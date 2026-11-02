@@ -4,7 +4,7 @@ Aplicativo acadêmico Android para apoiar a comparação multicritério de produ
 
 ## Estado do projeto
 
-Estamos na fase de planejamento da primeira entrega. O trabalho começa pela definição do escopo, requisitos, domínio, arquitetura, navegação e decisões técnicas. A implementação Android será iniciada depois dessas definições.
+As etapas de Visão e Escopo e de Engenharia de Requisitos estão concluídas documentalmente. A Etapa 2 consolida 27 requisitos funcionais, 13 não funcionais, 16 casos de uso, matriz de rastreabilidade e plano de verificação. O próximo passo é a modelagem de domínio e dados, seguida de arquitetura e navegação. A implementação Android será iniciada depois dessas definições.
 
 ## Documentação
 
