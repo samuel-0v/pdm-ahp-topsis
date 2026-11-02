@@ -1,46 +1,22 @@
 # Decisões técnicas
 
-## DEC-018 — Metodologia matemática AHP-TOPSIS
+As decisões aprovadas e seu histórico ficam centralizados em [Registro de Decisões do Projeto](decisoes-projeto.md), evitando cópias divergentes entre documentos.
 
-**Status:** Aprovada pela equipe.
+- A metodologia matemática aprovada está em [DEC-018](decisoes-projeto.md#4-dec-018--metodologia-matematica-ahp-topsis).
+- A política de exclusão de avaliações está em [DEC-019](decisoes-projeto.md#5-dec-019--exclusao-de-avaliacoes).
+- Requisitos funcionais, casos de uso e critérios de aceitação estão em [02-requisitos.md](02-requisitos.md).
 
-**Referência principal:** [ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf](../references/ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf), documento complementar “Avaliação Comparativa de Produtos com AHP-TOPSIS”.
+## Decisões técnicas ainda pendentes
 
-O documento complementar será a referência principal para a implementação dos algoritmos matemáticos. O enunciado principal apresenta outro procedimento para obter os pesos; esta escolha registra explicitamente a abordagem adotada pela equipe e mantém a divergência documentada.
+Os itens abaixo são questões de especificação e não alteram as decisões já aprovadas:
 
-### AHP — determinação dos pesos
+1. Definir a estrutura de coleções/documentos do Firebase Cloud Firestore e os identificadores dos dados oficiais.
+2. Definir entidades, relações, migrações e estratégia de persistência no Room.
+3. Especificar sincronização do catálogo e comportamento de erro/cache, respeitando os limites aprovados para uso offline.
+4. Definir bibliotecas e versões para navegação Compose, injeção de dependências e serialização.
+5. Detalhar estados de ViewModel e contratos dos repositórios/casos de uso.
+6. Definir arredondamento, precisão numérica e tratamento de empates e dados ausentes, mantendo os algoritmos da DEC-018.
+7. Definir a estratégia de salvamento automático e recuperação de rascunhos, sem contrariar DEC-006 e DEC-019.
+8. Escolher dados de referência e ferramentas de teste para os motores, repositórios e fluxos de interface.
 
-Será utilizado o método da média geométrica normalizada. Para cada linha `i` da matriz de comparações pareadas `A`, com `n` critérios:
-
-`GM_i = (∏_{j=1..n} a_ij)^(1/n)`
-
-Os pesos serão normalizados por:
-
-`w_i = GM_i / Σ_{k=1..n} GM_k`
-
-O cálculo do autovalor máximo estimado, Índice de Consistência (IC) e Razão de Consistência (RC) seguirá o procedimento descrito no documento de referência. A avaliação só poderá prosseguir ao TOPSIS se `RC ≤ 0,10`; caso contrário, os julgamentos deverão ser revisados.
-
-As duas categorias definidas no escopo possuem cinco critérios. Para `n = 5`, será usado o Índice Aleatório `IR = 1,12` da tabela adotada no documento complementar.
-
-### TOPSIS — classificação
-
-A implementação seguirá esta sequência:
-
-1. Construir a matriz de decisão das alternativas por critério.
-2. Realizar a normalização vetorial.
-3. Aplicar os pesos obtidos pelo AHP.
-4. Determinar as soluções ideais positiva e negativa conforme a natureza de cada critério.
-5. Calcular as distâncias euclidianas às soluções ideais.
-6. Calcular o coeficiente de proximidade relativa.
-7. Ordenar os produtos pelo coeficiente em ordem decrescente.
-
-### Consequências
-
-- Os motores AHP e TOPSIS serão implementados em Kotlin como componentes independentes da interface e do acesso a dados.
-- A validação matemática será coberta por testes unitários com resultados conhecidos.
-- A documentação de requisitos e arquitetura deverá refletir esta metodologia escolhida, sem apagar que o enunciado principal descreve outro método de obtenção de pesos.
-
-## Outras divergências do enunciado
-
-- `ProjetoDisciplina_PDM20262v2.pdf` é mantido como referência do escopo geral, requisitos e entregas.
-- Em caso de conflito sobre os cálculos, a decisão DEC-018 adota explicitamente o método descrito no documento complementar `ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf`.
+As decisões serão acrescentadas ao [registro central](decisoes-projeto.md) com novo identificador quando aprovadas. A arquitetura detalhada será mantida em [04-arquitetura.md](04-arquitetura.md).
