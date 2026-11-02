@@ -4,9 +4,9 @@
 **Instituição:** Universidade Federal de Uberlândia (UFU)
 **Semestre:** 2026/2
 **Projeto:** Sistema de Avaliação Comparativa Multicritério de Produtos (AHP-TOPSIS)
-**Versão:** 1.11
+**Versão:** 1.12
 **Data de consolidação:** 02/11/2026
-**Situação:** DEC-001 a DEC-035 aprovadas nas discussões da equipe.
+**Situação:** DEC-001 a DEC-036 aprovadas nas discussões da equipe.
 
 Este registro consolida decisões da equipe para orientar os requisitos, a modelagem e o desenvolvimento. Não substitui o enunciado do professor. Quando uma decisão adapta um exemplo ou procedimento do enunciado, a adaptação é identificada.
 
@@ -57,6 +57,7 @@ Este registro consolida decisões da equipe para orientar os requisitos, a model
 | DEC-033 | Metadados de validação dos critérios | Definições de critérios oficiais no Firestore incluem metadados genéricos reutilizáveis de validação; valores ainda não definidos além das faixas previamente aprovadas. |
 | DEC-034 | Identidade de produtos na seleção | Duplicidade é definida pela identidade do registro de origem; não há deduplicação automática entre catálogo oficial e pessoal. |
 | DEC-035 | Estado sem diferenciação | Processamento TOPSIS válido sem C* definido é persistido/listado como “Concluída — sem diferenciação”. |
+| DEC-036 | Organização conceitual do domínio | Avaliação é raiz de agregado; alternativas e julgamentos são componentes internos; resultados são objetos de valor; critérios e identidade histórica são preservados sem depender do catálogo atual. |
 
 ## 3. Regras transversais
 
@@ -239,6 +240,19 @@ Quando TOPSIS termina com processamento matematicamente válido, mas todas as al
 
 **Consequências:** RF20/RF22 e UC11/UC13 identificam explicitamente este estado; a modelagem representa conclusão válida sem coeficiente/ranking definido. Exportação continua conforme DEC-032.
 
+## DEC-036 — Organização conceitual do domínio
+
+**Status:** aprovada pelo usuário em 02/11/2026 ao iniciar a Etapa 3.
+**Origem:** aprovação da proposta de Modelagem do Domínio v0.2, com os três ajustes abaixo.
+
+Adotar os oito conceitos principais: Categoria, Critério, Produto, Avaliação, Alternativa da avaliação, Julgamento AHP, Resultado AHP e Resultado TOPSIS. A Avaliação é a raiz do agregado e responde pela consistência de seus componentes. Alternativas e julgamentos são componentes internos; resultados AHP/TOPSIS são objetos de valor sem identidade independente. Essa organização conceitual não exige uma tabela por conceito.
+
+Na avaliação, as definições dos critérios utilizados são preservadas como **CritérioPreservado**, objeto de valor interno que não constitui uma nona entidade independente. As alternativas guardam identidade histórica de origem e ID, identificação preservada do produto e seus valores associados aos critérios preservados. A identidade original é referência histórica e não exige que o produto ainda exista no catálogo atual (DEC-012, DEC-034). A definição atual do critério no catálogo é conceitualmente distinta de sua cópia preservada.
+
+A edição em memória permanece separada da avaliação persistida até salvamento explícito, sem criar uma entidade persistida adicional (DEC-025). A decisão não define schema, tabelas, tipos concretos, migrações ou implementação.
+
+**Consequências:** modelagem e arquitetura devem manter snapshots suficientes para consulta, cálculo e exportação offline, inclusive após remoções/atualizações do catálogo; atributos e persistência serão detalhados nas partes seguintes da Etapa 3.
+
 ## 11. Pendências de especificação
 
 Estas questões não alteram as decisões aprovadas; precisam ser detalhadas para requisitos, modelagem e testes:
@@ -256,8 +270,9 @@ Estas questões não alteram as decisões aprovadas; precisam ser detalhadas par
 - **v1.9:** DEC-033 aprovada para P01: metadados genéricos de validação junto às definições remotas dos critérios; limites numéricos adicionais e schema permanecem para detalhamento.
 - **v1.10:** DEC-034 aprovada para P02: identidade por origem e ID do registro; equivalência entre catálogos não é inferida automaticamente.
 - **v1.11:** DEC-035 aprovada para P03: resultado válido sem diferenciação é concluído e listado com rótulo explícito.
+- **v1.12:** DEC-036 aprovada para a organização conceitual da modelagem, incluindo distinção de CritérioPreservado, referências históricas independentes do catálogo e valores por critério nas alternativas.
 
-Este documento consolida as decisões DEC-001 a DEC-035 aprovadas nas discussões da equipe até 02/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
+Este documento consolida as decisões DEC-001 a DEC-036 aprovadas nas discussões da equipe até 02/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
 
 ## Validação dos requisitos não funcionais
 
