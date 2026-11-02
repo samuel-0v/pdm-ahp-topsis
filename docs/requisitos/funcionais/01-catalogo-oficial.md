@@ -88,7 +88,7 @@ Dados vindos do cache não são representados como atualização confirmada pelo
 **Rastreabilidade:** DEC-009, DEC-014, DEC-017, DEC-020.
 
 ### RF04 — Consultar catálogo remoto no Firebase Cloud Firestore
-**Descrição:** O sistema deve obter dados oficiais de categorias, critérios e produtos do Firestore e disponibilizar os metadados necessários à apresentação de sua origem.
+**Descrição:** O sistema deve obter dados oficiais de categorias, critérios e produtos do Firestore, incluindo metadados reutilizáveis de validação associados às definições de critérios (DEC-033), e disponibilizar os metadados necessários à apresentação de sua origem.
 
 **Ator principal:** Usuário (indiretamente); Firebase Cloud Firestore (sistema externo).
 
@@ -99,7 +99,7 @@ Aplicativo configurado para acesso ao projeto Firebase e regras de leitura.
 
 Aplicativo solicita dados ao repositório de catálogo.
 Repositório consulta o Firestore.
-Sistema interpreta e valida os documentos recebidos.
+Sistema interpreta e valida os documentos recebidos, incluindo tipo, unidade, domínio/limites aplicáveis, tratamento de ausência e natureza de benefício/custo das definições de critérios.
 Sistema disponibiliza os dados e a informação de proveniência conhecida às telas.
 **Fluxos alternativos e exceções:**
 
@@ -114,7 +114,8 @@ Consulta vazia: apresentar estado vazio.
 É possível ler produtos e categorias existentes no Firestore.
 O cliente não tem permissão para escrever no catálogo oficial.
 A aplicação distingue conteúdo vindo do cache de conteúdo confirmado pelo servidor.
-**Rastreabilidade:** DEC-009, DEC-010, DEC-020.
+As definições de critérios contêm os metadados necessários a uma validação genérica e podem ser usados em cache offline.
+**Rastreabilidade:** DEC-009, DEC-010, DEC-020, DEC-033.
 
 ### RF05 — Atualizar catálogo e consultar dados offline
 **Descrição:** O sistema deve buscar automaticamente atualizações do catálogo oficial e permitir consultar dados anteriormente disponíveis no cache quando a fonte remota estiver indisponível.

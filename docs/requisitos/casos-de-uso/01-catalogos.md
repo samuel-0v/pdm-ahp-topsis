@@ -1,8 +1,8 @@
 # Casos de uso — Catálogos
 
-**Versão:** 0.1 — rascunho, proposta de consolidação para revisão.
+**Versão:** 1.1 — UC01–UC15 aceitos; alinhamento às DEC-033–DEC-035.
 
-Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento ainda aguarda revisão; não registra novas decisões nem implementação.
+Base: RF01–RF27, RNF01–RNF13 e DEC-001–DEC-035 aprovados. P01–P03 resolvidos; detalhamento de modelagem e dados segue para as próximas etapas. Não representa implementação.
 
 [Índice dos casos de uso](README.md) · [Rastreabilidade](../rastreabilidade.md)
 

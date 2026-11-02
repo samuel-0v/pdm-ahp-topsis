@@ -1,8 +1,8 @@
 # Casos de uso — Configuração da avaliação
 
-**Versão:** 0.1 — rascunho, proposta de consolidação para revisão.
+**Versão:** 1.1 — UC01–UC15 aceitos; alinhamento às DEC-033–DEC-035.
 
-Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento ainda aguarda revisão; não registra novas decisões nem implementação.
+Base: RF01–RF27, RNF01–RNF13 e DEC-001–DEC-035 aprovados. P01–P03 resolvidos; detalhamento de modelagem e dados segue para as próximas etapas. Não representa implementação.
 
 [Índice dos casos de uso](README.md) · [Rastreabilidade](../rastreabilidade.md)
 
@@ -43,9 +43,9 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 
 1. O sistema apresenta produtos oficiais acessíveis e produtos pessoais da categoria.
 2. O usuário seleciona ou desmarca produtos.
-3. O sistema impede repetir o mesmo produto na seleção.
+3. O sistema impede repetir a mesma identidade de registro, formada por origem e ID (documento do Firestore ou cadastro pessoal local), conforme DEC-034.
 4. Associa cópias dos dados necessários à avaliação.
-5. O usuário prossegue para ajustar valores ou comparar critérios; o processamento exige pelo menos dois produtos distintos válidos.
+5. O usuário prossegue para ajustar valores ou comparar critérios; o processamento exige pelo menos duas alternativas válidas com identidades distintas (origem + ID, DEC-034).
 
 **Alternativas e exceções:**
 
@@ -57,7 +57,7 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 - A6 — Alteração em avaliação concluída: aplicar invalidação e salvamento do UC14.
 
 **Pós-condição:** alternativas associadas à edição atual; alterações nos catálogos não são realizadas.
-**Verificação:** seleção mista, prevenção de repetição do mesmo registro e bloqueio de processamento com uma alternativa. A identificação de equivalência entre registros dos dois catálogos permanece em revisão, conforme o relatório de consolidação.
+**Verificação:** seleção mista, prevenção de repetição do mesmo registro, permissão para selecionar registros distintos de origens diferentes mesmo com nomes/modelos iguais, e bloqueio de processamento com uma alternativa. Não se infere equivalência física automaticamente.
 
 ## UC08 — Ajustar e validar valores da avaliação
 
@@ -71,7 +71,7 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 
 1. O sistema apresenta valores de referência por produto, critério e unidade.
 2. O usuário ajusta os valores desejados na avaliação.
-3. O sistema verifica categoria, alternativas distintas, cinco critérios por produto, preenchimento, valores finitos, unidades e limites definidos.
+3. O sistema verifica categoria, identidades distintas (DEC-034), cinco critérios por produto, preenchimento e valores finitos, aplicando tipo, unidade, domínio/limites e ausência conforme metadados dos critérios (DEC-033).
 4. Valida notas de câmeras e ADAS entre 1 e 10 e as condições de normalização.
 5. Se os dados forem válidos, permite prosseguir, ainda sujeito à consistência AHP pelo UC10.
 

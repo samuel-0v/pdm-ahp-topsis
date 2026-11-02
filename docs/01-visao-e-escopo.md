@@ -4,9 +4,9 @@
 **Disciplina:** FACOM32503 — Programação para Dispositivos Móveis
 **Instituição:** Universidade Federal de Uberlândia — UFU
 **Semestre:** 2026/2
-**Versão editorial:** 1.1
+**Versão editorial:** 1.2
 **Base aprovada:** Visão e Escopo v1.0
-**Situação:** revisão editorial para evitar repetição do [Registro de Decisões](decisoes/registro-decisoes.md); nenhuma decisão de escopo foi alterada.
+**Situação:** base aprovada acrescida da exportação PDF autorizada na DEC-032; decisões detalhadas no [Registro de Decisões](decisoes/registro-decisoes.md).
 
 ## 1. Contextualização e problema
 
@@ -31,7 +31,9 @@ A primeira versão não oferece funções específicas de gestão corporativa ne
 
 A aplicação abrangerá duas categorias predefinidas — Smartphones Premium e Veículos Elétricos BEV — com critérios também predefinidos. O usuário poderá consultar o catálogo oficial, manter produtos pessoais, selecionar alternativas, personalizar valores por avaliação, configurar julgamentos AHP, processar TOPSIS e consultar os indicadores e o ranking.
 
-As avaliações serão locais e poderão ser salvas como rascunhos, retomadas, consultadas, editadas e recalculadas. A avaliação exigirá no mínimo duas alternativas. A exclusão de produtos pessoais e avaliações exigirá confirmação. Detalhes e consequências dessas escolhas estão no [Registro de Decisões](decisoes/registro-decisoes.md); requisitos verificáveis estão em [02-requisitos.md](requisitos/README.md).
+As avaliações serão locais e poderão ser salvas como rascunhos, retomadas, consultadas, editadas e recalculadas. A avaliação exigirá no mínimo duas alternativas. A exclusão de produtos pessoais e avaliações exigirá confirmação. Detalhes e consequências dessas escolhas estão no [Registro de Decisões](decisoes/registro-decisoes.md); requisitos verificáveis estão em [Requisitos](requisitos/README.md).
+
+Avaliações salvas e processadas, incluindo as sem diferenciação, poderão ser exportadas em PDF gerado localmente e compartilhado por ação explícita do usuário. Conteúdo e tratamento de alterações não salvas seguem a DEC-032 e o [RF27](requisitos/funcionais/07-exportacao.md).
 
 ## 5. Qualidade e rastreabilidade dos dados
 
@@ -43,11 +45,11 @@ A lista de critérios, unidades, fontes e adaptações aprovadas está no [Regis
 
 O produto será desenvolvido para Android, em Kotlin, com Jetpack Compose e arquitetura MVVM. O catálogo oficial será remoto; produtos pessoais e avaliações serão armazenados localmente. Os cálculos devem ser independentes de serviços externos e do tipo específico de produto, permitindo evolução futura sem ampliar automaticamente o escopo da primeira versão.
 
-A metodologia matemática aprovada, incluindo a referência escolhida e a diferença entre os PDFs do professor, está registrada na [DEC-018](decisoes/registro-decisoes.md#4-dec-018--metodologia-matematica-ahp-topsis). Os detalhes arquiteturais serão especificados em [04-arquitetura.md](arquitetura/arquitetura.md).
+A metodologia matemática aprovada, incluindo a referência escolhida e a diferença entre os PDFs do professor, está registrada na [DEC-018](decisoes/registro-decisoes.md#4-dec-018--metodologia-matemática-ahp-topsis). Os detalhes arquiteturais serão especificados em [Arquitetura](arquitetura/arquitetura.md).
 
 ## 7. Fora do escopo
 
-A primeira versão não inclui autenticação ou contas, sincronização dos dados pessoais entre dispositivos, criação de categorias ou critérios pelo usuário, colaboração, histórico de versões de avaliações, integração com lojas para compra/preço/estoque em tempo real ou exportação de relatórios. Essas possibilidades não constituem compromisso de entrega.
+A primeira versão não inclui autenticação ou contas, sincronização dos dados pessoais entre dispositivos, criação de categorias ou critérios pelo usuário, colaboração, histórico de versões de avaliações, integração com lojas para compra/preço/estoque em tempo real ou importação de avaliações. Exportação de rascunhos e de matrizes intermediárias também fica fora desta versão; o relatório PDF aprovado é delimitado pela DEC-032.
 
 ## 8. Limites e condições de uso
 
@@ -58,9 +60,11 @@ A primeira versão não inclui autenticação ou contas, sincronização dos dad
 
 ## 9. Resultado esperado desta etapa
 
-A Visão e Escopo delimita o problema, o público, as capacidades e os limites do produto. Requisitos, casos de uso e critérios de aceitação evoluem em [02-requisitos.md](requisitos/README.md); modelo, arquitetura, navegação e protótipo serão registrados nos documentos próprios após detalhamento.
+A Visão e Escopo delimita o problema, o público, as capacidades e os limites do produto. Requisitos, casos de uso e critérios de aceitação evoluem em [Requisitos](requisitos/README.md); modelo, arquitetura, navegação e protótipo serão registrados nos documentos próprios após detalhamento.
 
 ## 10. Histórico editorial
+
+- **v1.2:** inclusão da exportação PDF conforme DEC-032, revisando a exclusão anterior de relatórios.
 
 - **v1.0:** escopo preliminar consolidado a partir das decisões da equipe.
 - **v1.1:** reorganização editorial para manter o registro DEC-001 a DEC-019 em um documento central; as decisões aprovadas permanecem inalteradas.

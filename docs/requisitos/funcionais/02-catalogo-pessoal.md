@@ -5,7 +5,7 @@
 [Índice de requisitos](../README.md) · [Decisões](../../decisoes/registro-decisoes.md)
 
 ### RF06 — Cadastrar produto pessoal
-**Descrição:** O sistema deve permitir cadastrar produtos pessoais em categorias existentes, fornecendo identificação e os valores necessários à avaliação.
+**Descrição:** O sistema deve permitir cadastrar produtos pessoais em categorias existentes, fornecendo identificação e valores validados conforme os metadados dos critérios da categoria (DEC-033).
 
 **Ator principal:** Usuário.
 
@@ -33,10 +33,10 @@ Os cinco critérios exigidos correspondem à categoria escolhida.
 Valores inválidos são rejeitados.
 O produto permanece após reiniciar o app e não modifica o Firestore.
 A categoria é fixada no cadastro.
-**Rastreabilidade:** DEC-001, DEC-004, DEC-007, DEC-012, DEC-021.
+**Rastreabilidade:** DEC-001, DEC-004, DEC-007, DEC-012, DEC-021, DEC-033.
 
 ### RF07 — Consultar e editar produto pessoal
-**Descrição:** O sistema deve permitir consultar e editar dados de identificação e valores dos critérios de um produto pessoal, sem alterar sua categoria.
+**Descrição:** O sistema deve permitir consultar e editar dados de identificação e valores dos critérios de um produto pessoal, validando-os conforme os metadados da definição de critério associada (DEC-033), sem alterar sua categoria.
 
 **Ator principal:** Usuário.
 
@@ -65,7 +65,7 @@ Categoria é exibida sem permitir alteração.
 Alterações persistem após reinício.
 Edição não muda avaliações anteriores.
 Produtos do catálogo oficial permanecem somente leitura.
-**Rastreabilidade:** DEC-003, DEC-007, DEC-012, DEC-021.
+**Rastreabilidade:** DEC-003, DEC-007, DEC-012, DEC-021, DEC-033.
 
 ### RF08 — Excluir produto pessoal
 **Descrição:** O sistema deve permitir excluir um produto pessoal mediante confirmação explícita, preservando os dados já copiados para avaliações.

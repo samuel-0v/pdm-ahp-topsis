@@ -47,7 +47,7 @@ Avaliação iniciada e categoria fixa.
 
 Sistema apresenta produtos oficiais e pessoais da categoria.
 Usuário seleciona ou desmarca alternativas.
-Sistema evita inclusão duplicada do mesmo produto.
+Sistema impede selecionar novamente a mesma identidade de registro, formada por origem e identificador: ID do documento oficial no Firestore ou ID local do produto pessoal (DEC-034).
 Sistema associa os produtos e seus dados de referência à avaliação.
 **Fluxos alternativos e exceções:**
 
@@ -60,11 +60,11 @@ Produto com dados incompletos: exigir validação/correção antes do cálculo.
 **Critérios de aceitação:**
 
 É possível selecionar produtos de ambos os catálogos na mesma categoria.
-Produto não aparece duas vezes na mesma seleção.
-Mínimo de dois produtos distintos válidos para processar.
+O mesmo registro não aparece duas vezes na avaliação. Registros de origens distintas podem coexistir mesmo que nome, fabricante, modelo ou versão coincidam; não há deduplicação automática entre catálogos.
+Mínimo de duas alternativas válidas com identidades de registro distintas (origem + ID, DEC-034), da mesma categoria, para processar.
 Rascunhos podem permanecer incompletos.
 Alterações de seleção em avaliação concluída invalidam ranking após salvamento.
-**Rastreabilidade:** DEC-003, DEC-005, DEC-007, DEC-012, DEC-022.
+**Rastreabilidade:** DEC-003, DEC-005, DEC-007, DEC-012, DEC-022, DEC-034.
 
 ### RF12 — Ajustar valores dos critérios por avaliação
 **Descrição:** O sistema deve permitir substituir os valores de referência dos critérios para uma avaliação específica, preservando os valores de origem.
@@ -96,7 +96,7 @@ Alterar dados relevantes de avaliação concluída torna o resultado anterior in
 **Rastreabilidade:** DEC-003, DEC-006, DEC-017, DEC-025.
 
 ### RF13 — Validar dados da avaliação para processamento
-**Descrição:** O sistema deve verificar que a avaliação contém alternativas e valores de critérios suficientes e matematicamente válidos antes do TOPSIS.
+**Descrição:** O sistema deve verificar que a avaliação contém alternativas e valores de critérios suficientes e matematicamente válidos antes do TOPSIS, usando os metadados da definição de cada critério (DEC-033).
 
 **Ator principal:** Usuário (aciona avanço); sistema (executa validação).
 
@@ -106,9 +106,9 @@ Avaliação com categoria, critérios e alternativas associados, ainda que incom
 **Fluxo principal:**
 
 Sistema verifica categoria e coerência dos produtos.
-Confere o mínimo de duas alternativas distintas.
+Confere o mínimo de duas alternativas com identidades distintas (origem + ID, DEC-034).
 Confere presença dos cinco critérios exigidos por produto.
-Valida valores numéricos finitos, unidades, tipos e limites definidos; notas qualitativas entre 1 e 10.
+Aplica mecanismo genérico orientado pelos metadados do critério para validar tipo, unidade, domínio/limites aplicáveis e ausência; notas de câmeras e ADAS permanecem entre 1 e 10.
 Verifica condições matemáticas de normalização e comunica campos/problemas quando inválidos.
 Quando todos os dados necessários são válidos, autoriza a continuidade ao processamento.
 **Fluxos alternativos e exceções:**
@@ -120,9 +120,9 @@ Denominador de normalização nulo ou outras condições inviáveis: não execut
 
 **Critérios de aceitação:**
 
-Nunca processa com menos de dois produtos distintos.
+Nunca processa com menos de duas identidades de registro distintas (DEC-034).
 Notas de câmera e ADAS devem permanecer de 1 a 10.
 Valores não numéricos/infinitos não são aceitos.
 Rascunhos incompletos continuam salváveis.
 Consistência dos julgamentos AHP é verificada separadamente pelo RF17.
-**Rastreabilidade:** DEC-005, DEC-013, DEC-014, DEC-017, DEC-018.
+**Rastreabilidade:** DEC-005, DEC-013, DEC-014, DEC-017, DEC-018, DEC-033, DEC-034.

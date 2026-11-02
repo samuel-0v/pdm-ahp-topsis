@@ -1,8 +1,8 @@
 # Casos de uso — AHP, TOPSIS e resultados
 
-**Versão:** 0.1 — rascunho, proposta de consolidação para revisão.
+**Versão:** 1.1 — UC01–UC15 aceitos; estados de avaliação alinhados às DEC-033–DEC-035.
 
-Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento ainda aguarda revisão; não registra novas decisões nem implementação.
+Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-035 aprovados. Os casos de uso não representam implementação.
 
 [Índice dos casos de uso](README.md) · [Rastreabilidade](../rastreabilidade.md)
 
@@ -79,7 +79,7 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 
 - A1 — Abrir resultado salvo válido: apresentar os dados persistidos, sem exigir recálculo nem atualização do catálogo.
 - A2 — Dados inválidos, pesos desatualizados ou RC inconsistente: indicar correção pelos UC08–UC10; não publicar ranking válido.
-- A3 — Todos indistinguíveis, com d+ = d− = 0: apresentar ausência de diferenciação, sem C* fictício nem vencedor. A classificação persistida desse estado é ponto de revisão indicado no relatório.
+- A3 — Todos indistinguíveis, com d+ = d− = 0: apresentar ausência de diferenciação, sem C* fictício nem vencedor. Se salvo, classificar/listar como “Concluída — sem diferenciação” (DEC-035); exportar conforme DEC-032.
 - A4 — Empate: mesma posição para o grupo, sem desempate por nome ou preço; não confundir igualdade visual arredondada com empate matemático.
 - A5 — Falha numérica/normalização indefinida: informar falha sem resultado fictício.
 - A6 — Resultado desatualizado: indicar necessidade de recálculo, sem apresentá-lo como resultado atual válido.

@@ -1,14 +1,14 @@
 # Casos de uso — Persistência e gerenciamento
 
-**Versão:** 0.1 — rascunho, proposta de consolidação para revisão.
+**Versão:** 1.1 — UC01–UC15 aceitos; estados de avaliação alinhados às DEC-033–DEC-035.
 
-Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento ainda aguarda revisão; não registra novas decisões nem implementação.
+Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-035 aprovados. Os casos de uso não representam implementação.
 
 [Índice dos casos de uso](README.md) · [Rastreabilidade](../rastreabilidade.md)
 
 ## UC12 — Salvar avaliação e tratar saída com alterações
 
-**Objetivo:** preservar explicitamente rascunho ou avaliação com resultado válido.
+**Objetivo:** preservar explicitamente um rascunho ou uma avaliação concluída com resultado válido, inclusive sem diferenciação.
 **Ator principal:** usuário.
 **Gatilho:** acionar salvar ou tentar sair com alterações não salvas.
 **Pré-condição:** avaliação criada com categoria válida.
@@ -17,7 +17,7 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 **Fluxo principal:**
 
 1. O usuário solicita salvar rascunho ou avaliação processada.
-2. O sistema reúne configuração, cópias dos dados necessários, valores e julgamentos disponíveis; inclui indicadores/resultados somente quando válidos e correspondentes à configuração.
+2. O sistema reúne configuração, cópias dos dados necessários, valores e julgamentos disponíveis; inclui indicadores/resultados somente quando válidos e correspondentes à configuração, mesmo que C* esteja indefinido por ausência de diferenciação.
 3. Persiste o conjunto de forma atômica.
 4. Se entradas de cálculo foram alteradas sem novo resultado válido, invalida o resultado persistido anterior na mesma operação.
 5. Somente após concluir a gravação, confirma sucesso e considera a edição salva.
@@ -35,7 +35,7 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 
 ## UC13 — Consultar e retomar avaliações salvas
 
-**Objetivo:** localizar uma avaliação e continuar a partir de sua última gravação.
+**Objetivo:** localizar uma avaliação salva e retomar um rascunho ou consultar um resultado concluído.
 **Ator principal:** usuário.
 **Gatilho:** abrir avaliações salvas e selecionar registro.
 **Pré-condição:** aplicativo aberto; existência de registros verificada na consulta.
@@ -44,14 +44,14 @@ Base: RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados. O detalhamento a
 **Fluxo principal:**
 
 1. O usuário acessa avaliações salvas.
-2. O sistema consulta o armazenamento local e apresenta identificação, categoria e situação.
-3. O usuário seleciona um rascunho.
-4. O sistema restaura categoria, alternativas, critérios, valores e julgamentos da última gravação.
-5. O usuário continua a edição pelos casos de uso pertinentes, com categoria fixa.
+2. O sistema consulta o armazenamento local e apresenta identificação, categoria e situação, incluindo “Concluída — sem diferenciação” quando aplicável (DEC-035).
+3. O usuário seleciona um registro.
+4. Para rascunho, o sistema restaura categoria, alternativas, critérios, valores e julgamentos da última gravação; para concluída, abre o resultado válido, incluindo estado sem diferenciação.
+5. O usuário continua a edição de rascunho ou consulta/exporta resultado pelos casos de uso pertinentes, com categoria fixa.
 
 **Alternativas e exceções:**
 
-- A1 — Seleção de avaliação concluída: abrir resultado válido pelo UC11 ou editar pelo UC14.
+- A1 — Seleção de avaliação concluída: abrir resultado válido pelo UC11 ou editar pelo UC14; o estado sem diferenciação é resultado concluído consultável e exportável.
 - A2 — Lista vazia: informar ausência de avaliações salvas.
 - A3 — Registro inexistente ou falha de leitura: informar indisponibilidade.
 - A4 — Dados incoerentes: impedir cálculo inválido e informar erro; não substituir silenciosamente dados pelo catálogo atual.

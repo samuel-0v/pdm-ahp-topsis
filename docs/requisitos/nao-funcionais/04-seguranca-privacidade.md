@@ -1,6 +1,6 @@
 # Segurança e Privacidade
 
-**Versão:** 1.0 — requisitos validados.
+**Versão:** 1.1 — requisitos validados; esclarecimento de compartilhamento conforme DEC-032.
 
 [Índice de requisitos](../README.md)
 
@@ -31,6 +31,7 @@
 **Critérios de verificação:**
 
 - Produtos pessoais, matrizes de comparação e resultados permanecem no armazenamento local e não são enviados ao Firestore nas operações previstas.
+- O PDF da avaliação pode ser compartilhado por ação explícita do usuário conforme DEC-032; isso não autoriza envio automático ao Firestore nem sincronização. O arquivo entregue ao destino escolhido é uma cópia do relatório, não backup restaurável dos dados internos.
 - O uso não exige conta nem autenticação.
 - Solicitar somente permissões necessárias às funcionalidades implementadas.
 - Configurar e verificar a exclusão dos produtos pessoais e avaliações dos mecanismos de backup e transferência de dados nas versões Android suportadas.
@@ -38,4 +39,4 @@
 
 **Método de verificação:** inspecionar operações de rede, permissões e configuração de backup/transferência; verificar a restrição nas versões Android suportadas e a comunicação ao usuário. A aprovação documental não significa execução desses testes.
 
-**Decisões relacionadas:** DEC-004, DEC-009, DEC-011 e DEC-030.
+**Decisões relacionadas:** DEC-004, DEC-009, DEC-011, DEC-030 e DEC-032.

@@ -36,7 +36,7 @@ Não há salvamento automático de formulários.
 **Rastreabilidade:** DEC-004, DEC-006, DEC-022, DEC-025.
 
 ### RF22 — Consultar avaliações salvas
-**Descrição:** O sistema deve listar avaliações efetivamente persistidas, distinguindo rascunhos de avaliações concluídas.
+**Descrição:** O sistema deve listar avaliações efetivamente persistidas, distinguindo rascunhos, avaliações concluídas com resultado classificável e avaliações concluídas sem diferenciação (DEC-035).
 
 **Ator principal:** Usuário.
 
@@ -48,6 +48,7 @@ Não há salvamento automático de formulários.
 Usuário abre a listagem.
 Sistema consulta dados do Room.
 Apresenta avaliações salvas, com informações de identificação, categoria e situação.
+Para processamento válido sem diferenciação, apresenta o estado “Concluída — sem diferenciação”.
 Usuário seleciona um registro para continuar ou consultar.
 **Fluxos alternativos e exceções:**
 
@@ -59,11 +60,11 @@ Alterações em memória ainda não salvas: não tratá-las como versão persist
 
 **Critérios de aceitação:**
 
-Rascunhos e concluídas são identificáveis.
+Rascunhos, concluídas com resultado classificável e concluídas sem diferenciação são identificáveis.
 Seleção permite abrir avaliação individual.
 Listagem funciona offline e após reinício.
 Somente dados efetivamente persistidos são mostrados como salvos.
-**Rastreabilidade:** DEC-004, DEC-006, DEC-019, DEC-025.
+**Rastreabilidade:** DEC-004, DEC-006, DEC-019, DEC-025, DEC-035.
 
 ### RF23 — Retomar avaliação salva
 **Descrição:** O sistema deve restaurar a última versão persistida de um rascunho, preservando categoria, alternativas, valores e comparações já preenchidos.
@@ -139,7 +140,7 @@ Não há histórico de versões.
 Avaliação criada, com dados disponíveis para persistência.
 **Fluxo principal:**
 
-Sistema associa à avaliação cópias dos dados dos produtos e critérios necessários ao cálculo.
+Sistema associa à avaliação cópias dos dados dos produtos e critérios necessários ao cálculo, preservando origem e ID dos registros (DEC-034) e metadados das definições utilizadas (DEC-033).
 Durante salvamento manual, persiste valores, seleção, categoria e julgamentos AHP, além de indicadores e resultados válidos quando existentes.
 Ao reabrir a avaliação, usa os dados preservados, sem substituir automaticamente por valores atuais do catálogo.
 **Fluxos alternativos e exceções:**
@@ -156,7 +157,7 @@ Avaliações continuam consultáveis após mudanças no Firestore ou no catálog
 Dados usados nos cálculos são os da avaliação.
 O recálculo pode funcionar offline com snapshots íntegros.
 Não há atualização retroativa silenciosa de valores.
-**Rastreabilidade:** DEC-003, DEC-004, DEC-006, DEC-012, DEC-020.
+**Rastreabilidade:** DEC-003, DEC-004, DEC-006, DEC-012, DEC-020, DEC-033, DEC-034, DEC-035.
 
 ### RF26 — Excluir avaliação salva
 **Descrição:** O sistema deve permitir excluir definitivamente um rascunho ou avaliação concluída, mediante confirmação, sem excluir produtos.

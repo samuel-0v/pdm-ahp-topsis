@@ -1,7 +1,7 @@
 # Casos de uso
 
-**Versão:** 0.1 — rascunho, proposta para revisão da equipe.
-**Base:** RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 aprovados.
+**Versão:** 1.1 — UC01–UC15 aceitos; UC16 documenta a exportação aprovada na DEC-032.
+**Base:** RF01–RF27, RNF01–RNF13 e DEC-001–DEC-035 aprovados.
 
 [Requisitos](../README.md) · [Rastreabilidade](../rastreabilidade.md) · [Revisão da Etapa 2](../revisao-etapa-2.md)
 
@@ -9,12 +9,13 @@
 
 - **Usuário:** consulta catálogos, mantém produtos pessoais, configura comparações e gerencia avaliações locais. Não exige conta ou login.
 - **Firebase Cloud Firestore:** sistema externo de apoio às consultas do catálogo oficial. Dados em cache não garantem consulta atual ao servidor.
+- O compartilhamento padrão do Android e o destino escolhido apoiam o UC16; não criam contas ou sincronização no aplicativo.
 - Room, motores AHP/TOPSIS, ViewModels e repositórios são componentes internos, não atores.
 - Administração do catálogo por responsáveis externos não é funcionalidade do aplicativo nesta versão. Professor e equipe são interessados no projeto, não novos perfis de acesso.
 
-## Organização proposta
+## Organização dos casos de uso
 
-Não foi localizada uma lista UC01–UC15 nos arquivos atuais. A correspondência abaixo é uma proposta de organização dos RFs existentes, sujeita à revisão, e não uma recuperação de identificadores anteriormente documentados. Casos de uso descrevem objetivos do usuário; não determinam quantidade de telas nem classes Kotlin.
+A organização e os fluxos UC01–UC15 foram aceitos pelo usuário. O UC16 detalha a exportação aprovada posteriormente na DEC-032. P01–P03 foram resolvidos posteriormente pelas DEC-033–DEC-035; o detalhamento técnico segue para modelagem e preparação dos dados. Casos de uso descrevem objetivos do usuário; não determinam quantidade de telas nem classes Kotlin.
 
 | ID | Caso de uso | Documento |
 |---|---|---|
@@ -33,19 +34,21 @@ Não foi localizada uma lista UC01–UC15 nos arquivos atuais. A correspondênci
 | UC13 | Consultar e retomar avaliações salvas | [Persistência](04-persistencia.md#uc13--consultar-e-retomar-avaliações-salvas) |
 | UC14 | Editar e recalcular avaliação concluída | [Persistência](04-persistencia.md#uc14--editar-e-recalcular-avaliação-concluída) |
 | UC15 | Excluir avaliação salva | [Persistência](04-persistencia.md#uc15--excluir-avaliação-salva) |
+| UC16 | Exportar avaliação em PDF | [Exportação](05-exportacao.md#uc16--exportar-avaliação-em-pdf) |
 
 ## Convenções e regras comuns
 
 Os fluxos principais descrevem sucesso; alternativas e exceções registram desvios. Referências a outros UCs indicam reutilização narrativa, sem impor relações UML include/extend.
 
 1. Categoria de produto cadastrado e de avaliação criada é imutável (DEC-021/022).
-2. A seleção exige dois produtos distintos para processar, mas rascunhos podem estar incompletos. Não existe máximo funcional de 50 produtos (DEC-005/026).
+2. A seleção exige duas identidades distintas de registro (origem + ID, DEC-034), da mesma categoria e com dados válidos, para processar, mas rascunhos podem estar incompletos. Não existe máximo funcional de 50 produtos (DEC-005/026).
 3. Cálculos usam dados da avaliação. Alterações do catálogo não substituem essas cópias (RF25).
 4. Edição em memória não altera dados persistidos. Resultados deixam de representar a edição assim que entradas mudam; a invalidação persistida ocorre ao salvar (DEC-025, RNF05).
 5. Comparar, processar e consultar não significam salvar; saída com mudanças segue UC12.
 6. Regras matemáticas ficam centralizadas nas DEC-018 e DEC-024–029 e no RNF04; as fórmulas detalhadas permanecem nos RFs.
 7. Usabilidade e acessibilidade aplicam-se aos fluxos pertinentes; disponibilidade offline depende dos dados existentes (RNF01, RNF02, RNF06).
-8. Critérios de verificação dos UCs são roteiros documentais, não testes já executados.
+8. Uma avaliação processada sem diferenciação pode ser salva como “Concluída — sem diferenciação”, sem C*, posição ou vencedor fictício (DEC-035).
+9. Critérios de verificação dos UCs são roteiros documentais, não testes já executados.
 
 ## Relações entre os fluxos
 
@@ -55,5 +58,6 @@ Os fluxos principais descrevem sucesso; alternativas e exceções registram desv
 - UC12 pode ocorrer durante a edição e após processamento; UC13 restaura a versão salva.
 - UC14 reutiliza seleção, ajustes, julgamentos e cálculo conforme a mudança realizada.
 - UC15 exclui a avaliação, preservando os catálogos.
+- UC16 exporta a versão salva e processada; pode usar UC12 para salvar antes de gerar o PDF e UC14 quando necessário recalcular.
 
 Essa sequência explica dependências funcionais; não obriga navegação linear nem substitui o futuro protótipo.

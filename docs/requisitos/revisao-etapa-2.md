@@ -1,97 +1,97 @@
 # Revisão de consolidação da Etapa 2
 
-**Versão:** 0.1 — rascunho, preparada para revisão, sem aprovação automática.
+**Versão:** 1.0 — consolidação documental das decisões aprovadas.
 **Data:** 02/11/2026.
-**Escopo:** detalhamento dos casos de uso, rastreabilidade e preparação da verificação. Não inclui implementação, modelagem final, novas decisões ou execução de testes.
+**Escopo:** casos de uso, rastreabilidade, plano de verificação e resoluções P01–P03. Não inclui implementação, modelagem final nem execução de testes.
 
 [Requisitos](README.md) · [Casos de uso](casos-de-uso/README.md) · [Matriz](rastreabilidade.md) · [Plano de verificação](plano-verificacao.md)
 
-## Diagnóstico
+## Resultado da revisão
 
-Os RF01–RF26, RNF01–RNF13 e DEC-001–DEC-031 estão registrados como aprovados. Há base suficiente para detalhar fluxos, persistência e cálculo, sem reiniciar a elicitação. A presente consolidação propõe UC01–UC15 e relaciona todos os RFs e RNFs a verificações futuras.
+RF01–RF26 e RNF01–RNF13 estão validados; RF27 e UC16 registram a exportação aprovada na DEC-032. Os UC01–UC15 foram aceitos pelo usuário. As questões P01–P03 foram resolvidas pelas DEC-033–DEC-035, sem redefinir as decisões anteriores. A matriz e o plano foram alinhados a essas resoluções.
 
-A Etapa 2 ainda não deve ser declarada integralmente encerrada: a organização dos UCs aguarda revisão, e existem ambiguidades pontuais que afetam critérios de aceitação. Não foram encontradas regras aprovadas contraditórias sobre salvamento quando se distingue estado em memória da versão persistida; algumas redações antigas, porém, não explicitam essa distinção.
+O detalhamento de schema, domínios numéricos restantes e representação dos estados segue para modelagem e preparação dos dados, conforme aprovado. Isso não reabre P01–P03. A consolidação não comprova conformidade do aplicativo em execução nem conclusão de todos os entregáveis acadêmicos.
 
-## Fontes efetivamente examinadas
+## Fontes examinadas
 
-- Visão e Escopo, registro central DEC-001–031, seis arquivos de RFs e seis de RNFs.
-- Índices do projeto e documentação, questões de arquitetura e fluxo inicial de navegação.
-- Os dois PDFs do professor estão presentes em `references/`; este trabalho utiliza a referência e a divergência metodológica já registradas na DEC-018, sem nova auditoria integral dos PDFs.
-- Não foi localizada uma lista UC01–UC15 nos arquivos atuais. Os identificadores propostos precisam ser conferidos pela equipe caso exista outra lista fora do repositório.
+- Visão e Escopo, registro DEC-001–DEC-035, sete grupos de RFs e seis grupos de RNFs.
+- Casos de uso, índices, questões de arquitetura e fluxo inicial de navegação.
+- Os dois PDFs do professor estão presentes em `references/`. Esta consolidação utiliza a referência e a divergência metodológica já registradas na DEC-018; não representa nova auditoria integral dos PDFs nem confirmação externa das adaptações.
 
-## Material preparado
+## P01 — Domínio dos valores de entrada
 
-| Material | Conteúdo | Situação |
-|---|---|---|
-| Casos de uso | Atores, objetivos, gatilhos, pré-condições, fluxos, alternativas, pós-condições e verificações de UC01–UC15 | Proposta para revisão |
-| Rastreabilidade | 26 RFs, 13 RNFs e relação das 31 decisões com os fluxos/qualidade/processo | Proposta para revisão |
-| Plano de verificação | VT01–VT16, respeitando mínimos aprovados e distinguindo execução futura | Proposta para revisão |
-| RFs e RNFs existentes | Conteúdo normativo preservado | Aprovação anterior mantida |
+**Situação:** resolvido pela DEC-033.
 
-## Pontos que precisam de validação antes de encerrar a especificação
+**Questão original:** definir a origem e a aplicação reutilizável das regras dos critérios, incluindo tipo, unidade, limites e ausência.
 
-As recomendações abaixo NÃO são decisões aprovadas. Mantêm-se os identificadores atuais dos RFs/RNFs; nenhuma DEC-032 foi criada.
+**Decisão:** as definições oficiais no Firestore contêm metadados genéricos de validação. O aplicativo aplica essas regras sem lógica específica por categoria e usa as definições disponíveis em cache offline. Produtos pessoais permanecem locais; avaliações preservam metadados e valores usados.
 
-### P01 — Domínio dos valores de entrada
+**Consequências:** RF04, RF06/RF07 e RF13 aplicam leitura e validação por metadados; RF25 exige preservação das definições utilizadas. Valores ausentes e inválidos continuam impedindo processamento, sem impedir rascunhos incompletos. Notas de câmeras/ADAS continuam entre 1 e 10.
 
-**Evidência:** RF06/RF13 exigem valores válidos e limites definidos, mas somente as notas de câmeras/ADAS possuem intervalo explícito (1–10). O registro de decisões mantém limites de entrada como pendência.
+**Encaminhamento aprovado:** schema, identificadores/versionamento e limites numéricos ainda não definidos serão detalhados na modelagem e preparação dos dados. Nenhum limite novo foi criado nesta revisão. Não é condição para reabrir o P01.
 
-**Impacto:** ainda não é possível decidir todos os testes de aceitação de preço, autonomia, armazenamento, desempenho, tempo de recarga e seguro; principalmente zero, negativos e precisão de entrada.
+## P02 — Produtos distintos entre catálogos
 
-**Recomendação para discutir:** preparar um dicionário por critério contendo unidade, benefício/custo, tipo, domínio permitido e regra para ausência. Usar limites de significado físico e evitar tetos arbitrários. Não fixar novos intervalos neste pacote. A forma de guardar entrada incompleta no rascunho deve preservar a distinção entre ausência e valor válido, sem permitir processamento inválido.
+**Situação:** resolvido pela DEC-034.
 
-**Destino:** completar regras de validação RF06/RF13 antes da implementação dos validadores; detalhamento de representação na modelagem.
+**Questão original:** distinguir repetição de registro de equivalência física entre produtos.
 
-### P02 — Produtos distintos entre catálogos
+**Decisão:** identidade pelo par **origem + ID do registro**. Não permitir duas seleções da mesma identidade. Não deduplicar automaticamente por nome, fabricante, modelo ou versão.
 
-**Evidência:** RF11 impede inclusão duplicada do mesmo produto e exige pelo menos dois distintos; não define equivalência entre produto oficial e cadastro pessoal que descrevem o mesmo modelo/versão.
+**Consequências:**
 
-**Impacto:** deduplicar por identidade de registro ou por produto físico pode gerar seleções diferentes. Empate TOPSIS não resolve a identidade dos produtos.
+- O mínimo de duas alternativas significa duas identidades distintas, da mesma categoria e com dados válidos.
+- IDs iguais em origens diferentes não representam a mesma identidade.
+- Registros diferentes podem coexistir mesmo descrevendo o mesmo produto físico, inclusive dentro de uma mesma origem.
+- A avaliação preserva origem, ID e cópia dos dados; editar nome ou valores não muda a identidade do cadastro.
+- Não se promete reconhecimento de equivalência física. Uma mudança futura dessa regra precisará de nova decisão.
 
-**Recomendação para discutir:** explicitar que a prevenção mínima usa identidade do registro de origem, sem deduplicação automática por nome. Se a equipe desejar equivalência entre catálogos, definir uma regra própria antes de implementar. Esta recomendação não foi aplicada como obrigação aos RFs.
+RF11/RF13 e UC07 explicitam a regra. VT03/VT04 cobrem repetição de identidade, registros de origens diferentes e coincidência de nomes/modelos. Modelagem detalhará a representação dos identificadores sem alterar a regra aprovada.
 
-**Destino:** esclarecer RF11 e o conceito de identidade na modelagem.
+## P03 — Persistência do caso sem diferenciação
 
-### P03 — Persistência do caso sem diferenciação
+**Situação:** resolvido pela DEC-035, em continuidade às DEC-024 e DEC-032.
 
-**Evidência:** RF18–RF20/DEC-024 permitem informar ausência de diferenciação quando C* é indefinido; RF22 distingue rascunho e concluída e RNF05 proíbe resultado matematicamente inválido como concluído. Falta explicitar a classificação persistida do processamento válido que termina sem coeficiente definido.
+**Questão original:** classificar o processamento válido sem diferenciação, distinguindo-o de rascunho e erro matemático.
 
-**Impacto:** as telas de avaliações salvas e os testes precisam distinguir ausência legítima de diferenciação de falha matemática ou rascunho incompleto.
+**Decisão:** permitir salvamento como avaliação concluída e exibir **“Concluída — sem diferenciação”**. Preservar os indicadores calculáveis, sem inventar C*, posição ou vencedor.
 
-**Recomendação para discutir:** tratar como avaliação processada/concluída com resultado explícito “sem diferenciação”, preservando dados e indicadores calculáveis, sem inventar C*, posição ou vencedor. Isso precisa de aprovação antes de consolidar o estado persistido; não foi imposto no UC11.
+**Consequências:**
 
-**Destino:** esclarecer RF20–RF25 e estados do modelo, mantendo o comportamento matemático aprovado.
+- Salvamento continua manual; o estado só aparece como salvo depois da gravação bem-sucedida.
+- Avaliação pode ser reaberta, editada, recalculada, excluída e exportada conforme os fluxos aprovados.
+- Edição e invalidação obedecem à mesma distinção entre estado em memória e versão persistida da DEC-025.
+- A modelagem deve permitir conclusão sem coeficiente/ranking definido.
+- Coluna sem normalização definida permanece erro de validação; não é convertida em conclusão sem diferenciação.
 
-## Ajustes editoriais identificados
+RF20/RF22, UC11–UC13 e RNF05 refletem essa distinção. VT07 verifica o resultado matemático; VT08 verifica salvar/reabrir e VT17 verifica exportar o estado sem diferenciação.
 
-| Local | Observação | Tratamento neste pacote |
-|---|---|---|
-| Registro, regra transversal 3.2 | “Editar invalida” pode ser lido como alteração imediata no banco; DEC-025 e RNF05 já distinguem memória e persistência | UC12/UC14 explicitam a distinção; regra aprovada não foi alterada |
-| Registro, pendências seção 11 | Ainda pede especificar RNFs e garantias em encerramento inesperado, já tratados em RNF05 e DEC-025 | Atualização editorial sugerida abaixo, sem reabrir a aprovação |
-| RF19 | Rastreabilidade antiga não lista DEC-027/028 | Matriz inclui ambas; recomendado acrescentar referências no RF após revisão |
-| RF15/RF16 | Critérios numéricos antigos não referenciam DEC-029 | Matriz e plano apontam a tolerância aprovada, sem modificar fórmulas |
-| Fluxo de navegação | “Salvar” após saída usa nó de persistir avaliação/resultado, podendo sugerir resultado para rascunho; abertura para edição também passa diretamente por “alterações pendentes” | UCs distinguem abrir, modificar, rascunho e resultado; revisar diagrama quando detalhar navegação |
-| Visão e registro | Alguns rótulos dos links ainda usam nomes antigos como 02-requisitos.md, embora os destinos existam | Ajuste cosmético possível; não altera escopo |
+## Ajustes finais realizados
 
-Redação sugerida para substituir a pendência genérica antiga: “Revisar os casos de uso e resolver os pontos de entrada, identidade e estado sem diferenciação; detalhar contratos e estrutura Firestore/Room na modelagem/arquitetura. RNF01–RNF13 e política de perda de alterações não salvas já estão aprovados.” A substituição não foi feita no registro para manter sua revisão explícita.
+- Atualizados os índices e as bases dos casos de uso para DEC-001–DEC-035.
+- Explicado o mínimo de alternativas por identidade de registro nos requisitos e fluxos de seleção/validação.
+- Completada a rastreabilidade de metadados, identidade e conclusão sem diferenciação.
+- Acrescentadas verificações explícitas de identidade, preservação de metadados e salvamento/reabertura sem diferenciação.
+- Esclarecidas invalidação em memória, invalidação persistida e substituição do resultado no registro central.
+- Removidas pendências obsoletas sobre especificação dos RNFs e definição da política de perda de alterações não salvas.
+- Corrigidas referências matemáticas e rótulos antigos de links. O diagrama de navegação continua um fluxo inicial, a detalhar com o protótipo.
 
-## Pendências das etapas seguintes
+## Encaminhamento para as próximas etapas
 
-Não é necessário escolher agora bibliotecas, classes ou esquema de banco para aprovar os fluxos. Permanecem para o momento apropriado:
+| Etapa | Trabalho restante |
+|---|---|
+| Preparação dos dados | Modelos reais, fontes/datas, domínios numéricos restantes, rubricas de câmeras/ADAS, autonomia de smartphones, perfil de seguro e condições de recarga |
+| Modelagem | Entidades, identidade por origem/ID, cópias dos dados e metadados, relações e representação dos estados aprovados |
+| Arquitetura | Contratos Room/Firestore, dependências, versões Android, navegação, backup, concorrência e erros |
+| Testes | Referências matemáticas, ferramentas, massas de dados, dispositivo de desempenho e procedimento de aquecimento |
+| Gestão | Configuração efetiva do GitHub Projects, revisão/integração conforme DEC-031 e tags das entregas reais |
+| Disciplina | Conferir entregáveis exigidos e confirmar adaptações com o professor quando necessário; não há confirmação externa registrada aqui |
 
-- **Preparação dos dados:** modelos reais, fontes e datas, rubricas de câmeras/ADAS, protocolo de autonomia de smartphones, perfil do seguro e condições de recarga. DEC-013–017 já orientam essas escolhas; elas precisam estar prontas antes de validar o catálogo real.
-- **Modelagem:** entidades, identidade dos registros, cópias dos dados utilizados, relações e representação dos estados aprovados.
-- **Arquitetura:** contratos Room/Firestore, dependências, navegação, versões Android suportadas, configuração de backup, concorrência e tratamento de erros.
-- **Testes:** referências matemáticas, dispositivo de desempenho, procedimento de aquecimento, ferramentas e dados dos cenários.
-- **Gestão:** configuração efetiva do GitHub Projects e tags das entregas reais. Este pacote não criou quadro, PR, tag ou commit.
-- **Disciplina:** manter a diferença entre os métodos dos PDFs visível na DEC-018; confirmar com o professor as adaptações quando necessário. Não há evidência aqui de confirmação externa.
+## Histórico
 
-## Critério proposto para encerrar a Etapa 2
-
-1. Equipe revisa e aceita organização e fluxos UC01–UC15.
-2. Resolve P01–P03, um ponto por vez, e registra aprovações sem alterar silenciosamente decisões anteriores.
-3. Incorpora os esclarecimentos nos RFs/UCs e atualiza as pendências editoriais correspondentes.
-4. Confere matriz e plano, garantindo cobertura documental dos 26 RFs e 13 RNFs.
-5. Registra versão aprovada da especificação e encaminha as pendências técnicas às próximas etapas.
-
-A criação de commit ocorrerá somente após autorização do usuário. A conclusão documental não significa que o app atende aos requisitos em execução nem substitui entregáveis específicos exigidos pelo professor.
+- UC01–UC15 aceitos pelo usuário após o rascunho inicial.
+- DEC-032: exportação PDF; RF27, UC16 e VT17 acrescentados; DEC-011 e Visão e Escopo revisados explicitamente.
+- DEC-033: P01 resolvido por metadados genéricos, com detalhamento numérico/schema encaminhado às próximas etapas.
+- DEC-034: P02 resolvido por identidade do registro, sem equivalência física automática.
+- DEC-035: P03 resolvido por conclusão válida sem diferenciação e rótulo explícito.
+- Ajustes finais e commit documental autorizados pelo usuário. Nenhum teste do aplicativo é declarado executado.

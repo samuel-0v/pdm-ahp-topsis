@@ -1,15 +1,15 @@
 # Requisitos
 
-Os RF01–RF26 e RNF01–RNF13 estão validados documentalmente. Os testes de implementação serão executados posteriormente.
+Os RF01–RF26 e RNF01–RNF13 estão validados documentalmente. O RF27 registra a exportação aprovada na DEC-032. P01–P03 da revisão da Etapa 2 foram esclarecidos pelas DEC-033–DEC-035; detalhamentos de schema e modelagem seguem pendentes conforme relatório. Os testes de implementação serão executados posteriormente.
 
-## Consolidação da Etapa 2 — rascunho em revisão
+## Consolidação da Etapa 2
 
-O detalhamento abaixo foi preparado para revisão da equipe. Os requisitos já aprovados permanecem inalterados; a Etapa 2 ainda aguarda aceite da consolidação e resolução dos pontos explicitados no relatório.
+Os UC01–UC15 foram aceitos. RF27 e UC16 detalham a exportação aprovada na DEC-032. A matriz e o plano foram alinhados às DEC-033–DEC-035. P01–P03 estão resolvidos; o relatório distingue a consolidação documental dos detalhamentos técnicos e testes futuros.
 
-- [Casos de uso UC01–UC15](casos-de-uso/README.md), organizados em quatro grupos.
+- [Casos de uso UC01–UC16](casos-de-uso/README.md), organizados em cinco grupos.
 - [Matriz de rastreabilidade](rastreabilidade.md) entre RFs, RNFs, decisões e verificações.
 - [Plano inicial de verificação](plano-verificacao.md), sem testes de implementação executados.
-- [Relatório de revisão e pendências](revisao-etapa-2.md), com recomendações ainda não aprovadas.
+- [Relatório de revisão e pendências](revisao-etapa-2.md), com as resoluções de P01–P03 e os encaminhamentos para as próximas etapas.
 
 ## Requisitos funcionais
 
@@ -43,6 +43,7 @@ Os RF01–RF26 estão validados funcionalmente. A validação documental não re
 | RF24 | [Editar e recalcular avaliação concluída](funcionais/06-persistencia-avaliacoes.md) | Validado |
 | RF25 | [Preservar os dados utilizados nas avaliações](funcionais/06-persistencia-avaliacoes.md) | Validado |
 | RF26 | [Excluir avaliação salva](funcionais/06-persistencia-avaliacoes.md) | Validado |
+| RF27 | [Exportar avaliação em PDF](funcionais/07-exportacao.md) | DEC-032 aprovada; detalhamento registrado |
 
 Referência matemática: [documento AHP-TOPSIS](../../references/ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf). As regras transversais e decisões ficam no [registro central](../decisoes/registro-decisoes.md).
 
