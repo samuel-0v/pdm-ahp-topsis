@@ -8,14 +8,7 @@ Estamos na fase de planejamento da primeira entrega. O trabalho começa pela def
 
 ## Documentação
 
-- [Visão e escopo](docs/01-visao-e-escopo.md)
-- [Registro consolidado de decisões](docs/decisoes-projeto.md)
-- [Requisitos](docs/02-requisitos.md)
-- [Modelagem do domínio](docs/03-modelagem-dominio.md)
-- [Arquitetura](docs/04-arquitetura.md)
-- [Navegação](docs/05-navegacao.md)
-- [Decisões técnicas](docs/06-decisoes-tecnicas.md)
-- [Diagramas](diagrams/README.md)
+Acesse o [índice da documentação](docs/README.md) para decisões, requisitos, domínio, arquitetura e navegação.
 
 ## Referências do professor
 
