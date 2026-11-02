@@ -2,6 +2,15 @@
 
 Os RF01–RF26 e RNF01–RNF13 estão validados documentalmente. Os testes de implementação serão executados posteriormente.
 
+## Consolidação da Etapa 2 — rascunho em revisão
+
+O detalhamento abaixo foi preparado para revisão da equipe. Os requisitos já aprovados permanecem inalterados; a Etapa 2 ainda aguarda aceite da consolidação e resolução dos pontos explicitados no relatório.
+
+- [Casos de uso UC01–UC15](casos-de-uso/README.md), organizados em quatro grupos.
+- [Matriz de rastreabilidade](rastreabilidade.md) entre RFs, RNFs, decisões e verificações.
+- [Plano inicial de verificação](plano-verificacao.md), sem testes de implementação executados.
+- [Relatório de revisão e pendências](revisao-etapa-2.md), com recomendações ainda não aprovadas.
+
 ## Requisitos funcionais
 
 Os RF01–RF26 estão validados funcionalmente. A validação documental não representa implementação ou testes executados.
