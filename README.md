@@ -16,9 +16,10 @@ Estamos na fase de planejamento da primeira entrega. O trabalho começa pela def
 - [Decisões técnicas](docs/06-decisoes-tecnicas.md)
 - [Diagramas](diagrams/README.md)
 
-## Referências do trabalho
+## Referências do professor
 
-Os requisitos acadêmicos foram extraídos de `ProjetoDisciplina_PDM20262v2.pdf` e `ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf`, armazenados fora deste repositório. As anotações em `chatGPT.md` são material de apoio gerado por IA e não substituem os enunciados do professor.
+- [Avaliação Comparativa de Produtos com AHP-TOPSIS](references/ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf) — referência matemática principal, conforme DEC-018.
+- [Enunciado do projeto — versão 2](references/ProjetoDisciplina_PDM20262v2.pdf) — escopo, requisitos e entregas.
 
 ## Entregas
 
