@@ -17,11 +17,11 @@
 - Ao salvar alterações nos dados usados no cálculo de uma avaliação concluída, invalidar o resultado anterior na mesma operação.
 - Excluir a avaliação, seus dados e resultados associados de forma conjunta, preservando os catálogos e exigindo a confirmação já definida na DEC-019.
 - Alterações não salvas não modificam a última versão persistida e permanecem sujeitas à perda em encerramento inesperado, conforme DEC-025.
-- Resultados matemáticos inválidos não são persistidos como avaliações concluídas.
+- Resultados matemáticos inválidos não são persistidos como avaliações concluídas. O processamento válido sem diferenciação é um resultado reconhecido, salvável como “Concluída — sem diferenciação”, sem inventar coeficiente, posição ou vencedor (DEC-035). Coluna com normalização indefinida continua sendo falha de validação.
 
 **Método de verificação:** testes de integração da persistência com falhas provocadas durante operações envolvendo vários registros; verificar ausência de gravações parciais, preservação da versão anterior e coerência entre configuração e resultado. Testes ainda não executados nesta etapa documental.
 
-**Decisões relacionadas:** DEC-004, DEC-006, DEC-019 e DEC-025.
+**Decisões relacionadas:** DEC-004, DEC-006, DEC-019, DEC-025 e DEC-035.
 
 ### RNF06 — Funcionamento offline
 

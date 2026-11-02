@@ -33,7 +33,7 @@ Há dez comparações independentes para cinco critérios.
 Matriz possui diagonal 1 e reciprocidade a[j,i]=1/a[i,j].
 Usuário visualiza progresso e consegue voltar para revisar.
 Matriz incompleta não é aprovada.
-**Rastreabilidade:** DEC-018, DEC-023.
+**Rastreabilidade:** DEC-018, DEC-023, DEC-029.
 
 ### RF15 — Calcular pesos AHP por média geométrica normalizada
 **Descrição:** O sistema deve obter o vetor de prioridades dos critérios pelo método da média geométrica normalizada da matriz de comparações pareadas.
@@ -66,7 +66,7 @@ Os pesos obedecem à média geométrica normalizada, não à média aritmética 
 Pesos são positivos e somam aproximadamente 1.
 Matriz 5×5 com todos os elementos iguais a 1 resulta em pesos 0,20 para cada critério.
 Resultados são verificáveis por testes unitários com matrizes conhecidas.
-**Rastreabilidade:** DEC-018, DEC-023.
+**Rastreabilidade:** DEC-018, DEC-023, DEC-029.
 
 ### RF16 — Calcular indicadores de consistência AHP
 **Descrição:** O sistema deve calcular λmax estimado, Índice de Consistência (IC), Índice Aleatório (RI) e Razão de Consistência (RC).
@@ -101,7 +101,7 @@ Para cinco critérios o RI usado é 1,12.
 A matriz 5×5 toda igual a 1 produz λmax≈5, IC≈0 e RC≈0.
 Os resultados correspondem ao documento matemático escolhido.
 Indicadores exibidos são derivados dos cálculos reais.
-**Rastreabilidade:** DEC-018.
+**Rastreabilidade:** DEC-018, DEC-029.
 
 ### RF17 — Validar consistência e bloquear TOPSIS quando necessário
 **Descrição:** O sistema deve liberar o TOPSIS somente após obter uma matriz AHP completa e consistente, com RC menor ou igual a 0,10.
@@ -131,4 +131,4 @@ RC igual a 0,10 é aceita.
 RC maior que 0,10 bloqueia processamento TOPSIS.
 Usuário consegue corrigir julgamentos sem criar nova avaliação.
 Qualquer alteração de comparações exige recálculo.
-**Rastreabilidade:** DEC-018, DEC-023.
+**Rastreabilidade:** DEC-018, DEC-023, DEC-029.

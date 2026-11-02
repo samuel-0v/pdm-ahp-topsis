@@ -11,7 +11,7 @@
 
 **Pré-condições:**
 
-Pelo menos dois produtos distintos válidos, da mesma categoria; todos os valores necessários completos; matriz AHP consistente com RC≤0,10; pesos correspondentes à configuração atual.
+Pelo menos duas alternativas válidas com identidades distintas (origem + ID, DEC-034), da mesma categoria; todos os valores necessários completos; matriz AHP consistente com RC≤0,10; pesos correspondentes à configuração atual.
 **Fluxo principal:**
 
 Usuário revisa resumo de alternativas, valores e pesos.
@@ -74,10 +74,10 @@ Ordenação segue C* decrescente.
 Empates compartilham a mesma posição, sem usar nome/preço como desempate.
 Empate não é decidido somente pela igualdade após arredondamento visual.
 Não existe vencedor arbitrário no caso degenerado.
-**Rastreabilidade:** DEC-018, DEC-024.
+**Rastreabilidade:** DEC-018, DEC-024, DEC-027, DEC-028.
 
 ### RF20 — Consultar e interpretar resultados da avaliação
-**Descrição:** O sistema deve apresentar os resultados AHP e TOPSIS com transparência suficiente para o usuário compreender a classificação.
+**Descrição:** O sistema deve apresentar os resultados AHP e TOPSIS com transparência suficiente para o usuário compreender a classificação, incluindo o estado concluído sem diferenciação quando aplicável (DEC-035).
 
 **Ator principal:** Usuário.
 
@@ -106,4 +106,5 @@ Usuário pode consultar posições, pesos, indicadores e distâncias.
 Valores exibidos refletem cálculo realmente realizado.
 Empates e ausência de diferenciação são comunicados corretamente.
 Resultados persistidos continuam consultáveis após reiniciar o app.
-**Rastreabilidade:** DEC-006, DEC-018, DEC-024, DEC-025.
+Ausência válida de diferenciação é apresentada como resultado concluído sem inventar coeficiente, posição ou vencedor.
+**Rastreabilidade:** DEC-006, DEC-018, DEC-024, DEC-025, DEC-035.

@@ -31,15 +31,16 @@ flowchart TD
     RANK --> RESULT[Consultar ranking, pesos e distâncias]
     NODIFF --> RESULT
     RESULT --> SAVE{Salvar explicitamente?}
-    SAVE -- Sim --> PERSIST[Persistir avaliação e resultado]
+    SAVE -- Sim --> PERSIST[Persistir configuração e resultado válido quando existente]
     SAVE -- Não --> DIRTY[Manter alterações pendentes]
     PERSIST --> LIST
     LIST --> EDIT[Retomar ou editar avaliação]
-    EDIT --> DIRTY
+    EDIT --> CHANGE[Modificar dados da avaliação]
+    CHANGE --> DIRTY
     DIRTY --> EXIT{Sair com alterações?}
     EXIT -- Salvar --> PERSIST
     EXIT -- Descartar --> LIST
-    EXIT -- Continuar editando --> EDIT
+    EXIT -- Continuar editando --> CHANGE
     LIST --> DELETE[Solicitar exclusão]
     DELETE --> CONF{Confirmar?}
     CONF -- Sim --> REMOVE[Excluir avaliação localmente]
@@ -55,3 +56,11 @@ flowchart TD
 - Alterações não são salvas automaticamente. Ao sair com mudanças pendentes, oferecer **Salvar**, **Descartar alterações** ou **Continuar editando**.
 - Processar em memória não salva o resultado; sucesso de salvamento só é informado após persistência local confirmada.
 - Empates matemáticos compartilham posição. Se não houver diferenciação matemática, informar o estado sem declarar vencedor.
+
+## Exportação em PDF — DEC-032
+
+A consulta da avaliação processada oferece exportação pelo [UC16](../requisitos/casos-de-uso/05-exportacao.md), conforme [RF27](../requisitos/funcionais/07-exportacao.md). Sem edição pendente, gerar a partir da versão salva elegível e abrir o compartilhamento padrão do Android.
+
+Com alterações não salvas, oferecer **Salvar e exportar**, **Exportar última versão salva** e **Cancelar**. A primeira opção exige resultado atualizado e persistência bem-sucedida; a segunda depende de versão salva processada e mantém a edição pendente. Informar necessidade de recálculo antes de permitir exportar uma edição desatualizada. Cancelamentos e falhas não alteram a avaliação salva. Este complemento textual não constitui protótipo de telas.
+
+Identidade das alternativas segue origem + ID (DEC-034). Processamento válido sem diferenciação pode ser salvo e listado como **Concluída — sem diferenciação** (DEC-035); isso não converte falhas de normalização em resultados válidos.
