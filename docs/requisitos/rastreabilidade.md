@@ -16,7 +16,7 @@ Esta matriz conecta requisitos aprovados ao detalhamento dos casos de uso e às 
 | [RF04](funcionais/01-catalogo-oficial.md) | UC01, UC02 | DEC-009, 010, 020, 033 | VT01, VT12 |
 | [RF05](funcionais/01-catalogo-oficial.md) | UC01 | DEC-009, 010, 020 | VT01, VT11 |
 | [RF06](funcionais/02-catalogo-pessoal.md) | UC03 | DEC-001, 004, 007, 012, 021, 033 | VT02, VT03 |
-| [RF07](funcionais/02-catalogo-pessoal.md) | UC04 | DEC-003, 007, 012, 021, 033 | VT02 |
+| [RF07](funcionais/02-catalogo-pessoal.md) | UC04 | DEC-003, 007, 012, 021, 033 | VT02, VT03 |
 | [RF08](funcionais/02-catalogo-pessoal.md) | UC05 | DEC-007, 012 | VT02, VT10 |
 | [RF09](funcionais/02-catalogo-pessoal.md) | UC03–UC05, UC07 | DEC-003, 004, 007, 012 | VT02, VT04, VT11 |
 | [RF10](funcionais/03-configuracao-avaliacoes.md) | UC06 | DEC-001, 005, 008, 022, 025 | VT04 |
@@ -29,7 +29,7 @@ Esta matriz conecta requisitos aprovados ao detalhamento dos casos de uso e às 
 | [RF17](funcionais/04-ahp.md) | UC10, UC14 | DEC-018, 023; RNF04 | VT06, VT09 |
 | [RF18](funcionais/05-topsis-resultados.md) | UC11, UC14 | DEC-003, 005, 018, 024–026, 029, 034, 035 | VT07, VT09, VT14 |
 | [RF19](funcionais/05-topsis-resultados.md) | UC11 | DEC-018, 024, 027, 028 | VT07 |
-| [RF20](funcionais/05-topsis-resultados.md) | UC11 | DEC-006, 018, 024, 025, 035 | VT07, VT09, VT15 |
+| [RF20](funcionais/05-topsis-resultados.md) | UC11 | DEC-006, 018, 024, 025, 035 | VT07, VT08, VT09, VT15 |
 | [RF21](funcionais/06-persistencia-avaliacoes.md) | UC12 | DEC-004, 006, 022, 025 | VT08, VT09 |
 | [RF22](funcionais/06-persistencia-avaliacoes.md) | UC13 | DEC-004, 006, 019, 025, 035 | VT08 |
 | [RF23](funcionais/06-persistencia-avaliacoes.md) | UC13 | DEC-004, 006, 022, 025 | VT08, VT11 |
@@ -46,7 +46,7 @@ Esta matriz conecta requisitos aprovados ao detalhamento dos casos de uso e às 
 | [RNF02](nao-funcionais/01-usabilidade-acessibilidade.md) | Interfaces; TalkBack nos fluxos de avaliação/resultados | Critérios aprovados do RNF02 | VT15 |
 | [RNF03](nao-funcionais/02-desempenho-correcao.md) | UC10–UC11 | DEC-026 | VT14 |
 | [RNF04](nao-funcionais/02-desempenho-correcao.md) | UC08–UC11, UC14 | DEC-018, 024, 027–029; comparação direta do RC | VT03, VT06, VT07 |
-| [RNF05](nao-funcionais/03-integridade-offline.md) | UC12–UC15 e preservação RF25 | DEC-004, 006, 019, 025 | VT08–VT10 |
+| [RNF05](nao-funcionais/03-integridade-offline.md) | UC12–UC15 e preservação RF25 | DEC-004, 006, 019, 025, 035 | VT08–VT10 |
 | [RNF06](nao-funcionais/03-integridade-offline.md) | UC01–UC16 conforme dados presentes | DEC-004, 009, 010, 019, 020, 025, 032 | VT11, VT17 |
 | [RNF07](nao-funcionais/04-seguranca-privacidade.md) | Consultas oficiais e bloqueio de escrita | DEC-009; critérios aprovados do RNF07 | VT01, VT12 |
 | [RNF08](nao-funcionais/04-seguranca-privacidade.md) | Dados pessoais e avaliações; configuração Android e compartilhamento explícito do PDF | DEC-004, 009, 011, 030, 032 | VT13, VT17 |
