@@ -12,6 +12,6 @@ Os itens abaixo são questões de especificação e não alteram as decisões j�
 3. Especificar atualização, erros e comunicação de defasagem do catálogo, complementando a indicação de cache já aprovada na DEC-020.
 4. Definir bibliotecas e versões para navegação Compose, injeção de dependências e serialização.
 5. Detalhar estados de ViewModel e contratos dos repositórios/casos de uso.
-6. Definir arredondamento, precisão numérica e tratamento de empates e dados ausentes, mantendo os algoritmos da DEC-018.
+6. Aplicar DEC-027–DEC-029 e RNF04 para precisão, empates e posições; detalhar validação de entradas e dados ausentes.
 7. Detalhar a persistência transacional e o comportamento diante de encerramento inesperado, conforme a política manual da DEC-025.
 8. Escolher dados de referência e ferramentas de teste para os motores, repositórios e fluxos de interface.

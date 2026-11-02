@@ -4,9 +4,9 @@
 **Instituição:** Universidade Federal de Uberlândia (UFU)
 **Semestre:** 2026/2
 **Projeto:** Sistema de Avaliação Comparativa Multicritério de Produtos (AHP-TOPSIS)
-**Versão:** 1.4
+**Versão:** 1.7
 **Data de consolidação:** 02/11/2026
-**Situação:** DEC-001 a DEC-026 aprovadas nas discussões da equipe.
+**Situação:** DEC-001 a DEC-031 aprovadas nas discussões da equipe.
 
 Este registro consolida decisões da equipe para orientar os requisitos, a modelagem e o desenvolvimento. Não substitui o enunciado do professor. Quando uma decisão adapta um exemplo ou procedimento do enunciado, a adaptação é identificada.
 
@@ -48,6 +48,11 @@ Este registro consolida decisões da equipe para orientar os requisitos, a model
 | DEC-024 | Empates TOPSIS | Preservar posições empatadas e informar ausência de diferenciação sem eleger vencedor arbitrário. |
 | DEC-025 | Salvamento | Manual; avisar ao sair com alterações não salvas e oferecer salvar, descartar ou continuar editando. |
 | DEC-026 | Desempenho | Até 500 ms em pelo menos 95% das medições por cenário; condições no detalhamento abaixo. |
+| DEC-027 | Empates TOPSIS | Tolerância absoluta de 10⁻⁹; comparar com o maior coeficiente do grupo. |
+| DEC-028 | Posições no ranking | Numeração competitiva: 1º, 2º, 2º, 4º. |
+| DEC-029 | Testes matemáticos | Tolerância absoluta e relativa combinada de 10⁻⁹. |
+| DEC-030 | Backup e transferência | Excluir produtos pessoais e avaliações dos mecanismos de backup e transferência do Android. |
+| DEC-031 | Gestão e colaboração | GitHub Projects para tarefas e fluxo de branches/PRs proporcional às alterações. |
 
 ## 3. Regras transversais
 
@@ -114,7 +119,7 @@ A interface apresenta um par de critérios por vez, com indicador de progresso e
 
 ## 8. DEC-024 — Empates e ausência de diferenciação no TOPSIS
 
-Alternativas com coeficientes de proximidade matematicamente empatados compartilham a posição. O aplicativo não usa preço, nome, ordem de cadastro ou outro critério secundário para desempatar. Se as alternativas forem indistinguíveis e `d+ = d- = 0`, `C*` fica indefinido e o aplicativo informa “Sem diferenciação entre as alternativas”, sem fabricar coeficientes ou um vencedor. A política de tolerância numérica para empates próximos continua pendente.
+Alternativas com coeficientes de proximidade matematicamente empatados compartilham a posição. O aplicativo não usa preço, nome, ordem de cadastro ou outro critério secundário para desempatar. Se as alternativas forem indistinguíveis e `d+ = d- = 0`, `C*` fica indefinido e o aplicativo informa “Sem diferenciação entre as alternativas”, sem fabricar coeficientes ou um vencedor. A tolerância e formação dos grupos seguem a DEC-027; a numeração das posições segue a DEC-028.
 
 ## 9. DEC-025 — Salvamento manual e alterações não salvas
 
@@ -127,6 +132,40 @@ Rascunhos, alterações em avaliações existentes e resultados são persistidos
 Para avaliações matematicamente válidas com 2 a 50 produtos e cinco critérios, o processamento conjunto AHP e TOPSIS deverá terminar em até 500 ms em pelo menos 95% das medições de cada cenário. Inclui validações matemáticas, pesos, consistência, TOPSIS e ordenação final; exclui rede, persistência e renderização.
 
 A verificação usará cenários de 2, 10 e 50 produtos, com 100 medições por cenário após aquecimento, em build de produção e dispositivo físico documentado. A execução deverá manter a interface responsiva. O limite de 50 produtos vale exclusivamente para testes de desempenho, sem restrição funcional.
+
+## DEC-027 — Tolerância e formação dos grupos de empate TOPSIS
+
+**Status:** aprovada, incluindo complementação.
+
+Usar os coeficientes internos antes do arredondamento para exibição. Após ordenação decrescente, o maior coeficiente de cada grupo é sua referência. Um produto integra o grupo se a diferença absoluta para essa referência for menor ou igual a 10⁻⁹; caso contrário, inicia novo grupo. Não comparar somente vizinhos, evitando encadear diferenças que ultrapassem a tolerância em relação à referência.
+
+## DEC-028 — Numeração das posições no ranking
+
+**Status:** aprovada.
+
+Usar posições competitivas, pulando posições após empates: 1º, 2º, 2º, 4º. Os grupos são definidos pela DEC-027.
+
+## DEC-029 — Tolerância dos testes matemáticos
+
+**Status:** aprovada.
+
+Aceitar um resultado de teste quando `|calculado − referência| ≤ 10⁻⁹ + 10⁻⁹ × |referência|`. Aplicar a pesos, indicadores AHP, distâncias e coeficientes, utilizando referências independentes e de precisão suficiente. Valores arredondados dos PDFs, isoladamente, não bastam para verificar essa tolerância. Esta margem não altera o limite de consistência AHP nem a formação dos grupos de empate.
+
+## DEC-030 — Backup e transferência dos dados pessoais
+
+**Status:** aprovada — opção A.
+
+Excluir produtos pessoais e avaliações dos mecanismos de backup e transferência de dados do Android. Configurar e verificar a restrição nas versões suportadas. Comunicar ao usuário que a desinstalação do aplicativo ou a perda do aparelho pode causar perda definitiva dos dados. Os critérios de privacidade e verificação estão no [RNF08](../requisitos/nao-funcionais/04-seguranca-privacidade.md#rnf08--privacidade-dos-dados-pessoais).
+
+## DEC-031 — Gestão das atividades e colaboração
+
+**Status:** aprovada.
+
+Utilizar GitHub Projects com tarefas contendo título, descrição e critério de conclusão; atribuir responsável às tarefas assumidas; acompanhar pelos estados **A fazer**, **Em andamento** e **Concluído**. Cada integrante atualiza suas tarefas ao iniciar ou concluir o trabalho. Pendências e tarefas das entregas ficam registradas. Sprints, estimativas em pontos e automações não são obrigatórios.
+
+Código e alterações relevantes de requisitos ou arquitetura usam branch própria e PR. Pequenas correções de texto podem receber commit direto. PRs recebem revisão de outro integrante antes da integração, quando disponível.
+
+A aprovação define o processo; não declara configuração do GitHub Projects ou execução de operações remotas. Critérios verificáveis em [RNF12 e RNF13](../requisitos/nao-funcionais/06-processo-desenvolvimento.md#rnf12--controle-de-versao).
 
 ## 10. Consequências para requisitos e modelagem
 
@@ -143,10 +182,20 @@ Estas questões não alteram as decisões aprovadas; precisam ser detalhadas par
 - Selecionar modelos reais e registrar fontes e datas dos dados.
 - Definir rubricas de câmeras e ADAS e os protocolos comparáveis de autonomia de smartphones.
 - Definir perfil de referência do seguro e condições de medição da recarga rápida.
-- Especificar dados ausentes, entradas inválidas e a tolerância numérica para identificar empates próximos.
+- Especificar limites de entrada e tratamento dos dados ausentes; tolerâncias matemáticas aprovadas nas DEC-027 e DEC-029.
 - Detalhar contratos e estrutura Firestore/Room, casos de uso, requisitos não funcionais e critérios de aceitação; definir garantias de persistência em encerramento inesperado.
 - Confirmar com o professor, se necessário, as adaptações e a diferença metodológica do AHP.
 
 ## 12. Histórico
 
-Este documento consolida as decisões DEC-001 a DEC-026 aprovadas nas discussões da equipe até 02/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
+Este documento consolida as decisões DEC-001 a DEC-031 aprovadas nas discussões da equipe até 02/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
+
+## Validação dos requisitos não funcionais
+
+RNF01–RNF13 validados. RNF05 consolida a integridade transacional e a preservação da última versão salva; RNF06 delimita as operações offline pela disponibilidade dos dados locais. Critérios completos em [requisitos não funcionais](../requisitos/README.md). RNF07 consolida leitura pública e bloqueio de escrita do catálogo oficial; RNF08 incorpora a DEC-030 sobre backup e transferência.
+
+RNF09–RNF11 validados com critérios de separação de responsabilidades, cobertura mínima de testes e checklist documental. O detalhamento permanece no documento de RNFs, sem novos identificadores DEC.
+
+RNF12–RNF13 validados com tags de entrega, histórico identificável, GitHub Projects e fluxo de colaboração aprovado na DEC-031.
+
+RNF01 e RNF02 validados: protocolo de usabilidade com três participantes e matriz inicial de acessibilidade/responsividade aprovada. Todos os RNF01–RNF13 estão validados; os critérios completos ficam nos respectivos grupos de requisitos. Nenhum teste é declarado executado por essa validação documental.

@@ -1,6 +1,6 @@
 # Requisitos
 
-[Requisitos não funcionais](nao-funcionais.md) — RNF03 validado; demais em revisão.
+Os RF01–RF26 e RNF01–RNF13 estão validados documentalmente. Os testes de implementação serão executados posteriormente.
 
 ## Requisitos funcionais
 
@@ -36,3 +36,14 @@ Os RF01–RF26 estão validados funcionalmente. A validação documental não re
 | RF26 | [Excluir avaliação salva](funcionais/06-persistencia-avaliacoes.md) | Validado |
 
 Referência matemática: [documento AHP-TOPSIS](../../references/ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf). As regras transversais e decisões ficam no [registro central](../decisoes/registro-decisoes.md).
+
+## Requisitos não funcionais
+
+| Grupo | Identificadores | Situação |
+|---|---|---|
+| [Usabilidade e Interface](nao-funcionais/01-usabilidade-acessibilidade.md) | RNF01–RNF02 | Validado |
+| [Desempenho e Correção Matemática](nao-funcionais/02-desempenho-correcao.md) | RNF03–RNF04 | Validado |
+| [Confiabilidade, Persistência e Disponibilidade](nao-funcionais/03-integridade-offline.md) | RNF05–RNF06 | Validado |
+| [Segurança e Privacidade](nao-funcionais/04-seguranca-privacidade.md) | RNF07–RNF08 | Validado |
+| [Qualidade do Código](nao-funcionais/05-qualidade-codigo.md) | RNF09–RNF11 | Validado |
+| [Processo de Desenvolvimento](nao-funcionais/06-processo-desenvolvimento.md) | RNF12–RNF13 | Validado |

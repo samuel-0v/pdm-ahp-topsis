@@ -3,8 +3,8 @@
 | Documento | Situação |
 |---|---|
 | [Visão e escopo](01-visao-e-escopo.md) | Concluído |
-| [Decisões](decisoes/README.md) | DEC-001–DEC-026 aprovadas; DEC-027 proposta |
-| [Requisitos](requisitos/README.md) | RF01–RF26 validados; RNFs em validação |
+| [Decisões](decisoes/README.md) | DEC-001–DEC-031 aprovadas |
+| [Requisitos](requisitos/README.md) | RF01–RF26 e RNF01–RNF13 validados |
 | [Domínio](modelagem/dominio.md) | Pendente |
 | [Arquitetura](arquitetura/arquitetura.md) | Pendente |
 | [Navegação](interface/navegacao.md) | Fluxo funcional inicial |
