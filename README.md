@@ -4,7 +4,7 @@ Aplicativo acadêmico Android para apoiar a comparação multicritério de produ
 
 ## Estado do projeto
 
-As etapas de Visão e Escopo e de Engenharia de Requisitos estão concluídas documentalmente. A Etapa 2 consolida 27 requisitos funcionais, 13 não funcionais, 16 casos de uso, matriz de rastreabilidade e plano de verificação. A Etapa 3 está em andamento: as Partes 1–4 da modelagem foram aprovadas conceitualmente. O próximo passo é propor o mapeamento para persistência e snapshots (Parte 5), seguido de revisão técnica. Arquitetura e navegação serão detalhadas posteriormente. A implementação Android será iniciada depois dessas definições.
+As etapas de Visão e Escopo e de Engenharia de Requisitos estão concluídas documentalmente. A Etapa 2 consolida 27 requisitos funcionais, 13 não funcionais, 16 casos de uso, matriz de rastreabilidade e plano de verificação. A Etapa 3 está em andamento: as Partes 1–4 da modelagem foram aprovadas conceitualmente. O mapeamento para persistência e snapshots (Parte 5) está em rascunho, aguardando revisão técnica independente e aprovação. Arquitetura e navegação serão detalhadas posteriormente. A implementação Android será iniciada depois dessas definições.
 
 ## Documentação
 

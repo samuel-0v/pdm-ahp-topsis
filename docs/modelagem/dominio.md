@@ -1,7 +1,7 @@
 # Modelagem do domínio
 
-**Versão:** 1.1 — Parte 4 aprovada conceitualmente após revisão técnica.
-**Situação:** Partes 1–4 aprovadas conceitualmente nos níveis registrados. A Parte 4 foi aprovada após revisão técnica independente em 04/11/2026. A modelagem física permanece para proposta e revisão na Parte 5.
+**Versão:** 1.2 — Partes 1–4 aprovadas; Parte 5 proposta em arquivo separado.
+**Situação:** Partes 1–4 aprovadas conceitualmente nos níveis registrados. A Parte 4 foi aprovada após revisão técnica independente em 04/11/2026. A Parte 5 foi iniciada como rascunho, aguardando revisão técnica independente; a modelagem física não está aprovada.
 
 [Requisitos](../requisitos/README.md) · [Decisões](../decisoes/registro-decisoes.md)
 
@@ -279,7 +279,7 @@ Um Resultado TOPSIS concluído tem exatamente um detalhe por alternativa process
 2. Parte 2 aprovada em nível conceitual; tipos concretos e esquemas físicos permanecem em aberto.
 3. Parte 3 aprovada conceitualmente após revisão técnica final; schema físico permanece para detalhamento posterior.
 4. Parte 4 aprovada conceitualmente após revisão técnica; detalha comportamentos já aprovados, sem nova DEC.
-5. Mapear conceitos para Firestore, Room e snapshots preservados.
+5. [Parte 5 — Persistência e snapshots](05-persistencia-snapshots.md): rascunho para revisão técnica independente, sem aprovação física.
 
 **Rastreabilidade:** RF01–RF27, RNF01–RNF13; DEC-004, DEC-009, DEC-017, DEC-022, DEC-024, DEC-025, DEC-033–DEC-037.
 
@@ -406,3 +406,7 @@ flowchart TD
 **Status da Parte 4:** Aprovada conceitualmente após revisão técnica em 04/11/2026. A aprovação detalha as decisões vigentes, especialmente DEC-025, DEC-036 e DEC-037, sem criar nova DEC nem aprovar o mapeamento físico da Parte 5.
 
 **Rastreabilidade da Parte 4:** RF10–RF27; RNF01, RNF04–RNF06, RNF08, RNF10; DEC-019, DEC-022–DEC-025, DEC-027, DEC-028, DEC-032, DEC-035–DEC-037; UC06–UC16.
+
+## Parte 5 — Mapeamento do Domínio para Room, Firestore e Snapshots (rascunho)
+
+A [proposta da Parte 5](05-persistencia-snapshots.md) fica em arquivo próprio para manter as Partes 1–4 conceituais separadas do mapeamento físico. Apresenta modelo híbrido candidato, snapshots, integridade/transações, catálogo remoto, offline e alternativas técnicas P5-A–P5-E. **Status: rascunho aguardando revisão técnica independente; nenhuma escolha física aprovada ou nova DEC registrada.**

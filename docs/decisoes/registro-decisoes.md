@@ -4,9 +4,9 @@
 **Instituição:** Universidade Federal de Uberlândia (UFU)
 **Semestre:** 2026/2
 **Projeto:** Sistema de Avaliação Comparativa Multicritério de Produtos (AHP-TOPSIS)
-**Versão:** 1.12
-**Data de consolidação:** 02/11/2026
-**Situação:** DEC-001 a DEC-036 aprovadas nas discussões da equipe.
+**Versão:** 1.14
+**Data de consolidação:** 05/11/2026
+**Situação:** DEC-001 a DEC-038 aprovadas nas discussões da equipe.
 
 Este registro consolida decisões da equipe para orientar os requisitos, a modelagem e o desenvolvimento. Não substitui o enunciado do professor. Quando uma decisão adapta um exemplo ou procedimento do enunciado, a adaptação é identificada.
 
@@ -58,6 +58,8 @@ Este registro consolida decisões da equipe para orientar os requisitos, a model
 | DEC-034 | Identidade de produtos na seleção | Duplicidade é definida pela identidade do registro de origem; não há deduplicação automática entre catálogo oficial e pessoal. |
 | DEC-035 | Estado sem diferenciação | Processamento TOPSIS válido sem C* definido é persistido/listado como “Concluída — sem diferenciação”. |
 | DEC-036 | Organização conceitual do domínio | Avaliação é raiz de agregado; alternativas e julgamentos são componentes internos; resultados são objetos de valor; critérios e identidade histórica são preservados sem depender do catálogo atual. |
+| DEC-037 | Cardinalidades conceituais da modelagem | Categorias iniciais têm cinco critérios; futuras podem variar n dentro do suporte matemático; critérios atuais são exclusivos por categoria; rascunhos podem preservar AHP inconsistente sem liberar TOPSIS. |
+| DEC-038 | Estrutura Room (P5-A) | Modelo híbrido de seis tabelas; CHECK canônico pendente de validação; P5-B–P5-E não aprovadas. |
 
 ## 3. Regras transversais
 
@@ -253,6 +255,39 @@ A edição em memória permanece separada da avaliação persistida até salvame
 
 **Consequências:** modelagem e arquitetura devem manter snapshots suficientes para consulta, cálculo e exportação offline, inclusive após remoções/atualizações do catálogo; atributos e persistência serão detalhados nas partes seguintes da Etapa 3.
 
+## DEC-037 — Cardinalidades conceituais da modelagem
+
+**Status:** aprovada pelo usuário em 03/11/2026 durante a revisão da Parte 3 da Etapa 3.
+**Origem:** resolução conceitual das questões abertas de cardinalidade, sem definir schema ou estrutura física.
+
+As duas categorias iniciais mantêm exatamente cinco critérios. A modelagem conceitual deve comportar `n` variável para futuras categorias, mas isso não adiciona categorias personalizadas à versão inicial nem promete suporte matemático irrestrito. Antes de habilitar outro `n`, devem ser verificados a validade dos métodos AHP/TOPSIS, o RI aplicável e casos especiais; sem RI/regra matemática adequada, o processamento é bloqueado. Não se fixam limites arbitrários sem justificativa.
+
+Cada definição atual de Critério pertence logicamente a uma única Categoria. Categorias diferentes podem ter critérios semelhantes ou com o mesmo nome, mas suas definições e identidades não são compartilhadas. CritérioPreservado pertence exclusivamente à Avaliação que o copiou.
+
+Rascunhos podem preservar pesos e indicadores AHP calculados mesmo quando `RC > 0,10`, identificados como diagnóstico inconsistente dos julgamentos atuais. Isso não aprova consistência e não autoriza TOPSIS. TOPSIS exige julgamentos completos, pesos/indicadores vigentes e `RC ≤ 0,10`. Alterar julgamentos invalida os indicadores AHP anteriores na edição. O salvamento continua manual: a versão persistida permanece intacta até confirmação explícita, conforme DEC-025.
+
+**Consequências:** Partes 1–3 do documento de domínio refletem `n` variável conceitual, pertencimento exclusivo de critérios e persistência de diagnóstico AHP inconsistente em rascunhos. A decisão não define classes, tipos, tabelas, coleções, chaves, serialização ou migrações.
+
+## DEC-038 — Estrutura Room híbrida de seis tabelas (P5-A)
+
+**Status:** aprovada pelo usuário em 05/11/2026, com os limites abaixo.
+
+**Contexto:** mapear o domínio aprovado para persistência local com integridade, snapshots independentes e salvamento manual, sem impor uma tabela para cada conceito.
+
+**Alternativas avaliadas:** agregado inteiramente serializado (simplicidade, mas menor integridade relacional); modelo totalmente normalizado (mais restrições físicas, porém mais tabelas/junções); modelo híbrido (relações explícitas para componentes e conteúdo incorporado quando apropriado).
+
+**Decisão:** adotar como base as seis tabelas `produto_pessoal`, `avaliacao`, `criterio_preservado`, `alternativa_avaliacao`, `valor_alternativa` e `julgamento_ahp`. Avaliação permanece raiz do agregado. PKs, FKs internas e unicidades preservam pertencimento e identidade histórica origem + ID, sem dependência obrigatória dos registros atuais dos catálogos. Definições copiadas dos critérios permanecem imutáveis. Criação/atualização por salvamento explícito e exclusão confirmada são transacionais. Rascunhos incompletos e conclusões são suportados, sem histórico de versões ou persistência automática da edição em memória.
+
+**Unicidade AHP:** no máximo um julgamento independente por par não ordenado; pares ainda não respondidos podem faltar no rascunho. Normalizar IDs deterministicamente antes de gravar e ajustar a direção ao inverter a ordem, preservando a preferência. Rejeitar comparação consigo mesmo e critérios de outra avaliação. Preservar a PK composta por avaliação e par canônico. Prever defesa física adicional contra pares invertidos.
+
+**Dependência técnica aberta:** verificar a viabilidade e a forma de declarar uma restrição CHECK de ordem canônica no schema gerenciado pelo Room, com ordenação compatível com o normalizador. Esta aprovação não resolve sua implementação. A defesa física deverá ser definida e validada antes da implementação definitiva; PK isolada não impede pares invertidos sem normalização.
+
+**Limites:** não aprova P5-B (localização dos resultados), P5-C (Firestore), P5-D (tipos/IDs/dinheiro) ou P5-E (definições pessoais/compatibilidade offline). Campos e detalhes dessas propostas não são aprovados por aparecerem no modelo de seis tabelas. Tabelas adicionais exigem justificativa técnica e aprovação posterior.
+
+**Consequências:** manter separação entre domínio, estruturas físicas e edição em memória; testar integridade do agregado, rollback e pares invertidos na implementação futura. Preserva DEC-025, DEC-034, DEC-036 e DEC-037. Não exige código, migrations ou configuração de banco nesta atividade.
+
+**Rastreabilidade:** [Parte 5 — P5-A](../modelagem/05-persistencia-snapshots.md); RF11, RF14, RF21–RF26; RNF05, RNF09. Não altera os requisitos aprovados.
+
 ## 11. Pendências de especificação
 
 Estas questões não alteram as decisões aprovadas; precisam ser detalhadas para requisitos, modelagem e testes:
@@ -266,13 +301,16 @@ Estas questões não alteram as decisões aprovadas; precisam ser detalhadas par
 
 ## 12. Histórico
 
+- **v1.14:** DEC-038 registra aprovação limitada da P5-A; defesa física AHP ainda requer validação e P5-B–P5-E permanecem pendentes.
+
 - **v1.8:** DEC-032 aprovada: exportação local em PDF; revisão explícita da exclusão de relatórios da DEC-011. UC01–UC15 aceitos pelo usuário.
 - **v1.9:** DEC-033 aprovada para P01: metadados genéricos de validação junto às definições remotas dos critérios; limites numéricos adicionais e schema permanecem para detalhamento.
 - **v1.10:** DEC-034 aprovada para P02: identidade por origem e ID do registro; equivalência entre catálogos não é inferida automaticamente.
 - **v1.11:** DEC-035 aprovada para P03: resultado válido sem diferenciação é concluído e listado com rótulo explícito.
 - **v1.12:** DEC-036 aprovada para a organização conceitual da modelagem, incluindo distinção de CritérioPreservado, referências históricas independentes do catálogo e valores por critério nas alternativas.
+- **v1.13:** DEC-037 aprovada para cardinalidades conceituais da Parte 3: critérios iniciais/futuros, exclusividade por categoria e diagnóstico AHP inconsistente em rascunhos.
 
-Este documento consolida as decisões DEC-001 a DEC-036 aprovadas nas discussões da equipe até 02/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
+Este documento consolida as decisões DEC-001 a DEC-038 aprovadas nas discussões da equipe até 05/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
 
 ## Validação dos requisitos não funcionais
 

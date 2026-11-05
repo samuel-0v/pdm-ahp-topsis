@@ -86,3 +86,20 @@ As DEC-001–035 estão contempladas nas relações acima ou nas restrições ab
 ## Limite da rastreabilidade com as fontes do professor
 
 O [enunciado principal](../../references/ProjetoDisciplina_PDM20262v2.pdf) e a [referência matemática](../../references/ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf) estão presentes no repositório. A escolha matemática e a diferença entre procedimentos estão registradas na DEC-018. Esta matriz parte dos requisitos e decisões aprovados; não representa nova auditoria página a página dos PDFs nem confirmação de aceitação das adaptações pelo professor.
+
+## Mapeamento físico aprovado na Etapa 3
+
+DEC-038 → [Parte 5 — P5-A](../modelagem/05-persistencia-snapshots.md): seis tabelas Room, integridade interna e unicidade AHP; relacionada a RF11, RF14, RF21–RF26 e RNF05/RNF09. Não modifica esses requisitos. CHECK canônico requer validação técnica; P5-B–P5-E permanecem pendentes.
+
+## Propostas técnicas pendentes da Parte 5
+
+Não integram as decisões aprovadas nem alteram requisitos. [Contrato consolidado](../modelagem/05-contratos-persistencia.md) e [propostas candidatas](../decisoes/propostas-parte5.md):
+
+| Proposta pendente | Relações documentais | Verificação futura |
+|---|---|---|
+| DEC-039 / P5-B | RF15–RF25, RNF04/RNF05; resultados incorporados e coerentes | VT06–VT10 |
+| DEC-040 / P5-C | RF01–RF05, RF13, RNF06/RNF07; contrato remoto tipado | VT01, VT03, VT11, VT12 |
+| DEC-041 / P5-D | RF06/RF07, RF11–RF13, RF25, RNF04/RNF05; UUID, tipos e dinheiro | VT02–VT04, VT06–VT09 |
+| DEC-042 / P5-E | RF05, RF09, RF23/RF25/RF27, RNF06/RNF08; snapshots e offline | VT08, VT11, VT13, VT17 |
+
+As referências indicam cobertura esperada, não execução ou aprovação da modelagem física.
