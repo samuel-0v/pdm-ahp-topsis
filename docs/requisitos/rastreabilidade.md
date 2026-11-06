@@ -1,6 +1,6 @@
 # Matriz de rastreabilidade
 
-**Versão:** 1.0 — consolidação documental alinhada às DEC-001–DEC-035.
+**Versão de conteúdo:** 1.0 — matriz de requisitos baseada nas DEC-001–DEC-035, com complemento da DEC-038 e propostas pendentes da Parte 5 nas seções finais.
 
 [Índice de requisitos](README.md) · [Casos de uso](casos-de-uso/README.md) · [Verificações previstas](plano-verificacao.md) · [Revisão](revisao-etapa-2.md)
 
@@ -103,3 +103,7 @@ Não integram as decisões aprovadas nem alteram requisitos. [Contrato consolida
 | DEC-042 / P5-E | RF05, RF09, RF23/RF25/RF27, RNF06/RNF08; snapshots e offline | VT08, VT11, VT13, VT17 |
 
 As referências indicam cobertura esperada, não execução ou aprovação da modelagem física.
+
+### Ajustes propostos após a revisão de 06/11/2026
+
+A [resposta à revisão da Parte 5](../modelagem/revisao-parte5.md#cenários-adicionais-para-implementação) detalha os cenários adicionais e seus vínculos com os conjuntos VT existentes: obrigação do publicador e limite da detecção (DEC-040), original incompatível e resolução numérica (DEC-041), novo cadastro pessoal diante de incompatibilidade semântica (DEC-042) e consulta histórica versus recálculo (DEC-041/042). Esses ajustes continuam propostos; não modificam requisitos aprovados nem declaram testes executados.

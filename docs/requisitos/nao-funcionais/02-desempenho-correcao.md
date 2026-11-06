@@ -8,7 +8,7 @@
 
 **Situação:** validado, conforme DEC-026 e complementação aprovada.
 
-A meta quantitativa e seu protocolo estão na [DEC-026](../../decisoes/registro-decisoes.md#dec-026--desempenho-dos-cálculos).
+A meta quantitativa e seu protocolo estão na [DEC-026](../../decisoes/aprovadas/dec-026.md#dec-026--desempenho-dos-cálculos).
 
 Os cálculos executarão fora da thread principal. Durante o processamento, a navegação e os controles habilitados devem continuar respondendo conforme o fluxo previsto. Enquanto houver processamento, apresentar indicação de atividade, sem atraso artificial para exibir o indicador. Verificar no dispositivo físico de referência, incluindo o cenário de 50 produtos.
 
@@ -23,10 +23,10 @@ Os cálculos executarão fora da thread principal. Durante o processamento, a na
 **Critérios de verificação:**
 
 - Verificar pesos por média geométrica normalizada, indicadores AHP, distâncias e coeficientes TOPSIS com referências independentes de precisão suficiente.
-- Aplicar a tolerância combinada da [DEC-029](../../decisoes/registro-decisoes.md#dec-029--tolerância-dos-testes-matemáticos) aos testes.
+- Aplicar a tolerância combinada da [DEC-029](../../decisoes/aprovadas/dec-029.md#dec-029--tolerância-dos-testes-matemáticos) aos testes.
 - Comparar RC interno diretamente com 0,10, sem arredondamento prévio nem tolerância adicional. RC > 0,10 bloqueia TOPSIS. Exibir casas decimais suficientes para explicar o bloqueio quando o arredondamento usual ocultar a diferença. Complementação aprovada do RNF04.
-- Formar grupos de empate conforme [DEC-027](../../decisoes/registro-decisoes.md#dec-027--tolerância-e-formação-dos-grupos-de-empate-topsis), comparando cada coeficiente com o maior do grupo, com margem absoluta de 10⁻⁹.
-- Numerar posições conforme [DEC-028](../../decisoes/registro-decisoes.md#dec-028--numeração-das-posições-no-ranking): 1º, 2º, 2º, 4º.
+- Formar grupos de empate conforme [DEC-027](../../decisoes/aprovadas/dec-027.md#dec-027--tolerância-e-formação-dos-grupos-de-empate-topsis), comparando cada coeficiente com o maior do grupo, com margem absoluta de 10⁻⁹.
+- Numerar posições conforme [DEC-028](../../decisoes/aprovadas/dec-028.md#dec-028--numeração-das-posições-no-ranking): 1º, 2º, 2º, 4º.
 - Casos matematicamente indefinidos não devem gerar coeficientes fictícios ou vencedores arbitrários, conforme DEC-024.
 
 **Método de verificação:** testes unitários com referências independentes, casos limítrofes de RC, cadeias de proximidade e grupos de empate. A aprovação deste requisito não significa que esses testes já foram executados.
