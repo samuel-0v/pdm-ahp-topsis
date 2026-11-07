@@ -45,7 +45,7 @@ A lista de critérios, unidades, fontes e adaptações aprovadas está no [Regis
 
 O produto será desenvolvido para Android, em Kotlin, com Jetpack Compose e arquitetura MVVM. O catálogo oficial será remoto; produtos pessoais e avaliações serão armazenados localmente. Os cálculos devem ser independentes de serviços externos e do tipo específico de produto, permitindo evolução futura sem ampliar automaticamente o escopo da primeira versão.
 
-A metodologia matemática aprovada, incluindo a referência escolhida e a diferença entre os PDFs do professor, está registrada na [DEC-018](decisoes/registro-decisoes.md#4-dec-018--metodologia-matemática-ahp-topsis). Os detalhes arquiteturais serão especificados em [Arquitetura](arquitetura/arquitetura.md).
+A metodologia matemática aprovada, incluindo a referência escolhida e a diferença entre os PDFs do professor, está registrada na [DEC-018](decisoes/aprovadas/dec-018.md#dec-018--metodologia-matemática-ahp-topsis). Os detalhes arquiteturais serão especificados em [Arquitetura](arquitetura/arquitetura.md).
 
 ## 7. Fora do escopo
 

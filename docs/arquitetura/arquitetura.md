@@ -1,14 +1,13 @@
 # Arquitetura
 
-Pendente de elaboração. Decisões aprovadas ficam no [registro central](../decisoes/registro-decisoes.md).
+Pendente de elaboração. Decisões aprovadas ficam no [registro central](../decisoes/registro-decisoes.md). A [modelagem](../modelagem/dominio.md) registra as Partes 1–4 aprovadas conceitualmente e a base de seis tabelas da P5-A aprovada na DEC-038; os [contratos de persistência](../modelagem/05-contratos-persistencia.md) foram aprovados nas DEC-039–DEC-042, encerrando documentalmente a Etapa 3. Arquitetura é a próxima etapa e ainda não foi elaborada.
 
 ## Questões técnicas pendentes
 
-
 Os itens abaixo são questões de especificação e não alteram as decisões já aprovadas:
 
-1. Definir a estrutura de coleções/documentos do Firebase Cloud Firestore e os identificadores dos dados oficiais.
-2. Definir entidades, relações, migrações e estratégia de persistência no Room.
+1. Detalhar os contratos de acesso ao Firebase Cloud Firestore e a publicação coerente do catálogo, respeitando o layout e as identidades aprovados nas DEC-040/041.
+2. Detalhar o schema e as migrações Room a partir das seis tabelas aprovadas na DEC-038; validar a defesa CHECK canônica. A implementação deve cumprir os contratos aprovados nas DEC-039–DEC-042.
 3. Especificar atualização, erros e comunicação de defasagem do catálogo, complementando a indicação de cache já aprovada na DEC-020.
 4. Definir bibliotecas e versões para navegação Compose, injeção de dependências e serialização.
 5. Detalhar estados de ViewModel e contratos dos repositórios/casos de uso.
