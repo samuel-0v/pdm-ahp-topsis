@@ -11,6 +11,7 @@
 | [Contratos de persistência](modelagem/05-contratos-persistencia.md) | Contrato aprovado nas DEC-039–DEC-042 |
 | [Resposta à revisão da Parte 5](modelagem/revisao-parte5.md) | Cinco achados; tratamento contratual aprovado em 06/11/2026 |
 | [Fechamento da Etapa 3](modelagem/fechamento-etapa-3.md) | Concluído em 06/11/2026; dependências e próximo passo registrados |
+| [Plano da Fase 1 — primeira entrega](entregas/fase-1-plano.md) | Proposta para aprovação/distribuição; prazo de 10/11/2026 ainda provisório |
 | [Arquitetura](arquitetura/arquitetura.md) | Próxima etapa; pendente de elaboração |
 | [Navegação](interface/navegacao.md) | Fluxo funcional inicial |
 
