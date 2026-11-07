@@ -4,7 +4,7 @@ Aplicativo acadêmico Android para apoiar a comparação multicritério de produ
 
 ## Estado do projeto
 
-As etapas de Visão e Escopo e de Engenharia de Requisitos estão concluídas documentalmente. A Etapa 2 consolida 27 requisitos funcionais, 13 não funcionais, 16 casos de uso, matriz de rastreabilidade e plano de verificação. A Etapa 3 está em andamento: as Partes 1–4 da modelagem foram aprovadas conceitualmente. Na Parte 5, a estrutura Room de seis tabelas (P5-A) está aprovada pela DEC-038, com validação técnica do CHECK canônico pendente; P5-B–P5-E continuam propostas pendentes de aprovação. Arquitetura e navegação serão detalhadas posteriormente. A implementação Android será iniciada depois dessas definições.
+As etapas de Visão e Escopo e de Engenharia de Requisitos estão concluídas documentalmente. A Etapa 2 consolida 27 requisitos funcionais, 13 não funcionais, 16 casos de uso, matriz de rastreabilidade e plano de verificação. A [Etapa 3 está concluída documentalmente](docs/modelagem/fechamento-etapa-3.md): Partes 1–4 aprovadas conceitualmente e Parte 5 aprovada nas DEC-038–DEC-042, com aprovação conjunta de P5-B–P5-E em 06/11/2026. CHECK AHP, domínios/precisão e configuração de serialização permanecem dependências técnicas documentadas. A próxima etapa é Arquitetura; a navegação será detalhada posteriormente. A implementação Android será iniciada depois dessas definições.
 
 ## Documentação
 

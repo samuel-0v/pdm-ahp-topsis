@@ -9,4 +9,4 @@
 - Pela DEC-035, o processamento válido em que todas as alternativas são indistinguíveis e C* fica indefinido pode ser salvo como resultado concluído e aparece na listagem com o estado “Concluída — sem diferenciação”, distinto de rascunho e falha matemática.
 - Uma avaliação deve preservar uma cópia dos dados relevantes usados no cálculo.
 - Requisitos de edição, recálculo e exclusão devem explicitar estados e efeitos sobre resultados armazenados.
-- A especificação funcional validada RF01–RF27 está em [Requisitos](../requisitos/README.md). As Partes 1–4 da [modelagem de domínio](../modelagem/dominio.md) estão aprovadas conceitualmente; na Parte 5, a P5-A está aprovada pela DEC-038 e P5-B–P5-E permanecem pendentes.
+- A especificação funcional validada RF01–RF27 está em [Requisitos](../requisitos/README.md). As Partes 1–4 da [modelagem de domínio](../modelagem/dominio.md) estão aprovadas conceitualmente; a Parte 5 está aprovada nas DEC-038–DEC-042, com dependências técnicas preservadas no [fechamento da Etapa 3](../modelagem/fechamento-etapa-3.md).

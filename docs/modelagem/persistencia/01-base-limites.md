@@ -2,7 +2,9 @@
 
 [Índice da Parte 5](../05-persistencia-snapshots.md) · [Contrato consolidado](../05-contratos-persistencia.md)
 
-**Situação da Parte 5:** somente P5-A aprovada (DEC-038); P5-B–P5-E pendentes. CHECK canônico requer validação técnica.
+**Situação atual:** P5-A–P5-E aprovadas nas DEC-038–DEC-042 em seus níveis documentados. CHECK canônico ainda requer validação técnica.
+
+**Natureza deste capítulo:** estudo histórico das versões 0.1–0.5; referências a propostas ou escolhas pendentes no texto descrevem aquelas rodadas. As regras vigentes estão no [contrato consolidado aprovado](../05-contratos-persistencia.md).
 
 As Partes 1–4 definem conceitos e regras. Uma entidade do domínio não exige uma tabela própria: Avaliação continua raiz de agregado, CritérioPreservado é objeto de valor, alternativas/julgamentos são componentes e resultados não possuem identidade independente (DEC-036). Esta parte propõe sua representação física; não altera requisitos ou decisões.
 

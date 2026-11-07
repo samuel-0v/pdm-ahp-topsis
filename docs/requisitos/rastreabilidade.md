@@ -1,6 +1,6 @@
 # Matriz de rastreabilidade
 
-**Versão de conteúdo:** 1.0 — matriz de requisitos baseada nas DEC-001–DEC-035, com complemento da DEC-038 e propostas pendentes da Parte 5 nas seções finais.
+**Versão de conteúdo:** 1.0 — matriz de requisitos baseada nas DEC-001–DEC-035, com complementos aprovados da modelagem nas DEC-036–DEC-042 nas seções finais.
 
 [Índice de requisitos](README.md) · [Casos de uso](casos-de-uso/README.md) · [Verificações previstas](plano-verificacao.md) · [Revisão](revisao-etapa-2.md)
 
@@ -89,21 +89,23 @@ O [enunciado principal](../../references/ProjetoDisciplina_PDM20262v2.pdf) e a [
 
 ## Mapeamento físico aprovado na Etapa 3
 
-DEC-038 → [Parte 5 — P5-A](../modelagem/05-persistencia-snapshots.md): seis tabelas Room, integridade interna e unicidade AHP; relacionada a RF11, RF14, RF21–RF26 e RNF05/RNF09. Não modifica esses requisitos. CHECK canônico requer validação técnica; P5-B–P5-E permanecem pendentes.
+As [DEC-036](../decisoes/aprovadas/dec-036.md) e [DEC-037](../decisoes/aprovadas/dec-037.md) fundamentam, respectivamente, a organização do agregado e as cardinalidades conceituais, detalhadas nas [Partes 1–4 da modelagem](../modelagem/dominio.md). Mantêm os requisitos existentes e antecedem o mapeamento físico.
 
-## Propostas técnicas pendentes da Parte 5
+DEC-038 → [Parte 5 — P5-A](../modelagem/05-persistencia-snapshots.md): seis tabelas Room, integridade interna e unicidade AHP; relacionada a RF11, RF14, RF21–RF26 e RNF05/RNF09. Não modifica esses requisitos. CHECK canônico requer validação técnica; P5-B–P5-E foram aprovadas nas DEC-039–DEC-042 em 06/11/2026.
 
-Não integram as decisões aprovadas nem alteram requisitos. [Contrato consolidado](../modelagem/05-contratos-persistencia.md) e [propostas candidatas](../decisoes/propostas-parte5.md):
+## Contratos técnicos aprovados da Parte 5
 
-| Proposta pendente | Relações documentais | Verificação futura |
+As DEC-039–DEC-042 foram aprovadas conjuntamente em 06/11/2026 e detalham os requisitos existentes sem modificá-los. Consulte o [contrato aprovado](../modelagem/05-contratos-persistencia.md) e o [registro de decisões](../decisoes/registro-decisoes.md).
+
+| Decisão aprovada | Relações documentais | Verificação futura |
 |---|---|---|
 | DEC-039 / P5-B | RF15–RF25, RNF04/RNF05; resultados incorporados e coerentes | VT06–VT10 |
 | DEC-040 / P5-C | RF01–RF05, RF13, RNF06/RNF07; contrato remoto tipado | VT01, VT03, VT11, VT12 |
 | DEC-041 / P5-D | RF06/RF07, RF11–RF13, RF25, RNF04/RNF05; UUID, tipos e dinheiro | VT02–VT04, VT06–VT09 |
 | DEC-042 / P5-E | RF05, RF09, RF23/RF25/RF27, RNF06/RNF08; snapshots e offline | VT08, VT11, VT13, VT17 |
 
-As referências indicam cobertura esperada, não execução ou aprovação da modelagem física.
+As referências indicam cobertura esperada, sem declarar execução de testes. A modelagem e seus contratos estão aprovados; a implementação permanece futura.
 
-### Ajustes propostos após a revisão de 06/11/2026
+### Ajustes aprovados após a revisão de 06/11/2026
 
-A [resposta à revisão da Parte 5](../modelagem/revisao-parte5.md#cenários-adicionais-para-implementação) detalha os cenários adicionais e seus vínculos com os conjuntos VT existentes: obrigação do publicador e limite da detecção (DEC-040), original incompatível e resolução numérica (DEC-041), novo cadastro pessoal diante de incompatibilidade semântica (DEC-042) e consulta histórica versus recálculo (DEC-041/042). Esses ajustes continuam propostos; não modificam requisitos aprovados nem declaram testes executados.
+A [resposta à revisão da Parte 5](../modelagem/revisao-parte5.md#cenários-adicionais-para-implementação) detalha os cenários adicionais e seus vínculos com os conjuntos VT existentes: obrigação do publicador e limite da detecção (DEC-040), original incompatível e resolução numérica (DEC-041), novo cadastro pessoal diante de incompatibilidade semântica (DEC-042) e consulta histórica versus recálculo (DEC-041/042). Esses ajustes integram as decisões aprovadas em 06/11/2026; não modificam requisitos anteriores nem declaram testes executados. O [fechamento da Etapa 3](../modelagem/fechamento-etapa-3.md) mantém as dependências técnicas.

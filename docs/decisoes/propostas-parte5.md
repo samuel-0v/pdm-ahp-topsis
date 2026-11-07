@@ -1,22 +1,20 @@
-# Propostas de decisão — Parte 5
+# Parte 5 — Histórico da formalização das propostas
 
-**Versão:** 0.2 — 06/11/2026. **Todas pendentes de aprovação. DEC-040–DEC-042 ajustadas após revisão com ressalvas; redação revisada sujeita a nova conferência técnica.**
+**Versão:** 1.0 — 06/11/2026. **Status: DEC-039–DEC-042 aprovadas conjuntamente pelo usuário.**
 
-[Registro APROVADO](registro-decisoes.md) · [Parte 5](../modelagem/05-persistencia-snapshots.md) · [Contrato consolidado](../modelagem/05-contratos-persistencia.md)
+[Registro aprovado](registro-decisoes.md) · [Contrato aprovado](../modelagem/05-contratos-persistencia.md) · [Fechamento da Etapa 3](../modelagem/fechamento-etapa-3.md)
 
-O registro atual termina na DEC-038. DEC-039–DEC-042 são identificadores candidatos, a reconferir na formalização; não estão incluídos na contagem de decisões aprovadas. As preferências fornecidas nesta rodada autorizam elaborar a proposta, sem aprovação retroativa. DEC-001–038 permanecem inalteradas.
+As propostas 0.1 e 0.2 foram revisadas e seus ajustes explicados ao usuário. A confirmação “autorizo e pode finalizar”, em 06/11/2026, aprova as quatro decisões com os limites apresentados. Os identificadores foram conferidos no registro, que anteriormente terminava na DEC-038; não houve colisão nem criação de DEC-043.
 
-Os cinco achados recebidos e a justificativa dos ajustes propostos estão na [resposta à revisão da Parte 5](../modelagem/revisao-parte5.md). Não se transfere o parecer favorável da versão anterior para esta redação sem nova conferência.
+## Decisões formalizadas
 
-## Propostas por tema
-
-| Documento | Situação |
+| Decisão | Situação |
 |---|---|
-| [DEC-039 — P5-B — Resultados incorporados](propostas/dec-039.md) | Pendente de aprovação |
-| [DEC-040 — P5-C — Contrato do catálogo Firestore](propostas/dec-040.md) | Pendente de aprovação |
-| [DEC-041 — P5-D — Identidade e representação numérica](propostas/dec-041.md) | Pendente de aprovação |
-| [DEC-042 — P5-E — Definições pessoais, snapshots e compatibilidade offline](propostas/dec-042.md) | Pendente de aprovação |
+| [DEC-039 — P5-B — Resultados incorporados](aprovadas/dec-039.md) | Aprovada em 06/11/2026 |
+| [DEC-040 — P5-C — Contrato do catálogo Firestore](aprovadas/dec-040.md) | Aprovada em 06/11/2026 |
+| [DEC-041 — P5-D — Identidade e representação numérica](aprovadas/dec-041.md) | Aprovada em 06/11/2026 |
+| [DEC-042 — P5-E — Definições pessoais, snapshots e compatibilidade offline](aprovadas/dec-042.md) | Aprovada em 06/11/2026 |
 
-## Limites comuns
+## Limites preservados
 
-Todas dependem do contrato consolidado e preservam DEC-025, DEC-033–038 e os requisitos aprovados. A defesa física CHECK dos pares AHP continua questão técnica aberta da DEC-038, não resolvida por estas propostas. Nenhuma tabela adicional, migration, código Kotlin, configuração Firebase, navegação ou protótipo é autorizado por este documento. A implementação futura deverá comprovar os critérios; não há testes de banco executados nesta rodada.
+A formalização mantém seis tabelas, salvamento manual, snapshots independentes e as decisões anteriores. CHECK AHP, domínios/precisão e configuração de serialização continuam dependências técnicas, sem declaração de implementação ou testes executados. Os caminhos em `propostas/` apontam para os textos aprovados; o histórico Git preserva as redações submetidas.

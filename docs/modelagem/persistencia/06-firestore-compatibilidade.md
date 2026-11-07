@@ -2,7 +2,9 @@
 
 [Índice da Parte 5](../05-persistencia-snapshots.md) · [Contrato consolidado](../05-contratos-persistencia.md)
 
-**Situação da Parte 5:** somente P5-A aprovada (DEC-038); P5-B–P5-E pendentes. CHECK canônico requer validação técnica.
+**Situação atual:** P5-A–P5-E aprovadas nas DEC-038–DEC-042 em seus níveis documentados. CHECK canônico ainda requer validação técnica.
+
+**Natureza deste capítulo:** estudo histórico das versões 0.1–0.5; referências a propostas ou escolhas pendentes no texto descrevem aquelas rodadas. As regras vigentes estão no [contrato consolidado aprovado](../05-contratos-persistencia.md).
 
 Recomendação para revisão: categorias e produtos em coleções raiz; critérios embutidos como conjunto pequeno no documento da categoria. IDs de critérios são estáveis, exclusivos à categoria e globalmente inequívocos no catálogo; nomes iguais não significam identidade compartilhada (DEC-037).
 

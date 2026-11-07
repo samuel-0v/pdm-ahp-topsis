@@ -1,12 +1,12 @@
-# 1. Representação física candidata
+# 1. Contrato de representação física
 
 [Índice dos contratos](../05-contratos-persistencia.md) · [Parte 5](../05-persistencia-snapshots.md)
 
-**Status:** proposta ajustada após revisão com ressalvas, pendente de nova conferência e confirmação formal. A base de seis tabelas permanece aprovada na DEC-038; os detalhes de P5-B–P5-E não estão aprovados.
+**Status:** aprovado pelo usuário em 06/11/2026 nas DEC-038–DEC-042. Contrato documental para orientar implementação; CHECK AHP, domínios/precisão e serialização permanecem dependências técnicas.
 
-As seis tabelas permanecem as da DEC-038. Campos abaixo são candidatos ao schema, não entidades Kotlin. PK/FK/UNIQUE descrevem garantias a implementar e testar posteriormente. Campos não marcados opcionais são obrigatórios na linha; rascunhos permitem ausência de componentes/valores conforme o domínio.
+As seis tabelas permanecem as da DEC-038. Os campos abaixo definem o contrato de persistência aprovado; não constituem entidades Kotlin implementadas. PK/FK/UNIQUE descrevem garantias a implementar e testar posteriormente. Campos não marcados opcionais são obrigatórios na linha; rascunhos permitem ausência de componentes/valores conforme o domínio.
 
-| Tabela | Chaves e campos propostos |
+| Tabela | Chaves e campos do contrato |
 |---|---|
 | `produto_pessoal` | PK `produtoId` UUID textual; `categoriaId`, identificação obrigatória conforme RF06; rótulo histórico; `definicoesJson`, `valoresJson`, `formatoPayload` inteiro positivo; referências conhecidas opcionais. JSON inclui definições e proveniência por valor; produto pessoal não admite cadastro incompleto. |
 | `avaliacao` | PK `avaliacaoId` UUID; `categoriaId`, rótulo histórico, `estadoSalvo`, `tipoTopsis`, datas de criação/salvamento; título opcional; `lambdaMax`, `ic`, `ri`, `rc` opcionais como bloco indivisível. |

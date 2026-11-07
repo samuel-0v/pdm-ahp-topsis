@@ -4,9 +4,9 @@
 **Instituição:** Universidade Federal de Uberlândia (UFU)
 **Semestre:** 2026/2
 **Projeto:** Sistema de Avaliação Comparativa Multicritério de Produtos (AHP-TOPSIS)
-**Versão:** 1.14
-**Data de consolidação:** 05/11/2026
-**Situação:** DEC-001 a DEC-038 aprovadas nas discussões da equipe.
+**Versão:** 1.15
+**Data de consolidação:** 06/11/2026
+**Situação:** DEC-001 a DEC-042 aprovadas nas discussões da equipe.
 **Organização documental:** 05/11/2026 — detalhamentos separados por decisão; versão de conteúdo preservada.
 
 Este registro consolida decisões da equipe para orientar os requisitos, a modelagem e o desenvolvimento. Não substitui o enunciado do professor. Quando uma decisão adapta um exemplo ou procedimento do enunciado, a adaptação é identificada.
@@ -60,7 +60,11 @@ Este registro consolida decisões da equipe para orientar os requisitos, a model
 | DEC-035 | Estado sem diferenciação | Processamento TOPSIS válido sem C* definido é persistido/listado como “Concluída — sem diferenciação”. |
 | DEC-036 | Organização conceitual do domínio | Avaliação é raiz de agregado; alternativas e julgamentos são componentes internos; resultados são objetos de valor; critérios e identidade histórica são preservados sem depender do catálogo atual. |
 | DEC-037 | Cardinalidades conceituais da modelagem | Categorias iniciais têm cinco critérios; futuras podem variar n dentro do suporte matemático; critérios atuais são exclusivos por categoria; rascunhos podem preservar AHP inconsistente sem liberar TOPSIS. |
-| DEC-038 | Estrutura Room (P5-A) | Modelo híbrido de seis tabelas; CHECK canônico pendente de validação; P5-B–P5-E não aprovadas. |
+| DEC-038 | Estrutura Room (P5-A) | Modelo híbrido de seis tabelas; CHECK canônico pendente de validação; detalhes de P5-B–P5-E aprovados posteriormente nas DEC-039–DEC-042. |
+| DEC-039 | Resultados incorporados (P5-B) | Indicadores AHP na avaliação, pesos nos critérios e detalhes TOPSIS nas alternativas; conjuntos completos e invalidação coerente. |
+| DEC-040 | Contrato Firestore (P5-C) | Critérios embutidos e produtos raiz; revisão imutável sob responsabilidade do publicador, com limite explícito de detecção pelo cliente. |
+| DEC-041 | Identidade e números (P5-D) | UUID local, BRL em Long centavos, demais números/resultados Double; validação tipada, bloqueio de colisões monetárias e alcance do recálculo delimitado. |
+| DEC-042 | Snapshots e offline (P5-E) | Definições locais pessoais, snapshots independentes e compatibilidade com o destino; incompatibilidade semântica exige novo cadastro. |
 
 ## Detalhamento das decisões aprovadas
 
@@ -87,6 +91,10 @@ DEC-001–DEC-017, DEC-020 e DEC-021 estão descritas no resumo acima e nas regr
 | [DEC-036 — Organização conceitual do domínio](aprovadas/dec-036.md) | Aprovada |
 | [DEC-037 — Cardinalidades conceituais da modelagem](aprovadas/dec-037.md) | Aprovada |
 | [DEC-038 — Estrutura Room híbrida de seis tabelas (P5-A)](aprovadas/dec-038.md) | Aprovada |
+| [DEC-039 — P5-B — Resultados incorporados](aprovadas/dec-039.md) | Aprovada em 06/11/2026 |
+| [DEC-040 — P5-C — Contrato do catálogo Firestore](aprovadas/dec-040.md) | Aprovada em 06/11/2026 |
+| [DEC-041 — P5-D — Identidade e representação numérica](aprovadas/dec-041.md) | Aprovada em 06/11/2026 |
+| [DEC-042 — P5-E — Definições pessoais, snapshots e compatibilidade offline](aprovadas/dec-042.md) | Aprovada em 06/11/2026 |
 
 ## Documentos de apoio
 
@@ -96,4 +104,4 @@ DEC-001–DEC-017, DEC-020 e DEC-021 estão descritas no resumo acima e nas regr
 | [Consequências para requisitos e modelagem](consequencias-modelagem.md) | Orientações derivadas |
 | [Pendências, histórico e validação documental](acompanhamento.md) | Sem comprovação de implementação |
 
-As [propostas da Parte 5](propostas-parte5.md) permanecem pendentes e não integram o conjunto aprovado.
+As quatro propostas da Parte 5 foram aprovadas conjuntamente em 06/11/2026, incluindo os ajustes da revisão. Consulte o [histórico da formalização](propostas-parte5.md) e o [fechamento da Etapa 3](../modelagem/fechamento-etapa-3.md).

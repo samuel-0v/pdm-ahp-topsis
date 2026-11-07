@@ -2,7 +2,9 @@
 
 [Índice da Parte 5](../05-persistencia-snapshots.md) · [Contrato consolidado](../05-contratos-persistencia.md)
 
-**Situação da Parte 5:** somente P5-A aprovada (DEC-038); P5-B–P5-E pendentes. CHECK canônico requer validação técnica.
+**Situação atual:** P5-A–P5-E aprovadas nas DEC-038–DEC-042 em seus níveis documentados. CHECK canônico ainda requer validação técnica.
+
+**Natureza deste capítulo:** estudo histórico das versões 0.1–0.5; referências a propostas ou escolhas pendentes no texto descrevem aquelas rodadas. As regras vigentes estão no [contrato consolidado aprovado](../05-contratos-persistencia.md).
 
 O modelo recomendado coloca o cabeçalho AHP na avaliação, pesos nas linhas de critérios e detalhes TOPSIS nas alternativas. **Isso não torna peso parte imutável de CritérioPreservado nem transforma resultado em propriedade do produto:** o mapeador reconstrói objetos de valor Resultado AHP/TOPSIS, associados exclusivamente à avaliação. Todos esses campos são gravados/limpos na mesma transação.
 

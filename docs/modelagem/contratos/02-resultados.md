@@ -2,7 +2,7 @@
 
 [Índice dos contratos](../05-contratos-persistencia.md) · [Parte 5](../05-persistencia-snapshots.md)
 
-**Status:** proposta ajustada após revisão com ressalvas, pendente de nova conferência e confirmação formal. A base de seis tabelas permanece aprovada na DEC-038; os detalhes de P5-B–P5-E não estão aprovados.
+**Status:** aprovado pelo usuário em 06/11/2026 nas DEC-038–DEC-042. Contrato documental para orientar implementação; CHECK AHP, domínios/precisão e serialização permanecem dependências técnicas.
 
 | Situação | Contrato persistido |
 |---|---|

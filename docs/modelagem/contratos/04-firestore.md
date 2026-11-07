@@ -1,10 +1,10 @@
-# 4. P5-C — Contrato documental Firestore candidato
+# 4. P5-C — Contrato documental Firestore
 
 [Índice dos contratos](../05-contratos-persistencia.md) · [Parte 5](../05-persistencia-snapshots.md)
 
-**Status:** proposta ajustada após revisão com ressalvas, pendente de nova conferência e confirmação formal. A base de seis tabelas permanece aprovada na DEC-038; os detalhes de P5-B–P5-E não estão aprovados.
+**Status:** aprovado pelo usuário em 06/11/2026 nas DEC-038–DEC-042. Contrato documental para orientar implementação; CHECK AHP, domínios/precisão e serialização permanecem dependências técnicas.
 
-Todos os campos a seguir são do contrato PROPOSTO. O cliente só lê. `obrigatório` é condição para aceitar uma definição válida; documento de produto com valor ausente pode ser exibido como incompleto. Campo desconhecido meramente adicional pode ser ignorado; enum/versão semântica desconhecida não deve ser adivinhada.
+Todos os campos a seguir integram o contrato aprovado na DEC-040. O cliente só lê. `obrigatório` é condição para aceitar uma definição válida; documento de produto com valor ausente pode ser exibido como incompleto. Campo desconhecido meramente adicional pode ser ignorado; enum/versão semântica desconhecida não deve ser adivinhada.
 
 | Documento/campo | Obrigatoriedade e validação |
 |---|---|
@@ -42,7 +42,7 @@ O produto ilustrativo está incompleto: campos dos outros critérios não foram 
 
 ## Obrigação do publicador e limite da detecção
 
-**Escolha proposta:** manter o payload pequeno e exigir imutabilidade da definição associada a `(categoriaId, revisaoDefinicao)`. Qualquer alteração de conteúdo da definição, inclusive editorial, recebe novo token que não pode ser reutilizado para outro conteúdo. Uma alteração editorial pode continuar semanticamente compatível após comparação; revisão diferente não significa incompatibilidade automática. Atualizar um produto para outra revisão exige verificar seus valores e sua proveniência sob a definição correspondente, sem apenas trocar o token.
+**Decisão aprovada:** manter o payload pequeno e exigir imutabilidade da definição associada a `(categoriaId, revisaoDefinicao)`. Qualquer alteração de conteúdo da definição, inclusive editorial, recebe novo token que não pode ser reutilizado para outro conteúdo. Uma alteração editorial pode continuar semanticamente compatível após comparação; revisão diferente não significa incompatibilidade automática. Atualizar um produto para outra revisão exige verificar seus valores e sua proveniência sob a definição correspondente, sem apenas trocar o token.
 
 O publicador responde pelo vínculo entre os números publicados e essa definição. O cliente valida formato, valores e todos os metadados efetivamente disponíveis, mesmo quando os tokens coincidem. Se possui duas definições diferentes sob o mesmo par categoria/revisão ou outra evidência de significado contraditório, rejeita o conjunto para seleção/processamento e informa conflito de definição; não escolhe arbitrariamente uma delas. Avaliações históricas íntegras não são reescritas por esse conflito.
 

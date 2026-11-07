@@ -2,7 +2,9 @@
 
 [Índice da Parte 5](../05-persistencia-snapshots.md) · [Contrato consolidado](../05-contratos-persistencia.md)
 
-**Situação da Parte 5:** somente P5-A aprovada (DEC-038); P5-B–P5-E pendentes. CHECK canônico requer validação técnica.
+**Situação atual:** P5-A–P5-E aprovadas nas DEC-038–DEC-042 em seus níveis documentados. CHECK canônico ainda requer validação técnica.
+
+**Natureza deste capítulo:** estudo histórico das versões 0.1–0.5; referências a propostas ou escolhas pendentes no texto descrevem aquelas rodadas. As regras vigentes estão no [contrato consolidado aprovado](../05-contratos-persistencia.md).
 
 | Cenário | Evidência a obter na implementação |
 |---|---|
@@ -27,4 +29,4 @@ Esses são testes planejados, vinculados aos VT03, VT06–VT13 e VT17 existentes
 
 Os cenários específicos dos cinco achados posteriores estão na [resposta à revisão](../revisao-parte5.md#cenários-adicionais-para-implementação), incluindo os limites de detecção remota, original incompatível, novo cadastro pessoal, evolução do motor e colisões numéricas.
 
-**Status final da Parte 5: P5-A aprovada com ressalvas na DEC-038; P5-B–P5-E revisadas como propostas. Ajustes aguardam nova conferência técnica e confirmação formal; nenhum avanço automático para implementação.**
+**Status atual da Parte 5: aprovada pelo usuário nas DEC-038–DEC-042; Etapa 3 concluída documentalmente em 06/11/2026. Cenários de teste permanecem futuros.**
