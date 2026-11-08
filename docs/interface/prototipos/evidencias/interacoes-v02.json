@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "checks": 124,
+  "passed": [
+    "Entrada no catálogo",
+    "Criação sem salvamento automático",
+    "Zero alternativas bloqueia avanço",
+    "Uma alternativa bloqueia avanço",
+    "Duas alternativas liberam conferência",
+    "Valores da avaliação",
+    "Par pendente 1",
+    "Par 1 não respondido bloqueia próximo",
+    "Par pendente 2",
+    "Par 2 não respondido bloqueia próximo",
+    "Par pendente 3",
+    "Par 3 não respondido bloqueia próximo",
+    "Par pendente 4",
+    "Par 4 não respondido bloqueia próximo",
+    "Par pendente 5",
+    "Par 5 não respondido bloqueia próximo",
+    "Par pendente 6",
+    "Par 6 não respondido bloqueia próximo",
+    "Par pendente 7",
+    "Par 7 não respondido bloqueia próximo",
+    "Par pendente 8",
+    "Par 8 não respondido bloqueia próximo",
+    "Par pendente 9",
+    "Par 9 não respondido bloqueia próximo",
+    "Par pendente 10",
+    "Par 10 não respondido bloqueia próximo",
+    "Dez respostas liberam consistência",
+    "TOPSIS não salva automaticamente",
+    "DEC-025 oferece três opções",
+    "Continuar mantém edição",
+    "Falha ao salvar preserva edição e não sai",
+    "Salvar resultado e retornar às avaliações",
+    "Abrir edição mantém versão salva e não cria alterações",
+    "Cenário de alteração invalida somente a edição",
+    "Edição desatualizada bloqueia Salvar e exportar",
+    "Exportar última salva mantém edição pendente",
+    "Descartar restaura resultado salvo",
+    "Retoma par 4 ainda pendente",
+    "Descartar preserva rascunho anterior",
+    "Salvar rascunho preserva progresso",
+    "RC inconsistente bloqueia TOPSIS",
+    "Empate com numeração competitiva",
+    "Sem diferenciação não inventa posição",
+    "Sem diferenciação pode ser salva",
+    "Sem diferenciação exportável no cenário simulado",
+    "Seleção BEV mantém categoria e duas alternativas",
+    "Cinco critérios BEV e unidades próprios",
+    "Par BEV 1 não usa critério de smartphone",
+    "Par BEV 2 não usa critério de smartphone",
+    "Par BEV 3 não usa critério de smartphone",
+    "Par BEV 4 não usa critério de smartphone",
+    "Par BEV 5 não usa critério de smartphone",
+    "Par BEV 6 não usa critério de smartphone",
+    "Par BEV 7 não usa critério de smartphone",
+    "Par BEV 8 não usa critério de smartphone",
+    "Par BEV 9 não usa critério de smartphone",
+    "Par BEV 10 não usa critério de smartphone",
+    "Revisão BEV preserva seguro anual e recarga 20–80%",
+    "Ranking BEV usa fixture da categoria",
+    "Consulta salva preserva categoria BEV",
+    "Cadastro conserva seleção anterior",
+    "Falha no cadastro preserva formulário e seleção",
+    "Salvar cadastro retorna à seleção sem selecionar automaticamente",
+    "Oficial e pessoal podem coexistir",
+    "Resultado misto usa valores das alternativas selecionadas",
+    "Registros oficial e pessoal com mesmo nome não são deduplicados",
+    "Ranking de três alternativas preserva empate entre os dois registros Aurora",
+    "Descartar nova categoria preserva última avaliação salva",
+    "Sem corte horizontal T01/360/1",
+    "Alvos ≥48dp T01/360/1",
+    "Sem corte horizontal T07/360/1",
+    "Alvos ≥48dp T07/360/1",
+    "Sem corte horizontal T08-01-P/360/1",
+    "Alvos ≥48dp T08-01-P/360/1",
+    "Sem corte horizontal T10/360/1",
+    "Alvos ≥48dp T10/360/1",
+    "Sem corte horizontal T12-SALVA/360/1",
+    "Alvos ≥48dp T12-SALVA/360/1",
+    "Sem corte horizontal T06-MISTA/360/1",
+    "Alvos ≥48dp T06-MISTA/360/1",
+    "Sem corte horizontal T04-SELECAO-BEV/360/1",
+    "Alvos ≥48dp T04-SELECAO-BEV/360/1",
+    "Sem corte horizontal T01/360/2",
+    "Alvos ≥48dp T01/360/2",
+    "Sem corte horizontal T07/360/2",
+    "Alvos ≥48dp T07/360/2",
+    "Sem corte horizontal T08-01-P/360/2",
+    "Alvos ≥48dp T08-01-P/360/2",
+    "Sem corte horizontal T10/360/2",
+    "Alvos ≥48dp T10/360/2",
+    "Sem corte horizontal T12-SALVA/360/2",
+    "Alvos ≥48dp T12-SALVA/360/2",
+    "Sem corte horizontal T06-MISTA/360/2",
+    "Alvos ≥48dp T06-MISTA/360/2",
+    "Sem corte horizontal T04-SELECAO-BEV/360/2",
+    "Alvos ≥48dp T04-SELECAO-BEV/360/2",
+    "Sem corte horizontal T01/600/1",
+    "Alvos ≥48dp T01/600/1",
+    "Sem corte horizontal T07/600/1",
+    "Alvos ≥48dp T07/600/1",
+    "Sem corte horizontal T08-01-P/600/1",
+    "Alvos ≥48dp T08-01-P/600/1",
+    "Sem corte horizontal T10/600/1",
+    "Alvos ≥48dp T10/600/1",
+    "Sem corte horizontal T12-SALVA/600/1",
+    "Alvos ≥48dp T12-SALVA/600/1",
+    "Sem corte horizontal T06-MISTA/600/1",
+    "Alvos ≥48dp T06-MISTA/600/1",
+    "Sem corte horizontal T04-SELECAO-BEV/600/1",
+    "Alvos ≥48dp T04-SELECAO-BEV/600/1",
+    "Sem corte horizontal T01/600/2",
+    "Alvos ≥48dp T01/600/2",
+    "Sem corte horizontal T07/600/2",
+    "Alvos ≥48dp T07/600/2",
+    "Sem corte horizontal T08-01-P/600/2",
+    "Alvos ≥48dp T08-01-P/600/2",
+    "Sem corte horizontal T10/600/2",
+    "Alvos ≥48dp T10/600/2",
+    "Sem corte horizontal T12-SALVA/600/2",
+    "Alvos ≥48dp T12-SALVA/600/2",
+    "Sem corte horizontal T06-MISTA/600/2",
+    "Alvos ≥48dp T06-MISTA/600/2",
+    "Sem corte horizontal T04-SELECAO-BEV/600/2",
+    "Alvos ≥48dp T04-SELECAO-BEV/600/2"
+  ],
+  "layouts": [
+    {
+      "id": "T01",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T07",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T08-01-P",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T10",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T06-MISTA",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T04-SELECAO-BEV",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T01",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T07",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T08-01-P",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T10",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T06-MISTA",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T04-SELECAO-BEV",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T01",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T07",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T08-01-P",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T10",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T06-MISTA",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T04-SELECAO-BEV",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T01",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T07",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T08-01-P",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T10",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T06-MISTA",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T04-SELECAO-BEV",
+      "width": 600,
+      "scale": 2
+    }
+  ]
+}

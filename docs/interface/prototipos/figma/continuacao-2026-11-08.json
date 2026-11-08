@@ -1,0 +1,34 @@
+{
+  "data": "2026-11-08",
+  "branch": "docs/etapa5-interface-navegacao",
+  "commitCriado": false,
+  "fileKey": "S1Ba7mzFVfE1d0ds21FR36",
+  "sessionId": "2b852faf-0e54-4189-bb75-3994d4a677df",
+  "leitura": {
+    "sucesso": true,
+    "framesNativosConfirmados": 84,
+    "paginas": ["01 · Protótipo", "02 · Componentes"],
+    "observacao": "Reações internas de componentes não comprovam navegação entre telas."
+  },
+  "gravacao": {
+    "scriptTentado": "04-ajustes-layout.js",
+    "confirmada": false,
+    "motivo": "Limite de chamadas Figma MCP do plano Starter",
+    "conexoesAplicadasNestaContinuacao": false
+  },
+  "alternativa": {
+    "tipo": "Plugin local de desenvolvimento, não generativo",
+    "pasta": "plugin-local",
+    "idRealGeradoPeloFigmaNecessario": true,
+    "instalado": false,
+    "executadoNoFigma": false,
+    "verificacoesPreventivas": 3
+  },
+  "prototipoLocal": {
+    "versao": "0.2",
+    "descritores": 86,
+    "fixtures": 13,
+    "verificacoesInteracaoLayout": 124,
+    "resultado": "PASS"
+  }
+}

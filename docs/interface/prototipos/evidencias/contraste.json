@@ -1,0 +1,51 @@
+[
+  {
+    "par": "primary/onPrimary",
+    "fundo": "#65558F",
+    "texto": "#FFFFFF",
+    "contraste": 6.46,
+    "minimo": 4.5
+  },
+  {
+    "par": "primaryContainer/onPrimaryContainer",
+    "fundo": "#EADDFF",
+    "texto": "#21005D",
+    "contraste": 13.32,
+    "minimo": 4.5
+  },
+  {
+    "par": "surface/onSurface",
+    "fundo": "#FDF7FF",
+    "texto": "#1D1B20",
+    "contraste": 16.2,
+    "minimo": 4.5
+  },
+  {
+    "par": "surfaceContainer/secondary",
+    "fundo": "#F3EDF7",
+    "texto": "#49454F",
+    "contraste": 8.13,
+    "minimo": 4.5
+  },
+  {
+    "par": "successContainer/success",
+    "fundo": "#D6F5DE",
+    "texto": "#245D3C",
+    "contraste": 6.64,
+    "minimo": 4.5
+  },
+  {
+    "par": "errorContainer/error",
+    "fundo": "#F9DEDC",
+    "texto": "#B3261E",
+    "contraste": 5.14,
+    "minimo": 4.5
+  },
+  {
+    "par": "warningContainer/warning",
+    "fundo": "#FFF0C2",
+    "texto": "#704B00",
+    "contraste": 6.86,
+    "minimo": 4.5
+  }
+]

@@ -1,0 +1,18 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>PDM · Etapa 5</title>
+<style>body{font:14px Arial,sans-serif;padding:16px;color:#1d1b20}button{min-height:48px;margin:4px;padding:10px 14px}textarea{width:100%;height:240px;box-sizing:border-box}img{max-width:180px;vertical-align:top;margin:4px}p{line-height:1.5}.error{color:#b3261e}</style>
+<h1>Etapa 5 · aplicar no arquivo existente</h1><p>Inspeciona os 84 frames já criados. A aplicação ajusta layout e substitui conexões dos controles registrados, sem recriar as telas. Use apenas no arquivo autoral indicado na documentação.</p>
+<button id="inspect">Inspecionar sem alterar</button><button id="apply">Aplicar ajustes e conexões</button><button id="download">Baixar relatório JSON</button>
+<p id="status" role="status">Ainda não executado. O pacote local não comprova aplicação ou validação no Figma.</p>
+<textarea id="report" aria-label="Relatório de IDs e operações" readonly></textarea><div id="previews"></div>
+<script>
+let result=null;const buttons=[document.getElementById('inspect'),document.getElementById('apply')];
+function run(type){buttons.forEach(b=>b.disabled=true);parent.postMessage({pluginMessage:{type}},'*');}
+buttons[0].onclick=()=>run('inspect');buttons[1].onclick=()=>run('apply');
+document.getElementById('download').onclick=()=>{if(!result)return;const url=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='pdm-etapa5-aplicacao-figma.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+window.onmessage=event=>{const message=event.data.pluginMessage;if(!message)return;
+ if(message.type==='progress')document.getElementById('status').textContent=message.text;
+ if(message.type==='report'){result=message.report;document.getElementById('report').value=JSON.stringify(result,null,2);document.getElementById('status').textContent=result.error||result.stage;}
+ if(message.type==='ready')buttons.forEach(b=>b.disabled=false);
+ if(message.type==='preview'){const image=document.createElement('img');image.alt='Revisar '+message.id;image.src=URL.createObjectURL(new Blob([new Uint8Array(message.bytes)],{type:'image/png'}));document.getElementById('previews').append(image);}
+};
+</script></html>
