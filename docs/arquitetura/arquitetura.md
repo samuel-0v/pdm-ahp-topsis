@@ -1,16 +1,150 @@
-# Arquitetura
+# Etapa 4 — Arquitetura do Aplicativo
 
-Pendente de elaboração. Decisões aprovadas ficam no [registro central](../decisoes/registro-decisoes.md). A [modelagem](../modelagem/dominio.md) registra as Partes 1–4 aprovadas conceitualmente e a base de seis tabelas da P5-A aprovada na DEC-038; os [contratos de persistência](../modelagem/05-contratos-persistencia.md) foram aprovados nas DEC-039–DEC-042, encerrando documentalmente a Etapa 3. Arquitetura é a próxima etapa e ainda não foi elaborada.
+**Versão 0.1 · 08/11/2026 · Rascunho para revisão técnica independente.** As propostas desta pasta não estão aprovadas. Componentes e diagramas descrevem a arquitetura pretendida, não uma implementação Android existente.
 
-## Questões técnicas pendentes
+## Objetivo e contexto
 
-Os itens abaixo são questões de especificação e não alteram as decisões já aprovadas:
+Definir uma arquitetura Android viável para a primeira entrega de Requisitos e Modelagem do Sistema de Avaliação Comparativa Multicritério de Produtos — AHP-TOPSIS, FACOM32503/UFU. Aplicar MVVM, princípios de Clean Architecture e separação de responsabilidades às decisões vigentes, preservando o domínio e a persistência da Etapa 3.
 
-1. Detalhar os contratos de acesso ao Firebase Cloud Firestore e a publicação coerente do catálogo, respeitando o layout e as identidades aprovados nas DEC-040/041.
-2. Detalhar o schema e as migrações Room a partir das seis tabelas aprovadas na DEC-038; validar a defesa CHECK canônica. A implementação deve cumprir os contratos aprovados nas DEC-039–DEC-042.
-3. Especificar atualização, erros e comunicação de defasagem do catálogo, complementando a indicação de cache já aprovada na DEC-020.
-4. Definir bibliotecas e versões para navegação Compose, injeção de dependências e serialização.
-5. Detalhar estados de ViewModel e contratos dos repositórios/casos de uso.
-6. Aplicar DEC-027–DEC-029 e RNF04 para precisão, empates e posições; detalhar validação de entradas e dados ausentes.
-7. Detalhar a persistência transacional e o comportamento diante de encerramento inesperado, conforme a política manual da DEC-025.
-8. Escolher dados de referência e ferramentas de teste para os motores, repositórios e fluxos de interface.
+Fontes normativas do projeto: [visão](../01-visao-e-escopo.md), [RF01–RF27 e RNF01–RNF13](../requisitos/README.md), [UC01–UC16](../requisitos/casos-de-uso/README.md), [domínio](../modelagem/dominio.md), [estados](../modelagem/04-estados-transicoes.md), [Parte 5](../modelagem/05-persistencia-snapshots.md), [contratos consolidados](../modelagem/05-contratos-persistencia.md) e [registro de decisões](../decisoes/registro-decisoes.md). Anotações e documentação técnica apoiam escolhas arquiteturais; sua classificação e limitações estão em [fontes e verificação](referencias-e-validacao.md).
+
+## Diagnóstico da base existente
+
+| Evidência examinada | Situação encontrada e consequência |
+|---|---|
+| Arquitetura antes desta execução | Documento de pendências, sem componentes, ViewModels ou diagramas arquiteturais. Este arquivo passa a ser o índice da proposta. |
+| DEC-038–DEC-042 | Aprovadas no registro e em `decisoes/aprovadas/`. Textos em `decisoes/propostas/` e estudos históricos da Parte 5 não reabrem essas escolhas. |
+| Parte 5 | Seis tabelas, resultados incorporados, números tipados, revisões e compatibilidade já contratados. Não foi identificada inconsistência que exija redesenhar domínio ou persistência. CHECK canônico, schema/migrations e escolha de serialização continuam dependências técnicas. |
+| Código em `app/` | Motor Kotlin puro isolado, `AhpTopsis.kt`, e roteiro de testes; sem projeto Gradle Android configurado. O motor ainda não cumpre todos os contratos posteriores, conforme [análise específica](motores-matematicos.md). |
+| Interface em paralelo | [Etapa 5](../interface/README.md), [mapa de telas](../interface/mapa-telas.md) e [navegação](../interface/navegacao.md) são propostas. Seus IDs ajudam o alinhamento, sem aprovar layouts ou impor rotas. Alterações preexistentes dessa área foram preservadas. |
+| Enunciado v2, pp. 9 e 12 | A primeira entrega precisa explicar MVVM e fluxos; as quatro responsabilidades não exigem quatro módulos Gradle. O método de pesos segue a adaptação aprovada na DEC-018. |
+
+## Organização desta proposta
+
+| Documento | Conteúdo de referência |
+|---|---|
+| Este arquivo | Camadas, dependências, composição dos objetos, pacotes e síntese para apresentação. |
+| [Componentes e contratos](componentes.md) | Responsabilidades, entradas/saídas, casos de uso e rastreabilidade. |
+| [Gerenciamento de estado](gerenciamento-estado.md) | ViewModels, sessão, eventos, ciclo de vida, concorrência e navegação/Figma. |
+| [Fluxo de dados](fluxo-dados.md) | Room/Firestore, mapeamento, salvamento e PDF. |
+| [Motores matemáticos](motores-matematicos.md) | Fluxo AHP/TOPSIS, contratos e lacunas do código isolado. |
+| [Decisões pendentes](decisoes-pendentes.md) | Comparações de DI/navegação, recomendações e condições de aprovação. |
+| [Fontes e verificação](referencias-e-validacao.md) | Evidência das aulas, referências técnicas, verificações e revisão futura. |
+
+## Proposta geral: três camadas lógicas
+
+| Camada | Responsabilidade | Correspondência com as quatro responsabilidades do enunciado |
+|---|---|---|
+| Presentation | Composables, ViewModels, UiState, eventos e integração Android de navegação/compartilhamento. | UI + apresentação/estado (ViewModel). |
+| Domain | Modelos aprovados, regras/validações, operações de negócio, motores e contratos de acesso externo. | Domínio/motores matemáticos; inclui regras que não são fórmulas. |
+| Data | Implementações de repositórios e do gerador PDF, DTOs/entidades, mapeadores e fontes Room/Firestore. | Dados/repositório; geração de arquivo é também um detalhe de infraestrutura. |
+
+`di` é o ponto de composição, não uma quarta camada de negócio. A geração de PDF pertence a um adaptador em Data por depender de Android/arquivos; Domain define elegibilidade, conteúdo e contrato do documento. Não é necessária uma camada adicional de infraestrutura.
+
+### Diagrama 1 — Componentes e dependências de código
+
+Seta contínua significa **conhece/usa um tipo**; seta pontilhada `implementa` significa **realiza um contrato do Domain**. Nenhuma seta representa retorno de dados. Todos os componentes são propostos; apenas o cálculo puro inicial existe hoje, concentrado em `AhpTopsis`.
+
+```mermaid
+flowchart TB
+    subgraph P[Presentation]
+        UI["Telas e componentes Compose"]
+        VM["ViewModels e UiState"]
+        HOST["Host Android: navegação e compartilhamento"]
+        UI --> VM
+        HOST --> UI
+    end
+    subgraph D[Domain: Kotlin independente de Android]
+        UC["Casos de uso: seleção, cálculo, salvar e exportar"]
+        RULES["Modelos e validações do agregado"]
+        AHP["AhpEngine: responsabilidade proposta"]
+        TOP["TopsisEngine: responsabilidade proposta"]
+        REPO["Contratos: catálogo, pessoais e avaliações"]
+        PDFPORT["Contrato GeradorRelatorioPdf"]
+        UC --> RULES
+        UC --> AHP
+        UC --> TOP
+        UC --> REPO
+        UC --> PDFPORT
+    end
+    subgraph DATA[Data]
+        IMPL["Implementações dos três repositórios"]
+        MAP["Mappers, codecs e validação de representação"]
+        DAO["DAOs Room e transações"]
+        REM["Fonte Firestore e listeners"]
+        PDF["GeradorRelatorioPdfAndroid"]
+        IMPL --> MAP
+        IMPL --> DAO
+        IMPL --> REM
+        PDF --> MAP
+    end
+    VM --> UC
+    VM --> REPO
+    IMPL -. implementa .-> REPO
+    PDF -. implementa .-> PDFPORT
+    DAO --> ROOM[(Room: seis tabelas)]
+    REM --> SDK["SDK Firestore e cache"]
+    SDK --> FS[(Firestore oficial)]
+    PDF --> API["API Android PDF e arquivos locais"]
+    HOST --> SHARE["Compartilhamento Android"]
+```
+
+O nó conjunto de implementações resume três repositórios: catálogo usa Firestore; pessoais e avaliações usam Room. O [fluxo de dados](fluxo-dados.md) separa esses caminhos. `PDF → MAP` limita-se à formatação do relatório, sem consultas ao catálogo ou banco durante o desenho do PDF.
+
+### Dependências de código e execução
+
+Presentation depende de contratos/modelos e casos de uso do Domain; Data também depende do Domain para implementar seus contratos. Domain não importa Data, Android, Compose, Room, Firebase, `Context`, `Uri`, `NavController` ou ViewModel. Pode utilizar Kotlin e Coroutines/Flow, independentes de Android; isso não introduz acesso à infraestrutura no núcleo.
+
+Em execução, um clique chega ao ViewModel, que chama um caso de uso ou consulta simples pelo contrato de repositório. A instância concreta recebida executa o acesso externo e retorna modelos/erros tipados; o ViewModel publica UiState. A chamada de Domain para uma instância Data ocorre por uma interface do próprio Domain. Isso não cria dependência de código `Domain → Data`. A UI renderiza estado; recomposição não dispara escrita.
+
+### Construção e fornecimento das dependências
+
+Proposta ARQ-P02: injeção por construtor e montagem manual em `AppContainer`, com fábrica de ViewModels integrada ao proprietário AndroidX. O container cria Room, cliente Firestore, repositórios, gerador PDF e casos de uso, e fornece dispatchers. A fábrica recebe dependências e dados mínimos de navegação/estado salvo. UI e Domain não procuram o container globalmente.
+
+Banco/cliente/repositórios podem ser compartilhados no escopo da aplicação; motores e casos de uso sem estado não exigem escopos sofisticados. A edição pertence ao `AvaliacaoViewModel` da sessão, nunca a um singleton do container. Dependências Android usam contexto de aplicação quando necessário, sem reter Activity em ViewModel/repositório. O host de compartilhamento usa a Activity somente enquanto disponível. [Comparação e aprovação pendente](decisoes-pendentes.md).
+
+## Organização sugerida do código
+
+Proposta ARQ-P01: começar com **um único módulo Android `app`**, organizado por pacotes. Múltiplos módulos acrescentariam configuração Gradle e coordenação sem necessidade atual de distribuição independente. Pacotes não impõem fronteiras de compilação: revisão de imports e testes devem proteger a regra de dependência. Extrair módulos só diante de necessidade concreta.
+
+Estrutura futura sob o namespace existente `br.edu.ufu.pdm.mcdm`:
+
+```text
+app/src/main/java/br/edu/ufu/pdm/mcdm/
+├── presentation/
+│   ├── catalogo/        # consulta oficial/pessoal e detalhes
+│   ├── produtopessoal/  # formulário e manutenção
+│   ├── avaliacoes/      # listagem salva
+│   ├── avaliacao/       # sessão: seleção, valores, AHP, revisão e resultado
+│   ├── navigation/      # host, destinos e argumentos após decisão
+│   ├── exportacao/      # compartilhamento Android
+│   └── components/      # componentes visuais realmente reutilizados
+├── domain/
+│   ├── model/           # domínio aprovado e resultados tipados
+│   ├── repository/      # contratos de catálogo, pessoais e avaliações
+│   ├── usecase/         # operações com regras/orquestração relevantes
+│   ├── validation/      # valores, compatibilidade e invariantes
+│   ├── engine/          # responsabilidades AHP e TOPSIS
+│   └── exportacao/      # conteúdo e porta PDF sem Android
+├── data/
+│   ├── repository/      # implementações dos contratos
+│   ├── local/           # Room, DAOs, entidades e codecs
+│   ├── remote/          # Firestore, DTOs e listeners
+│   ├── mapper/          # representação externa ↔ domínio
+│   └── exportacao/      # adaptador Android de PDF
+└── di/                  # AppContainer e ViewModelFactory
+```
+
+A árvore orienta organização posterior: nenhum pacote/classe Kotlin novo foi criado. O motor só será movido/adaptado na implementação. Testes JVM futuros concentram regras, motores e ViewModels com fakes; testes instrumentados verificam Room, integração Android e Compose.
+
+## Testabilidade e manutenção
+
+Contratos permitem substituir Firestore/Room por fakes e testar casos de uso sem rede. Motores recebem matrizes e retornam resultados, sem repositórios. Dispatchers substituíveis tornam concorrência testável. Mappers/transações têm testes próprios de tipos, round-trip e atomicidade. Composables recebem estado/callbacks, permitindo verificar renderização sem construir todo o grafo.
+
+RNF09–RNF11 e DEC-029 orientam os testes, sem alegar execução do aplicativo nesta etapa. RNF05/06/08 mantêm integridade, offline disponível e dados pessoais locais. Não se promete recuperação de edição após morte do processo, catálogo integral offline ou reprodução binária entre versões do motor.
+
+## Pendências e status de aprovação
+
+ARQ-P01–ARQ-P06 estão em [decisões pendentes](decisoes-pendentes.md), sem ocupar IDs DEC nem alterar o registro aprovado. Antes de encerrar a Etapa 4: obter revisão independente, resolver achados, alinhar com a equipe e registrar aprovação explícita. Configuração e testes de implementação ficam para a etapa técnica; o [checklist](referencias-e-validacao.md) distingue os trabalhos.
+
+Para o vídeo: apresentar três camadas/quatro responsabilidades; seleção e cálculo sem salvar; salvamento manual atômico; catálogo/cache independente dos snapshots Room; pendências e limites. Estes documentos não comprovam apresentação ou entrega ao professor.
