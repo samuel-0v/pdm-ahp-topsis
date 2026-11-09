@@ -1,5 +1,7 @@
 # Aplicação manual no Figma sem chamadas MCP
 
+**Registro histórico v0.2.** Este pacote não foi instalado/executado e não inclui a revisão v0.3. Ver [fontes atuais e retomada](../../README.md) e [plano Figma v0.3](../plano-revisao-v03.json). Não executar scripts de criação inicial nem aplicar o pacote sem inspeção do arquivo atual.
+
 **Preparado em 08/11/2026; não instalado nem executado.** É um plugin de desenvolvimento local para aplicar os scripts revisáveis aos 84 frames existentes. Não é plugin generativo, não foi publicado e não muda o status atual do arquivo Figma: conexões continuam pendentes.
 
 A leitura MCP respondeu em 08/11, mas a chamada de gravação voltou a receber bloqueio Starter. Esta alternativa permite executar o trabalho pelo editor autorizado quando houver uma sessão Figma com edição e suporte a plugins locais. Sua disponibilidade nessa sessão não foi verificada aqui.

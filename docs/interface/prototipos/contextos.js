@@ -1,3 +1,4 @@
+// HISTÓRICO v0.2. Não incorporado no HTML v0.3; a sessão atual está em prototipo.js.
 // Projeção de cenários fixos do storyboard. Não calcula AHP ou TOPSIS.
 const fixtureData=JSON.parse(document.getElementById('fixtures').textContent);
 const demoCategories={

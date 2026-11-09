@@ -1,0 +1,78 @@
+{
+  "dataContextual": "2026-11-08 a 2026-11-09 America/Sao_Paulo",
+  "branch": "docs/etapa5-interface-navegacao",
+  "headInicial": "88f222680d298ca06b3dca7a76af266dbede8e0d",
+  "gitInicialLimpo": true,
+  "arquivosProtegidos": {
+    "total": 99,
+    "alterados": [],
+    "escopo": "app, requisitos, modelagem, decisões e arquitetura; comparação SHA-256 antes/depois"
+  },
+  "figma": {
+    "arquivo": "S1Ba7mzFVfE1d0ds21FR36",
+    "sessaoRevisao": "39d35ff4-bc6e-4dc6-aa80-ea55210177a2",
+    "leituraAtual": "bloqueada por quota MCP Starter",
+    "mutacaoNestaRevisao": false,
+    "inventarioHistorico": 84,
+    "conexoesAtuaisVerificadas": false,
+    "pluginInstaladoExecutadoNestaRevisao": false
+  },
+  "androidTalkBackParticipantesTeams": "não executados",
+  "resultados": {
+    "documentacao": {
+      "status": "PASS",
+      "comando": "python3 docs/interface/prototipos/verificar_documentacao.py",
+      "saida": "PASS: 87 descritores locais; 84 IDs Figma históricos; 225 destinos; 111 links locais e 3 âncoras; RF01–RF27/UC01–UC16; geração/sintaxe/SVG. Sem inspeção Figma atual."
+    },
+    "fixtures": {
+      "status": "PASS",
+      "comando": "python3 docs/interface/prototipos/validar_fixture.py",
+      "saida": "13 cenários ilustrativos conferidos; não são testes dos motores Android."
+    },
+    "matematica": {
+      "status": "PASS",
+      "comando": "node docs/interface/prototipos/verificar_matematica.cjs",
+      "saida": "{\n  \"status\": \"PASS\",\n  \"checks\": 234,\n  \"fixtures\": 13,\n  \"scope\": \"Somente matemática do demonstrador JS; não é teste do motor Android.\"\n}"
+    },
+    "contraste": {
+      "status": "PASS",
+      "comando": "python3 docs/interface/prototipos/verificar_contraste.py",
+      "saida": "PASS: 18 pares; texto ≥4,5:1, borda/foco ≥3:1."
+    },
+    "pluginPreventivo": {
+      "status": "PASS",
+      "comando": "node docs/interface/prototipos/figma/plugin-local/verificar_plugin.cjs /tmp/pdm-etapa5-plugin-revisao-v03",
+      "saida": "3 verificações de inspeção preventiva e manifesto sem rede passaram. API de mutação e execução real do plugin não foram testadas."
+    },
+    "diffCheck": {
+      "status": "PASS",
+      "comando": "git diff --check",
+      "saida": ""
+    },
+    "interacoes-v03": {
+      "status": "PASS",
+      "verificacoes": 283,
+      "layouts": 64,
+      "movimentoReduzido": false,
+      "evidencia": "interacoes-v03.json"
+    },
+    "interacoes-v03-movimento-reduzido": {
+      "status": "PASS",
+      "verificacoes": 283,
+      "layouts": 64,
+      "movimentoReduzido": true,
+      "evidencia": "interacoes-v03-movimento-reduzido.json"
+    },
+    "capturas": {
+      "pngs": 11,
+      "fontesCorrespondemAoHTMLAtual": true,
+      "inspecaoVisual": "início, AHP, resultado, abertura, BEV, mistura, cadastro e diálogo; comparar antes/depois conforme parecer"
+    },
+    "diagramaVetorial": {
+      "status": "inspecionado",
+      "metodo": "renderização real Chrome em /tmp/pdm-ui-svg-revisao.png; XML conferido pelo verificador documental",
+      "limite": "Resumo; os retornos e cancelamentos detalhados estão em navegacao.md"
+    }
+  },
+  "finalizadoEm": "2026-11-09T00:05:31-03:00"
+}

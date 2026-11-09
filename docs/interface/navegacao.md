@@ -4,13 +4,13 @@
 
 [Resumo vetorial editável em SVG](prototipos/mapa-navegacao.svg).
 
-**Proposta conceitual 0.2, alinhamento documental em 08/11/2026.** Preserva o fluxo de RF01–RF27 e os contratos anteriores, com Navigation Compose adotado na DEC-047 e abertura animada reconhecida na DEC-049, sem definir rotas Kotlin concretas. A categoria fica fixa durante toda a avaliação. Os diagramas representam o comportamento pretendido; o Figma ainda não recebeu as conexões por limite MCP. A abertura acrescentada abaixo ainda não foi aplicada ao HTML/Figma.
+**Revisão v0.3, 08–09/11/2026.** Fluxos aplicados ao demonstrador HTML, alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente; conexões Figma não foram verificadas/aplicadas nesta revisão.
 
 ```mermaid
 flowchart TD
     APP([Lançamento do aplicativo]) --> SPLASH["Abertura/Splash animada no host Android"]
     SPLASH --> CAT
-    CAT <--> LIST
+    CAT <--> LIST[Avaliações salvas]
     CAT[Catálogo] --> CATEG[Selecionar categoria]
     CATEG --> PROD[Produtos oficiais e pessoais da categoria]
     PROD --> DET[Detalhes do produto]
@@ -27,7 +27,9 @@ flowchart TD
     AHP --> DRAFT
     PROG --> DRAFT
     DRAFT --> DRAFTSAVE[Persistir rascunho localmente]
-    DRAFTSAVE --> LIST[Avaliações salvas]
+    DRAFTSAVE --> STAY[Manter etapa; versão salva confirmada]
+    SEL --> PESSSEL[Cadastro pessoal durante seleção]
+    PESSSEL -- Retornar sem selecionar automaticamente --> SEL
     SEL --> VAL[Ajustar valores dos critérios]
     VAL --> AHP[Comparar um par de critérios]
     AHP --> PROG[Atualizar progresso e permitir voltar/revisar]
@@ -49,7 +51,7 @@ flowchart TD
     RESULT --> SAVE{Salvar explicitamente?}
     SAVE -- Sim --> PERSIST[Persistir configuração e resultado válido quando existente]
     SAVE -- Não --> DIRTY[Manter alterações pendentes]
-    PERSIST --> LIST
+    PERSIST --> SAVED[Confirmar gravação; manter etapa ou seguir saída solicitada]
     PERSIST -- Falha ao salvar: manter edição --> DIRTY
     LIST -- Retomar rascunho --> RESUME[Restaurar última configuração salva]
     RESUME --> SEL
@@ -63,7 +65,7 @@ flowchart TD
     CHANGE --> DIRTY
     DIRTY --> EXIT{Sair com alterações?}
     EXIT -- Salvar --> PERSIST
-    EXIT -- Descartar --> LIST
+    EXIT -- Descartar --> ORIGIN[Retornar à origem solicitada]
     EXIT -- Continuar editando --> CHANGE
     LIST --> DELETE[Solicitar exclusão]
     DELETE --> CONF{Confirmar?}
@@ -86,13 +88,13 @@ flowchart TD
 
 A consulta da avaliação processada oferece exportação pelo [UC16](../requisitos/casos-de-uso/05-exportacao.md), conforme [RF27](../requisitos/funcionais/07-exportacao.md). Sem edição pendente, gerar a partir da versão salva elegível e abrir o compartilhamento padrão do Android.
 
-Com alterações não salvas, oferecer **Salvar e exportar**, **Exportar última versão salva** e **Cancelar**. A primeira opção exige resultado atualizado e persistência bem-sucedida; a segunda depende de versão salva processada e mantém a edição pendente. Informar necessidade de recálculo antes de permitir exportar uma edição desatualizada. Cancelamentos e falhas não alteram a avaliação salva. Os diálogos D02 e o compartilhamento T13 são representados no protótipo local e nos frames do Figma.
+Com alterações não salvas, oferecer **Salvar e exportar**, **Exportar última versão salva** e **Cancelar**. A primeira opção exige resultado atualizado e persistência bem-sucedida; a segunda depende de versão salva processada e mantém a edição pendente. Informar necessidade de recálculo antes de permitir exportar uma edição desatualizada. Cancelamentos e falhas não alteram a avaliação salva. O diálogo D02 e T13 são funcionais no demonstrador; os frames históricos Figma não comprovam navegação aplicada. O HTML não gera um PDF real.
 
 Identidade das alternativas segue origem + ID (DEC-034). Processamento válido sem diferenciação pode ser salvo e listado como **Concluída — sem diferenciação** (DEC-035); isso não converte falhas de normalização em resultados válidos.
 
 ## Voltar do Android e encerramento de edição
 
-Voltar entre etapas conserva a sessão em memória. Encerrar a edição aplica a DEC-025. Retomar abre a primeira pendência útil (seleção, valores, par AHP ou revisão); o storyboard local restaura o estado fixo da última gravação simulada.
+Voltar entre etapas conserva a sessão em memória. Encerrar a edição aplica a DEC-025. Retomar abre a primeira pendência útil (seleção, valores, par AHP ou revisão); o demonstrador restaura a configuração efetivamente salva em memória, inclusive texto inválido e julgamentos pendentes. Recarregar a página elimina a simulação; “restaurar” é um controle do laboratório, não uma funcionalidade extra do app.
 
 | Contexto | Comportamento proposto |
 |---|---|
@@ -104,7 +106,7 @@ Voltar entre etapas conserva a sessão em memória. Encerrar a edição aplica a
 | Seleção inicial de uma avaliação | Encerrar sessão; aplicar D01 quando houver alterações, inclusive avaliação nova nunca salva. |
 | Resultado recém-processado | Voltar à revisão preserva resultado atual em memória; sair da sessão aplica D01 se o resultado for novo/diferente do salvo. |
 | Consulta de avaliação salva sem edição | Retornar às avaliações, sem aviso de alterações inexistentes. |
-| Processamento em curso | Retornar à revisão sem publicar resposta tardia em edição abandonada. Cancelamento/identificação da operação depende da arquitetura. |
+| Processamento em curso | Retornar à revisão sem publicar resposta tardia em edição abandonada. No HTML a assinatura/token da operação impede publicação tardia; integração real segue a arquitetura. |
 | Avaliações na raiz | Retornar ao Catálogo; na raiz Catálogo, seguir saída normal do Android quando não houver edição. |
 | Compartilhamento padrão | Cancelar retorna à avaliação; não significa envio nem desfaz salvamento já confirmado. |
 
@@ -127,7 +129,7 @@ flowchart TD
     D01 -- Continuar editando --> EDIT[Fechar diálogo e manter edição]
 ```
 
-Na proposta, a origem pode ser catálogo, lista ou detalhe salvo. O protótipo local retorna à lista após salvar e ao descartar rascunhos para facilitar a demonstração; esse retorno é uma escolha visual proposta. Descartar edição de concluída restaura sua consulta salva. Salvar no aviso só permite sair depois do sucesso.
+A origem da sessão é a categoria/lista que iniciou a avaliação. Salvar pela ação da etapa mantém a etapa e atualiza a versão salva; salvar no aviso só permite sair após sucesso. Descartar restaura a versão anterior sem alterar produtos pessoais já gravados e encerra a sessão para a origem solicitada. Uma consulta salva volta à lista sem aviso inexistente. Detalhes de avaliação voltam ao resultado. Navegar dentro do assistente nunca salva.
 
 Mudança de valores/alternativas desatualiza TOPSIS, mantendo AHP se julgamentos/critérios não mudaram. Mudança de julgamento desatualiza ambos. Abrir edição sem alterar não invalida resultado; resultado recém-calculado novo/diferente também é conteúdo pendente. Alterações em memória não afetam a versão persistida até salvar.
 

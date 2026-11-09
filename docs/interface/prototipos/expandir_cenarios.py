@@ -1,4 +1,5 @@
-"""Prepara cenários locais adicionais; não escreve no arquivo Figma nem no app."""
+"""Preparação histórica v0.2; não executar sobre o manifesto atual v0.3."""
+raise SystemExit("Artefato histórico v0.2. Para regenerar a UI atual, execute atualizar_html.py; fixtures existentes são verificadas por validar_fixture.py.")
 import json
 from copy import deepcopy
 from pathlib import Path

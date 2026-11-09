@@ -1,79 +1,55 @@
-# Revisão e validação da proposta
+# Verificação da revisão UI/UX
 
-**Atividade iniciada em 06/11/2026; continuação local em 08/11/2026. Status: material preparado para revisão; Etapa 5 ainda aberta.** Branch: `docs/etapa5-interface-navegacao`, criada nesta continuação. Commit e push foram autorizados posteriormente pelo usuário.
+[Índice](README.md) · [Parecer](revisao-uiux.md) · [Fontes reproduzíveis](prototipos/README.md)
 
-[Índice](README.md) · [Rastreabilidade](mapa-telas.md) · [Limites do protótipo](prototipos/README.md)
+**Rodada v0.3 · 08–09/11/2026 · branch `docs/etapa5-interface-navegacao`.** Git foi conferido limpo antes das edições, no HEAD integrado à Etapa 4. Requisitos/modelagem/decisões/arquitetura e código Android foram preservados. Evidências v0.1/v0.2 continuam históricas, sem serem apresentadas como resultado desta rodada.
 
-## Evidências executadas
+## Resultados executados
 
-| Verificação | Resultado e limite |
+| Verificação | Resultado e alcance |
 |---|---|
-| Leitura da base aprovada e enunciado | Base e adaptações registradas no índice; requisitos e DEC-001–DEC-042 não foram editados. |
-| Acesso Figma | Autenticação, criação de arquivo separado, importações e montagem confirmadas pelo serviço. 84 frames na página do protótipo; ledger com IDs reais. |
-| Revisão visual Figma | Capturas de entrada, AHP, resultado, diálogo e amostra ampliada inspecionadas. Encontrados os problemas registrados em `prototipos/README.md`; correções/conexões interrompidas pelo limite do plano Starter. **Não aprovado visualmente nem como fluxo navegável.** |
-| Números ilustrativos | **Treze cenários** conferidos: cinco originais e oito combinações de alternativas em smartphones/BEV, com naturezas próprias. Não são testes dos motores Android. |
-| Contraste proposto | Sete pares de texto/fundo com razão calculada ≥4,5:1; valores em [contraste.json](prototipos/evidencias/contraste.json). Não é auditoria de todos os nós/estados do Figma. |
-| Interação local v0.2 | **124 verificações passaram** no Chrome 151.0.7922.169 headless, Linux, viewport de teste 1440 × 1200 CSS px. [Relatório atual](prototipos/evidencias/interacoes-v02.json) e [roteiro executável](prototipos/verificar_navegador.py). O [relatório v0.1](prototipos/evidencias/interacoes.json), com 84 verificações, foi preservado como histórico. |
-| Geometria local | Parte das 124 verificações: sete telas × larguras 360/600 × texto 100%/200%, sem elementos essenciais fora da largura e com altura dos botões ≥48 px. Não comprova toda a matriz Android nem TalkBack. |
-| Links/manifesto/sintaxe | Destinos, links, 86 descritores locais, correspondência dos 84 IDs Figma, HTML/projetor/fixtures embutidos e SVG conferidos pelo verificador documental. Fontes do plugin e scripts Figma com sintaxe válida; API de mutação não foi testada. |
-| Inspeção preventiva do plugin | Três verificações em Node: rejeitar arquivo diferente, rejeitar controle ausente e inspecionar o inventário correto sem chamar aplicação. Manifesto sem rede conferido. Não equivale a teste real do plugin no Figma. |
-| Whitespace e escopo | `git diff --check` executado; revisão dos arquivos para garantir ausência de alterações Android/requisitos/decisões. Sem commit. |
+| `verificar_documentacao.py` | PASS: 87 descritores de referência, 84 IDs Figma históricos, destinos válidos, links locais e âncoras, RF01–RF27/UC01–UC16, geração idêntica às fontes, sintaxe JS e SVG. Não consulta Figma nem valida a API de mutação. |
+| `validar_fixture.py` | PASS: 13 cenários de referência recalculados em Python, com naturezas próprias de smartphones/BEV. |
+| `verificar_matematica.cjs` | PASS: 234 verificações do calculador web, comparando pesos/λ/IC/RC, distâncias, coeficientes e postos com 13 fixtures; centavos/finitude/fração/overflow/colisão e julgamentos pendentes. [Relatório](prototipos/evidencias/revisao-v03/matematica-v03.json). |
+| `verificar_navegador.py` | PASS: **283 verificações** de interações DOM reais em Chrome headless. [Relatório](prototipos/evidencias/revisao-v03/interacoes-v03.json). Não é teste de implementação Android. |
+| Mesmo roteiro com `--movimento-reduzido` | PASS: 283 verificações; `matchMedia` confirmou preferência reduzida ativa. [Relatório](prototipos/evidencias/revisao-v03/interacoes-v03-movimento-reduzido.json). Abertura segue ao conteúdo sem repetição. |
+| Responsividade e alvos | 16 telas/estados × 360/600 CSS px × 100/200% = **64 combinações**, sem corte horizontal dos elementos inspecionados, alvos de ambos os eixos ≥48 px e rótulos/ajudas associados. Diálogo de saída nas quatro combinações também cabe e permite rolagem. |
+| `verificar_contraste.py` | PASS: **18 pares** sRGB; texto ≥4,5:1 e borda/foco ≥3:1. [Razões](prototipos/evidencias/revisao-v03/contraste-v03.json). Sem alegar auditoria de todos os estados Figma/Android. |
+| Capturas e inspeção | Onze PNGs reais: três antes e oito depois, com origem/metadados. Inspecionados início, AHP, ranking, abertura, BEV, mistura, cadastro ampliado e diálogo. [Comparação e links](revisao-uiux.md#antes-e-depois-visual). |
+| Figma | Sessão criada, tentativa de leitura bloqueada pelo limite MCP Starter; `whoami` confirmou o plano. Nenhum inventário atual, screenshot ou fluxo remoto foi verificado nesta revisão; nenhuma mutação efetuada. |
+| Inspeção do plugin histórico | Três verificações preventivas em Node passaram sobre pacote regenerado em `/tmp`: arquivo divergente, controle ausente e inventário de referência. Nenhuma mutação/API Figma executada; ZIP/ledger anteriores preservados. |
+| Escopo/Git | Hashes dos 99 arquivos protegidos conferidos; `git diff --check` sem erros. [Registro consolidado](prototipos/evidencias/revisao-v03/verificacoes-v03.json). |
 
-As interações exercitadas incluem seleção mínima, dez pares pendentes/respondidos, AHP/TOPSIS sem autosave, as três opções da DEC-025, falha no próximo salvamento com preservação da edição, retomada/descarte de rascunho, edição de concluída, exportação da última salva mantendo mudanças, bloqueio RC, empate e conclusão/exportação simulada sem diferenciação. Não há teste de banco, rede, compartilhamento real ou desempenho de motores nesta rodada.
+A execução usa perfil temporário do Chrome, sem sessão pessoal, rede de catálogo, instalação de dependências ou armazenamento persistente. Os relatórios incluem data contextual e limites. Não foram feitos testes de desempenho Android, Room/Firestore, geração de PDF, serviço de compartilhamento ou entrega externa.
 
-Na continuação foram exercitados também: percurso BEV completo com dez pares próprios; preservação de categoria após salvar; cadastro pessoal durante seleção; falha de cadastro sem perda da seleção; seleção mista; coexistência de nomes iguais com origem diferente; empate entre esses registros; descarte de uma nova categoria preservando a versão anterior; abertura de edição concluída sem marcar alteração só por abrir.
+## Percursos e exceções exercitados
 
-Capturas **do HTML local**, que cresce verticalmente e permite rolagem:
+- **Entrada:** T00 presente no lançamento; animação/transição liberam catálogo sem consulta remota; sem criação/salvamento de avaliação; retorno/restauração não repetem abertura. Texto da abertura também conferido a 100/200%.
+- **Smartphones:** mínimo de duas identidades; edição de preço preservando original/catálogo; dez respostas explícitas; AHP consistente; revisão; TOPSIS correspondente às entradas, resultado inicialmente não salvo. Percurso adicional de preferência 3 gera pesos/RC e coeficiente não uniforme conferidos com oráculo Python, sem resultado fixo fictício.
+- **BEV:** seleção, valores, dez pares, pesos, revisão, resultado e gravação, preservando seguro anual, custo da recarga e critérios próprios.
+- **Mista/cadastro:** erro obrigatório com foco no campo; falha de cadastro mantém formulário e sessão; sucesso retorna à mesma seleção sem associação automática; nomes iguais mantêm origem/ID; descartar avaliação não apaga produto pessoal já salvo.
+- **Sessão e versões:** abrir concluída não marca mudança; editar valores invalida TOPSIS e conserva AHP; mudar julgamento invalida ambos; pendência/resultado novo conta como mudança; salvar texto inválido mantém rascunho e remove conclusão afetada; retomar conserva respostas parciais. Restauração usa somente versão salva.
+- **Saída/foco:** três ações DEC-025, continuar preserva edição, diálogo recebe/devolve foco; falha de gravação mantém tela, edição e versão anterior com mensagem persistente. Voltar dos detalhes vai ao resultado; navegação interna não salva.
+- **Matemática e compatibilidade:** inconsistência bloqueia; empate competitivo; conclusão válida sem diferenciação sem C*/posto/vencedor; norma zero é falha; fração de centavo e colisão Double rejeitadas; original/semântica incompatíveis bloqueados sem atalho pelo efetivo; novo cadastro não copia números antigos.
+- **PDF/exclusão/consulta:** atual desatualizada bloqueia Salvar e exportar; exportar anterior mantém edição; falhas de PDF/compartilhamento não desfazem gravação nem afirmam envio; cancelar/falhar exclusão preserva registro; cache insuficiente, vazio confirmado e permissão negada distintos.
 
-- [Revisão em 360](prototipos/evidencias/revisao-360.png).
-- [Resultado em 600 com texto 200%](prototipos/evidencias/resultado-600-texto200.png).
-- [Revisão BEV v0.2 em 360](prototipos/evidencias/bev-revisao-360.png).
-- [Resultado misto v0.2 em 600/texto 200%](prototipos/evidencias/mista-resultado-600-texto200.png).
+## Acessibilidade: o que foi e não foi testado
 
-## Retomada do Figma em 08/11
+A geometria foi medida no DOM, não em dp de aparelho Android. Larguras são internas ao demonstrador em viewport desktop de 1440 × 1200 CSS px; texto é escalado pelo laboratório. Rótulos, `aria-describedby`, nomes dos campos repetidos com produto/critério/unidade, ordem DOM, mensagens com texto/símbolo, foco de diálogo e primeiro campo inválido foram conferidos por código e inspeção visual. A página e diálogos rolam verticalmente; cards/métricas refluem em 200%.
 
-A leitura confirmou os 84 frames e a estrutura anterior. A tentativa de aplicar correções foi rejeitada pelo limite de chamadas Starter, sem mutação confirmada. As reações internas M3 existentes não são conexões de fluxo do aplicativo. `whoami` confirmou o plano. Não se alterou o status do Figma para navegável.
+Isso não prova experiência com leitor de tela: **TalkBack, semântica Compose, teclado/IME, foco em aparelho, retorno do sistema, densidade/fontScale reais, rotação e morte do processo Android ainda não foram executados**. Não houve auditoria humana com tecnologia assistiva nem teste com participantes. O CSS respeita redução de movimento e a preferência foi efetivamente exercitada no Chrome; movimento no Figma continua pendente.
 
-Foi preparado um [plugin local de aplicação](prototipos/figma/plugin-local/README.md), com fontes revisáveis, empacotador, interface de inspeção/aplicação e relatório de IDs. O [ZIP de revisão](prototipos/figma/plugin-local/pacote-revisao.zip) ainda precisa do ID real de um plugin de desenvolvimento gerado pelo Figma; não foi instalado ou executado. A verificação sintática e os testes preventivos não validam layout, condicionais, overlays ou navegação no runtime Figma.
+## Roteiro de apresentação e aceite restante
 
-## Roteiro para a primeira apresentação
+1. Abrir o HTML e mostrar a abertura. Explorar detalhes de produto e dados fictícios/cache com data desconhecida.
+2. Criar Smartphones, selecionar dois e ajustar um valor. Confirmar igualdade ou explicar a escala completa, mostrar progresso e pesos/RC.
+3. Revisar/processar, explicar ranking e salvar manualmente. Editar concluída, mostrar resultado desatualizado e as três opções de saída.
+4. Demonstrar BEV e cadastro pessoal durante seleção; selecionar manualmente o novo produto.
+5. Usar o laboratório para inconsistência, empate, sem diferenciação e falhas de salvamento/PDF. Mostrar exportação da anterior sem perder edição.
+6. Mostrar 360/600 e texto 200%, com rolagem, indicando a limitação frente a Android/TalkBack.
 
-| Passo | Demonstrar | Evidência a apontar |
-|---|---|---|
-| 1 | Catálogo e detalhes de Smartphones Premium; mostrar que BEV usa outros critérios | T01–T03; apenas duas categorias aprovadas. |
-| 2 | Iniciar avaliação e selecionar uma alternativa, depois duas | Avanço bloqueado com menos de duas, seleção identificável. |
-| 3 | Conferir valores e preço efetivo ajustado | Original e efetivo distintos; catálogo não muda. |
-| 4 | Responder dez pares pela igualdade, revisando um anterior | Progresso real de respostas; ausência não vale 1. |
-| 5 | Mostrar pesos, λmax, IC, RI e RC | 20% por critério, RC 0 no cenário principal; cenário inconsistente separado bloqueia TOPSIS. |
-| 6 | Revisar, processar e consultar ranking | C* e distâncias coerentes, resultado ainda não salvo. |
-| 7 | Sair, continuar; simular falha e depois salvar | Três ações da DEC-025; falha não confirma gravação nem sai. |
-| 8 | Salvar/retomar rascunho; editar concluída e descartar | Separação entre edição em memória e versão salva. |
-| 9 | Mostrar empate e sem diferenciação | Mesmo posto no empate; nenhuma posição/C* inventada na ausência de diferenciação. |
-| 10 | Exportar última salva com edição pendente | Edição permanece; compartilhamento é simulado e não confirma envio. |
+Pode-se apresentar **o demonstrador HTML revisado**. Para fechar a Etapa 5, aplicar/verificar Figma e sua navegação, revisar a proposta com a equipe e verificar acesso do professor. Executar RNF01 com três participantes externos ao desenvolvimento, registrando ajuda e conclusão; RNF02 na implementação Android. Fontes/rubricas/imagens reais, vídeo e entrega formal seguem pendentes. Nenhum aceite ou envio ao Teams é declarado.
 
-Abrir o HTML para a demonstração navegável atual. Mostrar o Figma como trabalho editável em andamento, explicando a pendência de conexões; não apresentá-lo como fluxo já testado. O vídeo, a autorização de acesso do professor e o envio da entrega ainda precisam ser produzidos/verificados.
+## Arquivos da revisão
 
-## Validação de usabilidade e acessibilidade ainda necessária
-
-Aplicar o RNF01 com três participantes que não desenvolveram as telas: consultar produto, concluir avaliação, identificar melhor alternativa/empate e salvar/retomar rascunho. Explicar apenas o objetivo; registrar conclusão sem ajuda, ajuda necessária e dificuldades. Pelo menos dois de três devem concluir cada tarefa sem ajuda para navegar. Corrigir e repetir tarefas bloqueadas. Nenhum participante foi recrutado ou teste humano declarado nesta execução.
-
-No Android futuro, aplicar RNF02: retrato em 360/600 dp, fontes padrão/200%, fluxos de avaliação/resultados com TalkBack, ordem de leitura, semântica, texto/símbolo além da cor e alvos ≥48 × 48 dp. Verificar teclado, foco, diálogo, rolagem e ciclo de processo. A geometria do HTML não substitui esses testes.
-
-## Pendências para aceite
-
-| Prioridade | Trabalho |
-|---|---|
-| P0 | Corrigir e conectar Figma, testar no modo de apresentação e verificar permissão do avaliador. |
-| P0 | Revisar mapa/fluxos/telas com a equipe; alinhar o contrato de navegação com a Etapa 4. |
-| P1 | Portar seleção mista/cadastro/BEV do HTML para o Figma; completar entrada e AHP fora do cenário fixo e exceções secundárias. |
-| P1 | Rodar protocolo de usabilidade; revisar contraste e expansão de texto de todos os componentes Figma. |
-| P1 | Preparar capturas/vídeo e consolidar com a arquitetura para a primeira entrega. |
-| Posterior | Rotas, ViewModels, repositórios, PDF real, semântica Compose e testes Android, após autorização da etapa de implementação. |
-
-## Arquivos desta atividade
-
-Criados nesta execução: `docs/interface/README.md`, `mapa-telas.md`, `especificacao-telas.md`, `design-system.md`, `validacao.md` e os artefatos listados no [índice de protótipos](prototipos/README.md), incluindo HTML, manifesto, fixtures, scripts Figma, ledger, verificações, capturas e diagrama SVG.
-
-Alterados: `docs/interface/navegacao.md` e `docs/README.md`. O diretório `docs/entregas/` já estava não rastreado no início e foi preservado. Não foram alterados requisitos, decisões aprovadas, modelagem ou arquivos do aplicativo. Alterações paralelas de arquitetura ficam fora do commit da Etapa 5.
-
-Na continuação de 08/11 foram acrescentados o projetor `contextos.js`, a preparação `expandir_cenarios.py`, os metadados/registro Figma v0.1/continuação, as fontes e o ZIP de revisão do plugin local, duas capturas e `interacoes-v02.json`. HTML, manifesto, fixtures, verificadores e documentação da área foram atualizados. O registro JSON dessa continuação preserva o estado anterior à autorização posterior de commit e push.
+Documentos atualizados: README, mapa, navegação, especificação, design system, validação e índice de protótipos; criado o parecer independente. Fontes novas: template/CSS/JS da UI, calculador demonstrativo, roteiro DOM, verificador matemático/contraste e capturador. Gerador/HTML/manifesto/verificadores documental e de navegador atualizados; projetor/expansor antigos identificados como históricos. SVG redesenhado com T00. Figma: script 05 e plano preparados, README do plugin com limite de versão; ledger, scripts de criação e ZIP anteriores preservados. PNGs/JSONs da rodada em `prototipos/evidencias/revisao-v03/`.

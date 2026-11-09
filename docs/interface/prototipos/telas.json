@@ -1,8 +1,25 @@
 {
-  "versao": "0.2 · 08/11/2026 · continuação local",
+  "versao": "0.3 · revisão UI/UX · 08–09/11/2026",
   "figma": "https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36",
-  "aviso": "Cenários fictícios: catálogo BEV, seleção mista e cadastro na seleção são projetados localmente. Figma conserva 84 frames v0.1, sem novas gravações. AHP confirma igualdade; números TOPSIS vêm de fixtures verificadas, sem motor no protótipo.",
+  "aviso": "87 descritores de referência, 84 frames Figma históricos; HTML v0.3 usa sessão e renderização próprias, cálculos reais demonstrativos, inputs livres e splash DEC-049. Figma atual não pôde ser inspecionado por limite MCP.",
   "screens": [
+    {
+      "id": "T00",
+      "title": "Abertura animada",
+      "group": "Host de apresentação",
+      "figmaPendente": true,
+      "body": [
+        {
+          "type": "text",
+          "text": "PDM AHP-TOPSIS · Compare com clareza",
+          "role": "title"
+        }
+      ],
+      "footer": [],
+      "auto": "T01",
+      "animated": true,
+      "semDuracaoObrigatoria": true
+    },
     {
       "id": "T01",
       "title": "Compare com clareza",

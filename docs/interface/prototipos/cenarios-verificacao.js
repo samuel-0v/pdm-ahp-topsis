@@ -1,0 +1,84 @@
+/* Roteiro de interação em DOM real, carregado apenas pelo verificador headless. */
+(async()=>{
+ const passed=[],layouts=[];const assert=(value,label)=>{if(!value)throw new Error(label);passed.push(label);};
+ const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+ const root=()=>$('dialog').open?$('dialog'):$('phone');
+ const click=label=>{const b=[...root().querySelectorAll('button')].find(x=>x.textContent===label&&!x.disabled&&!x.hidden);if(!b)throw new Error('Controle ausente/habilitado: '+label);b.click();};
+ const input=(id,value)=>{const x=$(id);if(!x)throw new Error('Campo ausente: '+id);x.value=value;x.dispatchEvent(new Event('input',{bubbles:true}));};
+ const choose=key=>{$('scenario').value=key;$('scenario').dispatchEvent(new Event('change'));};
+ const fail=key=>{$('failure').value=key;$('failure').dispatchEvent(new Event('change'));};
+ const select=i=>{const key=C[S.edit.category].products[i].key;document.querySelector('[data-key="'+key+'"]').click();};
+ const begin=categoryKey=>{resetDemo();document.querySelector('[data-category="'+categoryKey+'"]').click();click('Iniciar avaliação');};
+ const allEqual=()=>{for(let i=0;i<10;i++){$('pref-equal').click();click(i===9?'Validar pesos e consistência':'Próxima comparação');}};
+ const complete=async categoryKey=>{begin(categoryKey);select(0);select(1);click('Conferir valores');click('Comparar critérios');allEqual();click('Revisar avaliação');click('Processar TOPSIS');await wait(80);};
+ try{
+  assert(S.route==='T00'&&S.splashCount===1,'Abertura DEC-049 presente no lançamento');await wait(1000);
+  assert(S.splashSeen&&$('splash').hidden&&S.route==='T01','Abertura transiciona ao conteúdo sem rede ou espera de dois segundos');
+  assert(!S.edit&&!S.records.length,'Abertura não cria nem salva avaliação');
+  for(const scale of [1,2]){document.documentElement.style.setProperty('--scale',scale);$('splash').hidden=false;const rect=$('splash').getBoundingClientRect(),last=$('skip-splash').getBoundingClientRect();assert(last.bottom<=rect.bottom&&last.left>=rect.left&&last.right<=rect.right,'Abertura permite leitura/ação em texto '+scale*100+'%');$('splash').hidden=true;}document.documentElement.style.setProperty('--scale',1);
+  begin('phone');assert(dirty()&&!S.records.length,'Nova avaliação é pendente e não salva automaticamente');assert($('next').disabled,'Zero alternativas bloqueia avanço');
+  select(0);assert($('next').disabled,'Uma alternativa bloqueia avanço');select(1);assert(!$('next').disabled,'Duas identidades distintas liberam conferência');
+  click('Conferir valores');assert($('value-0-1').getAttribute('aria-label').includes('Aurora Pro'),'Campo repetido identifica produto, critério e unidade');input('value-0-1','5.000,00');assert(S.edit.alts[0].original[1]==='5.200,00','Ajuste preserva valor original');
+  assert(C.phone.products[0].values[1]==='5.200,00','Ajuste não modifica catálogo');click('Comparar critérios');
+  assert($('next').disabled,'Par não respondido bloqueia próximo');$('pref-right').click();assert(S.edit.judgments[0]===null&&$('next').disabled,'Sentido sem intensidade não vira resposta implícita');
+  $('intensity-3').click();assert(S.edit.judgments[0]===1/3,'Preferência pelo segundo critério aplica recíproco');$('pref-equal').click();
+  for(let i=0;i<10;i++){if(i)$('pref-equal').click();assert(S.edit.judgments.filter(x=>x!==null).length===i+1,'Progresso por respostas efetivas '+(i+1));click(i===9?'Validar pesos e consistência':'Próxima comparação');}
+  assert(ahpCurrent()&&S.edit.ahp.consistent,'AHP completo e consistente');assert(S.edit.ahp.weights.every(w=>Math.abs(w-.2)<1e-9),'Pesos uniformes corretos no cenário igual');
+  click('Revisar avaliação');click('Processar TOPSIS');await wait(80);assert(S.route==='T12'&&topCurrent(),'Resultado TOPSIS atual calculado');
+  const expected=JSON.parse($('fixtures').textContent).cenarios.find(s=>s.id==='principal').topsis;
+  for(const row of S.edit.topsis.rows){const x=expected.alternativas.find(r=>r.alternativa===row.index);assert(Math.abs(row.coefficient-x.coeficiente)<1e-9,'Coeficiente correspondente à entrada livre, alternativa '+row.index);}
+  assert(!S.records.length&&dirty(),'Processar não salva resultado');const exitFocus=[...$('appbar').querySelectorAll('button')].find(b=>b.textContent==='Sair');exitFocus.focus();click('Sair');assert($('dialog').open&&$('dialog').querySelectorAll('button').length===3,'DEC-025 oferece três escolhas');
+  assert($('dialog').contains(document.activeElement),'Diálogo recebe foco ao abrir');
+  click('Continuar editando');assert(document.activeElement===exitFocus,'Fechar diálogo devolve foco à origem');assert(S.route==='T12'&&dirty(),'Continuar mantém edição');fail('save');click('Sair');click('Salvar');assert(S.route==='T12'&&dirty()&&!S.records.length,'Falha ao salvar impede saída e preserva edição');
+  assert($('content').querySelector('[role=alert]'),'Falha de salvamento permanece visível além do toast');
+  click('Salvar avaliação');assert(S.records.length===1&&!dirty(),'Salvar confirma versão separada');const savedId=S.edit.id,savedCoefficient=S.records[0].payload.topsis.rows[0].coefficient;
+  click('Editar avaliação');assert(S.route==='T07'&&!dirty(),'Abrir edição não invalida nem marca alteração');input('value-0-1','1,231');
+  assert(dirty()&&!topCurrent()&&ahpCurrent(),'Mudar valor desatualiza TOPSIS e preserva AHP');assert(S.records[0].payload.topsis.rows[0].coefficient===savedCoefficient,'Edição preserva resultado salvo');
+  go('T12');assert(!$('content').querySelector('.result-card'),'Resultado desatualizado não é mostrado como atual');click('Exportar PDF');
+  assert($('dialog').querySelector('button').disabled,'Edição desatualizada bloqueia Salvar e exportar');click('Exportar última versão salva');
+  assert(S.pdf.payload.alts[0].values[1]==='5.000,00'&&S.edit.alts[0].values[1]==='1,231'&&dirty(),'PDF da última salva não mistura dados e conserva edição');click('Cancelar compartilhamento');
+  click('Sair');click('Descartar alterações');assert(S.records[0].payload.id===savedId&&eligible(S.records[0]),'Descartar mantém a versão concluída');
+  loadRecord(savedId);click('Editar avaliação');input('value-0-1','1,231');click('Salvar rascunho');
+  assert(statusLabel(S.records[0].payload)==='Rascunho'&&S.records[0].payload.topsis===null,'Salvar sem recálculo invalida conclusão atomicamente na simulação');
+  closeSession();loadRecord(savedId);assert(S.edit.alts[0].values[1]==='1,231','Entrada pendente é preservada no rascunho');
+  begin('phone');select(0);select(1);click('Conferir valores');click('Comparar critérios');for(let i=0;i<3;i++){$('pref-equal').click();click('Próxima comparação');}click('Salvar rascunho');const draftId=S.edit.id;closeSession();loadRecord(draftId);
+  assert(S.route==='T08'&&S.pair===3&&S.edit.judgments.filter(x=>x!==null).length===3,'Retomada preserva três respostas e próximo par pendente');
+  const parent=JSON.stringify(S.edit);go('T06');click('Cadastrar produto pessoal');click('Salvar produto');assert(S.form&&S.route==='T04'&&Object.keys(S.errors).length>=6,'Cadastro inválido mantém formulário e aponta obrigatórios');
+  assert(document.activeElement.id==='product-name','Validação leva foco ao primeiro campo inválido');
+  input('product-name','Aurora Pro');['8000','5.200,00','8','16','256'].forEach((v,j)=>input('product-value-'+j,v));fail('product');click('Salvar produto');
+  assert(S.form&&JSON.stringify(S.edit)===parent&&!S.personal.length,'Falha do cadastro conserva formulário e avaliação');click('Salvar produto');
+  assert(S.route==='T06'&&!S.form&&JSON.stringify(S.edit)===parent&&S.personal.length===1,'Cadastro retorna à mesma seleção sem associação automática');
+  const personal=S.personal[0];document.querySelector('[data-key="'+personal.key+'"]').click();assert(S.edit.alts.length===3&&new Set(S.edit.alts.map(p=>p.key)).size===3,'Seleção mista mantém origens/IDs distintos, mesmo nome');
+  click('Sair');click('Descartar alterações');assert(S.personal.some(p=>p.key===personal.key),'Descartar avaliação não apaga produto pessoal salvo');
+  await complete('bev');assert(S.route==='T12'&&S.edit.category==='bev'&&topCurrent(),'BEV percorre avaliação completa');assert(criteria().map(c=>c.name).join(' ').includes('Seguro anual')&&!$('content').textContent.includes('Geekbench'),'Critérios e pesos BEV não usam critérios de smartphone');
+  assert(S.edit.alts[0].values[3]==='5.000,00'&&criteria()[3].unit==='R$/ano'&&!criteria()[2].benefit,'Seguro anual e natureza de recarga preservados');
+  click('Salvar avaliação');const beforeSplash=S.splashCount;S.edit.alts[0].values[1]='1,231';restoreDemo();assert(S.splashCount===beforeSplash&&S.edit.alts[0].values[1]==='180.000,00','Restaurar carrega só a salva e não repete abertura');
+  choose('inconsistent');assert(S.edit.ahp.rc>.1&&$('next').disabled,'AHP inconsistente bloqueia TOPSIS');click('Salvar rascunho');assert(!eligible(record())&&record().payload.ahp.rc>.1,'Rascunho preserva diagnóstico inconsistente sem conclusão');
+  choose('no-difference');assert(S.edit.topsis.kind==='sem-diferenciacao'&&S.edit.topsis.rows.every(r=>r.coefficient===null&&r.rank===undefined),'Sem diferenciação não inventa coeficiente/posição');click('Salvar avaliação');click('Exportar PDF');assert(S.route==='T13'&&eligible(S.pdf),'Sem diferenciação pode ser salva e exportada');
+  choose('tie');assert(S.edit.topsis.rows.map(r=>r.rank).join(',')==='1,2,2,4','Empates usam numeração competitiva');
+  choose('zero');click('Processar TOPSIS');await wait(80);assert(!topCurrent()&&S.errors.math.includes('Normalização'),'Norma zero gera falha e não conclusão sem diferenciação');
+  choose('resolution');const raws=copy(S.edit.alts.map(p=>p.values[1]));click('Processar TOPSIS');await wait(80);assert(!topCurrent()&&S.errors.math.includes('resolução monetária'),'Colisão monetária bloqueia TOPSIS');assert(JSON.stringify(raws)===JSON.stringify(S.edit.alts.map(p=>p.values[1])),'Bloqueio de resolução preserva centavos informados');
+  choose('representation');const count=S.edit.alts.length;const blocked=document.querySelector('[data-key="pessoal:blocked-demo"]');assert(blocked.disabled,'Original incompatível não pode ser selecionado');selectProduct(S.extraCandidate);assert(S.edit.alts.length===count,'Efetivo válido não contorna original incompatível');
+  choose('semantic');assert(document.querySelector('[data-key="pessoal:blocked-demo"]').disabled,'Definição semântica incompatível bloqueada');click('Cadastrar produto pessoal');assert(S.form.draft.values.every(x=>x===''),'Novo cadastro não copia/converte números incompatíveis');
+  choose('saved');fail('pdf');click('Exportar PDF');assert(S.route==='T12'&&eligible(record()),'Falha de PDF preserva sucesso anterior de gravação');fail('share');click('Exportar PDF');assert(S.route==='T12'&&eligible(record()),'Falha ao abrir compartilhamento não afirma envio nem altera avaliação');
+  fail('delete');go('T12-DETALHES');click('Excluir avaliação');click('Excluir avaliação');assert(eligible(record()),'Falha de exclusão preserva registro');click('Excluir avaliação');click('Cancelar');assert(eligible(record()),'Cancelar exclusão preserva registro');back();assert(S.route==='T12','Voltar dos dados da avaliação retorna ao resultado');
+  choose('cache-empty');const cacheText=$('content').textContent;choose('empty');assert(cacheText!==$('content').textContent,'Cache insuficiente e vazio confirmado são estados distintos');choose('denied');assert($('content').textContent.includes('negado'),'Permissão negada não é apresentada como vazio');
+  choose('saved');go('T07');input('value-0-1','5.100,00');go('T08');$('pref-left').click();$('intensity-3').click();assert(!ahpCurrent()&&!topCurrent(),'Revisar sentido/intensidade invalida ambos os resultados');go('T10');assert($('next').disabled,'AHP desatualizado bloqueia processamento');
+  click('Revisar pesos e consistência');click('Revisar comparações');click('Validar pesos e consistência');assert(Math.abs(S.edit.ahp.rc-.03309370139098369)<1e-12&&Math.abs(S.edit.ahp.weights[0]-.2467540309026237)<1e-12,'Sentido/intensidade livres produzem pesos/RC conferidos independentemente em Python');click('Revisar avaliação');click('Processar TOPSIS');await wait(80);assert(Math.abs(S.edit.topsis.rows[0].coefficient-.7636687217807708)<1e-12,'Ranking livre não uniforme corresponde ao oráculo Python');
+  choose('saved');go('T10');click('Processar TOPSIS');click('Voltar à revisão');await wait(80);assert(S.route==='T10'&&!dirty(),'Cancelar processamento não publica resposta tardia nem grava');
+  choose('saved');S.detail=copy(C.phone.products[0]);S.pdf=copy(record());S.shareReturn='T12';const pages=['T00','T01','T02','T03','T04','T05','T06','T07','T08','T08-LISTA','T09','T10','T11','T12','T12-DETALHES','T13'];
+  for(const width of [360,600])for(const scale of [1,2])for(const route of pages){
+   $('splash').hidden=route!=='T00';$('width').value=String(width);$('width').dispatchEvent(new Event('change'));$('font').value=String(scale);$('font').dispatchEvent(new Event('change'));if(route==='T04')newPersonal();else S.form=null;go(route);
+   const phone=$('phone').getBoundingClientRect();const elems=[...$('phone').querySelectorAll('button,p,h1,h2,h3,input,summary,.card,.notice')].filter(x=>!x.closest('[hidden]')&&x.getBoundingClientRect().width);
+   const overflow=elems.filter(x=>{const r=x.getBoundingClientRect();return r.left<phone.left-.5||r.right>phone.right+.5;});assert(!overflow.length,'Sem corte horizontal '+route+'/'+width+'/'+scale);
+   const targets=[...$('phone').querySelectorAll('button,input:not([type=radio]),summary,.radio-option')].filter(x=>!x.closest('[hidden]')&&x.getBoundingClientRect().width);
+   assert(targets.every(x=>{const r=x.getBoundingClientRect();return r.width>=47.5&&r.height>=47.5;}),'Alvos ≥48×48 '+route+'/'+width+'/'+scale);assert([...$('phone').querySelectorAll('input[type=text]')].every(x=>document.querySelector('label[for=\"'+x.id+'\"]')&&$(x.getAttribute('aria-describedby'))),'Campos têm rótulo/ajuda associados '+route+'/'+width+'/'+scale);layouts.push({route,width,scale});
+  }
+  $('splash').hidden=true;S.form=null;go('T07');input('value-0-1','5.100,00');
+  for(const width of [360,600])for(const scale of [1,2]){
+   $('width').value=String(width);$('width').dispatchEvent(new Event('change'));$('font').value=String(scale);$('font').dispatchEvent(new Event('change'));openDialog('exit');const rect=$('dialog').getBoundingClientRect();assert(rect.width<=width&&rect.height<=innerHeight*.91,'Diálogo cabe e permite rolagem '+width+'/'+scale);assert([...$('dialog').querySelectorAll('button')].every(b=>b.getBoundingClientRect().height>=48),'Ações do diálogo ≥48 '+width+'/'+scale);closeDialog();
+  }
+  assert(S.splashCount===1,'Voltar, navegação, edição e restauração não repetem abertura');
+  const report={status:'PASS',checks:passed.length,passed,layouts,motionPreference:matchMedia('(prefers-reduced-motion: reduce)').matches,scope:'Demonstrador HTML/JS. Sem testes Android/TalkBack ou participantes.'};const out=n('pre','',JSON.stringify(report));out.id='validation-report';document.body.append(out);
+ }catch(error){const out=n('pre','',JSON.stringify({status:'FAIL',error:String(error),route:S.route,passed}));out.id='validation-report';document.body.append(out);}
+})();
