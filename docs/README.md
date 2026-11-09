@@ -3,7 +3,7 @@
 | Documento | Situação |
 |---|---|
 | [Visão e escopo](01-visao-e-escopo.md) | Concluído |
-| [Decisões](decisoes/README.md) | DEC-001–DEC-042 aprovadas |
+| [Decisões](decisoes/README.md) | DEC-001–DEC-042 aprovadas; DEC-043–DEC-048 adotadas por delegação; DEC-049 corrige a abertura animada do enunciado |
 | [Requisitos](requisitos/README.md) | Etapa 2 concluída documentalmente: RF01–RF27 e RNF01–RNF13 |
 | [Fechamento da Etapa 2](requisitos/revisao-etapa-2.md) | Concluído: UC01–UC16, rastreabilidade e plano de verificação; P01–P03 resolvidos |
 | [Modelagem — índice das Partes 1–5](modelagem/dominio.md) | Partes 1–5 aprovadas; Etapa 3 concluída documentalmente |
@@ -12,8 +12,8 @@
 | [Resposta à revisão da Parte 5](modelagem/revisao-parte5.md) | Cinco achados; tratamento contratual aprovado em 06/11/2026 |
 | [Fechamento da Etapa 3](modelagem/fechamento-etapa-3.md) | Concluído em 06/11/2026; dependências e próximo passo registrados |
 | [Plano da Fase 1 — primeira entrega](entregas/fase-1-plano.md) | Proposta para aprovação/distribuição; prazo de 10/11/2026 ainda provisório |
-| [Arquitetura](arquitetura/arquitetura.md) | Próxima etapa; pendente de elaboração |
-| [Navegação](interface/navegacao.md) | Fluxo funcional inicial |
+| [Arquitetura](arquitetura/arquitetura.md) | Etapa 4 v0.4: dois achados da revisão v0.3 corrigidos; abertura animada reconhecida na DEC-049 e retorno à seleção explícito; protótipos/encerramento formal ainda pendentes |
+| [Navegação](interface/navegacao.md) | Fluxo funcional inicial; detalhamento da Etapa 5 em branch separada |
 
 Os requisitos detalhados ficam nos respectivos grupos. O registro de decisões e os documentos de modelagem funcionam como índices para arquivos menores, separados por tema. [PDFs do professor](../references/) e [diagramas](../diagrams/).
 
@@ -21,7 +21,7 @@ Os requisitos detalhados ficam nos respectivos grupos. O registro de decisões e
 
 | Área | Organização |
 |---|---|
-| Decisões | Resumo no registro, detalhamentos em `decisoes/aprovadas/`, caminhos históricos em `decisoes/propostas/` |
+| Decisões | Registro central; aprovações anteriores em `decisoes/aprovadas/`, escolhas por delegação em `decisoes/adotadas/`, caminhos históricos em `decisoes/propostas/` |
 | Modelagem conceitual | Um arquivo por parte, de 1 a 4 |
 | Persistência | Estudo e alternativas em `modelagem/persistencia/`; contrato consolidado aprovado em `modelagem/contratos/` |
 | Requisitos | Arquivos por grupo funcional, não funcional e de casos de uso; matriz e plano de verificação próprios |
