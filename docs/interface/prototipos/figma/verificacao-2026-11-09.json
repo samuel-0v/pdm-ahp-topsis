@@ -1,0 +1,20 @@
+{
+  "dataContextual": "2026-11-09 America/Sao_Paulo",
+  "arquivo": "https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36",
+  "sessionId": "25e15e7c-7917-449b-8514-2b372fcffa22",
+  "tentativas": [
+    {"ferramenta": "create_session", "resultado": "sessão criada"},
+    {"ferramenta": "use_figma", "acao": "ler somente páginas/IDs atuais", "resultado": "limite MCP Starter atingido; sem inventário retornado"},
+    {"ferramenta": "get_metadata", "acao": "ler página histórica 0:1", "resultado": "mesmo limite MCP Starter; sem metadados retornados"},
+    {"ferramenta": "whoami", "resultado": "plano Starter, assento View; não comprova permissão atual do arquivo"},
+    {"ferramenta": "web.open", "acao": "abrir o link autoral", "resultado": "URL inacessível pela ferramenta; não comprova acesso do avaliador"}
+  ],
+  "mutacoesNestaRodada": false,
+  "scripts01a05ExecutadosNestaRodada": false,
+  "pluginLocalInstaladoExecutadoNestaRodada": false,
+  "inventarioAtual": null,
+  "inventarioHistorico": {"frames": 84, "fonte": "estado-criacao.json", "naoReconfirmado": true},
+  "modoApresentacaoTestado": false,
+  "acessoDoAvaliadorVerificado": false,
+  "decisao": "Etapa 5 ainda aberta; PR draft por pendência real de Figma, não por testes futuros do aplicativo."
+}

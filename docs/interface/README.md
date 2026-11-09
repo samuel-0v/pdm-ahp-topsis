@@ -1,13 +1,14 @@
 # Etapa 5 — Interface, navegação e prototipagem
 
-**Revisão UI/UX v0.3 · 08–09/11/2026 · proposta visual para revisão.** Branch `docs/etapa5-interface-navegacao`, integrada à Etapa 4 antes desta revisão. Requisitos, modelagem, decisões e código Android foram preservados.
+**Revisão UI/UX v0.4 · 09/11/2026 · proposta visual para revisão.** Branch `docs/etapa5-interface-navegacao`, integrada à Etapa 4 antes desta revisão. Requisitos, modelagem, contratos aprovados e código Android foram preservados. DEC-049 e referências de arquitetura receberam somente correção editorial de estado atual.
 
 O [demonstrador local](prototipos/index.html) está utilizável para apresentação: abertura animada, duas categorias, seleção mista, cadastro pessoal, valores editáveis, dez pares AHP completos, cálculo correspondente às entradas, revisão, ranking, salvamento e exportação simulados. Abrir diretamente no navegador, sem servidor. Os registros existem **somente na memória da página**; recarregar reinicia os dados.
 
-**A Etapa 5 completa ainda não pode ser declarada concluída.** O [Figma autoral](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36) não pôde sequer ser inspecionado nesta revisão: limite MCP do plano Starter. O inventário histórico tem 84 frames editáveis, com correções e conexões então pendentes; seu estado atual não foi confirmado. Nenhuma mutação Figma desta revisão foi realizada. O plugin histórico permanece preparado, sem instalação/execução declarada.
+**A Etapa 5 completa ainda não pode ser declarada concluída.** O [Figma autoral](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36) não pôde sequer ser inspecionado nesta revisão: limite MCP do plano Starter. O inventário histórico tem 84 frames editáveis, com correções e conexões então pendentes; seu estado atual não foi confirmado. Novas tentativas em 09/11, por leitura JavaScript e metadados, foram bloqueadas; a abertura web também falhou. [Evidência](prototipos/figma/verificacao-2026-11-09.json). Nenhuma mutação Figma desta revisão foi realizada. O plugin histórico permanece preparado, sem instalação/execução declarada.
 
 | Material | Conteúdo |
 |---|---|
+| [Correções finais e prontidão](finalizacao-v04.md) | Achados corrigidos, evidências atuais e único impedimento de prototipagem: Figma não verificável. |
 | [Parecer independente](revisao-uiux.md) | Problemas concretos, fontes, correções, evidências antes/depois e decisão de apresentação. |
 | [Mapa e rastreabilidade](mapa-telas.md) | Famílias, RF01–RF27, UC01–UC16 e estados. |
 | [Navegação](navegacao.md) | Fluxo, Voltar, saída, retomada e versões do PDF; sem rotas Kotlin. |
@@ -37,9 +38,9 @@ As escolhas de três camadas, DI manual, sessão compartilhada, motores independ
 
 ## Trabalho restante
 
-1. Inspecionar o Figma atual, aplicar e validar as correções/conexões, portar a revisão visual e os percursos BEV/mistos; testar o modo de apresentação e acesso do avaliador. [Plano concreto](prototipos/figma/plano-revisao-v03.json).
-2. Revisar escolhas visuais com a equipe; executar RNF01 com três participantes e a matriz Android/TalkBack do RNF02 na implementação. Não há teste humano nem aceite presumido.
-3. Aprovar fontes, protocolos, rubricas, domínios/precisões e imagens reais do catálogo. O demonstrador não valida dados de produtos reais.
+1. Inspecionar o Figma atual, aplicar e validar as correções/conexões, portar a revisão visual e os percursos BEV/mistos; testar o modo de apresentação e acesso do avaliador. [Intervenção humana concreta](prototipos/figma/retomada-v04.md).
+2. Manter o plano futuro de RNF01 com três participantes e RNF02 no Android/TalkBack. Não foram executados nem são impedimentos artificiais ao fechamento documental da Etapa 5.
+3. Na preparação de dados/implementação, aprovar fontes, protocolos, rubricas, domínios/precisões e imagens reais. O demonstrador fictício não depende de inventar esses dados para estar documentado.
 4. Preparar vídeo e material final de entrega; não foi realizado envio ao Teams nem declarada aprovação do professor.
 
 Para a apresentação imediata, usar o HTML como **demonstrador revisado** e explicar o estado pendente do Figma. O [parecer](revisao-uiux.md) fundamenta essa distinção.

@@ -1,4 +1,4 @@
-"""Contraste sRGB dos pares efetivamente usados no demonstrador v0.3."""
+"""Contraste sRGB dos pares efetivamente usados no demonstrador v0.4."""
 import json
 from pathlib import Path
 
@@ -28,6 +28,7 @@ def luminance(color):
     linear = [c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4 for c in rgb]
     return sum(c * w for c, w in zip(linear, [.2126, .7152, .0722]))
 
+(base / 'evidencias/revisao-v04').mkdir(exist_ok=True)
 rows = []
 css = (base / 'prototipo.css').read_text().upper()
 for name, fg, bg, minimum in pairs:
@@ -37,5 +38,5 @@ for name, fg, bg, minimum in pairs:
     assert ratio >= minimum, (name, ratio)
     rows.append(dict(uso=name, frente=fg, fundo=bg, razao=round(ratio, 3), minimo=minimum, passa=True))
 report = dict(status='PASS', pares=rows, limite='Pares sRGB do HTML, não auditoria de todos os nós/estados nem do Figma/Android. Estados desabilitados e decoração não são usados como informação exclusiva.')
-(base / 'evidencias/revisao-v03/contraste-v03.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+(base / 'evidencias/revisao-v04/contraste-v04.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 print(f'PASS: {len(rows)} pares; texto ≥4,5:1, borda/foco ≥3:1.')

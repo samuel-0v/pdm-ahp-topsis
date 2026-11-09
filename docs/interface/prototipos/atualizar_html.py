@@ -1,4 +1,4 @@
-"""Gera um HTML autocontido e offline a partir das fontes revisáveis da UI v0.3."""
+"""Gera um HTML autocontido e offline a partir das fontes revisáveis da UI v0.4."""
 import json
 from pathlib import Path
 
@@ -17,4 +17,4 @@ for key, value in {
     assert html.count(key) == 1, key
     html = html.replace(key, value)
 (base / 'index.html').write_text(html)
-print('HTML v0.3 autocontido atualizado; sem gravação no Figma ou aplicativo Android.')
+print('HTML v0.4 autocontido atualizado; sem gravação no Figma ou aplicativo Android.')

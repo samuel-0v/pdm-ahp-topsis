@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "checks": 234,
+  "fixtures": 13,
+  "scope": "Somente matemática do demonstrador JS; não é teste do motor Android."
+}

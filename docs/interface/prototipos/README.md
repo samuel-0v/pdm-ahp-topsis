@@ -16,7 +16,7 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 
 | Arquivo | Finalidade e alcance |
 |---|---|
-| [modelo.html](modelo.html), [prototipo.css](prototipo.css), [prototipo.js](prototipo.js) | Template, identidade visual e sessão/controles da UI v0.3; fontes preferenciais para editar. |
+| [modelo.html](modelo.html), [prototipo.css](prototipo.css), [prototipo.js](prototipo.js) | Template, identidade visual e sessão/controles da UI v0.4; fontes preferenciais para editar. |
 | [numeros.js](numeros.js) | Cálculo demonstrativo DEC-018 e validações DEC-041. Não integra o app Android. |
 | [atualizar_html.py](atualizar_html.py) | Gera HTML autocontido a partir dessas fontes e JSONs; não editar apenas o HTML gerado. |
 | [telas.json](telas.json) | 87 descritores de storyboard: inclui T00 e 84 IDs do ledger histórico. Não é motor da sessão atual nem inventário remoto atualizado. |
@@ -27,7 +27,7 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 | [capturar_evidencias.py](capturar_evidencias.py) | Capturas reais do HTML; oculta somente laboratório externo. Abertura congelada para registro estático. |
 | [mapa-navegacao.svg](mapa-navegacao.svg) | Diagrama vetorial editável; detalhamento em `navegacao.md`. |
 | [contextos.js](contextos.js), [expandir_cenarios.py](expandir_cenarios.py) | Histórico v0.2, preservado para rastreabilidade; não incorporado na UI atual. Expansor interrompe antes de sobrescrever o manifesto v0.3. |
-| [evidências v0.3](evidencias/revisao-v03/) | Relatórios e capturas antes/depois. Evidências v0.1/v0.2 permanecem históricas. |
+| [evidências atuais](evidencias/revisao-v04/) | Relatórios e capturas antes/depois. Evidências v0.1/v0.2/v0.3 permanecem históricas. |
 
 ## Figma: situação exata e retomada
 
@@ -40,6 +40,7 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 | [04-ajustes-layout.js](figma/04-ajustes-layout.js) | Preparado anteriormente: títulos ampliados, botões, progresso exato e exclusão contextual. Não aplicado/verificado. |
 | [03-navegacao.js](figma/03-navegacao.js) | Preparado anteriormente: conexões e condicionais da versão nativa v0.1; não aplicado/verificado. |
 | [05-revisao-uiux.js](figma/05-revisao-uiux.js) | Novo, somente preparado: preflight de IDs/aliases, nova paleta e T00 vetorial com saída/pulo. Sem execução real ou validação de API/layout. Não porta a UI completa. |
+| [Retomada v0.4](figma/retomada-v04.md) e [tentativas reais](figma/verificacao-2026-11-09.json) | Impedimento remoto reconfirmado; checklist para inspeção humana e modo de apresentação. |
 | [Plano v0.3](figma/plano-revisao-v03.json) | Grupos/IDs históricos, ajustes concretos, ordem segura e limitações. |
 | [Plugin local histórico](figma/plugin-local/README.md) | Não instalado/executado. ZIP sem ID real não é instalável; não inclui script 05 nem a expansão v0.3. |
 | [Registro anterior de 08/11](figma/continuacao-2026-11-08.json) | História da continuação v0.2; não é relatório desta revisão. |
@@ -62,3 +63,5 @@ git diff --check
 ```
 
 Os dois scripts de navegador pressupõem Chrome em `/opt/google/chrome/chrome`, perfil temporário e dados fictícios. Podem exigir execução fora do sandbox; não usam sessão pessoal, serviço web ou relatórios externos. O verificador grava resultados em `/tmp`; as evidências publicadas são cópias identificadas da rodada. A matriz HTML não substitui Android/TalkBack, persistência real ou testes humanos.
+
+Na rodada v0.4, capturas e contraste são gravados em `evidencias/revisao-v04/`; o navegador grava relatórios em `/tmp/pdm-ui-v04-interacoes*.json`. O capturador aceita `--saida DIRETORIO`. Arquivos v0.3 são preservados; não confundir suas contagens com a rodada atual. RNF01 e testes Android/TalkBack continuam no plano futuro e não são requisitos de execução para fechar esta documentação.

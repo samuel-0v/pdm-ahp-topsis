@@ -22,3 +22,5 @@ dialog{max-width:min(400px,calc(var(--width) - 32px))}
 .splash{position:relative;inset:auto}
 
 .splash.leaving{opacity:0;transition:opacity 160ms ease-out}
+
+.pill.tie{background:var(--primary-soft);color:var(--primary);align-self:flex-start}

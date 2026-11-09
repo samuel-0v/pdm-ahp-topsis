@@ -2,7 +2,7 @@
 
 [Índice da Etapa 5](README.md) · [Navegação](navegacao.md) · [Especificação](especificacao-telas.md)
 
-**Revisão local v0.3, 08–09/11/2026.** Quatorze famílias, incluindo T00; T11 é um estado e D01–D04 são diálogos/referências, não novos destinos principais. O manifesto tem 87 descritores de storyboard, dos quais 84 constam do ledger Figma histórico. O HTML atual renderiza famílias e sessão próprias em `prototipo.js`, em vez de projetar coeficientes de frames estáticos. Não existe correspondência 1:1 entre cada estado editável e um frame Figma. O estado atual do arquivo remoto não pôde ser lido nesta revisão.
+**Revisão local v0.4, 09/11/2026.** Quatorze famílias, incluindo T00; T11 é um estado e D01–D04 são diálogos/referências, não novos destinos principais. O manifesto tem 87 descritores de storyboard, dos quais 84 constam do ledger Figma histórico. O HTML atual renderiza famílias e sessão próprias em `prototipo.js`, em vez de projetar coeficientes de frames estáticos. Não existe correspondência 1:1 entre cada estado editável e um frame Figma. O estado atual do arquivo remoto não pôde ser lido nesta revisão.
 
 | Família / IDs no manifesto | Nome e objetivo | Requisitos | Casos de uso |
 |---|---|---|---|
@@ -48,3 +48,5 @@ Todos os RF01–RF27 e UC01–UC16 estão relacionados acima; isso significa cob
 | Texto/largura/foco | 360/600 CSS px × 100/200%; 16 telas/estados e diálogos medidos; capturas inspecionadas | Amostras QA históricas não comprovam correção atual. |
 
 O cadastro não cria máximo de três alternativas: os dois oficiais por categoria são dados ilustrativos, e novos pessoais podem ser criados na sessão. A matriz acima registra cobertura de demonstração, não certificação de implementação. Falha de leitura do armazenamento Android, integração real do compartilhamento e metadados de catálogo reais continuam fora da simulação.
+
+Na v0.4, T03 reflete imediatamente cadastro pessoal editado, preservando snapshots; T07 focaliza e traz à vista o primeiro erro; T12 rotula empates também em postos intermediários; D03 inicia foco em Cancelar e mantém falha de exclusão visível. Não foram acrescentadas famílias ou regras de negócio. Ver [correções e evidências](finalizacao-v04.md).

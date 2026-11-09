@@ -1,7 +1,7 @@
 {
-  "versao": "0.3 · revisão UI/UX · 08–09/11/2026",
+  "versao": "0.4 · correções finais para PR draft · 09/11/2026",
   "figma": "https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36",
-  "aviso": "87 descritores de referência, 84 frames Figma históricos; HTML v0.3 usa sessão e renderização próprias, cálculos reais demonstrativos, inputs livres e splash DEC-049. Figma atual não pôde ser inspecionado por limite MCP.",
+  "aviso": "87 descritores de referência, 84 frames Figma históricos; HTML v0.4 usa sessão e renderização próprias, cálculos reais demonstrativos, inputs livres e splash DEC-049. Figma atual não pôde ser inspecionado por limite MCP.",
   "screens": [
     {
       "id": "T00",

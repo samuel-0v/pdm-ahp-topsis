@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "pares": [
+    {
+      "uso": "ação preenchida",
+      "frente": "#FFFFFF",
+      "fundo": "#006A62",
+      "razao": 6.486,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "conteúdo",
+      "frente": "#142C2F",
+      "fundo": "#FFFFFF",
+      "razao": 14.674,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "auxiliar",
+      "frente": "#4B6062",
+      "fundo": "#FFFFFF",
+      "razao": 6.669,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "auxiliar no fundo",
+      "frente": "#4B6062",
+      "fundo": "#F4F7F6",
+      "razao": 6.187,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "seleção",
+      "frente": "#006A62",
+      "fundo": "#D8F2ED",
+      "razao": 5.511,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "mensagem informativa",
+      "frente": "#4B6062",
+      "fundo": "#E9F1EF",
+      "razao": 5.81,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "sucesso",
+      "frente": "#205E42",
+      "fundo": "#E1F3E8",
+      "razao": 6.635,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "erro",
+      "frente": "#A52932",
+      "fundo": "#FFECEE",
+      "razao": 6.238,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "aviso",
+      "frente": "#775214",
+      "fundo": "#FFF2D8",
+      "razao": 6.312,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "pessoal",
+      "frente": "#5B478F",
+      "fundo": "#F0EAFB",
+      "razao": 6.514,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "abertura título",
+      "frente": "#FFFFFF",
+      "fundo": "#142C2F",
+      "razao": 14.674,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "abertura marca/texto",
+      "frente": "#9BDAC3",
+      "fundo": "#142C2F",
+      "razao": 9.231,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "abertura auxiliar",
+      "frente": "#B9D8CD",
+      "fundo": "#142C2F",
+      "razao": 9.62,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "abertura ação",
+      "frente": "#C7EEE0",
+      "fundo": "#142C2F",
+      "razao": 11.694,
+      "minimo": 4.5,
+      "passa": true
+    },
+    {
+      "uso": "borda funcional",
+      "frente": "#6D8181",
+      "fundo": "#FFFFFF",
+      "razao": 4.112,
+      "minimo": 3,
+      "passa": true
+    },
+    {
+      "uso": "foco no fundo",
+      "frente": "#5B478F",
+      "fundo": "#F4F7F6",
+      "razao": 7.103,
+      "minimo": 3,
+      "passa": true
+    },
+    {
+      "uso": "foco próximo ao botão",
+      "frente": "#5B478F",
+      "fundo": "#FFFFFF",
+      "razao": 7.657,
+      "minimo": 3,
+      "passa": true
+    },
+    {
+      "uso": "borda ação abertura",
+      "frente": "#69998A",
+      "fundo": "#142C2F",
+      "razao": 4.559,
+      "minimo": 3,
+      "passa": true
+    }
+  ],
+  "limite": "Pares sRGB do HTML, não auditoria de todos os nós/estados nem do Figma/Android. Estados desabilitados e decoração não são usados como informação exclusiva."
+}

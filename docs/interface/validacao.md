@@ -1,55 +1,46 @@
-# Verificação da revisão UI/UX
+# Verificação da interface e prontidão documental
 
-[Índice](README.md) · [Parecer](revisao-uiux.md) · [Fontes reproduzíveis](prototipos/README.md)
+[Índice](README.md) · [Correções v0.4](finalizacao-v04.md) · [Parecer histórico v0.3](revisao-uiux.md) · [Reprodução](prototipos/README.md)
 
-**Rodada v0.3 · 08–09/11/2026 · branch `docs/etapa5-interface-navegacao`.** Git foi conferido limpo antes das edições, no HEAD integrado à Etapa 4. Requisitos/modelagem/decisões/arquitetura e código Android foram preservados. Evidências v0.1/v0.2 continuam históricas, sem serem apresentadas como resultado desta rodada.
+**Rodada v0.4 · 09/11/2026 · branch `docs/etapa5-interface-navegacao`.** Base limpa `bd055c2`, igual ao remoto, com Etapa 4 integrada. Evidências v0.1/v0.2/v0.3 são históricas e foram preservadas. Nesta rodada houve correção editorial autorizada em DEC-049 e três documentos de arquitetura, sem mudar a decisão normativa ou implementar Android.
 
-## Resultados executados
+## Resultados atuais
 
-| Verificação | Resultado e alcance |
+| Comando / conferência | Resultado e limite |
 |---|---|
-| `verificar_documentacao.py` | PASS: 87 descritores de referência, 84 IDs Figma históricos, destinos válidos, links locais e âncoras, RF01–RF27/UC01–UC16, geração idêntica às fontes, sintaxe JS e SVG. Não consulta Figma nem valida a API de mutação. |
-| `validar_fixture.py` | PASS: 13 cenários de referência recalculados em Python, com naturezas próprias de smartphones/BEV. |
-| `verificar_matematica.cjs` | PASS: 234 verificações do calculador web, comparando pesos/λ/IC/RC, distâncias, coeficientes e postos com 13 fixtures; centavos/finitude/fração/overflow/colisão e julgamentos pendentes. [Relatório](prototipos/evidencias/revisao-v03/matematica-v03.json). |
-| `verificar_navegador.py` | PASS: **283 verificações** de interações DOM reais em Chrome headless. [Relatório](prototipos/evidencias/revisao-v03/interacoes-v03.json). Não é teste de implementação Android. |
-| Mesmo roteiro com `--movimento-reduzido` | PASS: 283 verificações; `matchMedia` confirmou preferência reduzida ativa. [Relatório](prototipos/evidencias/revisao-v03/interacoes-v03-movimento-reduzido.json). Abertura segue ao conteúdo sem repetição. |
-| Responsividade e alvos | 16 telas/estados × 360/600 CSS px × 100/200% = **64 combinações**, sem corte horizontal dos elementos inspecionados, alvos de ambos os eixos ≥48 px e rótulos/ajudas associados. Diálogo de saída nas quatro combinações também cabe e permite rolagem. |
-| `verificar_contraste.py` | PASS: **18 pares** sRGB; texto ≥4,5:1 e borda/foco ≥3:1. [Razões](prototipos/evidencias/revisao-v03/contraste-v03.json). Sem alegar auditoria de todos os estados Figma/Android. |
-| Capturas e inspeção | Onze PNGs reais: três antes e oito depois, com origem/metadados. Inspecionados início, AHP, ranking, abertura, BEV, mistura, cadastro ampliado e diálogo. [Comparação e links](revisao-uiux.md#antes-e-depois-visual). |
-| Figma | Sessão criada, tentativa de leitura bloqueada pelo limite MCP Starter; `whoami` confirmou o plano. Nenhum inventário atual, screenshot ou fluxo remoto foi verificado nesta revisão; nenhuma mutação efetuada. |
-| Inspeção do plugin histórico | Três verificações preventivas em Node passaram sobre pacote regenerado em `/tmp`: arquivo divergente, controle ausente e inventário de referência. Nenhuma mutação/API Figma executada; ZIP/ledger anteriores preservados. |
-| Escopo/Git | Hashes dos 99 arquivos protegidos conferidos; `git diff --check` sem erros. [Registro consolidado](prototipos/evidencias/revisao-v03/verificacoes-v03.json). |
+| `python3 docs/interface/prototipos/verificar_documentacao.py` | PASS: 87 descritores de referência, 84 IDs Figma históricos, destinos, links e âncoras; RF01–RF27/UC01–UC16; geração/sintaxe/SVG. Inclui links dos quatro documentos editoriais fora da área de interface. Não verifica inventário Figma atual. |
+| `python3 docs/interface/prototipos/validar_fixture.py` | PASS: 13 cenários numéricos de referência, com naturezas próprias de smartphones/BEV. |
+| `node docs/interface/prototipos/verificar_matematica.cjs` | PASS: 234 verificações do calculador web; pesos/λ/IC/RC, distâncias, coeficientes e postos comparados aos cenários; dinheiro, finitude e pendências. [Relatório](prototipos/evidencias/revisao-v04/matematica-v04.json). |
+| `python3 docs/interface/prototipos/verificar_contraste.py` | PASS: 18 pares sRGB; texto ≥4,5:1, borda/foco ≥3:1. [Razões](prototipos/evidencias/revisao-v04/contraste-v04.json). Sem auditoria universal de pixels/estados. |
+| `python3 docs/interface/prototipos/verificar_navegador.py` | PASS: **295 verificações**, incluindo regressões de detalhe pessoal, foco/rolagem de erro, empates e exclusão. [Relatório](prototipos/evidencias/revisao-v04/interacoes-v04.json). |
+| Mesmo comando com `--movimento-reduzido` | PASS: 295 verificações; preferência reduzida efetivamente reconhecida por `matchMedia`. [Relatório](prototipos/evidencias/revisao-v04/interacoes-v04-movimento-reduzido.json). |
+| Geometria HTML | 16 telas/estados × 360/600 CSS px × 100/200% = **64 combinações**; sem corte horizontal dos elementos inspecionados, alvos ≥48 × 48, rótulos/ajudas associados. Diálogos nas quatro combinações. |
+| `python3 docs/interface/prototipos/capturar_evidencias.py` | Doze capturas reais atuais, em Chrome isolado; fontes/hashes/viewports em [metadados](prototipos/evidencias/revisao-v04/capturas.json). Abertura congelada somente para registro estático; transição exercitada no navegador. |
+| Figma | `use_figma` e `get_metadata` bloqueados por quota Starter; URL também inacessível na ferramenta web. Nenhum inventário atual, screenshot, mutação, apresentação ou acesso de avaliador foi verificado. [Tentativas](prototipos/figma/verificacao-2026-11-09.json). |
+| Escopo e diff | Código Android, requisitos, modelagem e contratos preservados. DEC-049/arquitetura: apenas textos de histórico/estado. `git diff --check` sem erros. [Registro consolidado](prototipos/evidencias/revisao-v04/verificacoes-v04.json). |
 
-A execução usa perfil temporário do Chrome, sem sessão pessoal, rede de catálogo, instalação de dependências ou armazenamento persistente. Os relatórios incluem data contextual e limites. Não foram feitos testes de desempenho Android, Room/Firestore, geração de PDF, serviço de compartilhamento ou entrega externa.
+Os resultados acima devem ser conferidos junto aos relatórios publicados; não são testes do aplicativo Android. A rodada anterior teve 283 verificações, 64 combinações, 234 verificações matemáticas e 13 cenários: [registro v0.3](prototipos/evidencias/revisao-v03/verificacoes-v03.json). As doze verificações adicionais cobrem os achados da revisão atual.
 
-## Percursos e exceções exercitados
+## Percursos e inspeção visual
 
-- **Entrada:** T00 presente no lançamento; animação/transição liberam catálogo sem consulta remota; sem criação/salvamento de avaliação; retorno/restauração não repetem abertura. Texto da abertura também conferido a 100/200%.
-- **Smartphones:** mínimo de duas identidades; edição de preço preservando original/catálogo; dez respostas explícitas; AHP consistente; revisão; TOPSIS correspondente às entradas, resultado inicialmente não salvo. Percurso adicional de preferência 3 gera pesos/RC e coeficiente não uniforme conferidos com oráculo Python, sem resultado fixo fictício.
-- **BEV:** seleção, valores, dez pares, pesos, revisão, resultado e gravação, preservando seguro anual, custo da recarga e critérios próprios.
-- **Mista/cadastro:** erro obrigatório com foco no campo; falha de cadastro mantém formulário e sessão; sucesso retorna à mesma seleção sem associação automática; nomes iguais mantêm origem/ID; descartar avaliação não apaga produto pessoal já salvo.
-- **Sessão e versões:** abrir concluída não marca mudança; editar valores invalida TOPSIS e conserva AHP; mudar julgamento invalida ambos; pendência/resultado novo conta como mudança; salvar texto inválido mantém rascunho e remove conclusão afetada; retomar conserva respostas parciais. Restauração usa somente versão salva.
-- **Saída/foco:** três ações DEC-025, continuar preserva edição, diálogo recebe/devolve foco; falha de gravação mantém tela, edição e versão anterior com mensagem persistente. Voltar dos detalhes vai ao resultado; navegação interna não salva.
-- **Matemática e compatibilidade:** inconsistência bloqueia; empate competitivo; conclusão válida sem diferenciação sem C*/posto/vencedor; norma zero é falha; fração de centavo e colisão Double rejeitadas; original/semântica incompatíveis bloqueados sem atalho pelo efetivo; novo cadastro não copia números antigos.
-- **PDF/exclusão/consulta:** atual desatualizada bloqueia Salvar e exportar; exportar anterior mantém edição; falhas de PDF/compartilhamento não desfazem gravação nem afirmam envio; cancelar/falhar exclusão preserva registro; cache insuficiente, vazio confirmado e permissão negada distintos.
+Foram exercitados Smartphones e BEV, mínimo de duas alternativas, cadastro pessoal durante seleção sem autoseleção, mistura de origens/IDs, valores livres, dez pares e sentidos/intensidades Saaty, AHP consistente/inconsistente/desatualizado, revisão e TOPSIS correspondente às entradas. Inclui preferência não uniforme comparada a oráculo Python, empate competitivo e conclusão válida sem diferenciação, sem vencedor inventado.
 
-## Acessibilidade: o que foi e não foi testado
+Também verificados: salvar/retomar rascunho, edição independente da versão salva, três escolhas da DEC-025, falhas sem perda da anterior, consulta sem recálculo, exportação da última salva preservando edição, falhas de PDF/compartilhamento, cancelamento e falha de exclusão, retorno dos detalhes, resposta tardia cancelada, cache/vazio/permissão distintos e bloqueios DEC-041/042. As novas regressões conferem atualização imediata de detalhe pessoal e preservação de snapshots ao editar/excluir cadastro.
 
-A geometria foi medida no DOM, não em dp de aparelho Android. Larguras são internas ao demonstrador em viewport desktop de 1440 × 1200 CSS px; texto é escalado pelo laboratório. Rótulos, `aria-describedby`, nomes dos campos repetidos com produto/critério/unidade, ordem DOM, mensagens com texto/símbolo, foco de diálogo e primeiro campo inválido foram conferidos por código e inspeção visual. A página e diálogos rolam verticalmente; cards/métricas refluem em 200%.
+Capturas inspecionadas: [início](prototipos/evidencias/revisao-v04/depois-inicio.png), [AHP](prototipos/evidencias/revisao-v04/depois-ahp.png), [ranking](prototipos/evidencias/revisao-v04/depois-resultado.png), [abertura](prototipos/evidencias/revisao-v04/abertura-360.png), [BEV](prototipos/evidencias/revisao-v04/bev-revisao-360.png), [mista 600/200%](prototipos/evidencias/revisao-v04/mista-resultado-600-texto200.png), [cadastro 360/200%](prototipos/evidencias/revisao-v04/cadastro-360-texto200.png), [saída 360/200%](prototipos/evidencias/revisao-v04/saida-360-texto200.png), [empate](prototipos/evidencias/revisao-v04/empate-360.png), [pessoal atualizado](prototipos/evidencias/revisao-v04/pessoal-atualizado-360.png), [foco do erro](prototipos/evidencias/revisao-v04/foco-erro-valores-360.png) e [exclusão com Cancelar](prototipos/evidencias/revisao-v04/exclusao-cancelar-360.png). Comparação histórica de antes/depois permanece no [parecer](revisao-uiux.md#antes-e-depois-visual).
 
-Isso não prova experiência com leitor de tela: **TalkBack, semântica Compose, teclado/IME, foco em aparelho, retorno do sistema, densidade/fontScale reais, rotação e morte do processo Android ainda não foram executados**. Não houve auditoria humana com tecnologia assistiva nem teste com participantes. O CSS respeita redução de movimento e a preferência foi efetivamente exercitada no Chrome; movimento no Figma continua pendente.
+## Acessibilidade e limites de execução
 
-## Roteiro de apresentação e aceite restante
+Geometria em DOM/Chrome, viewport de teste 1440 × 1200 CSS px e larguras internas de referência; isso não equivale a dp/sp de aparelho. Foram conferidos nomes/rótulos/ajudas, ordem DOM, mensagens além da cor, foco/retorno de diálogo, foco e rolagem do primeiro erro, alvos e reflow com texto ampliado. Perfil temporário, sem sessão pessoal, rede de catálogo, instalação de dependências ou armazenamento entre recargas. No HTML, PDF e gravação são simulados; não há arquivo/envio real.
 
-1. Abrir o HTML e mostrar a abertura. Explorar detalhes de produto e dados fictícios/cache com data desconhecida.
-2. Criar Smartphones, selecionar dois e ajustar um valor. Confirmar igualdade ou explicar a escala completa, mostrar progresso e pesos/RC.
-3. Revisar/processar, explicar ranking e salvar manualmente. Editar concluída, mostrar resultado desatualizado e as três opções de saída.
-4. Demonstrar BEV e cadastro pessoal durante seleção; selecionar manualmente o novo produto.
-5. Usar o laboratório para inconsistência, empate, sem diferenciação e falhas de salvamento/PDF. Mostrar exportação da anterior sem perder edição.
-6. Mostrar 360/600 e texto 200%, com rolagem, indicando a limitação frente a Android/TalkBack.
+**Não executados:** participantes, TalkBack, semântica Compose, teclado/IME e foco em aparelho, densidade/fontScale reais, rotação/morte do processo Android, Room/Firestore, PDF/compartilhamento real e testes de desempenho Android. A inspeção técnica de capturas não é teste humano de usabilidade nem aceite da equipe. O Figma tem limites próprios, ainda sem verificação atual.
 
-Pode-se apresentar **o demonstrador HTML revisado**. Para fechar a Etapa 5, aplicar/verificar Figma e sua navegação, revisar a proposta com a equipe e verificar acesso do professor. Executar RNF01 com três participantes externos ao desenvolvimento, registrando ajuda e conclusão; RNF02 na implementação Android. Fontes/rubricas/imagens reais, vídeo e entrega formal seguem pendentes. Nenhum aceite ou envio ao Teams é declarado.
+## Critérios de fechamento documental e pendência real
 
-## Arquivos da revisão
+Para encerrar a documentação/prototipagem da Etapa 5, mapa, especificação, identidade visual, fluxos/estados e evidências precisam ser coerentes com os contratos, e o Figma exigido deve estar efetivamente inspecionado, corrigido e demonstrável no modo de apresentação, com link/acesso conferido. O HTML está demonstrável, mas não comprova essas condições remotas.
 
-Documentos atualizados: README, mapa, navegação, especificação, design system, validação e índice de protótipos; criado o parecer independente. Fontes novas: template/CSS/JS da UI, calculador demonstrativo, roteiro DOM, verificador matemático/contraste e capturador. Gerador/HTML/manifesto/verificadores documental e de navegador atualizados; projetor/expansor antigos identificados como históricos. SVG redesenhado com T00. Figma: script 05 e plano preparados, README do plugin com limite de versão; ledger, scripts de criação e ZIP anteriores preservados. PNGs/JSONs da rodada em `prototipos/evidencias/revisao-v03/`.
+**Impedimento atual: Figma sem acesso funcional para validar inventário, correções, conexões, apresentação e acesso do avaliador.** A [intervenção humana](prototipos/figma/retomada-v04.md) lista exatamente o trabalho necessário. Enquanto isso, o PR deve ser draft, e a Etapa 5 não é declarada concluída.
+
+RNF01 com participantes e testes Android/TalkBack da implementação **não são impedimentos adicionais para fechar esta documentação**. Mantém-se o plano: três participantes externos ao desenvolvimento devem consultar produto, concluir avaliação, identificar resultado/empate e salvar/retomar; registrar ajuda/dificuldades e os critérios do RNF01. No Android, aplicar RNF02 em 360/600 dp, texto 100/200%, TalkBack, foco, rolagem e ciclo de vida. Nenhuma execução ou aprovação desses testes é presumida.
+
+Dados/fontes/rubricas/assets reais pertencem à preparação dos dados e implementação, sem inventá-los por estética. Aprovação da equipe/professor, vídeo final e envio ao Teams são evidências distintas e não declaradas aqui. Para apresentar agora, abrir o HTML offline e explicar a simulação e a pendência Figma; seguir o roteiro de categorias → seleção/cadastro → valores → dez pares → pesos → revisão → resultado → salvar/editar/sair/PDF.

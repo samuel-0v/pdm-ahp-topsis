@@ -4,7 +4,7 @@
 
 [Resumo vetorial editável em SVG](prototipos/mapa-navegacao.svg).
 
-**Revisão v0.3, 08–09/11/2026.** Fluxos aplicados ao demonstrador HTML, alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente; conexões Figma não foram verificadas/aplicadas nesta revisão.
+**Revisão v0.4, 09/11/2026.** Fluxos aplicados ao demonstrador HTML, alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente; conexões Figma não foram verificadas/aplicadas nesta revisão.
 
 ```mermaid
 flowchart TD
@@ -99,7 +99,7 @@ Voltar entre etapas conserva a sessão em memória. Encerrar a edição aplica a
 | Contexto | Comportamento proposto |
 |---|---|
 | Teclado aberto | Primeiro recolher teclado; próximo Voltar segue a regra da tela. Não descartar entrada. |
-| Diálogo de saída/exportação/exclusão | Fechar como Continuar editando/Cancelar; nenhuma gravação, exclusão ou exportação implícita. Devolver foco ao controle de origem. |
+| Diálogo de saída/exportação/exclusão | Fechar como Continuar editando/Cancelar; nenhuma gravação, exclusão ou exportação implícita. Devolver foco ao controle de origem. Em exclusões, o foco inicial é Cancelar. |
 | Detalhe de produto | Retornar à lista da mesma categoria/origem, preservando posição quando possível. |
 | Produto pessoal em edição | Com mudanças, aplicar as três escolhas de saída; sem mudanças, retornar à origem. |
 | AHP, valores e revisão | Voltar ao par/etapa anterior sem perder a edição. Primeiro par retorna aos valores. Navegar não marca mudança por si só. |

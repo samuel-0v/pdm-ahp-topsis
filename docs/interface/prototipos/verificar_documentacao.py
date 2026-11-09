@@ -39,7 +39,8 @@ def anchors(file):
     return result
 
 links = fragments = 0
-for file in area.rglob('*.md'):
+editorials = [area.parent / 'decisoes/adotadas/dec-049.md'] + [area.parent / 'arquitetura' / name for name in ['arquitetura.md', 'decisoes-pendentes.md', 'referencias-e-validacao.md']]
+for file in [*area.rglob('*.md'), *editorials]:
     for target in re.findall(r'\]\(([^)]+)\)', file.read_text()):
         if target.startswith(('http:', 'https:', 'mailto:')):
             continue

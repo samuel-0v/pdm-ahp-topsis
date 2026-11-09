@@ -1,0 +1,138 @@
+{
+  "data": "2026-11-09T10:57:54-03:00",
+  "baseRodada": "bd055c29393c0a2e59fbf2b89defef931b0a4425",
+  "branch": "docs/etapa5-interface-navegacao",
+  "gitInicialLimpo": true,
+  "remotoInicialIgual": true,
+  "mainConferida": "907e3dd",
+  "escopo": {
+    "arquivosProtegidos": 102,
+    "inalterados": 98,
+    "editoriaisAutorizados": [
+      "docs/decisoes/adotadas/dec-049.md",
+      "docs/arquitetura/decisoes-pendentes.md",
+      "docs/arquitetura/referencias-e-validacao.md",
+      "docs/arquitetura/arquitetura.md"
+    ],
+    "secaoNormativaDEC049Inalterada": true,
+    "calculadorDemonstrativoInalterado": true,
+    "evidenciasV03Preservadas": true,
+    "androidImplementado": false
+  },
+  "fontesEstudo": {
+    "sha256": "1dc9f39fc1da83c4beb608cabc3281e974be618d97045a06a73b0b316b81d99d",
+    "bytes": 538343,
+    "classifications": {
+      "[AULA]": 347,
+      "[MATERIAL]": 119,
+      "[COMPLEMENTO]": 59
+    }
+  },
+  "resultados": {
+    "documentacao": {
+      "status": "PASS",
+      "comando": "python3 docs/interface/prototipos/verificar_documentacao.py",
+      "saida": "PASS: 87 descritores locais; 84 IDs Figma históricos; 225 destinos; 235 links locais e 19 âncoras; RF01–RF27/UC01–UC16; geração/sintaxe/SVG. Sem inspeção Figma atual."
+    },
+    "fixtures": {
+      "status": "PASS",
+      "comando": "python3 docs/interface/prototipos/validar_fixture.py",
+      "saida": "13 cenários ilustrativos conferidos; não são testes dos motores Android."
+    },
+    "contraste": {
+      "status": "PASS",
+      "comando": "python3 docs/interface/prototipos/verificar_contraste.py",
+      "saida": "PASS: 18 pares; texto ≥4,5:1, borda/foco ≥3:1."
+    },
+    "diffCheck": {
+      "status": "PASS",
+      "comando": "git diff --check",
+      "saida": ""
+    },
+    "matematica": {
+      "comando": "node docs/interface/prototipos/verificar_matematica.cjs",
+      "status": "PASS",
+      "checks": 234,
+      "fixtures": 13,
+      "scope": "Somente matemática do demonstrador JS; não é teste do motor Android.",
+      "arquivo": "matematica-v04.json"
+    },
+    "interacoes-v04": {
+      "status": "PASS",
+      "checks": 295,
+      "layouts": 64,
+      "movimentoReduzido": false,
+      "comando": "python3 docs/interface/prototipos/verificar_navegador.py",
+      "arquivo": "interacoes-v04.json"
+    },
+    "interacoes-v04-movimento-reduzido": {
+      "status": "PASS",
+      "checks": 295,
+      "layouts": 64,
+      "movimentoReduzido": true,
+      "comando": "python3 docs/interface/prototipos/verificar_navegador.py --movimento-reduzido",
+      "arquivo": "interacoes-v04-movimento-reduzido.json"
+    },
+    "capturas": {
+      "status": "inspecionadas",
+      "pngs": 12,
+      "fontesCorrespondem": true,
+      "comando": "python3 docs/interface/prototipos/capturar_evidencias.py",
+      "repeticaoParcial": "python3 docs/interface/prototipos/capturar_evidencias.py --somente foco-erro-valores-360 pessoal-atualizado-360",
+      "limite": "Foco em captura de altura completa reposicionada no topo; posicionamento do erro na viewport testado no DOM. Nenhuma imagem Figma atual.",
+      "hashesIdenticosAPNGsV03JaInspecionados": [
+        "depois-resultado.png",
+        "cadastro-360-texto200.png",
+        "depois-ahp.png",
+        "saida-360-texto200.png",
+        "bev-revisao-360.png",
+        "abertura-360.png",
+        "depois-inicio.png"
+      ]
+    }
+  },
+  "figma": {
+    "dataContextual": "2026-11-09 America/Sao_Paulo",
+    "arquivo": "https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36",
+    "sessionId": "25e15e7c-7917-449b-8514-2b372fcffa22",
+    "tentativas": [
+      {
+        "ferramenta": "create_session",
+        "resultado": "sessão criada"
+      },
+      {
+        "ferramenta": "use_figma",
+        "acao": "ler somente páginas/IDs atuais",
+        "resultado": "limite MCP Starter atingido; sem inventário retornado"
+      },
+      {
+        "ferramenta": "get_metadata",
+        "acao": "ler página histórica 0:1",
+        "resultado": "mesmo limite MCP Starter; sem metadados retornados"
+      },
+      {
+        "ferramenta": "whoami",
+        "resultado": "plano Starter, assento View; não comprova permissão atual do arquivo"
+      },
+      {
+        "ferramenta": "web.open",
+        "acao": "abrir o link autoral",
+        "resultado": "URL inacessível pela ferramenta; não comprova acesso do avaliador"
+      }
+    ],
+    "mutacoesNestaRodada": false,
+    "scripts01a05ExecutadosNestaRodada": false,
+    "pluginLocalInstaladoExecutadoNestaRodada": false,
+    "inventarioAtual": null,
+    "inventarioHistorico": {
+      "frames": 84,
+      "fonte": "estado-criacao.json",
+      "naoReconfirmado": true
+    },
+    "modoApresentacaoTestado": false,
+    "acessoDoAvaliadorVerificado": false,
+    "decisao": "Etapa 5 ainda aberta; PR draft por pendência real de Figma, não por testes futuros do aplicativo."
+  },
+  "decisao": "HTML pronto para demonstração/revisão; Etapa 5 aberta; PR draft pela falta de verificação Figma. RNF01 e testes Android/TalkBack não são bloqueios documentais.",
+  "limites": "Sem testes Android/TalkBack, participantes, aceite da equipe/professor ou envio ao Teams."
+}

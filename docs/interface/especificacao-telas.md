@@ -2,7 +2,7 @@
 
 [Mapa, RFs e UCs](mapa-telas.md) · [Navegação](navegacao.md) · [Identidade visual](design-system.md)
 
-**Revisão local v0.3, 08–09/11/2026.** Comportamentos abaixo foram aplicados ao HTML, salvo limites explicitados. O manifesto mantém referências de storyboard; a sessão editável é renderizada em `prototipo.js`. Figma: apenas inventário histórico, sem leitura/mutação confirmada nesta revisão. RFs e UCs por família estão no mapa.
+**Revisão local v0.4, 09/11/2026.** Comportamentos abaixo foram aplicados ao HTML, salvo limites explicitados. O manifesto mantém referências de storyboard; a sessão editável é renderizada em `prototipo.js`. Figma: apenas inventário histórico, sem leitura/mutação confirmada nesta revisão. RFs e UCs por família estão no mapa.
 
 ## Catálogo e produtos — T01 a T04
 
@@ -18,7 +18,7 @@ T01 reúne início e categorias **após a abertura animada**. A entrada de consu
 
 T02 separa oficiais/pessoais da categoria por abas ou ações equivalentes. Mostra identificação, origem e incompletude; oferece detalhes, cadastro pessoal e iniciar avaliação. O protótipo usa abas com rótulos e estado selecionado. Não introduz busca, filtros, categorias personalizadas ou limite de 50 produtos.
 
-T03 é somente leitura para oficial. Mostra fabricante/modelo/versão conhecidos, cinco critérios, valores, unidades e referências disponíveis. Produtos pessoais oferecem editar/excluir com D03. Fonte, data de referência, protocolo/rubrica, perfil e estimativa desconhecidos não se transformam em informação confirmada. ADAS da equipe não é certificação de segurança.
+T03 é somente leitura para oficial. Mostra fabricante/modelo/versão conhecidos, cinco critérios, valores, unidades e referências disponíveis. Produtos pessoais oferecem editar/excluir com D03. Salvar edição atualiza imediatamente título e dados do detalhe; snapshots de avaliações já salvas continuam independentes. Fonte, data de referência, protocolo/rubrica, perfil e estimativa desconhecidos não se transformam em informação confirmada. ADAS da equipe não é certificação de segurança.
 
 T04 reúne cadastro e edição pessoal: identificação, fabricante/modelo/versão e cinco valores. Categoria é escolhida antes do cadastro e imutável na edição. Campos obrigatórios inválidos impedem gravar produto; falha mantém formulário e não confirma sucesso. Cadastro iniciado pela seleção retorna à mesma avaliação e disponibiliza o novo registro sem alterar os já selecionados. O HTML permite editar nome, fabricante/modelo opcionais e cinco valores. Erros de preenchimento e falha de gravação preservam formulário e seleção; o Figma ainda precisa receber essa interação.
 
@@ -45,7 +45,7 @@ Ausência real ou original canônico fora do domínio pode ser corrigido no efet
 
 Apresentar cinco critérios por produto com unidade, natureza, referência original e efetivo ajustado; marcar ajustes. Usar blocos verticais em 360 dp. O roteiro pode alterar R$ 5.200,00 para R$ 5.000,00; o catálogo permanece intacto. Nenhum coeficiente é aplicado antes de calcular os valores efetivos.
 
-Ausente não vale zero. Entrada inválida é erro textual próximo ao campo; rascunho pode preservar texto pendente sem número fictício, mas produto pessoal não pode ser salvo inválido. Interpretar pt-BR sem separadores ambíguos. Fração de centavo não zero é rejeitada, sem arredondamento/truncamento silencioso; zeros decimais excedentes exatos são permitidos conforme DEC-041. Não impor duas casas a todos os critérios nem teto de preço novo. Notas de câmeras/ADAS ficam em 1–10; demais validações do aplicativo virão dos metadados preservados. No demonstrador fictício, a definição `demo-v1` valida representação/finitude e notas 1–10; não afirma validar protocolos ou domínios ainda não aprovados de um catálogo real.
+Ausente não vale zero. Entrada inválida é erro textual próximo ao campo; ao tentar avançar/processar, foco e rolagem levam ao primeiro campo inválido, inclusive em produto abaixo da área inicial; rascunho pode preservar texto pendente sem número fictício, mas produto pessoal não pode ser salvo inválido. Interpretar pt-BR sem separadores ambíguos. Fração de centavo não zero é rejeitada, sem arredondamento/truncamento silencioso; zeros decimais excedentes exatos são permitidos conforme DEC-041. Não impor duas casas a todos os critérios nem teto de preço novo. Notas de câmeras/ADAS ficam em 1–10; demais validações do aplicativo virão dos metadados preservados. No demonstrador fictício, a definição `demo-v1` valida representação/finitude e notas 1–10; não afirma validar protocolos ou domínios ainda não aprovados de um catálogo real.
 
 Preservar fonte/data do original; marcar efetivo ajustado e não herdar referência como se descrevesse o novo número. Mudar valores/alternativas desatualiza TOPSIS; AHP continua atual se julgamentos/critérios não mudaram. Versão salva só é afetada após gravação explícita.
 
@@ -71,7 +71,7 @@ T11 é estado de atividade, não função independente. Evitar processamento dup
 
 ## Resultados e detalhes — T12
 
-Ranking apresenta produto, posição, C*, d+, d−; detalhes disponibilizam pesos, λmax, IC, RI, RC e valores utilizados. Destacar apenas vencedor único. Empates usam coeficientes internos e tolerância 10⁻⁹, com posições 1º/2º/2º/4º; igualdade após arredondamento não define empate. Não arredondar cálculos intermediários.
+Ranking apresenta produto, posição, C*, d+, d−; detalhes disponibilizam pesos, λmax, IC, RI, RC e valores utilizados. Destacar apenas vencedor único. Cards empatados recebem também o rótulo textual “Empate · N alternativas”, inclusive em posições intermediárias. Empates usam coeficientes internos e tolerância 10⁻⁹, com posições 1º/2º/2º/4º; igualdade após arredondamento não define empate. Não arredondar cálculos intermediários.
 
 Sem diferenciação apresenta d+=d−=0, C* não definido e nenhuma posição/vencedor fictício. É conclusão válida salvável/exportável, distinta de falha matemática. Resultado novo mostra “Ainda não salvo”; sucesso de salvar só após confirmação. Consulta salva não recalcula nem depende de catálogo atual. Falha de novo recálculo preserva versão salva; atualização isolada do motor não autoriza substituição silenciosa.
 
@@ -79,7 +79,7 @@ Detalhes compartilhados entre consulta e edição precisam respeitar contexto: e
 
 ## Diálogos, saída e PDF — D01 a D04 / T13
 
-D01 contém Salvar, Descartar alterações e Continuar editando. Falha mantém edição e versão salva. D03 nomeia objeto e consequência permanente, com confirmar/cancelar; excluir produto não modifica snapshots das avaliações. D04 permanece referência histórica de ajuste; no HTML v0.3 o ajuste é feito diretamente nos campos de T07, com original visível.
+D01 contém Salvar, Descartar alterações e Continuar editando. Falha mantém edição e versão salva. D03 nomeia objeto e consequência permanente, com confirmar/cancelar e foco inicial em Cancelar; falha de exclusão fica visível na tela e sucesso limpa a mensagem anterior; excluir produto não modifica snapshots das avaliações. D04 permanece referência histórica de ajuste; no HTML v0.4 o ajuste é feito diretamente nos campos de T07, com original visível.
 
 D02 distingue salvar edição processada, exportar integralmente a última versão elegível e cancelar. Se precisar recalcular, Salvar e exportar fica indisponível com explicação; sem versão anterior elegível, a segunda opção também fica indisponível. Falha de PDF após gravação não desfaz a gravação. Compartilhamento cancelado, indisponível ou com falha não confirma envio. Conteúdo do PDF é o do RF27, sem matrizes intermediárias.
 
