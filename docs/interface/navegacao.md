@@ -4,11 +4,12 @@
 
 [Resumo vetorial editável em SVG](prototipos/mapa-navegacao.svg).
 
-**Proposta conceitual 0.1, 06/11/2026.** Amplia o fluxo existente conforme RF01–RF27 e DEC-022–DEC-042, sem definir rotas Kotlin ou Navigation Compose. A categoria fica fixa durante toda a avaliação. Os diagramas representam o comportamento pretendido; o Figma ainda não recebeu as conexões por limite MCP.
+**Proposta conceitual 0.2, alinhamento documental em 08/11/2026.** Preserva o fluxo de RF01–RF27 e os contratos anteriores, com Navigation Compose adotado na DEC-047 e abertura animada reconhecida na DEC-049, sem definir rotas Kotlin concretas. A categoria fica fixa durante toda a avaliação. Os diagramas representam o comportamento pretendido; o Figma ainda não recebeu as conexões por limite MCP. A abertura acrescentada abaixo ainda não foi aplicada ao HTML/Figma.
 
 ```mermaid
 flowchart TD
-    APP([Entrada no aplicativo]) --> CAT
+    APP([Lançamento do aplicativo]) --> SPLASH["Abertura/Splash animada no host Android"]
+    SPLASH --> CAT
     CAT <--> LIST
     CAT[Catálogo] --> CATEG[Selecionar categoria]
     CATEG --> PROD[Produtos oficiais e pessoais da categoria]
@@ -72,6 +73,7 @@ flowchart TD
 
 ## Regras de navegação
 
+- A abertura animada atende ao escopo do enunciado, p. 4, conforme [DEC-049](../decisoes/adotadas/dec-049.md). No percurso normal segue ao catálogo, sem impor espera fixa de dois segundos ou aguardar rede. Não é uma etapa do grafo de avaliação nem um destino para voltar; integração com a splash do sistema e restauração válida seguem o contrato arquitetural, evitando reinício de edição ou duas aberturas em sequência.
 - O usuário não altera a categoria depois da criação da avaliação; para outra categoria, inicia uma nova.
 - As comparações AHP aparecem uma por vez, com progresso e retorno para revisão. Alterar uma comparação invalida a validação de consistência anterior.
 - Uma matriz AHP incompleta pode permanecer em rascunho, mas não libera TOPSIS.

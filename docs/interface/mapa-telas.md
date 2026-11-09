@@ -4,8 +4,11 @@
 
 **Proposta local 0.2, 08/11/2026.** Treze famílias organizam as funcionalidades. T11 é estado de processamento; D01–D04 são diálogos, não destinos principais. O Figma mantém os 84 frames v0.1, incluindo variantes e vinte estados AHP. Localmente são 86 descritores e projeções reutilizadas conforme categoria/seleção; não são 86 telas independentes. Os dois descritores adicionais ainda não existem no Figma.
 
+**Adendo de alinhamento com a revisão v0.3:** a abertura animada exigida no enunciado foi reconhecida na DEC-049. A linha abaixo registra um contrato adicional de apresentação, ainda sem ID/descritor no manifesto e sem frame/conexão Figma verificados. Os inventários existentes acima não foram alterados por esta correção documental.
+
 | Família / IDs no manifesto | Nome e objetivo | Requisitos | Casos de uso |
 |---|---|---|---|
+| Abertura/Splash — a representar, sem ID atual | Identificar o aplicativo com animação e seguir ao conteúdo inicial; fora da sessão de avaliação | Enunciado v2, p. 4; [DEC-049](../decisoes/adotadas/dec-049.md); sem novo RF | Entrada do app, conduzindo a UC01 no percurso normal; sem novo UC |
 | T01; T01-NOVA | Início/Categorias; escolher uma das duas categorias para consultar ou criar avaliação | RF01, RF04, RF05, RF10 | UC01, UC06 |
 | T02 e variantes | Produtos por categoria; distinguir oficiais e pessoais, consultar e iniciar comparação | RF02, RF04, RF05, RF09, RF11 | UC01, UC03–UC05, UC07 |
 | T03 e variantes | Detalhes do produto; cinco valores/unidades, origem, referência e ações pessoais | RF03, RF07, RF08, RF25 | UC02, UC04, UC05 |
