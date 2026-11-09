@@ -4,9 +4,9 @@
 **Instituição:** Universidade Federal de Uberlândia (UFU)
 **Semestre:** 2026/2
 **Projeto:** Sistema de Avaliação Comparativa Multicritério de Produtos (AHP-TOPSIS)
-**Versão:** 1.15
-**Data de consolidação:** 06/11/2026
-**Situação:** DEC-001 a DEC-042 aprovadas nas discussões da equipe.
+**Versão:** 1.17
+**Data de consolidação:** 08/11/2026
+**Situação:** DEC-001 a DEC-042 aprovadas anteriormente; DEC-043 a DEC-048 adotadas por delegação explícita do usuário em 08/11/2026; DEC-049 adotada para corrigir a omissão da abertura animada identificada na revisão v0.3.
 **Organização documental:** 05/11/2026 — detalhamentos separados por decisão; versão de conteúdo preservada.
 
 Este registro consolida decisões da equipe para orientar os requisitos, a modelagem e o desenvolvimento. Não substitui o enunciado do professor. Quando uma decisão adapta um exemplo ou procedimento do enunciado, a adaptação é identificada.
@@ -15,13 +15,13 @@ Este registro consolida decisões da equipe para orientar os requisitos, a model
 
 - [Visão e Escopo](../01-visao-e-escopo.md): visão, público, capacidades e limites do produto; este registro reúne o resumo e os links dos detalhamentos.
 - [Especificação de requisitos](../requisitos/README.md): RF01–RF27 e RNF01–RNF13 validados documentalmente.
-- [Decisões técnicas](../arquitetura/arquitetura.md): questões técnicas ainda pendentes.
+- [Arquitetura](../arquitetura/arquitetura.md): escolhas técnicas adotadas nas DEC-043–DEC-048; detalhes e validações de implementação ainda pendentes.
 - [ProjetoDisciplina_PDM20262v2.pdf](../../references/ProjetoDisciplina_PDM20262v2.pdf): referência para o enunciado, escopo e entregas.
 - [ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf](../../references/ProjetoDisciplina_PDM20262_AHP+TOPSIS.pdf): referência matemática principal escolhida pela equipe na DEC-018.
 
 ## 2. Resumo das decisões
 
-| ID | Tema | Decisão aprovada |
+| ID | Tema | Decisão vigente — status no detalhamento |
 |---|---|---|
 | DEC-001 | Modelo do aplicativo | Comparador híbrido com arquitetura genérica preparada para futuras configurações. |
 | DEC-002 | Público-alvo | Consumidores individuais e equipes/organizações, sem recursos corporativos específicos nesta versão. |
@@ -65,6 +65,13 @@ Este registro consolida decisões da equipe para orientar os requisitos, a model
 | DEC-040 | Contrato Firestore (P5-C) | Critérios embutidos e produtos raiz; revisão imutável sob responsabilidade do publicador, com limite explícito de detecção pelo cliente. |
 | DEC-041 | Identidade e números (P5-D) | UUID local, BRL em Long centavos, demais números/resultados Double; validação tipada, bloqueio de colisões monetárias e alcance do recálculo delimitado. |
 | DEC-042 | Snapshots e offline (P5-E) | Definições locais pessoais, snapshots independentes e compatibilidade com o destino; incompatibilidade semântica exige novo cadastro. |
+| DEC-043 | Camadas e módulo | MVVM com Presentation, Domain e Data por pacotes em um único módulo Android `app`; quatro responsabilidades do enunciado preservadas. |
+| DEC-044 | Injeção de dependências | Injeção manual por construtor, AppContainer e ViewModelFactory; sem Hilt/Koin nesta versão. |
+| DEC-045 | Sessão e estado | AvaliacaoViewModel no proprietário do grafo de avaliação; cadastro pessoal filho com VM próprio; edição em memória e salvamento manual separados. |
+| DEC-046 | Casos de uso e motores | Casos de uso onde há regra/orquestração; consultas simples pelos contratos; AHP/TOPSIS puros e independentes da infraestrutura. |
+| DEC-047 | Navegação | Navigation 2 / Navigation Compose com NavHost, grafo aninhado de avaliação e destinos tipados. |
+| DEC-048 | Infraestrutura PDF | Porta no Domain, PdfDocument/arquivo privado em Data e compartilhamento Android com URI temporária em Presentation, conforme DEC-032. |
+| DEC-049 | Abertura animada | Reconhecer a splash com animação exigida no escopo do enunciado, p. 4; responsabilidade de Presentation fora da sessão, sem duração fixa obrigatória de dois segundos. |
 
 ## Detalhamento das decisões aprovadas
 
@@ -95,6 +102,22 @@ DEC-001–DEC-017, DEC-020 e DEC-021 estão descritas no resumo acima e nas regr
 | [DEC-040 — P5-C — Contrato do catálogo Firestore](aprovadas/dec-040.md) | Aprovada em 06/11/2026 |
 | [DEC-041 — P5-D — Identidade e representação numérica](aprovadas/dec-041.md) | Aprovada em 06/11/2026 |
 | [DEC-042 — P5-E — Definições pessoais, snapshots e compatibilidade offline](aprovadas/dec-042.md) | Aprovada em 06/11/2026 |
+
+## Decisões arquiteturais adotadas por delegação
+
+Em 08/11/2026, após a revisão da v0.2, o usuário instruiu o agente a tomar as decisões com base no enunciado em `references/` e nas anotações `chatGPT.md`. Essa delegação autoriza selecionar e registrar as alternativas técnicas. Não atribui ao professor/equipe um aceite que não foi informado nem declara a Etapa 4 encerrada. ARQ-P01–ARQ-P06 são os identificadores históricos das propostas agora resolvidas; DEC-001–DEC-042 permanecem inalteradas.
+
+| Decisão | Origem | Status |
+|---|---|---|
+| [DEC-043 — Camadas e módulo](adotadas/dec-043.md) | ARQ-P01 | Adotada por delegação do usuário |
+| [DEC-044 — Injeção manual](adotadas/dec-044.md) | ARQ-P02 | Adotada por delegação do usuário |
+| [DEC-045 — Sessão e estado](adotadas/dec-045.md) | ARQ-P03 | Adotada por delegação do usuário |
+| [DEC-046 — Casos de uso e motores](adotadas/dec-046.md) | ARQ-P04 | Adotada por delegação do usuário |
+| [DEC-047 — Navigation Compose](adotadas/dec-047.md) | ARQ-P05 | Adotada por delegação do usuário |
+| [DEC-048 — PDF local nativo](adotadas/dec-048.md) | ARQ-P06 | Adotada por delegação do usuário |
+| [DEC-049 — Abertura animada](adotadas/dec-049.md) | Correção do parecer v0.3 | Adotada por autorização do usuário para corrigir os achados procedentes |
+
+A DEC-049 foi registrada após o parecer v0.3 para reconciliar o item de escopo da p. 4 com a arquitetura/interface. Não altera as seis escolhas anteriores ou os contratos aprovados; a duração de dois segundos do fluxo ilustrativo da p. 11 não é tratada como atraso obrigatório.
 
 ## Documentos de apoio
 
