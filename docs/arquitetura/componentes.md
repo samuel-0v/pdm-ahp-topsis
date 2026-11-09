@@ -1,6 +1,6 @@
 # Componentes e contratos arquiteturais
 
-**Versão 0.1 · 08/11/2026 · Rascunho para revisão técnica independente; não aprovado.** Nomes de componentes/operações são sugestões, não classes existentes nem assinaturas Kotlin definitivas.
+**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** Nomes orientam a implementação; não são classes Kotlin existentes.
 
 ## Objetivo e contexto
 
@@ -16,6 +16,7 @@ Criar caso de uso quando houver validação de negócio, construção de snapsho
 
 | Operação | Camada e componente sugerido | Dependências | Entrada → saída conceitual | Requisitos/decisões |
 |---|---|---|---|---|
+| Apresentar abertura animada | P: host Android e apresentação da abertura | Identidade visual e mecanismo de splash/transição compatível | Lançamento → abertura animada → conteúdo inicial/destino recuperável válido, sem escrita de dados | Enunciado v2, p. 4; DEC-049; conduz a UC01/RF01, sem novo RF/UC |
 | Listar categorias; consultar oficiais/lista/detalhe | D: `CatalogoRepository`; Data: `FirestoreCatalogoRepository` | Fonte Firestore, mapper, validação de representação/definição | Consulta/ID → fluxo de dados conhecidos, proveniência e problemas de disponibilidade/contrato | RF01–05; UC01/02; DEC-009/010/020/033/040 |
 | Consultar pessoais/lista/detalhe | D: `ProdutoPessoalRepository`; Data: implementação Room | DAO, codec e mapper | Categoria/UUID → lista reativa ou produto com definições locais | RF07/09; UC04; DEC-004/042 |
 | Cadastrar/editar pessoal | D: `SalvarProdutoPessoal` | Validador e repositório pessoal | Dados/definições; UUID existente se edição → produto salvo ou erros por campo | RF06/07/09; UC03/04; DEC-021/033/041/042 |
@@ -69,8 +70,8 @@ Códigos concretos de erro dependem da revisão. Usar resultados tipados para fa
 
 `ExportarAvaliacaoPdf` lê cópia consistente da versão persistida selecionada, valida formato/invariantes e elegibilidade e prepara conteúdo. Não chama motores nem catálogo. `GeradorRelatorioPdf` recebe conteúdo e instante de geração e retorna referência de documento independente de Android (por exemplo, identificador opaco e nome/MIME), nunca `Context` ou `Uri` no Domain.
 
-Data implementa geração/arquivos; propõe-se API nativa de PDF, sem impor biblioteca externa. Presentation transforma a referência em URI pelo adaptador Android e abre o seletor com acesso temporário. Paginação e limpeza de temporários exigem detalhamento técnico; a API está pendente em ARQ-P06. As três opções da DEC-032 estão no [fluxo de dados](fluxo-dados.md).
+Data implementa geração/arquivos com PdfDocument nativo, conforme DEC-048, sem biblioteca PDF externa inicial. Presentation transforma a referência em URI pelo adaptador Android e abre o seletor com acesso temporário. Paginação e limpeza de temporários exigem detalhamento técnico; a escolha da API está adotada na DEC-048 (origem ARQ-P06). As três opções da DEC-032 estão no [fluxo de dados](fluxo-dados.md).
 
 ## Justificativas, pendências e aprovação
 
-A distribuição atende RNF09/10 com contratos substituíveis/regras puras e preserva o agregado/seis tabelas, sem módulos ou fontes extras. ARQ-P03/P04/P06 dependem de revisão dos escopos, fronteiras do motor e referência PDF. A quantidade final de classes seguirá responsabilidades reais, não a quantidade de RFs. Nenhum componente proposto é declarado implementado ou aprovado.
+A distribuição atende RNF09/10 com contratos substituíveis/regras puras e preserva agregado/seis tabelas. As DEC-045/046/048 adotam escopos, fronteiras do motor e infraestrutura PDF por delegação do usuário. A quantidade final de classes seguirá responsabilidades reais, não a quantidade de RFs. A escolha está definida documentalmente; nenhum componente foi implementado nesta atividade. Permanecem detalhamentos/testes de implementação e alinhamento com Etapa 5.

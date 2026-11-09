@@ -6,7 +6,15 @@
 
 ## Catálogo e produtos — T01 a T04
 
-T01 reúne início e categorias, sem splash temporizado obrigatório. A entrada de consulta abre produtos; a entrada “Nova avaliação” escolhe categoria e cria edição em memória. Apenas as duas categorias aprovadas são apresentadas.
+### Abertura/Splash — exigência do enunciado
+
+**Adendo documental de 08/11/2026, conforme DEC-049:** o [enunciado v2, p. 4](../../references/ProjetoDisciplina_PDM20262v2.pdf), exige apresentação inicial do aplicativo com animação. A abertura deve identificar PDM AHP-TOPSIS e fazer uma transição animada para o conteúdo inicial; o percurso normal segue para T01. Não impor duração fixa de dois segundos a partir do fluxo ilustrativo da p. 11, aguardar consulta remota para liberar a abertura ou criar avaliação nesse momento.
+
+A abertura pertence ao host Android, fora do grafo de avaliação; não é uma etapa a rever ao pressionar Voltar. Retornos do cadastro/compartilhamento e recomposições não a reapresentam nem reiniciam a sessão. Em restauração, respeitar o destino e os dados efetivamente recuperáveis, conforme [contrato de ciclo de vida](../arquitetura/gerenciamento-estado.md). Integrar com a splash do sistema para evitar duplicação; os recursos e a animação compatível serão verificados na implementação.
+
+**Critérios de representação:** identificação visual legível, animação/transição descrita, destino após abertura, contraste/acessibilidade e sinalização de que não há progresso de cálculo ou salvamento nessa apresentação. Abertura ainda não possui descritor no manifesto local nem frame/conexão próprios verificados no Figma. Este adendo especifica o comportamento a representar; não declara os protótipos corrigidos.
+
+T01 reúne início e categorias **após a abertura animada**. A entrada de consulta abre produtos; a entrada “Nova avaliação” escolhe categoria e cria edição em memória. Apenas as duas categorias aprovadas são apresentadas. A [DEC-049](../decisoes/adotadas/dec-049.md) corrige a omissão documental anterior sem modificar RF01–RF27.
 
 T02 separa oficiais/pessoais da categoria por abas ou ações equivalentes. Mostra identificação, origem e incompletude; oferece detalhes, cadastro pessoal e iniciar avaliação. O protótipo usa ações textuais para alternar. Não introduz busca, filtros, categorias personalizadas ou limite de 50 produtos.
 

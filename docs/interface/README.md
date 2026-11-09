@@ -18,14 +18,17 @@ O material permite demonstrar localmente os percursos de avaliação nas duas ca
 
 ## Base analisada e adaptações preservadas
 
-Foram lidos [Visão e Escopo](../01-visao-e-escopo.md), [requisitos e casos de uso](../requisitos/README.md), [domínio](../modelagem/dominio.md), [estados](../modelagem/04-estados-transicoes.md), [persistência e snapshots](../modelagem/05-persistencia-snapshots.md), [contratos consolidados](../modelagem/05-contratos-persistencia.md) e os capítulos de valores, compatibilidade, operações e recálculo. O [registro de decisões](../decisoes/registro-decisoes.md) e as regras transversais definem os comportamentos; a [arquitetura existente](../arquitetura/arquitetura.md) ainda é um documento de pendências.
+**Adendo documental de 08/11/2026 — revisão da arquitetura v0.3:** reconhecida a exigência de abertura animada do enunciado na DEC-049. Especificação, mapa e navegação foram alinhados neste texto, sem alterar HTML, manifesto, scripts ou Figma. A representação da abertura nos protótipos permanece pendente; os inventários e evidências de execução anteriores não foram ampliados.
+
+Foram lidos [Visão e Escopo](../01-visao-e-escopo.md), [requisitos e casos de uso](../requisitos/README.md), [domínio](../modelagem/dominio.md), [estados](../modelagem/04-estados-transicoes.md), [persistência e snapshots](../modelagem/05-persistencia-snapshots.md), [contratos consolidados](../modelagem/05-contratos-persistencia.md) e os capítulos de valores, compatibilidade, operações e recálculo. O [registro de decisões](../decisoes/registro-decisoes.md) e as regras transversais definem os comportamentos; a [arquitetura](../arquitetura/arquitetura.md) agora registra as escolhas de DEC-043–DEC-048 e a correção de abertura da DEC-049, sem declarar as escolhas visuais aprovadas.
 
 O [enunciado v2](../../references/ProjetoDisciplina_PDM20262v2.pdf), pp. 7, 9 e 11, pede layouts, navegação, protótipos e apresentação das escolhas visuais na primeira entrega. A data da Fase 1 indicada ali é 03/11/2026; este material foi preparado em 06/11/2026 e não constitui comprovante de entrega. A arquitetura continua necessária para a entrega, embora não seja pré-condição para estes artefatos. O [plano de entrega existente](../entregas/fase-1-plano.md) não foi alterado nesta execução.
 
-| Exemplo do enunciado | Proposta guiada pela base aprovada |
+| Trecho do enunciado | Tratamento documental e situação |
 |---|---|
 | Quatro categorias e exemplos genéricos de critérios | Somente Smartphones Premium e Veículos Elétricos (BEV), com os cinco critérios próprios aprovados. |
-| Nome “CompareAI”, splash de 2 s e “cores da seleção” | Nome PDM AHP-TOPSIS; entrada direta no catálogo. Não adotar trechos editoriais alheios ao projeto como requisitos. |
+| Splash Screen com animação — Escopo do Projeto, p. 4 | Exigência de apresentação reconhecida na [DEC-049](../decisoes/adotadas/dec-049.md): abertura animada e depois conteúdo inicial. Omissão anterior corrigida na especificação/mapa/navegação; representação no HTML/Figma ainda pendente. |
+| Nome “CompareAI”, duração de 2 s no fluxo ilustrativo da p. 11 e “cores da seleção” | Usar nome PDM AHP-TOPSIS. O item de escopo exige a abertura animada, mas não fixa dois segundos; não tornar a sugestão ilustrativa um atraso obrigatório. |
 | AHP antes dos valores | Conferir valores → AHP → revisão, preservando o fluxo já existente. |
 | Vencedor com destaque dourado | Destaque apenas para vencedor único; empates e ausência de diferenciação respeitam DEC-024/027/028/035. |
 | Gráficos e matrizes como telas obrigatórias | Não acrescentados como funcionalidades. Detalhes exibem os indicadores e valores exigidos; PDF não contém matrizes intermediárias. |
@@ -49,6 +52,7 @@ Fontes/rubricas reais, domínios e precisão dos critérios dependem também da 
 
 ## Itens restantes para concluir a Etapa 5
 
+- Representar a abertura/splash animada exigida no enunciado e sua transição ao conteúdo conforme DEC-049; conferir identificação visual, acessibilidade e retorno. A especificação foi corrigida documentalmente, mas esta atividade não alterou o manifesto, HTML ou Figma.
 - Aplicar e verificar conexões no Figma após a liberação de chamadas; corrigir barras superiores, botões estreitos, progresso e variantes ampliadas antes de apresentar esse arquivo como navegável.
 - Completar interações de intensidade/sentido Saaty e entrada livre. BEV, seleção mista e cadastro durante seleção já são demonstráveis localmente com dados fixos; sua expansão para Figma continua pendente.
 - Completar exceções secundárias, incluindo falhas de leitura/compartilhamento, cadastro inválido e estados de consulta vazia/sem permissão. Falha de cadastro durante seleção já é simulável no HTML.

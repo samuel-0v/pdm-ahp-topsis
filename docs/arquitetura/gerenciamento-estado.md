@@ -1,6 +1,6 @@
 # ViewModels, estado e execução assíncrona
 
-**Versão 0.1 · 08/11/2026 · Rascunho para revisão técnica independente; não aprovado.** Escopos e nomes são propostas ARQ-P03/P05, sem ViewModels implementados.
+**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** Sessão e navegação definidas nas DEC-045/047, sem ViewModels implementados.
 
 ## Objetivo e contexto
 
@@ -88,7 +88,7 @@ Falha de rede conserva cache válido conhecido com aviso, sem declarar sincroniz
 
 O ViewModel retido pelo mesmo proprietário preserva a sessão durante rotação, mas perde-se ao terminar o proprietário ou morrer o processo. O mecanismo AndroidX retém ViewModels; DI apenas ajuda a criá-los.
 
-Proposta ARQ-P03: `SavedStateHandle` guarda apenas pequenos identificadores/parâmetros de recuperação (avaliação salva, categoria, etapa/par quando reconstruíveis), sem serializar a edição ou resultados não salvos. Após morte do processo, uma avaliação já salva pode ser recarregada integralmente do Room; edição posterior pode se perder. Uma avaliação nova nunca salva não pode ser recuperada pelo seu UUID sozinho. Etapa restaurada deve ser validada contra o conteúdo realmente recuperado; não prometer retorno a um resultado não salvo. Sem registro salvo ou definições suficientes, oferecer reinício/retorno seguro, sem criar rascunho.
+DEC-045 (origem ARQ-P03): `SavedStateHandle` guarda apenas pequenos identificadores/parâmetros de recuperação (avaliação salva, categoria, etapa/par quando reconstruíveis), sem serializar a edição ou resultados não salvos. Após morte do processo, uma avaliação já salva pode ser recarregada integralmente do Room; edição posterior pode se perder. Uma avaliação nova nunca salva não pode ser recuperada pelo seu UUID sozinho. Etapa restaurada deve ser validada contra o conteúdo realmente recuperado; não prometer retorno a um resultado não salvo. Sem registro salvo ou definições suficientes, oferecer reinício/retorno seguro, sem criar rascunho.
 
 `rememberSaveable`/`SavedStateHandle` são restauração condicionada ao estado fornecido pelo Android e a seus limites, não backup permanente. O aviso ao sair cobre saída controlada; não há garantia de mostrar diálogo antes de encerramento inesperado. Essa limitação já é aceita em RNF05/DEC-025 e precisa aparecer na comunicação do produto.
 
@@ -96,7 +96,93 @@ Proposta ARQ-P03: `SavedStateHandle` guarda apenas pequenos identificadores/par�
 
 Destinos são identificados conceitualmente, sem strings/rotas fixadas. Passar IDs e origem, não matrizes/objetos inteiros no back stack. Para avaliação nova, compartilhar a sessão em memória e sua categoria; UUID ainda não salvo não é uma referência recuperável pelo Room.
 
-O proprietário compartilhado deve permanecer vivo durante todo o assistente e no cadastro pessoal aberto a partir da seleção. Com Navigation 2 pode ser uma entrada do grafo da avaliação; com Navigation 3 é necessário definir proprietário/escopo que não seja destruído ao substituir a entrada da etapa. A solução concreta depende de ARQ-P05; Activity global não é escolhida por conveniência. Retorno do cadastro informa o ID do produto salvo à sessão; não salva nem seleciona automaticamente avaliação por efeito de recomposição.
+### Proprietário AndroidX da sessão — ARQ-P03/P05
+
+Decisão DEC-047 (origem ARQ-P05): **Navigation 2 / Navigation Compose**, com um grafo aninhado de avaliação dentro do NavHost principal. O proprietário do `AvaliacaoViewModel` é o **`NavBackStackEntry` da instância desse grafo**, que implementa `ViewModelStoreOwner`. Todas as etapas obtêm o VM no mesmo proprietário pai por meio da fábrica manual; obter o VM no proprietário padrão de cada tela criaria instâncias diferentes. O mecanismo de escopo está documentado nas [APIs AndroidX de ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-apis).
+
+O nome do grafo aqui é conceitual, sem fixar rotas Kotlin. Ao criar ou retomar uma avaliação, entrar uma única vez no grafo e inicializar a sessão: criação em memória com critérios disponíveis, ou cópia validada da versão salva. Navegar entre seleção, valores, AHP, revisão e resultado altera destinos filhos, preservando a entrada pai. Há **uma sessão ativa por NavHost**; iniciar outra avaliação exige resolver a saída da atual primeiro. A composição do grafo não é o agregado persistido, e seu identificador não torna recuperável uma avaliação nunca salva.
+
+Duração dos proprietários definida na DEC-045:
+
+| Proprietário | Objeto mantido | Até quando permanece |
+|---|---|---|
+| Entrada do grafo de avaliação | Um `AvaliacaoViewModel` com edição e referência salva separadas | Durante todas as etapas e o cadastro pessoal aberto a partir delas, mesmo quando uma etapa fica fora de composição ou com ciclo de vida parado. |
+| Entrada filha de cadastro pessoal | `ProdutoPessoalViewModel` do formulário | Enquanto esse formulário estiver na pilha; removê-lo no retorno não remove o proprietário pai da avaliação. |
+| Entrada externa de catálogo/lista | ViewModel correspondente, conforme seu escopo | Segue o fluxo externo. Não é proprietário da edição nem recebe uma cópia mutável dela. |
+
+O AndroidX oferece entradas também para grafos pais e mantém seus ViewModels enquanto esse escopo existir, conforme o [contrato de NavBackStackEntry e compartilhamento por grafo](https://developer.android.com/guide/navigation/use-graph/programmatic). A organização do assistente em um [grafo aninhado](https://developer.android.com/guide/navigation/design/nested-graphs) é a escolha adotada nas DEC-045/047 por delegação do usuário.
+
+### Cadastro pessoal e retorno à mesma seleção
+
+1. A seleção abre o cadastro como **destino filho do mesmo grafo de avaliação**, mantendo a entrada da seleção abaixo dele. Não sair do grafo, não substituir sua entrada pai e não recriar a sessão.
+2. O formulário usa seu próprio ViewModel, com categoria fixa da avaliação e definições suficientes/compatíveis. O host fornece esses dados de contexto; não passar o agregado inteiro por argumento nem permitir ao formulário editar a avaliação. O mesmo Composable pode atender cadastro externo com outro proprietário/contexto, sem criar uma sessão artificial.
+3. Salvar produto pessoal é uma operação local explícita independente de salvar avaliação. Em falha, manter formulário e sessão. Em sucesso, retornar apenas o UUID do produto à entrada de seleção como resultado pequeno; a proposta admite o `SavedStateHandle` dessa entrada para o retorno, com consumo e remoção do resultado após tratamento.
+4. Remover somente a entrada do formulário por retorno na pilha, revelando a seleção já existente. A seleção continua obtendo o mesmo `AvaliacaoViewModel` do pai; não navegar para uma nova instância da seleção nem recarregar a avaliação do Room sobre a edição.
+5. O ID retornado permite localizar o produto na lista pessoal atualizada. Incorporá-lo à avaliação exige a ação de seleção e a validação de identidade/compatibilidade já previstas; o retorno não salva nem associa a avaliação por recomposição. Cancelamento retorna sem ID de produto novo. Um produto pessoal já salvo continua no catálogo se depois o usuário descartar a avaliação.
+
+O resultado de navegação transporta uma referência de produto, não valores ou definições que substituam snapshots. Remover o ID após consumo evita reaplicação por nova observação, sem prometer entrega única após morte de processo. Se houver ID pendente restaurado, verificar o cadastro e o contexto recuperados; isso não recupera a edição perdida nem autoriza seleção automática.
+
+### Diagrama 5 — Propriedade e ciclo de vida da sessão
+
+Setas contínuas indicam entrada/navegação/saída; pontilhadas indicam **propriedade do ViewModel ou uso da mesma sessão**. O contorno representa a instância do grafo cujo proprietário permanece na pilha. Cadastro e retorno são destinos/estados da mesma sessão, não avaliações novas. Componentes são projetados conforme DEC-045/047, sem implementação de navegação.
+
+```mermaid
+flowchart TD
+    IN["Avaliação: criar ou retomar"] --> OWNER
+    subgraph G["Grafo de avaliação ativo no NavHost"]
+        OWNER["NavBackStackEntry do grafo: ViewModelStoreOwner"]
+        VM["AvaliacaoViewModel: edição e referência salva separadas"]
+        SEL["Seleção de alternativas"]
+        CAD["Cadastro pessoal: destino filho com entrada própria"]
+        PVM["ProdutoPessoalViewModel: formulário independente"]
+        RET["Retorno à mesma seleção: consumir UUID ou cancelamento"]
+        VAL["Valores e validações"]
+        AHP["AHP e revisão"]
+        RESULT["Resultado em memória ou consulta da versão salva"]
+        EXIT{"Encerrar sessão: saída resolvida?"}
+        OWNER -. mantém .-> VM
+        OWNER --> SEL
+        SEL -->|Abrir cadastro| CAD
+        CAD -. entrada filha mantém .-> PVM
+        CAD -->|Salvar produto com sucesso ou cancelar| RET
+        RET -->|Revelar seleção existente| SEL
+        SEL -->|Conferir seleção e avançar| VAL
+        VAL --> AHP
+        AHP --> RESULT
+        VM -. mesma sessão .-> SEL
+        VM -. preservada durante cadastro .-> CAD
+        VM -. mesma sessão .-> RET
+        VM -. mesma sessão .-> VAL
+        VM -. mesma sessão .-> AHP
+        VM -. mesma sessão .-> RESULT
+        SEL -->|Sair da sessão| EXIT
+        RESULT -->|Sair da sessão| EXIT
+        EXIT -->|Não: continuar ou falha ao salvar| VM
+    end
+    EXIT -->|Sim: sem pendência, salvar confirmado ou descartar| POP["Remover grafo e filhos sem guardar sessão para restauração"]
+    POP --> CLEAR["Liberar ViewModel; cancelar trabalhos; retornar à origem"]
+```
+
+O nó de retorno representa o tratamento do resultado antes de revelar a seleção anterior, não uma rota nova. O caminho é explicitamente `RET → SEL`; avançar de `SEL` para valores exige ação separada, depois de conferir/selecionar as alternativas e aplicar validações. Cadastro bem-sucedido ou cancelado não pula a seleção. Saída a partir de qualquer outra etapa segue a mesma decisão do nó `EXIT`; o desenho mostra duas origens para evitar repetição. Valores, AHP e revisão não são necessariamente um fluxo visual rígido. As regras de consistência/processamento permanecem no [Diagrama 2](motores-matematicos.md).
+
+### Voltar, encerramento e retomada
+
+| Contexto de Voltar ou saída | Comportamento proposto e efeito no proprietário |
+|---|---|
+| Teclado/diálogo aberto | Tratar primeiro esse elemento conforme navegação da Etapa 5; fechar diálogo de confirmação equivale a cancelar/continuar. Não remover o grafo nem gravar por esse gesto. |
+| Cadastro pessoal dentro da avaliação | Voltar trata as pendências do próprio formulário; ao cancelar/descartar ou salvar com sucesso e retornar, remover só sua entrada. Edição da avaliação permanece no pai. |
+| Valores, comparações e revisão | Voltar para a etapa/par anterior conserva o agregado em memória e a entrada pai; não recarregar Room nem salvar por navegação. Rever par pode ser evento de UI sem nova entrada de navegação. |
+| Resultado | Voltar à revisão conserva a sessão e os resultados correspondentes. Resultado novo/diferente continua pendente até salvar explicitamente. |
+| Seleção inicial ou ação explícita de sair/ir a fluxo externo | Resolver saída da sessão: sem pendência, sair; com pendência, oferecer Salvar/Descartar/Continuar. Salvar só sai após confirmação; falha ou Continuar mantém entrada pai e edição. |
+| Processamento em curso | Voltar à revisão invalida/cancela a tentativa; resposta tardia não entra na edição. Se a ação for encerrar sessão, resolver também as alterações pendentes antes de remover o grafo. |
+| Exclusão confirmada da avaliação salva | Após sucesso, encerrar sua sessão e remover grafo/filhos; em cancelamento/falha, preservar sessão e versão salva. |
+| Fora da sessão | Aplicar a pilha do fluxo externo conforme a [navegação proposta](../interface/navegacao.md); não há edição de avaliação oculta a salvar. Nova entrada no assistente cria outro escopo. |
+
+Botão Voltar do Android e botão da barra superior devem respeitar essas condições. Atalhos para catálogo/lista ou para outra avaliação não podem contornar o aviso de saída. Não remover o grafo ao simplesmente salvar e continuar, apresentar resultado ou abrir/fechar o compartilhamento Android; enviar o app ao segundo plano também não é encerramento controlado da sessão.
+
+Na saída resolvida, remover definitivamente a entrada do grafo e seus filhos: conceitualmente `popUpTo` do grafo com remoção inclusiva e **sem `saveState` para guardar essa sessão**. Não usar restauração de back stack para ressuscitar uma edição descartada ou encerrada; as opções de [salvar/restaurar pilha](https://developer.android.com/guide/navigation/backstack) não substituem a política DEC-025. Quando a remoção definitiva do escopo se efetivar, seu ViewModelStore será liberado e `onCleared`/cancelamento de `viewModelScope` encerrarão trabalhos; não gravar nesse momento. Término definitivo do NavHost/Activity ou morte de processo também pode eliminar o escopo, sem garantia de diálogo prévio.
+
+Enquanto o proprietário for retido durante mudança de configuração, sua sessão pode continuar em memória. **Após morte do processo, a instância do ViewModel foi perdida**, mesmo que o Android restaure a pilha. Aplicar a política da seção de restauração: nova instância só carrega a última versão Room se houver ID salvo e contrato válido; nunca reconstruir seleção/resultados não salvos a partir de etapas da pilha. Se a entrada restaurada apontar ao cadastro, AHP ou resultado que dependia de edição perdida, redirecionar para uma etapa coerente com os dados recuperados; para avaliação nunca salva, reiniciar/retornar com explicação, sem criar rascunho automático. O cadastro pessoal já confirmado no Room permanece consultável, independentemente da avaliação.
 
 | Contrato a alinhar com Figma | Estados e ações que precisam de representação |
 |---|---|
@@ -111,4 +197,4 @@ IDs seguem o [mapa em elaboração](../interface/mapa-telas.md); não são contr
 
 ## Justificativas, pendências e aprovação
 
-Um ViewModel de sessão evita cópias concorrentes de uma avaliação; ViewModels separados para catálogos/formulário/lista evitam estado global excessivo. Estado imutável e comandos explícitos tornam DEC-025/039 verificáveis. Revisar ARQ-P03 (escopo, restauração e serialização de comandos) e ARQ-P05 com a equipe/Figma. Não houve implementação nem aprovação desses contratos.
+Um ViewModel de sessão evita cópias concorrentes de uma avaliação; ViewModels separados para catálogos/formulário/lista evitam estado global excessivo. Estado imutável e comandos explícitos tornam DEC-025/039 verificáveis. A v0.2 refinou o proprietário, cadastro/retorno e término do escopo; na v0.3 essas escolhas foram adotadas nas DEC-045/047 por delegação do usuário. Restam alinhamento com Figma e verificações da implementação, sem nova confirmação de cada alternativa técnica nem declaração de código implementado.

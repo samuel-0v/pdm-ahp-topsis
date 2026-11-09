@@ -1,6 +1,6 @@
 # Etapa 4 — Arquitetura do Aplicativo
 
-**Versão 0.1 · 08/11/2026 · Rascunho para revisão técnica independente.** As propostas desta pasta não estão aprovadas. Componentes e diagramas descrevem a arquitetura pretendida, não uma implementação Android existente.
+**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** Modelo documentado; componentes ainda não implementados. A adoção das escolhas não declara encerramento formal da Etapa 4.
 
 ## Objetivo e contexto
 
@@ -12,7 +12,7 @@ Fontes normativas do projeto: [visão](../01-visao-e-escopo.md), [RF01–RF27 e 
 
 | Evidência examinada | Situação encontrada e consequência |
 |---|---|
-| Arquitetura antes desta execução | Documento de pendências, sem componentes, ViewModels ou diagramas arquiteturais. Este arquivo passa a ser o índice da proposta. |
+| Arquitetura antes da v0.1 | Documento de pendências, sem componentes, ViewModels ou diagramas arquiteturais. Este arquivo passou a ser o índice da proposta. |
 | DEC-038–DEC-042 | Aprovadas no registro e em `decisoes/aprovadas/`. Textos em `decisoes/propostas/` e estudos históricos da Parte 5 não reabrem essas escolhas. |
 | Parte 5 | Seis tabelas, resultados incorporados, números tipados, revisões e compatibilidade já contratados. Não foi identificada inconsistência que exija redesenhar domínio ou persistência. CHECK canônico, schema/migrations e escolha de serialização continuam dependências técnicas. |
 | Código em `app/` | Motor Kotlin puro isolado, `AhpTopsis.kt`, e roteiro de testes; sem projeto Gradle Android configurado. O motor ainda não cumpre todos os contratos posteriores, conforme [análise específica](motores-matematicos.md). |
@@ -28,10 +28,20 @@ Fontes normativas do projeto: [visão](../01-visao-e-escopo.md), [RF01–RF27 e 
 | [Gerenciamento de estado](gerenciamento-estado.md) | ViewModels, sessão, eventos, ciclo de vida, concorrência e navegação/Figma. |
 | [Fluxo de dados](fluxo-dados.md) | Room/Firestore, mapeamento, salvamento e PDF. |
 | [Motores matemáticos](motores-matematicos.md) | Fluxo AHP/TOPSIS, contratos e lacunas do código isolado. |
-| [Decisões pendentes](decisoes-pendentes.md) | Comparações de DI/navegação, recomendações e condições de aprovação. |
+| [Decisões adotadas e pendências técnicas](decisoes-pendentes.md) | Escolhas vigentes, comparação das alternativas, fontes e tarefas técnicas futuras. |
 | [Fontes e verificação](referencias-e-validacao.md) | Evidência das aulas, referências técnicas, verificações e revisão futura. |
 
-## Proposta geral: três camadas lógicas
+### Refinamentos v0.1 → v0.2
+
+A revisão independente foi recebida e seus [quatro apontamentos foram respondidos](referencias-e-validacao.md#resposta-à-revisão-independente-da-v01). A v0.2 explicita as regras definitivas de DEC-041/042 sem mudá-las, detalha proprietário/retorno/encerramento do ViewModel no Navigation Compose com o [Diagrama 5](gerenciamento-estado.md#diagrama-5--propriedade-e-ciclo-de-vida-da-sessão), torna a identificação das anotações portável e consolida ARQ-P01–ARQ-P06 para aprovação. A distribuição de camadas/componentes e a integração matemática permanecem as da proposta v0.1; nenhum motor, schema ou protótipo foi implementado/alterado.
+
+### Adoção das escolhas — v0.3
+
+Por instrução posterior do usuário para tomar as decisões conforme o enunciado e as aulas, ARQ-P01–ARQ-P06 foram resolvidas nas **DEC-043–DEC-048**: módulo único/três camadas, DI manual, sessão compartilhada, casos de uso/motores independentes, Navigation Compose e PDF nativo local. O [quadro de decisões](decisoes-pendentes.md) e o [registro central](../decisoes/registro-decisoes.md) identificam fontes, status e consequências. Os textos anteriores de revisão descrevem o percurso v0.1/v0.2; não deixam essas alternativas ainda abertas.
+
+## Arquitetura geral: três camadas lógicas
+
+**Correção v0.4:** o escopo do enunciado, p. 4, exige abertura/splash animada. A [DEC-049](../decisoes/adotadas/dec-049.md) corrige a omissão da v0.3 e atribui essa apresentação ao host Android, fora da sessão de avaliação. A [especificação da interface](../interface/especificacao-telas.md#aberturasplash--exigência-do-enunciado) e a navegação conceitual foram alinhadas documentalmente; Figma/HTML não foram alterados. O Diagrama 5 também foi corrigido para retornar do cadastro à seleção antes de avançar a valores.
 
 | Camada | Responsabilidade | Correspondência com as quatro responsabilidades do enunciado |
 |---|---|---|
@@ -43,22 +53,22 @@ Fontes normativas do projeto: [visão](../01-visao-e-escopo.md), [RF01–RF27 e 
 
 ### Diagrama 1 — Componentes e dependências de código
 
-Seta contínua significa **conhece/usa um tipo**; seta pontilhada `implementa` significa **realiza um contrato do Domain**. Nenhuma seta representa retorno de dados. Todos os componentes são propostos; apenas o cálculo puro inicial existe hoje, concentrado em `AhpTopsis`.
+Seta contínua significa **conhece/usa um tipo**; seta pontilhada `implementa` significa **realiza um contrato do Domain**. Nenhuma seta representa retorno de dados. Os componentes são projetados e ainda não implementados; apenas o cálculo puro inicial existe hoje, concentrado em `AhpTopsis`.
 
 ```mermaid
 flowchart TB
     subgraph P[Presentation]
         UI["Telas e componentes Compose"]
         VM["ViewModels e UiState"]
-        HOST["Host Android: navegação e compartilhamento"]
+        HOST["Host Android: abertura, navegação e compartilhamento"]
         UI --> VM
         HOST --> UI
     end
     subgraph D[Domain: Kotlin independente de Android]
         UC["Casos de uso: seleção, cálculo, salvar e exportar"]
         RULES["Modelos e validações do agregado"]
-        AHP["AhpEngine: responsabilidade proposta"]
-        TOP["TopsisEngine: responsabilidade proposta"]
+        AHP["AhpEngine: responsabilidade de domínio"]
+        TOP["TopsisEngine: responsabilidade de domínio"]
         REPO["Contratos: catálogo, pessoais e avaliações"]
         PDFPORT["Contrato GeradorRelatorioPdf"]
         UC --> RULES
@@ -99,13 +109,13 @@ Em execução, um clique chega ao ViewModel, que chama um caso de uso ou consult
 
 ### Construção e fornecimento das dependências
 
-Proposta ARQ-P02: injeção por construtor e montagem manual em `AppContainer`, com fábrica de ViewModels integrada ao proprietário AndroidX. O container cria Room, cliente Firestore, repositórios, gerador PDF e casos de uso, e fornece dispatchers. A fábrica recebe dependências e dados mínimos de navegação/estado salvo. UI e Domain não procuram o container globalmente.
+DEC-044 (origem ARQ-P02): injeção por construtor e montagem manual em `AppContainer`, com fábrica de ViewModels integrada ao proprietário AndroidX. O container cria Room, cliente Firestore, repositórios, gerador PDF e casos de uso, e fornece dispatchers. A fábrica recebe dependências e dados mínimos de navegação/estado salvo. UI e Domain não procuram o container globalmente.
 
-Banco/cliente/repositórios podem ser compartilhados no escopo da aplicação; motores e casos de uso sem estado não exigem escopos sofisticados. A edição pertence ao `AvaliacaoViewModel` da sessão, nunca a um singleton do container. Dependências Android usam contexto de aplicação quando necessário, sem reter Activity em ViewModel/repositório. O host de compartilhamento usa a Activity somente enquanto disponível. [Comparação e aprovação pendente](decisoes-pendentes.md).
+Banco/cliente/repositórios podem ser compartilhados no escopo da aplicação; motores e casos de uso sem estado não exigem escopos sofisticados. A edição pertence ao `AvaliacaoViewModel` mantido no NavBackStackEntry do grafo da sessão, nunca a um singleton do container. Cadastro pessoal aberto durante seleção é destino filho com VM próprio; seu retorno não remove esse proprietário pai, conforme [contrato de sessão](gerenciamento-estado.md). Dependências Android usam contexto de aplicação quando necessário, sem reter Activity em ViewModel/repositório. O host de compartilhamento usa a Activity somente enquanto disponível. [Comparação e decisões adotadas](decisoes-pendentes.md).
 
 ## Organização sugerida do código
 
-Proposta ARQ-P01: começar com **um único módulo Android `app`**, organizado por pacotes. Múltiplos módulos acrescentariam configuração Gradle e coordenação sem necessidade atual de distribuição independente. Pacotes não impõem fronteiras de compilação: revisão de imports e testes devem proteger a regra de dependência. Extrair módulos só diante de necessidade concreta.
+DEC-043 (origem ARQ-P01): começar com **um único módulo Android `app`**, organizado por pacotes. Múltiplos módulos acrescentariam configuração Gradle e coordenação sem necessidade atual de distribuição independente. Pacotes não impõem fronteiras de compilação: revisão de imports e testes devem proteger a regra de dependência. Extrair módulos só diante de necessidade concreta.
 
 Estrutura futura sob o namespace existente `br.edu.ufu.pdm.mcdm`:
 
@@ -145,6 +155,6 @@ RNF09–RNF11 e DEC-029 orientam os testes, sem alegar execução do aplicativo 
 
 ## Pendências e status de aprovação
 
-ARQ-P01–ARQ-P06 estão em [decisões pendentes](decisoes-pendentes.md), sem ocupar IDs DEC nem alterar o registro aprovado. Antes de encerrar a Etapa 4: obter revisão independente, resolver achados, alinhar com a equipe e registrar aprovação explícita. Configuração e testes de implementação ficam para a etapa técnica; o [checklist](referencias-e-validacao.md) distingue os trabalhos.
+ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. Restam o alinhamento operacional com Etapa 5, eventuais ajustes da conferência final e o encerramento formal da Etapa 4; não se atribui ao professor um aceite não informado. Configuração e testes de implementação ficam para a etapa técnica, conforme o [checklist](referencias-e-validacao.md).
 
 Para o vídeo: apresentar três camadas/quatro responsabilidades; seleção e cálculo sem salvar; salvamento manual atômico; catálogo/cache independente dos snapshots Room; pendências e limites. Estes documentos não comprovam apresentação ou entrega ao professor.

@@ -13,6 +13,10 @@ Estas questões não alteram as decisões aprovadas; precisam ser detalhadas par
 
 ## 12. Histórico
 
+- **v1.17 (08/11/2026):** revisão independente v0.3 aceita nos dois achados: abertura animada reconhecida na DEC-049 com alinhamento documental à interface; Diagrama 5 retorna do cadastro à seleção. Sem alteração de contratos anteriores, código ou protótipos.
+
+- **v1.16 (08/11/2026):** DEC-043–DEC-048 adotadas por delegação explícita do usuário, resolvendo as seis escolhas da arquitetura conforme enunciado/aulas. DEC-001–DEC-042 e os contratos definitivos foram preservados; sem implementação nem encerramento formal da Etapa 4.
+
 - **v1.15 (06/11/2026):** DEC-039–DEC-042 aprovadas conjuntamente pelo usuário após os ajustes da revisão; Partes 1–5 aprovadas e Etapa 3 concluída documentalmente. Dependências técnicas e limite de detecção do cliente preservados.
 
 - **v1.14:** DEC-038 registra aprovação limitada da P5-A; defesa física AHP ainda requer validação e P5-B–P5-E permanecem pendentes.
@@ -24,7 +28,7 @@ Estas questões não alteram as decisões aprovadas; precisam ser detalhadas par
 - **v1.12:** DEC-036 aprovada para a organização conceitual da modelagem, incluindo distinção de CritérioPreservado, referências históricas independentes do catálogo e valores por critério nas alternativas.
 - **v1.13:** DEC-037 aprovada para cardinalidades conceituais da Parte 3: critérios iniciais/futuros, exclusividade por categoria e diagnóstico AHP inconsistente em rascunhos.
 
-Este documento consolida as decisões DEC-001 a DEC-042 aprovadas nas discussões da equipe até 06/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
+Este documento preserva as aprovações de DEC-001–DEC-042 até 06/11/2026 e registra a adoção delegada de DEC-043–DEC-048 e a correção de abertura da DEC-049 em 08/11/2026. Novas decisões devem receber novo identificador e registrar status, contexto, decisão e consequências. Alterações em decisões existentes devem ser registradas, sem apagar silenciosamente o histórico.
 
 ## Validação dos requisitos não funcionais
 

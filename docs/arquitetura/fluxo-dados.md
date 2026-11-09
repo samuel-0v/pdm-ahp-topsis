@@ -1,12 +1,12 @@
 # Fluxo de dados, persistência e exportação
 
-**Versão 0.1 · 08/11/2026 · Rascunho para revisão técnica independente; não aprovado.** Diagramas representam comportamento proposto, sem Room/Firestore/PDF configurados.
+**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** Comportamento arquitetural definido; Room, Firestore e PDF não foram configurados.
 
 ## Objetivo e contexto
 
-Definir como os [componentes](componentes.md) implementam conceitualmente os [contratos P5](../modelagem/05-contratos-persistencia.md). DEC-038–DEC-042 estão aprovadas: esta proposta não reabre o schema de seis tabelas, os tipos numéricos, a política de snapshots ou as revisões. DEC-025/032 definem salvamento manual e PDF; RNF05–RNF08 definem integridade, offline e privacidade.
+Definir como os [componentes](componentes.md) implementam conceitualmente os [contratos P5](../modelagem/05-contratos-persistencia.md). DEC-038–DEC-042 estão aprovadas: esta arquitetura não reabre o schema de seis tabelas, os tipos numéricos, a política de snapshots ou as revisões. DEC-025/032 definem salvamento manual e PDF; RNF05–RNF08 definem integridade, offline e privacidade.
 
-## Proposta: fontes com responsabilidades distintas
+## Fontes com responsabilidades distintas
 
 ### Diagrama 4 — Dados remotos, locais e snapshots
 
@@ -62,7 +62,17 @@ Validar `formatoContrato`, identidades, tipos, ordens/critérios, regras conheci
 
 O publicador deve manter cada definição imutável sob `(categoriaId, revisaoDefinicao)`. Se houver evidência de conteúdo contraditório sob mesmo token, rejeitar uso dependente; sem evidência/definição anterior, o cliente não detecta troca semântica oculta. Não propor hash/assinatura/payload extra como se DEC-040 já os exigisse.
 
-Ao selecionar, comparar com as definições do destino: as escolhidas na criação ou os critérios preservados da avaliação existente. Mudança editorial pode ser compatível, remapeando IDs/ordem; mudança de limite exige revalidação; mudança semântica ou falta de informação bloqueia conforme P5-E. Confirmação visual não contorna bloqueio. Produto pessoal incompatível semanticamente requer novo cadastro explícito com novas definições/UUID, sem migrar silenciosamente os números ou a categoria do antigo.
+Ao selecionar, comparar com as definições do destino: as escolhidas na criação ou os critérios preservados da avaliação existente. Mudança editorial pode ser compatível, remapeando IDs/ordem; mudança de limite exige revalidação; mudança semântica ou falta de informação bloqueia conforme P5-E. Confirmação visual não contorna bloqueio.
+
+Para produto pessoal, distinguir os dois caminhos aprovados na [DEC-042](../decisoes/aprovadas/dec-042.md) e no [contrato definitivo P5-E — correção de produtos pessoais](../modelagem/contratos/05-compatibilidade-offline.md#caminho-de-correção-de-produtos-pessoais):
+
+| Situação | Tratamento aprovado, preservado na v0.2 |
+|---|---|
+| Número incorreto sob definição semanticamente equivalente | Corrigir explicitamente o valor no cadastro existente e revalidar, mantendo UUID, categoria e definições associadas. Limite de destino diferente exige revalidação na seleção; corrigir o número não substitui a definição do cadastro. |
+| Incompatibilidade semântica de unidade, moeda/período, natureza, rubrica/protocolo ou identidade/significado dos critérios | Bloquear associação direta do cadastro antigo. Exigir novo cadastro explícito com definições suficientes/compatíveis e outro UUID, conforme P5-E; informar valores sob essas definições, sem copiar/converter silenciosamente números antigos. |
+| Informação essencial insuficiente | Classificar como indeterminada e bloquear a reutilização dependente dela até haver definições/dados suficientes; não presumir equivalência nem criar cadastro fictício. |
+
+O cadastro antigo continua consultável/editável sob suas definições e os snapshots das avaliações permanecem intactos. A exigência de novo UUID na segunda linha vem do contrato aprovado, não de uma nova decisão arquitetural. A v0.2 apenas explicita essa distinção; não autoriza migração de definições dentro da edição pessoal.
 
 ### Room, DAOs e reconstrução
 
@@ -82,7 +92,16 @@ Leitura de agregado usa transação/leitura consistente, valida completude e inv
 | Edição incompleta → rascunho | Valor efetivo canônico ausente pode coexistir com texto `entradaPendenteEfetiva`; não participa do cálculo. Só persiste ao salvar. Produto pessoal exige validação completa. |
 | Domínio → motores | Valores efetivos validados; dinheiro converte deterministicamente de centavos para a unidade do critério em Double, sem substituir o canônico. Bloquear colisões de valores distintos e inviabilidade numérica. |
 
-Original com representação desconhecida não pode ser selecionado fingindo ausência ou corrigindo apenas o efetivo. Original canônico conhecido fora de domínio pode ser preservado como evidência, exigindo efetivo válido para cálculo. Fonte/data do número original não certificam o ajustado. Regras completas ficam em [P5-D](../modelagem/contratos/03-valores-serializacao.md), sem duplicação do dicionário físico aqui.
+O tratamento da origem segue a [DEC-041](../decisoes/aprovadas/dec-041.md) e o [contrato definitivo P5-D — original incompatível e fora de domínio](../modelagem/contratos/03-valores-serializacao.md#original-incompatível-e-original-fora-de-domínio), sem alteração de comportamento na v0.2:
+
+| Situação do original | Seleção, ajuste e processamento |
+|---|---|
+| Conhecido, canônico e válido | Pode ser copiado e receber ajuste explícito do efetivo; preservar original e proveniências separadas. O efetivo ainda deve passar pelas regras do destino. |
+| Conhecido/canônico e finito, porém fora do domínio | Pode ser preservado como evidência com o problema indicado, desde que significado/compatibilidade sejam verificáveis; exigir efetivo explicitamente corrigido e válido antes do cálculo. Não equivale a permitir cadastro pessoal obrigatório inválido. |
+| Realmente ausente | Preservar ausência real, sem inventar original; permitir informar efetivo explicitamente sob definição conhecida. Rascunho admite pendência, mas processamento exige completude e validade. |
+| Representação desconhecida ou incompatível | Bloquear seleção até correção explícita na fonte e nova leitura válida. Informar só um efetivo válido não resolve a impossibilidade de interpretar/preservar o original pelo contrato. Não converter presumidamente, fingir ausência ou guardar payload bruto incompatível no snapshot. |
+
+Valor efetivo informado é um dado independente sujeito à validação, não um mecanismo para dispensar o contrato da origem. Fonte/data do número original não certificam o ajustado; metadados desconhecidos permanecem desconhecidos. Regras de tipos, compatibilidade e elegibilidade continuam cumulativas. Essas distinções esclarecem a revisão da v0.1 sem flexibilizar ou ampliar DEC-041.
 
 ## Diagrama 3 — Da edição ao salvamento manual
 
@@ -131,10 +150,10 @@ O ViewModel resolve a escolha de versão; o caso de uso de exportação conhece 
 
 Domain prepara identificação/categoria, instante de geração, produtos/valores efetivos/unidades, critérios/naturezas/pesos, λmax/IC/RC, ranking/C*/distâncias definidos, indicação de empates/sem diferenciação e referência ao método. O conteúdo é o da DEC-032; não inclui matrizes intermediárias, coeficiente/posição fictícios ou dados novos do catálogo.
 
-O adaptador Data gera arquivo privado temporário; propõe-se a API nativa [PdfDocument](https://developer.android.com/reference/android/graphics/pdf/PdfDocument) e compartilhamento por URI com [acesso temporário ao arquivo](https://developer.android.com/training/secure-file-sharing/share-file) via host Presentation. O Domain recebe/retorna referência opaca sem Android. O host abre o seletor padrão após a ação explícita autorizada; não há upload próprio. API, paginação, nome, acessibilidade do documento e limpeza segura após o uso ficam em ARQ-P06. Gerar arquivo independe de rede; o destino escolhido pode depender dela.
+O adaptador Data gera arquivo privado temporário; a DEC-048 adota a API nativa [PdfDocument](https://developer.android.com/reference/android/graphics/pdf/PdfDocument) e compartilhamento por URI com [acesso temporário ao arquivo](https://developer.android.com/training/secure-file-sharing/share-file) via host Presentation. O Domain recebe/retorna referência opaca sem Android. O host abre o seletor padrão após a ação explícita autorizada; não há upload próprio. A escolha de PdfDocument/FileProvider está definida na DEC-048; paginação, nome, acessibilidade do documento e limpeza segura após o uso exigem detalhamento/teste de implementação. Gerar arquivo independe de rede; o destino escolhido pode depender dela.
 
 ## Justificativas, pendências e aprovação
 
 Repositórios por origem/responsabilidade evitam sincronização ambígua, cópias integrais do catálogo e dependência histórica do remoto. Validação na entrada e na reconstrução protege tanto processamento quanto consulta. RNF07 exige regras Firestore de leitura pública e escrita negada, inclusive fora da UI; RNF08/DEC-030 exigem exclusão de dados pessoais de backup/transferência, ainda sem configuração nesta etapa.
 
-Continuam pendentes CHECK canônico AHP, schema/migrations sem fallback destrutivo, serialização/versões, domínios/precisão/fontes/rubricas e testes reais de atomicidade/offline. A arquitetura distribui suas responsabilidades, sem declarar essas tarefas resolvidas. ARQ-P04/P06 requerem revisão; aprovação e implementação não foram realizadas.
+Continuam pendentes CHECK canônico AHP, schema/migrations sem fallback destrutivo, serialização/versões, domínios/precisão/fontes/rubricas e testes reais de atomicidade/offline. A arquitetura distribui suas responsabilidades, sem declarar essas tarefas resolvidas. As escolhas de ARQ-P04/P06 estão adotadas nas DEC-046/048. O alinhamento com interface e as validações de implementação permanecem, sem declarar essas tarefas executadas.

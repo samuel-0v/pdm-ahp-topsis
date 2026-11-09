@@ -1,6 +1,6 @@
 # Integração dos motores AHP e TOPSIS
 
-**Versão 0.1 · 08/11/2026 · Rascunho para revisão técnica independente; não aprovado.** Motores não foram reimplementados ou alterados nesta execução.
+**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** Conteúdo matemático preservado; motores não foram reimplementados ou alterados nesta atividade.
 
 ## Objetivo e contexto
 
@@ -23,7 +23,7 @@ O arquivo [AhpTopsis.kt](../../app/src/main/java/br/edu/ufu/pdm/mcdm/domain/AhpT
 
 Essas são lacunas do protótipo matemático, não inconsistências que autorizem alterar a modelagem aprovada. A arquitetura não declara o motor pronto ou seus testes passados.
 
-## Proposta de responsabilidades e contratos
+## Responsabilidades e contratos adotados
 
 `AhpEngine` e `TopsisEngine` nomeiam duas responsabilidades lógicas do Domain. Não obrigam duas interfaces, injeção sofisticada ou descarte do `AhpTopsis` existente. Na implementação futura, adaptar/separar o código quando isso tornar seus contratos claros; não manter duas implementações concorrentes. A política de grupos/posições pode permanecer uma função pura de resultado no Domain.
 
@@ -96,4 +96,4 @@ Desempenho segue DEC-026: cenários de 2/10/50 alternativas e cinco critérios, 
 
 ## Pendências e status de aprovação
 
-ARQ-P04 propõe a fronteira de preparação/motores/resultado, preservando a metodologia já aprovada. Implementação deve adequar o caso degenerado, empates/posições e defesas numéricas antes de conectar UI/Room. Escolher dados de referência e definir domínios/precisão dos critérios continuam pendências. Não houve código novo, reescrita, teste do motor ou aprovação da Etapa 4.
+A DEC-046 (origem ARQ-P04) adota a fronteira de preparação/motores/resultado, preservando a metodologia já aprovada. Implementação deve adequar o caso degenerado, empates/posições e defesas numéricas antes de conectar UI/Room. Escolher dados de referência e definir domínios/precisão dos critérios continuam pendências. Não houve código novo, reescrita, teste do motor ou aprovação da Etapa 4.

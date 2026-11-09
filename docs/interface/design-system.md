@@ -2,7 +2,7 @@
 
 [Índice](README.md) · [Figma — fundações e componentes](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36)
 
-**Proposta visual, sujeita à revisão.** Material Design 3 orienta a composição Android/Jetpack Compose. A identidade usa superfícies claras, violeta para ações e mensagens com texto além de cor. Não inclui marca ou logotipo definitivo, splash obrigatório, tema escuro ou gráficos novos.
+**Proposta visual, sujeita à revisão.** Material Design 3 orienta a composição Android/Jetpack Compose. A identidade usa superfícies claras, violeta para ações e mensagens com texto além de cor. Não inclui marca ou logotipo definitivo, tema escuro ou gráficos novos. A abertura/splash animada integra o escopo de apresentação exigido pelo enunciado, conforme [DEC-049](../decisoes/adotadas/dec-049.md) e [especificação da abertura](especificacao-telas.md#aberturasplash--exigência-do-enunciado). Sua representação visual e animação ainda precisam ser aplicadas e verificadas no Figma, HTML e manifesto; não foram implementadas por esta correção editorial.
 
 ## Cores propostas
 
