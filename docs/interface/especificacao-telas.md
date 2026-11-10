@@ -2,7 +2,7 @@
 
 [Mapa, RFs e UCs](mapa-telas.md) · [Navegação](navegacao.md) · [Identidade visual](design-system.md)
 
-**Revisão local v0.4, 09/11/2026.** Comportamentos abaixo foram aplicados ao HTML, salvo limites explicitados. O manifesto mantém referências de storyboard; a sessão editável é renderizada em `prototipo.js`. A atualização Figma v0.5 de 10/11 está na página 03, com roteiros restritos; ela não reproduz a sessão livre do HTML. Ver [aplicação e limites](finalizacao-v05.md). RFs e UCs por família estão no mapa.
+**Etapa 5 v0.5 · 10/11/2026 · aprovada pelo usuário.** Os comportamentos HTML validados na v0.4 foram preservados, salvo os limites explicitados. O manifesto mantém referências de storyboard; a sessão editável é renderizada em `prototipo.js`. A atualização Figma v0.5 de 10/11 está na página 03, com roteiros restritos; ela não reproduz a sessão livre do HTML. Ver [aplicação e limites](finalizacao-v05.md). RFs e UCs por família estão no mapa.
 
 ## Catálogo e produtos — T01 a T04
 
@@ -79,7 +79,7 @@ Detalhes compartilhados entre consulta e edição precisam respeitar contexto: e
 
 ## Diálogos, saída e PDF — D01 a D04 / T13
 
-D01 contém Salvar, Descartar alterações e Continuar editando. Falha mantém edição e versão salva. D03 nomeia objeto e consequência permanente, com confirmar/cancelar e foco inicial em Cancelar; falha de exclusão fica visível na tela e sucesso limpa a mensagem anterior; excluir produto não modifica snapshots das avaliações. D04 permanece referência histórica de ajuste; no HTML v0.4 o ajuste é feito diretamente nos campos de T07, com original visível.
+D01 contém Salvar, Descartar alterações e Continuar editando. Falha mantém edição e versão salva. D03 nomeia objeto e consequência permanente, com confirmar/cancelar e foco inicial em Cancelar; falha de exclusão fica visível na tela e sucesso limpa a mensagem anterior; excluir produto não modifica snapshots das avaliações. D04 permanece referência histórica de ajuste; no HTML atual o ajuste é feito diretamente nos campos de T07, com original visível.
 
 D02 distingue salvar edição processada, exportar integralmente a última versão elegível e cancelar. Se precisar recalcular, Salvar e exportar fica indisponível com explicação; sem versão anterior elegível, a segunda opção também fica indisponível. Falha de PDF após gravação não desfaz a gravação. Compartilhamento cancelado, indisponível ou com falha não confirma envio. Conteúdo do PDF é o do RF27, sem matrizes intermediárias.
 

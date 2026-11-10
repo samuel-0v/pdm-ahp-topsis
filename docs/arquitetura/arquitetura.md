@@ -16,7 +16,7 @@ Fontes normativas do projeto: [visão](../01-visao-e-escopo.md), [RF01–RF27 e 
 | DEC-038–DEC-042 | Aprovadas no registro e em `decisoes/aprovadas/`. Textos em `decisoes/propostas/` e estudos históricos da Parte 5 não reabrem essas escolhas. |
 | Parte 5 | Seis tabelas, resultados incorporados, números tipados, revisões e compatibilidade já contratados. Não foi identificada inconsistência que exija redesenhar domínio ou persistência. CHECK canônico, schema/migrations e escolha de serialização continuam dependências técnicas. |
 | Código em `app/` | Motor Kotlin puro isolado, `AhpTopsis.kt`, e roteiro de testes; sem projeto Gradle Android configurado. O motor ainda não cumpre todos os contratos posteriores, conforme [análise específica](motores-matematicos.md). |
-| Interface em paralelo | [Etapa 5](../interface/README.md), [mapa de telas](../interface/mapa-telas.md) e [navegação](../interface/navegacao.md) são propostas. Seus IDs ajudam o alinhamento, sem aprovar layouts ou impor rotas. Alterações preexistentes dessa área foram preservadas. |
+| Interface em paralelo | [Etapa 5 v0.5](../interface/README.md), [mapa de telas](../interface/mapa-telas.md) e [navegação](../interface/navegacao.md) foram aprovados pelo usuário em 10/11/2026, com [alcance registrado](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental). Seus IDs orientam a interface e não impõem rotas Kotlin. O encerramento da Etapa 4 não é presumido por essa aprovação. |
 | Enunciado v2, pp. 9 e 12 | A primeira entrega precisa explicar MVVM e fluxos; as quatro responsabilidades não exigem quatro módulos Gradle. O método de pesos segue a adaptação aprovada na DEC-018. |
 
 ## Organização desta proposta
@@ -155,6 +155,6 @@ RNF09–RNF11 e DEC-029 orientam os testes, sem alegar execução do aplicativo 
 
 ## Pendências e status de aprovação
 
-ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. Restam o alinhamento operacional com Etapa 5, eventuais ajustes da conferência final e o encerramento formal da Etapa 4; não se atribui ao professor um aceite não informado. Configuração e testes de implementação ficam para a etapa técnica, conforme o [checklist](referencias-e-validacao.md).
+ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. O alinhamento documental com a Etapa 5 v0.5 foi registrado; restam a integração de implementação, eventuais ajustes da conferência arquitetural final e o encerramento formal da Etapa 4; não se atribui ao professor um aceite não informado. Configuração e testes de implementação ficam para a etapa técnica, conforme o [checklist](referencias-e-validacao.md).
 
 Para o vídeo: apresentar três camadas/quatro responsabilidades; seleção e cálculo sem salvar; salvamento manual atômico; catálogo/cache independente dos snapshots Room; pendências e limites. Estes documentos não comprovam apresentação ou entrega ao professor.

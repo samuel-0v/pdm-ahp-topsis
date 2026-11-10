@@ -59,12 +59,12 @@ Qualquer escolha deve cumprir: IDs mínimos como argumentos; UI com callbacks de
 | Publicação do catálogo | Definições imutáveis por revisão e verificação do publicador; não é funcionalidade administrativa do app. Regras de escrita negada serão testadas. |
 | Dados reais | Domínios, precisão, erro admissível, fontes/rubricas/protocolos antes de habilitar critérios reais; não inventar limites para concluir a arquitetura. |
 | Motor inicial | Adequar sem diferenciação/empates/defesas numéricas e validar com referências independentes; não reimplementar nesta etapa documental. |
-| Etapa 5 | Alinhar estados, escopos, retornos e diálogos, conforme [contrato de integração](gerenciamento-estado.md); não aguardar acabamento visual nem alterar o Figma nesta atividade. |
+| Etapa 5 | v0.5 aprovada pelo usuário, conforme [fechamento da interface](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental). Estados, escopos, retornos e diálogos estão documentados; integrar e verificar o [contrato completo](gerenciamento-estado.md) no Android posteriormente. |
 
 ## Origem da adoção e pendências reais
 
 O [parecer independente da v0.1 e suas respostas](referencias-e-validacao.md#resposta-à-revisão-independente-da-v01) precedem esta escolha. Depois de receber a v0.2, o usuário instruiu o agente a tomar as decisões conforme enunciado e aulas. Em atendimento a essa delegação, as seis alternativas foram escolhidas e registradas nas DEC-043–DEC-048; não se atribui ao usuário uma aprovação literal anterior de cada texto, nem ao professor um aceite não informado.
 
-As escolhas técnicas não dependem mais de confirmação individual. Permanecem o alinhamento operacional com a Etapa 5 (Voltar, retornos, estados e diálogos), eventual ajuste decorrente da revisão final e o encerramento formal da Etapa 4. A documentação não altera o Figma nem comprova a entrega ao professor.
+As escolhas técnicas não dependem mais de confirmação individual. O alinhamento documental com a Etapa 5 v0.5 está registrado. Permanecem integração Android, eventual ajuste decorrente da revisão arquitetural final e encerramento formal da Etapa 4. A aprovação da interface não encerra a arquitetura por extensão nem comprova a entrega ao professor.
 
 Schema/migrations/CHECK, domínios/fontes/rubricas/precisão, versões de dependências, adequações do motor e testes são tarefas posteriores já listadas acima. Não reabrem DEC-041/042 nem impedem a adoção desta arquitetura documental. Nenhum código, configuração ou commit é produzido nesta atividade.

@@ -4,7 +4,7 @@
 
 [Resumo vetorial editável em SVG](prototipos/mapa-navegacao.svg).
 
-**Revisão v0.4, 09/11/2026.** Fluxos aplicados ao demonstrador HTML, alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente. A rodada posterior de 10/11 aplica abertura e conexões na página Figma 03, com [roteiros restritos](finalizacao-v05.md).
+**Etapa 5 v0.5 · 10/11/2026 · aprovada pelo usuário.** Os fluxos HTML validados na v0.4 foram preservados e estão alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente. A rodada posterior de 10/11 aplica abertura e conexões na página Figma 03, com [roteiros restritos](finalizacao-v05.md).
 
 ```mermaid
 flowchart TD

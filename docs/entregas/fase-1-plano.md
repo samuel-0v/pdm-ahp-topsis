@@ -1,12 +1,18 @@
 # Fase 1 — Plano de conclusão de Requisitos e Modelagem
 
-**Versão:** 0.1 — 06/11/2026. **Situação:** proposta para aprovação e distribuição pela equipe.
+**Plano original:** v0.1 — 06/11/2026. **Atualização de acompanhamento:** 10/11/2026. A distribuição de papéis/prazos permanece proposta; os artefatos da Etapa 5 v0.5 foram aprovados pelo usuário.
 **Prazo operacional provisório:** 10/11/2026, conforme informação de adiamento fornecida pelo usuário; confirmação no Teams ou pelo professor pendente. Horário oficial ainda desconhecido.
 **Base auditada:** `main`, commit `0b072ca4af4cc4098487fe75d756017ab8b575ef`, com diretório de trabalho limpo antes desta atividade.
 
 [Índice da documentação](../README.md) · [Tarefas propostas](fase-1-tarefas.md) · [Mensagem para o grupo](fase-1-mensagem-equipe.md)
 
-Este plano organiza a primeira entrega. Não altera requisitos, decisões ou Partes 1–5 da modelagem. Nenhuma issue, branch, PR, commit, protótipo ou submissão foi criado por esta atividade. As tarefas e os papéis abaixo são sugestões; nomes e atribuições individuais dependem de confirmação.
+Este plano organiza a primeira entrega. Não altera requisitos, decisões ou Partes 1–5 da modelagem. Na atividade original de planejamento, em 06/11, não foram criados issue, branch, PR, commit, protótipo ou submissão. As tarefas e os papéis abaixo são sugestões; nomes e atribuições individuais dependem de confirmação.
+
+## Atualização de acompanhamento — 10/11/2026
+
+A [Etapa 5 v0.5 foi aprovada pelo usuário e concluída documentalmente](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental). Mapa/rastreabilidade, navegação, design system, HTML calculável e página Figma 03 estão disponíveis com evidências e limites. O [PR #5](https://github.com/samuel-0v/pdm-ahp-topsis/pull/5) reúne esse material. Os artefatos de F1-05–F1-08 podem ser reutilizados na consolidação, sem refazer o protótipo ou executar o antigo plano de retomada.
+
+A [arquitetura](../arquitetura/arquitetura.md) também foi documentada posteriormente ao diagnóstico inicial, com escolhas adotadas nas DEC-043–DEC-049; seu encerramento formal é separado da aprovação da interface. Permanecem consolidação do pacote, roteiro/vídeo, confirmação de prazo/formato/responsáveis e submissão com comprovante. A aprovação da Etapa 5 não aprova o plano inteiro, não confirma a data no Teams e não comprova a entrega ao professor.
 
 ## 1. Referências e separação das fases
 
@@ -46,20 +52,20 @@ Checklist derivado da página 7, com o roteiro da página 9 e prototipagem da p�
 
 - [x] Requisitos funcionais e não funcionais definidos: RF01–RF27 e RNF01–RNF13 localizados e conferidos.
 - [ ] Documento de requisitos organizado e legível no material que será inserido no Teams; conferir formato aceito na atividade.
-- [ ] Arquitetura do app modelada: MVVM, UI, estado, domínio/motores e dados/repositórios.
+- [x] Arquitetura do app modelada: documentação disponível nos sete documentos da Etapa 4; encerramento formal separado.
 - [ ] Diagramas de arquitetura legíveis no pacote da entrega.
-- [ ] Layouts e navegação especificados; diagrama de navegação completo para a apresentação.
-- [ ] Protótipos autorais de tela no Figma, com fluxo demonstrável e evidências acessíveis.
+- [x] Layouts e navegação especificados: Etapa 5 v0.5 aprovada pelo usuário, com mapa, especificação e diagramas.
+- [x] Protótipo autoral Figma demonstrável, com apresentação e acesso conferidos; HTML calculável e evidências vinculados à revisão v0.5.
 - [ ] Link do vídeo descrevendo a etapa de desenvolvimento, com acesso testado para o professor.
 - [ ] Documento(s) e materiais inseridos na atividade correta do Teams, com comprovante do envio.
 
-As Etapas internas 1–3 concluídas não encerram toda a Fase 1 do professor. Faltam principalmente Arquitetura, Interfaces/Protótipos e Consolidação da entrega.
+A conclusão documental das etapas internas não encerra toda a Fase 1 do professor. Arquitetura e interface já possuem artefatos; a Etapa 5 está aprovada pelo usuário. A consolidação do pacote, o vídeo e o envio continuam pendentes, assim como a conferência formal da Etapa 4.
 
 ## 3. Diagnóstico documental e evidências
 
-Retrato do repositório antes da criação deste plano. “Concluído e verificado” significa existência e conferência documental, não teste do aplicativo, qualidade visual comprovada ou aceitação pelo professor. “Não iniciado” limita-se ao material local encontrado; trabalhos externos podem existir e devem ser informados.
+**Diagnóstico histórico de 06/11/2026; não é o estado atual dos artefatos.** A atualização acima registra a evolução posterior de arquitetura/interface. Retrato do repositório antes da criação deste plano. “Concluído e verificado” significa existência e conferência documental, não teste do aplicativo, qualidade visual comprovada ou aceitação pelo professor. “Não iniciado” limita-se ao material local encontrado; trabalhos externos podem existir e devem ser informados.
 
-| Entregável/controle | Classificação | Evidência e limitação | Ação |
+| Entregável/controle | Classificação em 06/11 | Evidência e limitação | Ação |
 |---|---|---|---|
 | Visão e escopo | Concluído e verificado | [Visão](../01-visao-e-escopo.md) delimita duas categorias, capacidades e exclusões; [registro](../decisoes/registro-decisoes.md) contém DEC-001–DEC-042. | Reutilizar na introdução; não reabrir decisões. |
 | Requisitos e casos de uso | Concluído e verificado | [Índice](../requisitos/README.md), sete grupos funcionais, seis não funcionais e cinco grupos de UCs: contados 27 RFs, 13 RNFs e 16 UCs, sem duplicidade. | Selecionar o conteúdo para a apresentação. |
@@ -82,7 +88,7 @@ Nenhum protótipo, vídeo ou envio foi considerado concluído por inferência. A
 
 ## 4. Divisão sugerida e issues para aprovação
 
-Todas as linhas abaixo são **propostas**, inicialmente “A fazer” após aprovação. O catálogo completo de issues em [Tarefas da Fase 1](fase-1-tarefas.md) contém objetivo, referências, artefato, critérios de conclusão, dependências e prazos para cada tarefa. Nenhuma foi criada no GitHub.
+As linhas abaixo preservam a divisão e as metas **propostas em 06/11**, sem atribuição nominal. O acompanhamento de 10/11 acima registra os artefatos já disponíveis; não reiniciar F1-05–F1-08 como “A fazer” nem deduzir o estado de issues externas a partir deste catálogo. O catálogo completo de issues em [Tarefas da Fase 1](fase-1-tarefas.md) contém objetivo, referências, artefato, critérios de conclusão, dependências e prazos para cada tarefa. Nenhuma foi criada pela atividade original de planejamento; este documento não audita o estado atual de issues/Projects.
 
 | ID | Título proposto da issue | Papel principal sugerido | Prioridade | Meta interna provisória |
 |---|---|---|---|---|
@@ -107,7 +113,7 @@ P0 indica necessário para fechar a entrega ou remover bloqueio; P1 indica apoio
 
 Após aprovação, criar as issues com os títulos e critérios do catálogo; adicionar ao Projects e atribuir **uma pessoa confirmada** como responsável principal por issue, listando colaboradores. Usar os estados **A fazer**, **Em andamento** e **Concluído**; tarefa bloqueada permanece no estado correspondente com motivo e dependência registrados.
 
-Sugestões de branches/PRs, ainda não criados: `docs/fase1-requisitos-entrega` (F1-02), `docs/etapa4-arquitetura` (F1-03/F1-04), `docs/etapa5-interface-navegacao` (F1-05–F1-08), `docs/fase1-integracao-planejada` (F1-09) e `docs/fase1-consolidacao` (F1-10–F1-14). Arquivos de apoio do Figma e links precisam entrar no PR de interface; vídeo e recibo entram como evidência da consolidação. Pequenas correções podem seguir a exceção da DEC-031. Revisão por outro integrante quando disponível; não esperar uma branch de implementação Android para concluir a Fase 1.
+Sugestões originais de branches/PRs, sem inventário remoto atualizado das demais frentes: `docs/fase1-requisitos-entrega` (F1-02), `docs/etapa4-arquitetura` (F1-03/F1-04), `docs/etapa5-interface-navegacao` (F1-05–F1-08), `docs/fase1-integracao-planejada` (F1-09) e `docs/fase1-consolidacao` (F1-10–F1-14). A branch de interface e o PR #5 já existem e contêm os arquivos de apoio Figma e links; vídeo e recibo entram como evidência da consolidação. Pequenas correções podem seguir a exceção da DEC-031. Revisão por outro integrante quando disponível; não esperar uma branch de implementação Android para concluir a Fase 1.
 
 ## 5. Dependências, paralelismo e cronograma
 
@@ -178,12 +184,12 @@ Não foi feita submissão nem consultado o estado da atividade do Teams neste tr
 |---|---|---|
 | Prazo de 10/11 e horário não confirmados | F1-01 busca aviso oficial imediatamente; trabalhar com a data provisória sem declarar prorrogação comprovada. | Líder |
 | Quantidade de integrantes e atribuições desconhecidas; PDF inconsistente | Confirmar pessoas disponíveis e composição; preencher papéis sem reproduzir automaticamente oito ou seis alunos. | Líder/equipe |
-| Protótipo/vídeo já feitos fora do repositório podem existir | Pedir links, validar conteúdo e permissões antes de refazer; tarefas continuam abertas até evidência. | UX/líder |
-| Arquitetura e prototipagem ainda não comprovadas; prazo curto | Executar em paralelo por papéis; priorizar fluxos aprovados e legibilidade. Não trocar protótipos exigidos por texto para caber no prazo. | Android/UX |
-| Exemplos do professor divergentes do escopo escolhido | Confirmar adaptações com o professor quando necessário: duas categorias, BEV, autonomia em horas e método da DEC-018. Não adotar as quatro categorias, nome “CompareAI”, gráficos ou matriz intermediária por mera cópia do exemplo. Abertura/splash e demais itens das páginas 4/11 devem ser conciliados em F1-01/F1-05, sem modificar requisitos automaticamente. | Líder + Android/UX |
+| Material externo adicional e vídeo ainda não comprovados | Reutilizar o Figma autoral e a Etapa 5 aprovada; conferir eventuais materiais externos e vídeo sem presumir publicação/envio. | UX/líder |
+| Consolidação dos artefatos existentes no pacote final | Reutilizar arquitetura documentada e protótipos v0.5 aprovados; conferir legibilidade do material exportado e alinhamento das falas, sem declarar envio ou aceite do professor. | Android/UX/líder |
+| Exemplos do professor divergentes do escopo escolhido | Confirmar adaptações com o professor quando necessário: duas categorias, BEV, autonomia em horas e método da DEC-018. Não adotar as quatro categorias, nome “CompareAI”, gráficos ou matriz intermediária por mera cópia do exemplo. A abertura animada da página 4 já foi reconhecida na DEC-049 e representada na Etapa 5; dois segundos são exemplo, sem nova duração obrigatória. | Líder + Android/UX |
 | Cronograma ilustrativo da página 10 contém datas e tema divergentes | Usar páginas 7/9 e orientação posterior confirmada para a entrega. | Líder |
 | Exigir implementação real antes do vídeo desvia da Fase 1 | Usar protótipos e diagramas, com exemplos rotulados; deixar Gradle/APK, integração e testes para a Fase 2. | Todos |
 | Acesso Figma/vídeo falha para o avaliador | Testar permissões antes do envio e guardar evidência; reservar 10/11 para correções de acesso. | UX/líder |
 | Dependências técnicas da Etapa 3 confundidas com bloqueios da apresentação | Mostrar CHECK, precisão e serialização como trabalho futuro nos momentos aprovados; não declarar essas validações executadas. | Android/dados |
 
-Distribuir imediatamente: Android assume arquitetura/diagramas; UX assume mapa de telas/navegação/protótipo; dados assume síntese dos requisitos e da integração planejada; líder confirma prazo/equipe e coordena roteiro, pacote e envio. Primeiro aprovar este plano e associar pessoas reais aos papéis. A [mensagem preparada](fase-1-mensagem-equipe.md) pode ser compartilhada pelo usuário após essa revisão.
+Próximos passos da entrega: reutilizar arquitetura/diagramas e a Etapa 5 v0.5 aprovada; dados prepara a síntese dos requisitos/integração e a liderança confirma prazo/equipe e coordena roteiro, pacote e envio. Primeiro aprovar este plano e associar pessoas reais aos papéis. A [mensagem preparada](fase-1-mensagem-equipe.md) pode ser compartilhada pelo usuário após essa revisão.

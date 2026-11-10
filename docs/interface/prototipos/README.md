@@ -29,7 +29,8 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 | [capturar_evidencias.py](capturar_evidencias.py) | Capturas reais do HTML; oculta somente laboratório externo. Abertura congelada para registro estático. |
 | [mapa-navegacao.svg](mapa-navegacao.svg) | Diagrama vetorial editável; detalhamento em `navegacao.md`. |
 | [contextos.js](contextos.js), [expandir_cenarios.py](expandir_cenarios.py) | Histórico v0.2, preservado para rastreabilidade; não incorporado na UI atual. Expansor interrompe antes de sobrescrever o manifesto v0.3. |
-| [evidências atuais](evidencias/revisao-v04/) | Relatórios e capturas antes/depois. Evidências v0.1/v0.2/v0.3 permanecem históricas. |
+| [Evidências v0.5](evidencias/figma-v05/) | Auditoria/apresentação Figma, capturas e reconferência HTML da revisão aprovada. |
+| [Evidências HTML v0.4](evidencias/revisao-v04/) | Capturas e relatórios da base HTML preservada na v0.5. Evidências anteriores mantêm seu contexto histórico. |
 
 ## Figma: aplicação atual e histórico
 
@@ -43,8 +44,8 @@ A página nova tem 598 quadros (duplicações de contexto para os roteiros, não
 | [01-fundacoes.js](figma/01-fundacoes.js), [02-telas.js](figma/02-telas.js) | Criação inicial já executada. **Não repetir sobre o arquivo existente.** |
 | [04-ajustes-layout.js](figma/04-ajustes-layout.js) | Preparado anteriormente: títulos ampliados, botões, progresso exato e exclusão contextual. Não aplicado/verificado. |
 | [03-navegacao.js](figma/03-navegacao.js) | Preparado anteriormente: conexões e condicionais da versão nativa v0.1; não aplicado/verificado. |
-| [05-revisao-uiux.js](figma/05-revisao-uiux.js) | Novo, somente preparado: preflight de IDs/aliases, nova paleta e T00 vetorial com saída/pulo. Sem execução real ou validação de API/layout. Não porta a UI completa. |
-| [Retomada v0.4](figma/retomada-v04.md) e [tentativas reais](figma/verificacao-2026-11-09.json) | Impedimento remoto reconfirmado; checklist para inspeção humana e modo de apresentação. |
+| [05-revisao-uiux.js](figma/05-revisao-uiux.js) | Histórico v0.3, somente preparado: preflight de IDs/aliases, nova paleta e T00 vetorial com saída/pulo. Sem execução real ou validação de API/layout. Não porta a UI completa. |
+| [Retomada v0.4](figma/retomada-v04.md) e [tentativas reais](figma/verificacao-2026-11-09.json) | Impedimento registrado em 09/11, superado na v0.5; checklist histórico, sem nova execução necessária. |
 | [Plano v0.3](figma/plano-revisao-v03.json) | Grupos/IDs históricos, ajustes concretos, ordem segura e limitações. |
 | [Plugin local histórico](figma/plugin-local/README.md) | Não instalado/executado. ZIP sem ID real não é instalável; não inclui script 05 nem a expansão v0.3. |
 | [Registro anterior de 08/11](figma/continuacao-2026-11-08.json) | História da continuação v0.2; não é relatório desta revisão. |

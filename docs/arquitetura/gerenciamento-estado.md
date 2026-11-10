@@ -176,7 +176,7 @@ O nó de retorno representa o tratamento do resultado antes de revelar a seleç�
 | Seleção inicial ou ação explícita de sair/ir a fluxo externo | Resolver saída da sessão: sem pendência, sair; com pendência, oferecer Salvar/Descartar/Continuar. Salvar só sai após confirmação; falha ou Continuar mantém entrada pai e edição. |
 | Processamento em curso | Voltar à revisão invalida/cancela a tentativa; resposta tardia não entra na edição. Se a ação for encerrar sessão, resolver também as alterações pendentes antes de remover o grafo. |
 | Exclusão confirmada da avaliação salva | Após sucesso, encerrar sua sessão e remover grafo/filhos; em cancelamento/falha, preservar sessão e versão salva. |
-| Fora da sessão | Aplicar a pilha do fluxo externo conforme a [navegação proposta](../interface/navegacao.md); não há edição de avaliação oculta a salvar. Nova entrada no assistente cria outro escopo. |
+| Fora da sessão | Aplicar a pilha do fluxo externo conforme a [navegação aprovada na Etapa 5](../interface/navegacao.md); não há edição de avaliação oculta a salvar. Nova entrada no assistente cria outro escopo. |
 
 Botão Voltar do Android e botão da barra superior devem respeitar essas condições. Atalhos para catálogo/lista ou para outra avaliação não podem contornar o aviso de saída. Não remover o grafo ao simplesmente salvar e continuar, apresentar resultado ou abrir/fechar o compartilhamento Android; enviar o app ao segundo plano também não é encerramento controlado da sessão.
 
@@ -184,7 +184,7 @@ Na saída resolvida, remover definitivamente a entrada do grafo e seus filhos: c
 
 Enquanto o proprietário for retido durante mudança de configuração, sua sessão pode continuar em memória. **Após morte do processo, a instância do ViewModel foi perdida**, mesmo que o Android restaure a pilha. Aplicar a política da seção de restauração: nova instância só carrega a última versão Room se houver ID salvo e contrato válido; nunca reconstruir seleção/resultados não salvos a partir de etapas da pilha. Se a entrada restaurada apontar ao cadastro, AHP ou resultado que dependia de edição perdida, redirecionar para uma etapa coerente com os dados recuperados; para avaliação nunca salva, reiniciar/retornar com explicação, sem criar rascunho automático. O cadastro pessoal já confirmado no Room permanece consultável, independentemente da avaliação.
 
-| Contrato a alinhar com Figma | Estados e ações que precisam de representação |
+| Contrato de interface e implementação | Estados e ações que precisam de representação |
 |---|---|
 | T01–T04/T06: catálogos e seleção | Carregando, vazio confirmado, cache parcial/indisponível, permissão negada, dados incompatíveis, origem, seleção mista e confirmação de gravação do pessoal. |
 | T07/T08/T09: valores e AHP | Original/efetivo, entrada pendente, erros por critério, dez pares atuais, progresso/revisão, RC precisa e bloqueio por inconsistência. |
@@ -193,8 +193,8 @@ Enquanto o proprietário for retido durante mudança de configuração, sua sess
 | D01–D04 e T13 | Saída com três escolhas; exportação com três escolhas; exclusão com confirmação; sucesso somente após commit; falhas/cancelamento e sem afirmar envio no compartilhamento. |
 | Preservação e navegação | Voltar entre etapas preserva edição; saída aplica aviso; cadastro durante seleção retém sessão; morte do processo recupera somente o que a política permite. |
 
-IDs seguem o [mapa em elaboração](../interface/mapa-telas.md); não são contratos de rotas. A arquitetura não altera protótipos. Após revisão, alinhar os fluxos de [navegação](../interface/navegacao.md), sem aguardar o encerramento visual para validar responsabilidades.
+IDs seguem o [mapa aprovado na Etapa 5 v0.5](../interface/mapa-telas.md); não são contratos de rotas. O [registro da interface](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental) documenta apresentação, limites e aprovação do usuário. A tabela acima mantém o contrato completo para implementação: os roteiros restritos do Figma não simulam toda a execução Android.
 
 ## Justificativas, pendências e aprovação
 
-Um ViewModel de sessão evita cópias concorrentes de uma avaliação; ViewModels separados para catálogos/formulário/lista evitam estado global excessivo. Estado imutável e comandos explícitos tornam DEC-025/039 verificáveis. A v0.2 refinou o proprietário, cadastro/retorno e término do escopo; na v0.3 essas escolhas foram adotadas nas DEC-045/047 por delegação do usuário. Restam alinhamento com Figma e verificações da implementação, sem nova confirmação de cada alternativa técnica nem declaração de código implementado.
+Um ViewModel de sessão evita cópias concorrentes de uma avaliação; ViewModels separados para catálogos/formulário/lista evitam estado global excessivo. Estado imutável e comandos explícitos tornam DEC-025/039 verificáveis. A v0.2 refinou o proprietário, cadastro/retorno e término do escopo; na v0.3 essas escolhas foram adotadas nas DEC-045/047 por delegação do usuário. O alinhamento documental com a Etapa 5 foi registrado; restam integração e verificações da implementação, sem nova confirmação de cada alternativa técnica nem declaração de código implementado.

@@ -141,8 +141,8 @@ O parecer independente já foi recebido e respondido; as seis escolhas foram ado
 4. Se snapshots, tipos/Long, originais/efetivos, revisões, limites de detecção e seis tabelas seguem DEC-038–DEC-042.
 5. Se bloqueios AHP/TOPSIS, empates, sem diferenciação e lacunas do motor estão expostos sem declarar implementação pronta.
 6. Se PDF usa apenas a versão salva escolhida e falhas de cada etapa preservam os fatos anteriores.
-7. Se os contratos com Figma e os estados/retornos refletem DEC-043–DEC-049, incluindo abertura animada e retorno à seleção; registrar a aplicação/validação visual pendente e o encerramento formal da etapa quando efetivamente autorizado.
+7. Se os contratos com Figma e os estados/retornos refletem DEC-043–DEC-049, incluindo abertura animada e retorno à seleção; consultar a [aplicação e aprovação da Etapa 5 v0.5](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental), preservando as verificações futuras no Android e o encerramento formal separado da Etapa 4.
 
 Após aprovação documental, implementar e testar os cenários do [plano vigente](../requisitos/plano-verificacao.md) e dos contratos P5: matemática de referência, fronteiras monetárias, atomicidade com falha provocada, cache parcial/permissões, mudança/exclusão de catálogo, ciclo de vida e saída/PDF. Continuam abertos os domínios/fontes/rubricas, schema/migrations/CHECK e versões de dependências. Não são apresentados como testes passados ou requisitos novos.
 
-**Status final desta versão:** seis escolhas arquiteturais adotadas e formalizadas por delegação do usuário; permanecem alinhamento com Etapa 5, conferência/encerramento formal e tarefas técnicas futuras. A decisão não declara protótipos, aplicativo ou entrega ao professor concluídos.
+**Status final desta versão:** seis escolhas arquiteturais adotadas e formalizadas por delegação do usuário; o alinhamento documental com a Etapa 5 v0.5 foi registrado e aprovado pelo usuário no escopo da interface. Permanecem conferência/encerramento formal da Etapa 4 e tarefas técnicas futuras. A aprovação da Etapa 5 não declara aplicativo ou entrega ao professor concluídos.

@@ -58,11 +58,11 @@ Também inspecionadas: [abertura](prototipos/evidencias/revisao-v03/abertura-360
 
 **O HTML v0.3 pode ser apresentado como demonstrador revisado**, com dados fictícios, cálculo demonstrativo e armazenamento/PDF simulados explicitamente identificados. Os fluxos prioritários e exceções essenciais funcionam com as regras aprovadas; evidências e limites estão em [Validação](validacao.md). Requisitos/decisões não foram alterados e não se iniciou implementação Android.
 
-**Não apresentar a Etapa 5 inteira como concluída.** A pendência real de prototipagem é verificar/aplicar o Figma, testar seu modo de apresentação e o acesso do avaliador. RNF01 com participantes e testes Android/TalkBack permanecem planejados nas fases correspondentes, sem serem bloqueios artificiais para o fechamento documental. O bloqueio remoto não invalida os artefatos locais, mas scripts preparados não comprovam navegação remota. Dados/fontes/rubricas reais e integração Android permanecem nas etapas correspondentes. Não há aprovação do professor, participantes testados, vídeo final ou entrega ao Teams nesta execução.
+**Parecer histórico da v0.3: a Etapa 5 ainda não podia ser apresentada como concluída.** A pendência real naquela rodada era verificar/aplicar o Figma, testar seu modo de apresentação e o acesso do avaliador. RNF01 com participantes e testes Android/TalkBack permanecem planejados nas fases correspondentes, sem serem bloqueios artificiais para o fechamento documental. O bloqueio remoto não invalida os artefatos locais, mas scripts preparados não comprovam navegação remota. Dados/fontes/rubricas reais e integração Android permanecem nas etapas correspondentes. Não há aprovação do professor, participantes testados, vídeo final ou entrega ao Teams nesta execução.
 
 ## Continuação para PR — v0.4
 
-A [rodada de 09/11](finalizacao-v04.md) corrige detalhes de foco, atualização de produto pessoal, indicação de empates e feedback de exclusão. As capturas e contagens acima preservam a história v0.3; os resultados atuais estão em [validação](validacao.md). O novo acesso Figma também foi bloqueado; PR deve permanecer draft por essa pendência, sem presumir aprovação da equipe/professor.
+A [rodada de 09/11](finalizacao-v04.md) corrige detalhes de foco, atualização de produto pessoal, indicação de empates e feedback de exclusão. As capturas e contagens acima preservam a história v0.3; os resultados atuais estão em [validação](validacao.md). Na rodada v0.4, o novo acesso Figma também foi bloqueado; naquele momento o PR devia permanecer draft, sem presumir aprovação da equipe/professor. A rodada v0.5 superou esse impedimento e recebeu posteriormente a [aprovação do usuário](finalizacao-v05.md#aprovação-e-fechamento-documental).
 
 ## Continuação nativa — v0.5
 

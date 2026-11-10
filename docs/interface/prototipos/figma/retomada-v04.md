@@ -1,4 +1,6 @@
-# Intervenção necessária no Figma — 09/11/2026
+# Plano histórico de intervenção no Figma — 09/11/2026
+
+**Registro histórico v0.4.** As pendências abaixo descrevem 09/11. Foram superadas na atualização v0.5 via Firefox/Scripter, com alcance e limites registrados no [fechamento aprovado pelo usuário](../../finalizacao-v05.md#aprovação-e-fechamento-documental). Este checklist não é uma solicitação atual para reaplicar scripts.
 
 [Etapa 5](../../README.md) · [Tentativas reais de acesso](verificacao-2026-11-09.json) · [Plano por IDs históricos](plano-revisao-v03.json)
 

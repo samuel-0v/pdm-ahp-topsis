@@ -2,7 +2,7 @@
 
 [Índice](README.md) · [Especificação](especificacao-telas.md) · [Evidências](validacao.md)
 
-**Proposta v0.4 no HTML e adaptação nativa v0.5 na página 03 do Figma.** A página histórica não foi recolorida. Referência Material Design 3 para Android/Compose, com superfícies claras, verde profundo e controles de altura expansível. A cor destaca ações e seleção; texto, símbolo e posição comunicam o significado. A marca com três barras é um estudo de comparação, não uma marca definitiva.
+**Design system da Etapa 5 v0.5 · aprovado pelo usuário em 10/11/2026.** Preserva a identidade HTML validada na v0.4, adaptada à página 03 do Figma. A página histórica não foi recolorida. Referência Material Design 3 para Android/Compose, com superfícies claras, verde profundo e controles de altura expansível. A cor destaca ações e seleção; texto, símbolo e posição comunicam o significado. A marca com três barras integra a identidade de prototipagem desta versão.
 
 ## Cores aplicadas localmente
 
@@ -63,4 +63,4 @@ O progresso tem dez segmentos, com contagem do quadro preparado. BEV usa os dois
 
 Diálogos têm superfície branca, raio 24, sombra e scrim 32% editável dentro de um overlay 360 × 800. O fechamento exige uma ação explícita; Salvar/Descartar/Continuar permanecem visíveis. A rolagem vertical integral conserva tamanho de texto e alvos, inclusive nas amostras 360/600 e 200%.
 
-Contraste deriva dos mesmos pares sRGB conferidos no HTML, com cores vinculadas à coleção própria. Auditoria geométrica e inspeção de capturas são evidências técnicas; não são testes de leitor de tela no Figma nem TalkBack/Compose. As escolhas continuam propostas de design, não novas decisões de negócio.
+Contraste deriva dos mesmos pares sRGB conferidos no HTML, com cores vinculadas à coleção própria. Auditoria geométrica e inspeção de capturas são evidências técnicas; não são testes de leitor de tela no Figma nem TalkBack/Compose. As escolhas de design integram a versão aprovada; não criam regras de negócio.

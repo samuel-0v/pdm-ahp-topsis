@@ -2,7 +2,7 @@
 
 [Índice da Etapa 5](README.md) · [Navegação](navegacao.md) · [Especificação](especificacao-telas.md)
 
-**Revisão local v0.4, 09/11/2026.** Quatorze famílias, incluindo T00; T11 é um estado e D01–D04 são diálogos/referências, não novos destinos principais. O manifesto tem 87 descritores de storyboard, dos quais 84 constam do ledger Figma histórico. O HTML atual renderiza famílias e sessão próprias em `prototipo.js`, em vez de projetar coeficientes de frames estáticos. Não existe correspondência 1:1 entre cada estado editável e um frame Figma. Na rodada de 09/11 o arquivo remoto não pôde ser lido. Em 10/11, a página 03 recebeu a atualização nativa v0.5; os 84 quadros históricos permanecem separados. [Ledger atual](prototipos/figma/revisao-v05/auditoria-final.json).
+**Etapa 5 v0.5 · 10/11/2026 · aprovada pelo usuário.** O mapa preserva as famílias definidas na revisão local v0.4 e incorpora a correspondência Figma v0.5 abaixo. Quatorze famílias, incluindo T00; T11 é um estado e D01–D04 são diálogos/referências, não novos destinos principais. O manifesto tem 87 descritores de storyboard, dos quais 84 constam do ledger Figma histórico. O HTML atual renderiza famílias e sessão próprias em `prototipo.js`, em vez de projetar coeficientes de frames estáticos. Não existe correspondência 1:1 entre cada estado editável e um frame Figma. Na rodada de 09/11 o arquivo remoto não pôde ser lido. Em 10/11, a página 03 recebeu a atualização nativa v0.5; os 84 quadros históricos permanecem separados. [Ledger atual](prototipos/figma/revisao-v05/auditoria-final.json).
 
 | Família / IDs no manifesto | Nome e objetivo | Requisitos | Casos de uso |
 |---|---|---|---|
@@ -30,7 +30,7 @@ Todos os RF01–RF27 e UC01–UC16 estão relacionados acima; isso significa cob
 
 ## Estados representados e alcance
 
-| Estado | Representação HTML v0.4 | Figma v0.5 — página 03 |
+| Estado | HTML da revisão v0.5 (base v0.4) | Figma v0.5 — página 03 |
 |---|---|---|
 | Abertura e transição | T00; animação, pulo, redução de movimento; não reaparece por retorno/restauração | OPEN0/OPEN1/OPEN2 → HOME; pulo e entrada manual sem animação. Não se presume detecção da preferência do sistema. |
 | AHP pendente/progresso | T08; dez pares, três sentidos, intensidades 2–9 e igualdade 1 explícitos; T08-LISTA permite revisão | Quatro roteiros com dez pares, progresso exato do quadro, sentidos e grade 1–9 restritos às respostas preparadas. |

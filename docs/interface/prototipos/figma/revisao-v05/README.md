@@ -12,7 +12,7 @@ Variáveis de design estão disponíveis no Starter; variáveis, expressões e c
 
 São quatro roteiros: Smartphones/BEV × dois oficiais/seleção mista. Os oito conjuntos numéricos (preço original/ajustado em cada roteiro) são calculados pelo mesmo módulo demonstrativo `numeros.js`, conforme DEC-018. No Figma, somente as entradas correspondentes estão habilitadas: não há texto livre seguido de coeficiente fixo. Há dez pares completos e sentido/intensidade na escala Saaty; um percurso preparado consistente não substitui a validação de julgamentos arbitrários do HTML.
 
-Listas, salvamentos e retomadas são ramificações ilustrativas, sem memória global ou persistência. Voltar revisita o quadro ilustrado. Não é a pilha Android nem uma segunda implementação do motor. PDF/compartilhamento são simulados. Falhas e bloqueios têm exemplos identificados; esses exemplos isolados não comprovam transações ou recuperação de falhas em execução. A edição livre e esses testes funcionais continuam no HTML v0.4.
+Listas, salvamentos e retomadas são ramificações ilustrativas, sem memória global ou persistência. Voltar revisita o quadro ilustrado. Não é a pilha Android nem uma segunda implementação do motor. PDF/compartilhamento são simulados. Falhas e bloqueios têm exemplos identificados; esses exemplos isolados não comprovam transações ou recuperação de falhas em execução. A edição livre e esses testes funcionais continuam no HTML da revisão v0.5, com a base funcional validada na v0.4 preservada.
 
 ## Fontes e segurança de execução
 

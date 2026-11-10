@@ -39,8 +39,9 @@ def anchors(file):
     return result
 
 links = fragments = 0
-editorials = [area.parent / 'decisoes/adotadas/dec-049.md'] + [area.parent / 'arquitetura' / name for name in ['arquitetura.md', 'decisoes-pendentes.md', 'referencias-e-validacao.md']]
-for file in [*area.rglob('*.md'), *editorials]:
+related = [area.parent.parent / 'README.md', area.parent / 'README.md', area.parent / 'decisoes/adotadas/dec-049.md',
+           *(area.parent / 'arquitetura').glob('*.md'), *(area.parent / 'entregas').glob('*.md')]
+for file in sorted(set(area.rglob('*.md')) | set(related)):
     for target in re.findall(r'\]\(([^)]+)\)', file.read_text()):
         if target.startswith(('http:', 'https:', 'mailto:')):
             continue
@@ -86,4 +87,4 @@ for name in ['prototipo.js', 'numeros.js', 'cenarios-verificacao.js', 'verificar
 for file in (base / 'figma').glob('*.js'):
     script = 'const fs=require("fs");const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;new AsyncFunction(fs.readFileSync(process.argv[1],"utf8"));'
     subprocess.run(['node', '-e', script, str(file)], check=True, capture_output=True)
-print(f'PASS: {len(ids)} descritores locais; 84 IDs Figma históricos; {targets} destinos; {links} links locais e {fragments} âncoras; RF01–RF27/UC01–UC16; geração/sintaxe/SVG. Sem inspeção Figma atual.')
+print(f'PASS: {len(ids)} descritores locais; 84 IDs Figma históricos; {targets} destinos; {links} links locais e {fragments} âncoras; RF01–RF27/UC01–UC16; geração/sintaxe/SVG. Não consulta o Figma remoto; auditoria nativa separada.')
