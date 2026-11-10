@@ -1,0 +1,441 @@
+{
+  "metodo": "PNGs reais; nenhuma composição de mockup gerada. Exportação nativa diferenciada de captura do player. Amostragem visual não é teste Android ou com participantes.",
+  "fontes": {
+    "docs/interface/prototipos/figma/revisao-v05/auditoria-final.json": "2dec0c59e33fdd9ce14223b82b6aff3d0616c040f10cd22267c354d72c1fe207",
+    "docs/interface/prototipos/figma/revisao-v05/gerar-modelo.cjs": "c84de7a58302ec1b044705eb8cda6868cee3765fbde8b73b50cb48da47466a5b",
+    "docs/interface/prototipos/figma/revisao-v05/gerar-roteiros.cjs": "dc492c87998d6b7bf1223a80d40777ae63349c92a2f8f657f4c293777a984f0f",
+    "docs/interface/prototipos/figma/revisao-v05/02-construir.js": "06678788b4d22b86977989e1063681400e6ec8cd9794aca9799e60fc40601d42",
+    "docs/interface/prototipos/figma/revisao-v05/04-conectar.js": "5e880dd8d423b3e38b5312586bb3e9a77b5ab6567f5cc9daf6af7bbe7a0615b3",
+    "docs/interface/prototipos/figma/revisao-v05/07-auditar.js": "8a6a637d2f555dd94634abf0eb2972b45f2a08c8040707f4fd40c3e6448ad742",
+    "docs/interface/prototipos/figma/revisao-v05/09-retomada-limpa.js": "7a13a0c4b04bba9be6ba29d92c6cae593b873cb8ddb200511306f4f28ebdd0f5"
+  },
+  "capturas": [
+    {
+      "arquivo": "abertura-exportada.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "7abc0f31bc05f9832ec8a1c2524fcb17bf94573cd456be4722d0a42259b475e1",
+      "gravadoEmUTC": "2026-11-10T08:40:21+00:00",
+      "metodo": "exportação PNG nativa",
+      "nodeId": "21:2595"
+    },
+    {
+      "arquivo": "acesso-privativo-categoria.png",
+      "largura": 1920,
+      "altura": 1048,
+      "sha256": "b02f8bcef51d4a5b33a21e3713024c7e68cc15a039c39f5e5f9b8907ec36cbc7",
+      "gravadoEmUTC": "2026-11-10T09:18:27+00:00",
+      "metodo": "captura da janela privativa Firefox incluindo contexto e URL"
+    },
+    {
+      "arquivo": "acesso-privativo-inicio.png",
+      "largura": 1920,
+      "altura": 1048,
+      "sha256": "dedca1dcc7ee7116007c812ba06069b4565fe1ed018324d087c787d677dfc6fb",
+      "gravadoEmUTC": "2026-11-10T09:17:04+00:00",
+      "metodo": "captura da janela privativa Firefox incluindo contexto e URL"
+    },
+    {
+      "arquivo": "ahp-decimo-par-registrado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "83d5d90e76ba84de7c8a17a5f94ed07ae4543ede3a931978b3d04dcde0e9d487",
+      "gravadoEmUTC": "2026-11-10T09:14:08+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "ahp-inconsistente-bloqueado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "95c81c1c1e646cefb24a2e5a0d76882abec5db7ab6e34c221b7ce9255b5dfe6f",
+      "gravadoEmUTC": "2026-11-10T08:59:50+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "ahp-primeiro-par-registrado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "1f57436b14d31dcfe4cb9ac2634ae73ad45999325d22a30fc7f35339b05ff0c0",
+      "gravadoEmUTC": "2026-11-10T08:47:37+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "antes-formatacao-resultado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "edd4ebceb9b9c192052a9fcee16bf0faa556e8b7e4d03bddf81bcb0bcc71a397",
+      "gravadoEmUTC": "2026-11-10T04:36:35+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "antes-inicio-preservado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "23fd9585532e2f235c306fce6c94ac56608f05f73f9cd64394deb44cbcaab490",
+      "gravadoEmUTC": "2026-11-10T08:40:21+00:00",
+      "metodo": "exportação PNG nativa",
+      "nodeId": "6:8"
+    },
+    {
+      "arquivo": "apresentacao-inicio.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "3499373950857828cae3ee8e44a3e57e97aa142a7fd2b33869484c9a636d62a7",
+      "gravadoEmUTC": "2026-11-10T04:31:43+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-ahp-intensidade.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "20dd3bc9b96fe1b147f345885b32b273b44b65aec2151c434edecf3d63ab573a",
+      "gravadoEmUTC": "2026-11-10T08:13:32+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-ahp-sentido.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "0445c846598e9ccae66d240bdb7d1d32472bba76bdeb0004a1e0cfa97a8d2d94",
+      "gravadoEmUTC": "2026-11-10T08:13:28+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-cadastro-pessoal.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "6693fc2a1078aaa1dbba4c7210d1190802e770a5f6fa28a1db0edf5424eec6d7",
+      "gravadoEmUTC": "2026-11-10T08:10:46+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-cadastro-retorno-sem-autoselecao.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "dd801bb6042c3035cc198fa95d51f2db89bb98ad9f69dea52e1b8084d7895370",
+      "gravadoEmUTC": "2026-11-10T08:10:50+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-decimo-par.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "8db94a85452dab37f91390b133fdb4e5a01117501dae14443c3a2894aa048dd6",
+      "gravadoEmUTC": "2026-11-10T08:14:55+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-mista-origem-pessoal.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "711dc7cb3767d90d28d5f75ba0ceb72471ecc4e212b61fb34757254fee7d81a1",
+      "gravadoEmUTC": "2026-11-10T08:17:55+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-mista-resultado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "e5a3b4381e5b6e8cafb95cb40fb826d7a118c9bff3b461d4051c0c426c05be85",
+      "gravadoEmUTC": "2026-11-10T08:15:07+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-pdf-salvo.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "0575b18eecea5150be4e56c5a8bfd93095b060843bea0d7298e44b1efd432c8e",
+      "gravadoEmUTC": "2026-11-10T08:15:15+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bev-pesos.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "a5b42a287a36190f1da86877787337c4f8d049fcd699f1922c8d84c1f10d96a7",
+      "gravadoEmUTC": "2026-11-10T08:14:59+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bloqueio-original.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "563918d3e66db197dcf233c1295cc26c510fb876806d8d68b6a44f533a1b9629",
+      "gravadoEmUTC": "2026-11-10T09:11:36+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bloqueio-resolucao.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "af4655a5eae9ab70f8d22fc4f7e7d471c94bc239a0139c0592f370df34acea54",
+      "gravadoEmUTC": "2026-11-10T09:11:52+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "bloqueio-semantico.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "07db4a696f33cd112612e6efdfc60db2acf99548978f587e3747a556ac7c8d96",
+      "gravadoEmUTC": "2026-11-10T09:11:44+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "carregamento.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "c9b4a0b1767716eb31a898c4478d9af6106596293137c2e0865d4af6f6cf1bd8",
+      "gravadoEmUTC": "2026-11-10T09:12:41+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "confirmar-exclusao.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "ae91f8403904a277fa4d1b4b4dc6e33840133fdaf3d66241df09bf09499b3d14",
+      "gravadoEmUTC": "2026-11-10T08:18:01+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "depois-inicio-exportado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "293d7403513fc4aa0088ab77f473b904dbf0e9b7c30b76f381c575985d4628a5",
+      "gravadoEmUTC": "2026-11-10T08:40:21+00:00",
+      "metodo": "exportação PNG nativa",
+      "nodeId": "21:2526"
+    },
+    {
+      "arquivo": "descarte-preserva-ultimo-rascunho.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "dcd17d89f195778fa196892b85bccd8a7288d3f957de4618e9d2340b320566e2",
+      "gravadoEmUTC": "2026-11-10T08:55:12+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "edicao-salva-como-rascunho.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "dcd17d89f195778fa196892b85bccd8a7288d3f957de4618e9d2340b320566e2",
+      "gravadoEmUTC": "2026-11-10T08:07:42+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "edicao-separada-da-salva.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "26afd50a09d53c32710121551ebb70d0f5840b5692536f88a89d9f67bb5aa689",
+      "gravadoEmUTC": "2026-11-10T08:05:55+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "empate-competitivo.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "e50b998d6e8bb43dfc38bd994a102af1c58de62d79dac8d10464e23c3cfb312d",
+      "gravadoEmUTC": "2026-11-10T08:59:57+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "empate-postos-intermediarios.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "3997d718a4e6e9e764927e51d891ba005650c7fc84740de41949b52264133f9e",
+      "gravadoEmUTC": "2026-11-10T08:59:58+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "erro-consulta.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "96d16e53475ef809f16b5224a44e8e2fefd19b74a78d732ec9fef30913576952",
+      "gravadoEmUTC": "2026-11-10T09:12:45+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "falha-compartilhamento.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "6dff7505cb4c3eef4487227aa90fa9c4d3bab39483e2b20f059516fda6f329d1",
+      "gravadoEmUTC": "2026-11-10T09:12:15+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "falha-pdf.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "4d48ccc14632bdfc121358c025e1e6527dc9f3dc83b85b9db65a741bbbc3e076",
+      "gravadoEmUTC": "2026-11-10T09:12:07+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "falha-salvamento.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "c55366d09543a9479a5869024b758f813b89009a436ba256ed95c603b3df846a",
+      "gravadoEmUTC": "2026-11-10T09:12:00+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "normalizacao-indefinida.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "884b82f9a67f89bacba8bfbc8b49c71fed979f8500782f1762b40a17e770ebe6",
+      "gravadoEmUTC": "2026-11-10T09:11:28+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "pdf-antes-do-salvamento.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "31edf4bd61ed936e6a2e868c6c54801d0ab188cec82abdd138f50ecbbcb66147",
+      "gravadoEmUTC": "2026-11-10T09:13:35+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "pdf-edicao-desatualizada.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "598777d446bba8cc42b7b3e8b662dd9592b30961ca0dc5e6cb3c77ff505f3299",
+      "gravadoEmUTC": "2026-11-10T08:05:57+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "pdf-versao-anterior-preservada.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "c062ef030315221310b32db43a6614897d451cb95b7b0b905e4a1af6df921f57",
+      "gravadoEmUTC": "2026-11-10T08:07:21+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "qa360200.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "2fc305f944c69e3fc92c0fe124154dc8b665343565f3fba80d23ba6716ac2331",
+      "gravadoEmUTC": "2026-11-10T09:12:53+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "qa600100.png",
+      "largura": 600,
+      "altura": 800,
+      "sha256": "6cc78ffb1b7d638caf88eb2eecaf944f38a5d55bf58f8205f959879d6f3e0f96",
+      "gravadoEmUTC": "2026-11-10T09:13:00+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "qa600200.png",
+      "largura": 600,
+      "altura": 800,
+      "sha256": "ed46796c1e460928c6bc4d7f4ff8ba87ac080e8b710558d07d8c3035ca3ee144",
+      "gravadoEmUTC": "2026-11-10T09:13:08+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "rascunho-retomado-em-valores.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "4aeecd3558124491b2c451e46a516ba9a4efac1b1ba5604e6619b5c4e1b7dee1",
+      "gravadoEmUTC": "2026-11-10T08:47:12+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "resultado-recalculado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "0119ccd3bc3e95f963ab70ce8ee59d80bc96dea7bac2935266c698dbf4c03482",
+      "gravadoEmUTC": "2026-11-10T08:10:18+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "retomada-parcial-nao-simulada.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "a1f4291f203a58b705b8a7e66c0f88b205ab34f2e51e3d031d235673fd03a1c8",
+      "gravadoEmUTC": "2026-11-10T08:47:42+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "retomada-saida-sem-alteracoes.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "d27c14128b146e4e70811c8841a3a9435c149e639095b84f0328cb814485b124",
+      "gravadoEmUTC": "2026-11-10T08:47:26+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "revisao-rascunho-limpa.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "73665c4fd2f791efb003e2d8b9543bc99522c213be8a0667538807e52f2e590c",
+      "gravadoEmUTC": "2026-11-10T08:55:03+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "saida-tres-opcoes.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "d164ce0279cb42278cb85bea5da503887fa07025d1ce70230d069a83865225e4",
+      "gravadoEmUTC": "2026-11-10T08:02:55+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "sem-diferenciacao-pdf.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "f32971e7c613fa4a3db3f6e59e73fa65f1a44207f3c44210403a742feff72452",
+      "gravadoEmUTC": "2026-11-10T09:12:30+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "sem-diferenciacao.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "39357e6b3bd4aac25b92ec2a8d600afe3989078bb4c95659a6245ae4574a7918",
+      "gravadoEmUTC": "2026-11-10T09:12:22+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "smartphones-pdf-salvo.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "fa2bb6bef531475ae389d6429dac8e11974284f4151041ad20d6d5f8f62543e0",
+      "gravadoEmUTC": "2026-11-10T08:04:07+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "smartphones-pesos.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "1017fc02e4486d95c331370c42540cd483f8dc52dcec8ed23da2ce9bba193973",
+      "gravadoEmUTC": "2026-11-10T04:35:57+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "smartphones-resultado.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "bc3e21bcacae68b96db911ce0aca5e40ae58f0ede99769a4eadc082790cf4928",
+      "gravadoEmUTC": "2026-11-10T08:02:53+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "smartphones-versao-salva.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "2240c4741f9b039e1a8f688c3c35e6794406359fffaf1081d4044079446237c9",
+      "gravadoEmUTC": "2026-11-10T08:04:04+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    },
+    {
+      "arquivo": "valor-ausente.png",
+      "largura": 360,
+      "altura": 800,
+      "sha256": "06ce1c4950cdece4d41f30be1aa300d857937dd42375ca18d64307d1985efc8a",
+      "gravadoEmUTC": "2026-11-10T09:11:20+00:00",
+      "metodo": "captura real da apresentação Firefox, recorte da viewport"
+    }
+  ]
+}

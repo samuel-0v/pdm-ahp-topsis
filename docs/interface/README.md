@@ -1,14 +1,19 @@
 # Etapa 5 — Interface, navegação e prototipagem
 
-**Revisão UI/UX v0.4 · 09/11/2026 · proposta visual para revisão.** Branch `docs/etapa5-interface-navegacao`, integrada à Etapa 4 antes desta revisão. Requisitos, modelagem, contratos aprovados e código Android foram preservados. DEC-049 e referências de arquitetura receberam somente correção editorial de estado atual.
+**Revisão Figma v0.5 · 10/11/2026 · proposta para revisão.** O HTML mantém a UI v0.4 e seu cálculo demonstrativo. Branch `docs/etapa5-interface-navegacao`, integrada à Etapa 4 antes desta revisão. Requisitos, modelagem, contratos aprovados e código Android foram preservados. DEC-049 e referências de arquitetura receberam somente correção editorial de estado atual.
 
 O [demonstrador local](prototipos/index.html) está utilizável para apresentação: abertura animada, duas categorias, seleção mista, cadastro pessoal, valores editáveis, dez pares AHP completos, cálculo correspondente às entradas, revisão, ranking, salvamento e exportação simulados. Abrir diretamente no navegador, sem servidor. Os registros existem **somente na memória da página**; recarregar reinicia os dados.
 
-**A Etapa 5 completa ainda não pode ser declarada concluída.** O [Figma autoral](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36) não pôde sequer ser inspecionado nesta revisão: limite MCP do plano Starter. O inventário histórico tem 84 frames editáveis, com correções e conexões então pendentes; seu estado atual não foi confirmado. Novas tentativas em 09/11, por leitura JavaScript e metadados, foram bloqueadas; a abertura web também falhou. [Evidência](prototipos/figma/verificacao-2026-11-09.json). Nenhuma mutação Figma desta revisão foi realizada. O plugin histórico permanece preparado, sem instalação/execução declarada.
+O [Figma autoral](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36) foi atualizado pelo Firefox autorizado, via Scripter, na página **03 · Protótipo revisado v0.5**: 598 quadros de contextos/ramificações, 1.681 conexões e sete entradas de apresentação. As duas páginas anteriores e os 84 frames históricos foram preservados. A [auditoria nativa](prototipos/figma/revisao-v05/auditoria-final.json) confere conexões efetivas, textos numéricos, identidade/origem, geometria e inventário. O limite MCP continua; ele não impediu a edição pela API nativa no navegador.
+
+[**Abrir a apresentação Figma revisada**](https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2567&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed). Link conferido em janela privativa do Firefox, sem autenticação nesta execução; usar os roteiros preparados da página 03.
+
+O Figma usa **roteiros preparados e entradas restritas**, sem cálculo livre ou memória global. São quatro percursos: Smartphones/BEV × oficiais/mista; números correspondentes às escolhas fixadas, calculados pela adaptação DEC-018. Listas, salvamentos e PDF são ramificações ilustrativas. O HTML continua sendo a demonstração com entradas livres e resultado calculado. Ver [aplicação e limites](prototipos/figma/revisao-v05/README.md) e [evidências v0.5](finalizacao-v05.md). Nenhum dos artefatos constitui implementação Android ou aprovação da entrega.
 
 | Material | Conteúdo |
 |---|---|
-| [Correções finais e prontidão](finalizacao-v04.md) | Achados corrigidos, evidências atuais e único impedimento de prototipagem: Figma não verificável. |
+| [Atualização Figma e prontidão v0.5](finalizacao-v05.md) | Aplicação real, apresentação, evidências, limites e avaliação de prontidão. |
+| [Correções locais v0.4](finalizacao-v04.md) | Histórico da revisão do HTML e do impedimento MCP de 09/11. |
 | [Parecer independente](revisao-uiux.md) | Problemas concretos, fontes, correções, evidências antes/depois e decisão de apresentação. |
 | [Mapa e rastreabilidade](mapa-telas.md) | Famílias, RF01–RF27, UC01–UC16 e estados. |
 | [Navegação](navegacao.md) | Fluxo, Voltar, saída, retomada e versões do PDF; sem rotas Kotlin. |
@@ -38,9 +43,9 @@ As escolhas de três camadas, DI manual, sessão compartilhada, motores independ
 
 ## Trabalho restante
 
-1. Inspecionar o Figma atual, aplicar e validar as correções/conexões, portar a revisão visual e os percursos BEV/mistos; testar o modo de apresentação e acesso do avaliador. [Intervenção humana concreta](prototipos/figma/retomada-v04.md).
+1. Revisar a proposta e seus limites no [parecer v0.5](finalizacao-v05.md), incluindo a conferência de acesso ao link. A página 03 foi efetivamente aplicada e os percursos principais foram usados; a [retomada v0.4](prototipos/figma/retomada-v04.md) descreve o impedimento histórico, superado pelo Firefox autorizado.
 2. Manter o plano futuro de RNF01 com três participantes e RNF02 no Android/TalkBack. Não foram executados nem são impedimentos artificiais ao fechamento documental da Etapa 5.
 3. Na preparação de dados/implementação, aprovar fontes, protocolos, rubricas, domínios/precisões e imagens reais. O demonstrador fictício não depende de inventar esses dados para estar documentado.
 4. Preparar vídeo e material final de entrega; não foi realizado envio ao Teams nem declarada aprovação do professor.
 
-Para a apresentação imediata, usar o HTML como **demonstrador revisado** e explicar o estado pendente do Figma. O [parecer](revisao-uiux.md) fundamenta essa distinção.
+Para demonstrar entradas livres e cálculo correspondente, abrir o HTML. No Figma, usar a **página 03** e os roteiros explicitamente preparados; as páginas 01/02 são histórico preservado. Consultar o [parecer de prontidão](finalizacao-v05.md) antes de tratar a proposta como entrega aprovada.

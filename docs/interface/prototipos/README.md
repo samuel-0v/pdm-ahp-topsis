@@ -1,5 +1,7 @@
 # Protótipo local e fontes editáveis
 
+[**Abrir a apresentação Figma revisada**](https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2567&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed). Link conferido em janela privativa do Firefox, sem autenticação nesta execução; usar os roteiros preparados da página 03.
+
 [Etapa 5](../README.md) · [Parecer](../revisao-uiux.md) · [Validação](../validacao.md)
 
 ## Abrir e demonstrar
@@ -29,9 +31,11 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 | [contextos.js](contextos.js), [expandir_cenarios.py](expandir_cenarios.py) | Histórico v0.2, preservado para rastreabilidade; não incorporado na UI atual. Expansor interrompe antes de sobrescrever o manifesto v0.3. |
 | [evidências atuais](evidencias/revisao-v04/) | Relatórios e capturas antes/depois. Evidências v0.1/v0.2/v0.3 permanecem históricas. |
 
-## Figma: situação exata e retomada
+## Figma: aplicação atual e histórico
 
-[Arquivo autoral real](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36). O usuário autorizou arquivo separado na etapa anterior. O ledger registra 84 frames editáveis, página de componentes, tokens e instâncias Material 3 da criação anterior. Nesta revisão, uma nova sessão foi criada, mas a tentativa de leitura foi bloqueada pelo limite MCP Starter; `whoami` confirmou o plano. Não foi possível verificar se houve trabalho manual posterior. **Não se declara o arquivo atualmente navegável, atualizado ou aprovado.**
+[Arquivo autoral real](https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36). Em 10/11 foi criada a página **03 · Protótipo revisado v0.5**, preservando os 84 frames e a página de componentes anteriores. A edição funcionou pela conta aberta no Firefox e pelo plugin Scripter; o MCP continuou limitado. O plugin local histórico não foi instalado/executado. **A fonte atual está em [revisao-v05](figma/revisao-v05/README.md)**; os scripts históricos abaixo não devem ser reaplicados.
+
+A página nova tem 598 quadros (duplicações de contexto para os roteiros, não novas famílias de telas), 1.681 conexões básicas e sete entradas, incluindo abertura e acesso sem animação. As entradas são restritas a cenários preparados, com oito conjuntos numéricos correspondentes e rótulo de demonstração. Salvar, retomar, excluir e exportar são ramificações simuladas; não há memória global entre percursos. A [auditoria final nativa](figma/revisao-v05/auditoria-final.json) é distinta dos testes da apresentação e dos testes HTML. Ver [registro atual](../finalizacao-v05.md).
 
 | Artefato Figma | Status |
 |---|---|
@@ -45,9 +49,7 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 | [Plugin local histórico](figma/plugin-local/README.md) | Não instalado/executado. ZIP sem ID real não é instalável; não inclui script 05 nem a expansão v0.3. |
 | [Registro anterior de 08/11](figma/continuacao-2026-11-08.json) | História da continuação v0.2; não é relatório desta revisão. |
 
-Na retomada, ler as skills Figma adequadas, inspecionar inventário atual, conferir ledger e preservar alterações da equipe. Fazer cópia/versionamento antes de mutar. Revisar 04/03 contra o estado atual e a especificação v0.1; não injetar descritores v0.3 como se fossem frames já criados. Revisar 05, injetando `LEDGER`, e parar se T00 ou aliases divergirem. O script retorna IDs para registro, não aprovação visual.
-
-Os próximos ajustes incluem layout e cores de instâncias M3 externas, campos/escala completos, BEV/mista/cadastro, estados DEC-041/042, movimento e fluxos. No Figma, usar cenários preparados com entradas restritas e identificadas, ou um mecanismo efetivamente calculado; não permitir entrada livre chegar a coeficiente fixo. Testar retornos, três escolhas, falhas e versões do PDF no modo de apresentação. Capturar evidências e verificar conta do avaliador antes de declarar concluído.
+Os registros v0.1–v0.4 acima permanecem históricos: o bloqueio de acesso de 09/11 foi superado por outro meio autorizado. A retomada atual deve partir do ledger v0.5, não de um novo disparo dos scripts 01/02 históricos. O compilador Starter descarta ações condicionais e não depende de recursos de prototipagem pagos.
 
 ## Reproduzir
 
@@ -55,6 +57,7 @@ Os próximos ajustes incluem layout e cores de instâncias M3 externas, campos/e
 python3 docs/interface/prototipos/atualizar_html.py
 python3 docs/interface/prototipos/verificar_documentacao.py
 python3 docs/interface/prototipos/validar_fixture.py
+python3 docs/interface/prototipos/figma/revisao-v05/verificar_roteiros.py
 node docs/interface/prototipos/verificar_matematica.cjs
 python3 docs/interface/prototipos/verificar_contraste.py
 python3 docs/interface/prototipos/verificar_navegador.py

@@ -2,7 +2,7 @@
 
 [Índice](README.md) · [Especificação](especificacao-telas.md) · [Evidências](validacao.md)
 
-**Proposta v0.4 aplicada ao HTML; Figma ainda não atualizado/verificado.** Referência Material Design 3 para Android/Compose, com superfícies claras, verde profundo e controles de altura expansível. A cor destaca ações e seleção; texto, símbolo e posição comunicam o significado. A marca com três barras é um estudo de comparação, não uma marca definitiva.
+**Proposta v0.4 no HTML e adaptação nativa v0.5 na página 03 do Figma.** A página histórica não foi recolorida. Referência Material Design 3 para Android/Compose, com superfícies claras, verde profundo e controles de altura expansível. A cor destaca ações e seleção; texto, símbolo e posição comunicam o significado. A marca com três barras é um estudo de comparação, não uma marca definitiva.
 
 ## Cores aplicadas localmente
 
@@ -18,7 +18,7 @@
 | foco / pessoal | `#5B478F` / `#F0EAFB` | Contorno de foco de 3 px; rótulo pessoal diferencia origem sem depender só da cor. |
 | abertura | `#142C2F`, branco, `#9BDAC3`, `#B9D8CD` | Contraste da identificação e marca inicial. |
 
-Razões calculadas em [contraste-v03.json](prototipos/evidencias/revisao-v04/contraste-v04.json). A conferência cobre os pares listados, sem afirmar auditoria de todos os pixels/estados do Figma. Controles desabilitados usam opacidade e texto explicativo de bloqueio nas telas pertinentes.
+Razões calculadas em [contraste-v04.json](prototipos/evidencias/revisao-v04/contraste-v04.json). A conferência cobre os pares listados, sem afirmar auditoria de todos os pixels/estados do Figma. Controles desabilitados usam opacidade e texto explicativo de bloqueio nas telas pertinentes.
 
 ## Tipografia e composição
 
@@ -29,6 +29,8 @@ Ritmo de 4 px, com espaços 8/12/16/20/24/28/32. Conteúdo: 20 px em 360 e 28 px
 Os valores são referências visuais em **CSS px**, não medidas de uma implementação Android em dp/sp. Em 600 a composição aproveita largura; em 200% cards de métricas passam para uma coluna, navegação e abas empilham e rótulos quebram. O conteúdo usa rolagem vertical da página. Não se validou paisagem.
 
 ## Componentes aplicados
+
+A tabela abaixo descreve o HTML, incluindo atributos ARIA e controles nativos web. A adaptação Figma e seus limites estão na seção específica ao final.
 
 | Componente | Decisão de uso e estados |
 |---|---|
@@ -49,4 +51,16 @@ T00 desenha as barras e revela a identificação em 520 ms; a saída usa dissolu
 
 Ordem DOM: título → situação → progresso → conteúdo/erros → ações → navegação. Mudança de tela leva foco ao conteúdo; seleção preserva rolagem; botões e campos possuem foco visível; o primeiro campo inválido do cadastro ou dos valores recebe foco após validação, com rolagem para ficar visível. Exclusões iniciam foco em Cancelar; falhas permanecem na tela. Mensagens de erro usam texto e `role=alert`; toast usa `role=status`. A splash oculta os demais conteúdos enquanto visível.
 
-O Figma histórico usa tokens violeta e instâncias do Material 3 Design Kit; estes **não receberam automaticamente** a nova paleta. O [script 05](prototipos/figma/05-revisao-uiux.js) prepara atualização dos aliases e T00, sem prometer restilização integral das instâncias externas nem navegação testada. TalkBack, semântica Compose, teclado/IME e testes humanos permanecem pendentes.
+O Figma histórico usa tokens violeta e instâncias do Material 3 Design Kit; estes **não receberam automaticamente** a nova paleta. O [script 05 histórico](prototipos/figma/05-revisao-uiux.js) preparava atualização dos aliases e T00 e não foi executado nesta rodada. A revisão efetivamente aplicada tem coleção própria na página 03, descrita abaixo. TalkBack, semântica Compose, teclado/IME e testes humanos permanecem pendentes.
+
+## Adaptação aplicada ao Figma v0.5
+
+A página 03 usa coleção própria de cores, espaçamentos e raios, sem alterar os tokens dos 84 frames anteriores. Roboto Regular/Medium/Bold foi conferida e carregada. Corpo 16/24, títulos 24/32, destaque 30/38, ações 14/20 e auxiliares 12–14/18–22, em unidades do arquivo Figma; as amostras 200% dobram os tamanhos de texto. Isso não equivale a testar `fontScale` Android.
+
+Há seis variantes locais de ação (primary/secondary/danger × Enabled/Disabled), quatro componentes de mensagem com propriedade de texto e ilustrações vetoriais editáveis. O botão cresce com rótulos longos e tem mínimo de 52; a auditoria confere pelo menos 48 em cada eixo nos alvos conectados. Os campos do roteiro são representações restritas, identificadas como preparadas; não prometem digitação.
+
+O progresso tem dez segmentos, com contagem do quadro preparado. BEV usa os dois sentidos de preferência e intensidades 2/4; igualdade registra 1. A grade Saaty contém 1–9, habilitando somente a intensidade do cenário. Pesos exibem uma casa percentual; C*/distâncias, quatro casas com vírgula. O runtime nativo ignorou `toLocaleString`, por isso a exibição usa `toFixed` e substituição decimal, preservando os valores calculados fora do Figma.
+
+Diálogos têm superfície branca, raio 24, sombra e scrim 32% editável dentro de um overlay 360 × 800. O fechamento exige uma ação explícita; Salvar/Descartar/Continuar permanecem visíveis. A rolagem vertical integral conserva tamanho de texto e alvos, inclusive nas amostras 360/600 e 200%.
+
+Contraste deriva dos mesmos pares sRGB conferidos no HTML, com cores vinculadas à coleção própria. Auditoria geométrica e inspeção de capturas são evidências técnicas; não são testes de leitor de tela no Figma nem TalkBack/Compose. As escolhas continuam propostas de design, não novas decisões de negócio.

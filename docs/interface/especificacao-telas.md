@@ -2,7 +2,7 @@
 
 [Mapa, RFs e UCs](mapa-telas.md) · [Navegação](navegacao.md) · [Identidade visual](design-system.md)
 
-**Revisão local v0.4, 09/11/2026.** Comportamentos abaixo foram aplicados ao HTML, salvo limites explicitados. O manifesto mantém referências de storyboard; a sessão editável é renderizada em `prototipo.js`. Figma: apenas inventário histórico, sem leitura/mutação confirmada nesta revisão. RFs e UCs por família estão no mapa.
+**Revisão local v0.4, 09/11/2026.** Comportamentos abaixo foram aplicados ao HTML, salvo limites explicitados. O manifesto mantém referências de storyboard; a sessão editável é renderizada em `prototipo.js`. A atualização Figma v0.5 de 10/11 está na página 03, com roteiros restritos; ela não reproduz a sessão livre do HTML. Ver [aplicação e limites](finalizacao-v05.md). RFs e UCs por família estão no mapa.
 
 ## Catálogo e produtos — T01 a T04
 
@@ -12,7 +12,7 @@
 
 A abertura pertence ao host Android, fora do grafo de avaliação; não é uma etapa a rever ao pressionar Voltar. Retornos do cadastro/compartilhamento e recomposições não a reapresentam nem reiniciam a sessão. Em restauração, respeitar o destino e os dados efetivamente recuperáveis, conforme [contrato de ciclo de vida](../arquitetura/gerenciamento-estado.md). Integrar com a splash do sistema para evitar duplicação; os recursos e a animação compatível serão verificados na implementação.
 
-**Representação local:** marca vetorial, nome e mensagem; desenho/revelação de 520 ms e saída em 160 ms, liberando T01; pulo e preferência por movimento reduzido. Fallback de evento não equivale a espera de rede. A splash oculta o restante da interface enquanto visível. O manifesto inclui T00; Figma tem somente script preparado, sem frame/conexão verificados nesta revisão.
+**Representação local:** marca vetorial, nome e mensagem; desenho/revelação de 520 ms e saída em 160 ms, liberando T01; pulo e preferência por movimento reduzido. Fallback de evento não equivale a espera de rede. A splash oculta o restante da interface enquanto visível. O manifesto inclui T00. No Figma v0.5, OPEN0/OPEN1/OPEN2 fazem a revelação e a transição para HOME; os retornos não apontam para OPEN0. A entrada separada “Começar sem animação” é alternativa manual; não se presume detecção automática da preferência do sistema no Figma.
 
 T01 reúne início e categorias **após a abertura animada**. A entrada de consulta abre produtos; a entrada “Nova avaliação” escolhe categoria e cria edição em memória. Apenas as duas categorias aprovadas são apresentadas. A [DEC-049](../decisoes/adotadas/dec-049.md) corrige a omissão documental anterior sem modificar RF01–RF27.
 
@@ -20,7 +20,7 @@ T02 separa oficiais/pessoais da categoria por abas ou ações equivalentes. Most
 
 T03 é somente leitura para oficial. Mostra fabricante/modelo/versão conhecidos, cinco critérios, valores, unidades e referências disponíveis. Produtos pessoais oferecem editar/excluir com D03. Salvar edição atualiza imediatamente título e dados do detalhe; snapshots de avaliações já salvas continuam independentes. Fonte, data de referência, protocolo/rubrica, perfil e estimativa desconhecidos não se transformam em informação confirmada. ADAS da equipe não é certificação de segurança.
 
-T04 reúne cadastro e edição pessoal: identificação, fabricante/modelo/versão e cinco valores. Categoria é escolhida antes do cadastro e imutável na edição. Campos obrigatórios inválidos impedem gravar produto; falha mantém formulário e não confirma sucesso. Cadastro iniciado pela seleção retorna à mesma avaliação e disponibiliza o novo registro sem alterar os já selecionados. O HTML permite editar nome, fabricante/modelo opcionais e cinco valores. Erros de preenchimento e falha de gravação preservam formulário e seleção; o Figma ainda precisa receber essa interação.
+T04 reúne cadastro e edição pessoal: identificação, fabricante/modelo/versão e cinco valores. Categoria é escolhida antes do cadastro e imutável na edição. Campos obrigatórios inválidos impedem gravar produto; falha mantém formulário e não confirma sucesso. Cadastro iniciado pela seleção retorna à mesma avaliação e disponibiliza o novo registro sem alterar os já selecionados. O HTML permite editar nome, fabricante/modelo opcionais e cinco valores. Erros de preenchimento e falha de gravação preservam formulário e seleção; no Figma v0.5 há cadastro preparado iniciado pela seleção, retorno com os dois oficiais mantidos e inclusão pessoal por ação posterior. O formulário nativo não aceita texto livre.
 
 | Categoria | Cinco critérios, unidades e natureza |
 |---|---|
@@ -75,7 +75,7 @@ Ranking apresenta produto, posição, C*, d+, d−; detalhes disponibilizam peso
 
 Sem diferenciação apresenta d+=d−=0, C* não definido e nenhuma posição/vencedor fictício. É conclusão válida salvável/exportável, distinta de falha matemática. Resultado novo mostra “Ainda não salvo”; sucesso de salvar só após confirmação. Consulta salva não recalcula nem depende de catálogo atual. Falha de novo recálculo preserva versão salva; atualização isolada do motor não autoriza substituição silenciosa.
 
-Detalhes compartilhados entre consulta e edição precisam respeitar contexto: excluir somente registro salvo; exportar somente versão elegível. A revisão histórica do Figma encontrou ação de exclusão no detalhe compartilhado sem essa condição; o estado atual não pôde ser confirmado. O HTML condiciona a existência do registro salvo, e detalhes mostram valores originais/efetivos e identidade. Não é autorização para excluir uma avaliação nunca salva.
+Detalhes compartilhados entre consulta e edição precisam respeitar contexto: excluir somente registro salvo; exportar somente versão elegível. A revisão histórica do Figma encontrou ação de exclusão no detalhe compartilhado sem essa condição; esse achado é histórico. A página v0.5 oferece exclusão somente na ramificação de versão salva; os 84 quadros históricos foram preservados. O HTML condiciona a existência do registro salvo, e detalhes mostram valores originais/efetivos e identidade. Não é autorização para excluir uma avaliação nunca salva.
 
 ## Diálogos, saída e PDF — D01 a D04 / T13
 

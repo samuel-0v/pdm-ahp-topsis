@@ -4,7 +4,7 @@
 
 [Resumo vetorial editável em SVG](prototipos/mapa-navegacao.svg).
 
-**Revisão v0.4, 09/11/2026.** Fluxos aplicados ao demonstrador HTML, alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente; conexões Figma não foram verificadas/aplicadas nesta revisão.
+**Revisão v0.4, 09/11/2026.** Fluxos aplicados ao demonstrador HTML, alinhados às DEC-043–DEC-049 e ao contrato definitivo da sessão da Etapa 4. Sem rotas Kotlin. Categoria fixa na avaliação. Abertura T00 aplicada localmente. A rodada posterior de 10/11 aplica abertura e conexões na página Figma 03, com [roteiros restritos](finalizacao-v05.md).
 
 ```mermaid
 flowchart TD
@@ -88,7 +88,7 @@ flowchart TD
 
 A consulta da avaliação processada oferece exportação pelo [UC16](../requisitos/casos-de-uso/05-exportacao.md), conforme [RF27](../requisitos/funcionais/07-exportacao.md). Sem edição pendente, gerar a partir da versão salva elegível e abrir o compartilhamento padrão do Android.
 
-Com alterações não salvas, oferecer **Salvar e exportar**, **Exportar última versão salva** e **Cancelar**. A primeira opção exige resultado atualizado e persistência bem-sucedida; a segunda depende de versão salva processada e mantém a edição pendente. Informar necessidade de recálculo antes de permitir exportar uma edição desatualizada. Cancelamentos e falhas não alteram a avaliação salva. O diálogo D02 e T13 são funcionais no demonstrador; os frames históricos Figma não comprovam navegação aplicada. O HTML não gera um PDF real.
+Com alterações não salvas, oferecer **Salvar e exportar**, **Exportar última versão salva** e **Cancelar**. A primeira opção exige resultado atualizado e persistência bem-sucedida; a segunda depende de versão salva processada e mantém a edição pendente. Informar necessidade de recálculo antes de permitir exportar uma edição desatualizada. Cancelamentos e falhas não alteram a avaliação salva. O diálogo D02 e T13 são funcionais no demonstrador; na página 03, as ramificações PDF/EDIT_PDF representam versões preparadas. Isso não confere memória global ao Figma. O HTML não gera um PDF real.
 
 Identidade das alternativas segue origem + ID (DEC-034). Processamento válido sem diferenciação pode ser salvo e listado como **Concluída — sem diferenciação** (DEC-035); isso não converte falhas de normalização em resultados válidos.
 
@@ -154,4 +154,16 @@ flowchart TD
     SHARE --> RET
 ```
 
-Não alternar silenciosamente para a versão anterior se Salvar e exportar falhar. Exportar última salva mantém edição pendente. Se a geração do PDF falhar após uma gravação bem-sucedida, a gravação permanece. Abrir compartilhamento não comprova envio. As reações Figma estão [preparadas](prototipos/figma/03-navegacao.js), ainda não aplicadas nem validadas nesse ambiente.
+Não alternar silenciosamente para a versão anterior se Salvar e exportar falhar. Exportar última salva mantém edição pendente. Se a geração do PDF falhar após uma gravação bem-sucedida, a gravação permanece. Abrir compartilhamento não comprova envio. O script [histórico](prototipos/figma/03-navegacao.js) não foi executado. A página 03 utiliza o [compilador v0.5](prototipos/figma/revisao-v05/README.md), com conexões básicas efetivamente aplicadas e auditadas, sem variáveis de prototipagem pagas.
+
+## Navegação nativa v0.5 e limites do roteiro
+
+A entrada “Começar · abertura e avaliação” passa por OPEN0/OPEN1/OPEN2 e chega a HOME; “Começar sem animação” começa em HOME. Nenhum retorno de avaliação, formulário ou PDF aponta para a abertura. Há também entradas para exemplos, rascunho e amostras de layout.
+
+HOME → P/B_CAT → seleção dos dois oficiais → valores → ajuste preparado → dez pares AHP → WEIGHTS → REVIEW → RESULT → SAVED → PDF. Cadastro iniciado em SEL2 segue para FORM e retorna a SEL3 com dois selecionados: o pessoal só entra após toque próprio, conduzindo à variante M. A ordem inicial e os valores habilitados são restrições explicitamente rotuladas da demonstração.
+
+Entre RESULT e a lista, EXIT oferece Salvar/Descartar/Continuar. Em uma edição concluída, EDIT separa o preço preparado atual do snapshot salvo, exige recálculo para salvar/exportar a edição e permite PDF da versão anterior sem trocar a edição. Salvar uma edição desatualizada conduz ao rascunho sem PDF; não exporta resultado antigo como atual. Os diálogos são overlays de tela inteira com scrim, superfície central e fechamento por ação explícita.
+
+As ramificações DRAFT/LIST oferecem retomada limpa no roteiro dedicado de Valores e na revisão do rascunho de edição concluída. Outras retomadas parciais estão identificadas como não simuladas e desabilitadas. Não existe armazenamento nem memória global: voltar a HOME/reiniciar outro roteiro não recupera automaticamente um conjunto global de registros. O contrato completo da sessão, valores livres, recuperação de falhas e múltiplas avaliações é demonstrado pelo HTML; no Android, deve seguir o contrato aprovado da Etapa 4. O botão Voltar representado no Figma revisita quadros preparados; a barra/tecla do navegador e atalhos do player não equivalem ao Voltar Android.
+
+A auditoria das 1.681 conexões é separada dos [percursos de apresentação](finalizacao-v05.md). Falhas isoladas no laboratório não comprovam a recuperação de uma transação nativa em andamento.

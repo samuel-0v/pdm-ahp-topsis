@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "framesPrepared": 598,
+  "preparedFlows": 4,
+  "numericFixtures": 8,
+  "checks": 3804,
+  "scope": "Compilador e oráculo Python dos roteiros estáticos. Não comprova execução nativa, apresentação Figma ou Android."
+}

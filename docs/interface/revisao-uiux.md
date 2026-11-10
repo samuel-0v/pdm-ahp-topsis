@@ -2,7 +2,7 @@
 
 [Índice](README.md) · [Protótipo](prototipos/index.html) · [Verificações](validacao.md)
 
-**08–09/11/2026.** Revisão do material existente no HEAD `88f2226`, após conferir Git limpo e selecionar `docs/etapa5-interface-navegacao`. O trabalho anterior foi preservado; não foram reexecutados scripts de criação inicial do Figma. A revisão compara artefatos com contratos, e não muda requisitos por preferência estética.
+**Registro histórico v0.3, 08–09/11/2026.** A aplicação Figma posterior de 10/11 e o parecer atual estão em [v0.5](finalizacao-v05.md). Os impedimentos remotos abaixo descrevem a data desta revisão. Revisão do material existente no HEAD `88f2226`, após conferir Git limpo e selecionar `docs/etapa5-interface-navegacao`. O trabalho anterior foi preservado; não foram reexecutados scripts de criação inicial do Figma. A revisão compara artefatos com contratos, e não muda requisitos por preferência estética.
 
 ## Fontes e classificações
 
@@ -63,3 +63,7 @@ Também inspecionadas: [abertura](prototipos/evidencias/revisao-v03/abertura-360
 ## Continuação para PR — v0.4
 
 A [rodada de 09/11](finalizacao-v04.md) corrige detalhes de foco, atualização de produto pessoal, indicação de empates e feedback de exclusão. As capturas e contagens acima preservam a história v0.3; os resultados atuais estão em [validação](validacao.md). O novo acesso Figma também foi bloqueado; PR deve permanecer draft por essa pendência, sem presumir aprovação da equipe/professor.
+
+## Continuação nativa — v0.5
+
+Em 10/11, o Firefox autorizado e o Scripter permitiram atualizar o arquivo. A página nova preserva o trabalho anterior e aplica a identidade visual, cenários guiados, abertura, componentes e conexões. A [auditoria nativa](prototipos/figma/revisao-v05/auditoria-final.json) verificou 598 quadros e 1.681 conexões, sem divergências no inventário histórico, textos numéricos ou geometria conferida. A conclusão histórica de falta total de acesso Figma não descreve mais a situação atual. Percursos de apresentação, acesso e limites devem ser avaliados pelo [registro v0.5](finalizacao-v05.md), sem transformar a auditoria de conexões em teste humano ou em validação Android.

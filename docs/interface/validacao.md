@@ -1,8 +1,8 @@
 # Verificação da interface e prontidão documental
 
-[Índice](README.md) · [Correções v0.4](finalizacao-v04.md) · [Parecer histórico v0.3](revisao-uiux.md) · [Reprodução](prototipos/README.md)
+[Índice](README.md) · [Revisão Figma v0.5](finalizacao-v05.md) · [Correções v0.4](finalizacao-v04.md) · [Parecer histórico v0.3](revisao-uiux.md) · [Reprodução](prototipos/README.md)
 
-**Rodada v0.4 · 09/11/2026 · branch `docs/etapa5-interface-navegacao`.** Base limpa `bd055c2`, igual ao remoto, com Etapa 4 integrada. Evidências v0.1/v0.2/v0.3 são históricas e foram preservadas. Nesta rodada houve correção editorial autorizada em DEC-049 e três documentos de arquitetura, sem mudar a decisão normativa ou implementar Android.
+**HTML v0.4 e atualização Figma v0.5 · reconferência em 10/11/2026 · branch `docs/etapa5-interface-navegacao`.** A rodada v0.4 iniciou em `bd055c2`; esta continuação v0.5 iniciou em `91cafd7`, com Etapa 4 integrada e sem novos commits da equipe após a pausa. Evidências v0.1/v0.2/v0.3 são históricas e foram preservadas. Nesta rodada houve correção editorial autorizada em DEC-049 e três documentos de arquitetura, sem mudar a decisão normativa ou implementar Android.
 
 ## Resultados atuais
 
@@ -12,16 +12,17 @@
 | `python3 docs/interface/prototipos/validar_fixture.py` | PASS: 13 cenários numéricos de referência, com naturezas próprias de smartphones/BEV. |
 | `node docs/interface/prototipos/verificar_matematica.cjs` | PASS: 234 verificações do calculador web; pesos/λ/IC/RC, distâncias, coeficientes e postos comparados aos cenários; dinheiro, finitude e pendências. [Relatório](prototipos/evidencias/revisao-v04/matematica-v04.json). |
 | `python3 docs/interface/prototipos/verificar_contraste.py` | PASS: 18 pares sRGB; texto ≥4,5:1, borda/foco ≥3:1. [Razões](prototipos/evidencias/revisao-v04/contraste-v04.json). Sem auditoria universal de pixels/estados. |
-| `python3 docs/interface/prototipos/verificar_navegador.py` | PASS: **295 verificações**, incluindo regressões de detalhe pessoal, foco/rolagem de erro, empates e exclusão. [Relatório](prototipos/evidencias/revisao-v04/interacoes-v04.json). |
-| Mesmo comando com `--movimento-reduzido` | PASS: 295 verificações; preferência reduzida efetivamente reconhecida por `matchMedia`. [Relatório](prototipos/evidencias/revisao-v04/interacoes-v04-movimento-reduzido.json). |
+| `python3 docs/interface/prototipos/verificar_navegador.py` | PASS: **295 verificações**, incluindo regressões de detalhe pessoal, foco/rolagem de erro, empates e exclusão. [Reconferência 10/11](prototipos/evidencias/figma-v05/html-interacoes.json). |
+| Mesmo comando com `--movimento-reduzido` | PASS: 295 verificações; preferência reduzida efetivamente reconhecida por `matchMedia`. [Reconferência 10/11](prototipos/evidencias/figma-v05/html-interacoes-movimento-reduzido.json). |
 | Geometria HTML | 16 telas/estados × 360/600 CSS px × 100/200% = **64 combinações**; sem corte horizontal dos elementos inspecionados, alvos ≥48 × 48, rótulos/ajudas associados. Diálogos nas quatro combinações. |
 | `python3 docs/interface/prototipos/capturar_evidencias.py` | Doze capturas reais atuais, em Chrome isolado; fontes/hashes/viewports em [metadados](prototipos/evidencias/revisao-v04/capturas.json). Abertura congelada somente para registro estático; transição exercitada no navegador. |
-| Figma | `use_figma` e `get_metadata` bloqueados por quota Starter; URL também inacessível na ferramenta web. Nenhum inventário atual, screenshot, mutação, apresentação ou acesso de avaliador foi verificado. [Tentativas](prototipos/figma/verificacao-2026-11-09.json). |
-| Escopo e diff | Código Android, requisitos, modelagem e contratos preservados. DEC-049/arquitetura: apenas textos de histórico/estado. `git diff --check` sem erros. [Registro consolidado](prototipos/evidencias/revisao-v04/verificacoes-v04.json). |
+| `python3 docs/interface/prototipos/figma/revisao-v05/verificar_roteiros.py` | PASS: 3.804 verificações estruturais/numéricas, quatro roteiros e oito conjuntos conferidos por oráculo Python. [Relatório](prototipos/evidencias/figma-v05/roteiros-verificacao.json). Não equivale a 3.804 interações GUI. |
+| Figma | MCP ainda limitado, mas a conta autorizada no Firefox/Scripter permitiu criar/inspecionar a página 03. Auditoria atual: 598 quadros, 1.681 conexões e sete entradas, sem problemas nas verificações executadas. Os [bloqueios de 09/11](prototipos/figma/verificacao-2026-11-09.json) são históricos; percursos e acesso estão separados na [v0.5](finalizacao-v05.md). |
+| Escopo e diff | Código Android, requisitos, modelagem e contratos preservados. DEC-049/arquitetura: apenas textos de histórico/estado. `git diff --check` sem erros. [Registro atual](prototipos/evidencias/figma-v05/verificacoes-v05.json). |
 
-Os resultados acima devem ser conferidos junto aos relatórios publicados; não são testes do aplicativo Android. A rodada anterior teve 283 verificações, 64 combinações, 234 verificações matemáticas e 13 cenários: [registro v0.3](prototipos/evidencias/revisao-v03/verificacoes-v03.json). As doze verificações adicionais cobrem os achados da revisão atual.
+Os [verificadores de base reconferidos em 10/11](prototipos/evidencias/figma-v05/verificadores-base.json) registram comandos/saídas de fixtures, matemática e contraste. Os resultados acima devem ser conferidos junto aos relatórios publicados; não são testes do aplicativo Android. Os PNGs HTML v0.4 foram preservados: nesta continuação só o aviso externo sobre o estado do Figma mudou; CSS, calculador e interações web permaneceram iguais. Os testes de navegador de 10/11 foram reconferidos após regenerar o HTML. A rodada v0.3 teve 283 verificações, 64 combinações, 234 verificações matemáticas e 13 cenários: [registro v0.3](prototipos/evidencias/revisao-v03/verificacoes-v03.json). As doze verificações adicionais cobrem os achados da revisão atual.
 
-## Percursos e inspeção visual
+## Percursos HTML e inspeção visual
 
 Foram exercitados Smartphones e BEV, mínimo de duas alternativas, cadastro pessoal durante seleção sem autoseleção, mistura de origens/IDs, valores livres, dez pares e sentidos/intensidades Saaty, AHP consistente/inconsistente/desatualizado, revisão e TOPSIS correspondente às entradas. Inclui preferência não uniforme comparada a oráculo Python, empate competitivo e conclusão válida sem diferenciação, sem vencedor inventado.
 
@@ -33,14 +34,25 @@ Capturas inspecionadas: [início](prototipos/evidencias/revisao-v04/depois-inici
 
 Geometria em DOM/Chrome, viewport de teste 1440 × 1200 CSS px e larguras internas de referência; isso não equivale a dp/sp de aparelho. Foram conferidos nomes/rótulos/ajudas, ordem DOM, mensagens além da cor, foco/retorno de diálogo, foco e rolagem do primeiro erro, alvos e reflow com texto ampliado. Perfil temporário, sem sessão pessoal, rede de catálogo, instalação de dependências ou armazenamento entre recargas. No HTML, PDF e gravação são simulados; não há arquivo/envio real.
 
-**Não executados:** participantes, TalkBack, semântica Compose, teclado/IME e foco em aparelho, densidade/fontScale reais, rotação/morte do processo Android, Room/Firestore, PDF/compartilhamento real e testes de desempenho Android. A inspeção técnica de capturas não é teste humano de usabilidade nem aceite da equipe. O Figma tem limites próprios, ainda sem verificação atual.
+**Não executados:** participantes, TalkBack, semântica Compose, teclado/IME e foco em aparelho, densidade/fontScale reais, rotação/morte do processo Android, Room/Firestore, PDF/compartilhamento real e testes de desempenho Android. A inspeção técnica de capturas não é teste humano de usabilidade nem aceite da equipe. O Figma possui [auditoria nativa própria](prototipos/figma/revisao-v05/auditoria-final.json) e percursos de apresentação descritos na [v0.5](finalizacao-v05.md); não são testes Android.
 
-## Critérios de fechamento documental e pendência real
+## Critérios de fechamento documental e parecer atual
 
 Para encerrar a documentação/prototipagem da Etapa 5, mapa, especificação, identidade visual, fluxos/estados e evidências precisam ser coerentes com os contratos, e o Figma exigido deve estar efetivamente inspecionado, corrigido e demonstrável no modo de apresentação, com link/acesso conferido. O HTML está demonstrável, mas não comprova essas condições remotas.
 
-**Impedimento atual: Figma sem acesso funcional para validar inventário, correções, conexões, apresentação e acesso do avaliador.** A [intervenção humana](prototipos/figma/retomada-v04.md) lista exatamente o trabalho necessário. Enquanto isso, o PR deve ser draft, e a Etapa 5 não é declarada concluída.
+O impedimento de falta total de acesso Figma de 09/11 foi superado: o Firefox autorizado permitiu editar a página 03 via Scripter. A auditoria nativa leu 598 quadros, 1.681 conexões, sete entradas, textos numéricos/origens e geometria, sem problemas encontrados nas verificações executadas; os 84 IDs/nomes/dimensões históricos conferiram. A [rodada v0.5](finalizacao-v05.md) distingue essa auditoria dos percursos realmente usados na apresentação, do acesso do avaliador e dos limites das ramificações preparadas. Não concluir prontidão a partir de scripts ou contagens.
 
 RNF01 com participantes e testes Android/TalkBack da implementação **não são impedimentos adicionais para fechar esta documentação**. Mantém-se o plano: três participantes externos ao desenvolvimento devem consultar produto, concluir avaliação, identificar resultado/empate e salvar/retomar; registrar ajuda/dificuldades e os critérios do RNF01. No Android, aplicar RNF02 em 360/600 dp, texto 100/200%, TalkBack, foco, rolagem e ciclo de vida. Nenhuma execução ou aprovação desses testes é presumida.
 
-Dados/fontes/rubricas/assets reais pertencem à preparação dos dados e implementação, sem inventá-los por estética. Aprovação da equipe/professor, vídeo final e envio ao Teams são evidências distintas e não declaradas aqui. Para apresentar agora, abrir o HTML offline e explicar a simulação e a pendência Figma; seguir o roteiro de categorias → seleção/cadastro → valores → dez pares → pesos → revisão → resultado → salvar/editar/sair/PDF.
+Dados/fontes/rubricas/assets reais pertencem à preparação dos dados e implementação, sem inventá-los por estética. Aprovação da equipe/professor, vídeo final e envio ao Teams são evidências distintas e não declaradas aqui. Para apresentar, abrir o HTML offline ou o fluxo de apresentação Figma e explicar os limites próprios de cada artefato; seguir o roteiro de categorias → seleção/cadastro → valores → dez pares → pesos → revisão → resultado → salvar/editar/sair/PDF.
+
+## Verificação nativa Figma — 10/11/2026
+
+A [inspeção inicial](prototipos/figma/revisao-v05/inspecao-inicial.json) confirmou o ledger antes de escrever. A nova página tem coleção própria de cores/espaçamentos/raios, seis variantes de ação e quatro mensagens reutilizáveis. A [auditoria final somente de leitura](prototipos/figma/revisao-v05/auditoria-final.json) verificou destinos e tipos de reação efetivos, ações desabilitadas sem interação, abertura, coeficientes/distâncias com quatro casas, identidade por nome e origem, alvos conectados ≥48 × 48, limites horizontais, alturas de texto e rolagem. Inclui os quadros de revisão em 360/200%, 600/100% e 600/200%; as medidas são unidades do Figma, não dp/sp Android.
+
+O [verificador de roteiros](prototipos/figma/revisao-v05/verificar_roteiros.py) reconstrói o grafo e usa oráculo Python independente para oito conjuntos numéricos dos cenários. A auditoria não certifica todos os pixels, teclado/leitor de tela Figma, usabilidade humana, execução Android, persistência real ou transações do app. Os erros do laboratório são exemplos isolados; a recuperação funcional da sessão web é conferida pelos testes HTML.
+
+
+Na apresentação nativa, os percursos completos conferidos foram Smartphones com dois oficiais e BEV misto, incluindo cadastro, dez pares, resultados e PDF. Houve regressões dirigidas de edição/rascunho/saída e visitas à galeria de exceções e às três referências de layout ampliado. Os dois outros cruzamentos receberam auditoria estrutural/numérica, sem percurso GUI completo. Ver [registro da apresentação](prototipos/evidencias/figma-v05/apresentacao.json), [capturas e hashes](prototipos/evidencias/figma-v05/capturas.json) e [parecer de prontidão](finalizacao-v05.md). Não se atribuem os 3.804 checks do compilador a cliques humanos ou testes Android.
+
+O [parecer v0.5](finalizacao-v05.md#acesso-e-decisão-de-prontidão) registra prontidão técnica para revisão/apresentação: acesso pela janela privativa conferido, sem autenticação nessa execução. A conta específica do professor e o aceite acadêmico não foram testados ou presumidos. O impedimento remoto de 09/11 foi superado; o PR pode deixar o draft, preservando os limites dos roteiros preparados.

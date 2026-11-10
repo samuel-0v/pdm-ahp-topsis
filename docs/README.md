@@ -13,7 +13,7 @@
 | [Fechamento da Etapa 3](modelagem/fechamento-etapa-3.md) | Concluído em 06/11/2026; dependências e próximo passo registrados |
 | [Plano da Fase 1 — primeira entrega](entregas/fase-1-plano.md) | Proposta para aprovação/distribuição; prazo de 10/11/2026 ainda provisório |
 | [Arquitetura](arquitetura/arquitetura.md) | Etapa 4 v0.4: dois achados da revisão v0.3 corrigidos; abertura animada reconhecida na DEC-049 e retorno à seleção explícito; protótipos/encerramento formal ainda pendentes |
-| [Interface e prototipagem — Etapa 5](interface/README.md) | Proposta para revisão: telas, identidade, Figma editável e protótipo local navegável; conexões Figma pendentes por limite MCP |
+| [Interface e prototipagem — Etapa 5](interface/README.md) | Proposta revisada v0.5: HTML calculável e página Figma 03 com roteiros preparados, conexões e apresentação verificadas; alcance e prontidão em [parecer](interface/finalizacao-v05.md) |
 | [Navegação](interface/navegacao.md) | Fluxos de catálogo, avaliação, saída e PDF; Voltar do Android |
 
 Os requisitos detalhados ficam nos respectivos grupos. O registro de decisões e os documentos de modelagem funcionam como índices para arquivos menores, separados por tema. [PDFs do professor](../references/) e [diagramas](../diagrams/).

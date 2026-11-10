@@ -1,5 +1,7 @@
 # Correções finais e prontidão — v0.4
 
+**Registro histórico de 09/11.** O acesso e a aplicação Figma foram retomados em 10/11; ver [estado atual v0.5](finalizacao-v05.md).
+
 [Índice](README.md) · [Validação e comandos](validacao.md) · [Protótipo local](prototipos/index.html)
 
 **09/11/2026. Status: demonstrador local revisado; Etapa 5 aberta por falta de verificação do Figma. PR deve ser draft.** A branch foi encontrada limpa em `bd055c2`, igual ao remoto, e `origin/main` em `907e3dd`, com a Etapa 4 integrada. Não havia PR existente para a branch no início da rodada. O histórico foi preservado, sem rebase ou force push.

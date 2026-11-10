@@ -1,0 +1,4 @@
+# Intermediários reproduzíveis; os IDs reais ficam no ledger de aplicação.
+modelo.json
+roteiros.json
+lotes/

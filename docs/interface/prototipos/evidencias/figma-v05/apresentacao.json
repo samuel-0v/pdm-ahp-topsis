@@ -1,0 +1,1157 @@
+{
+  "data": "2026-11-10T06:18:27-03:00",
+  "arquivo": "https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36",
+  "apresentacao": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2567&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+  "pagina": {
+    "id": "21:2491",
+    "nome": "03 · Protótipo revisado v0.5",
+    "quadros": 598,
+    "conexoes": 1681,
+    "entradas": 7
+  },
+  "metodo": "Cliques/rolagem GUI e leitura da barra de endereço; inspeção visual de capturas reais. Registro de destinos bem-sucedidos; não é teste Android nem gravação de vídeo. Reaberturas por link são identificadas.",
+  "percursosCompletos": [
+    "Smartphones, dois oficiais, preço ajustado, dez igualdades, AHP/TOPSIS, salvar e PDF simulado",
+    "BEV misto com cadastro pessoal sem autoseleção, ajuste preparado, dez pares com sentidos/intensidades, AHP/TOPSIS, salvar e PDF simulado"
+  ],
+  "regressoesDirigidas": [
+    "Três opções de saída; edição separada da salva; PDF anterior mantém edição; salvar edição desatualizada como rascunho",
+    "Retomar Valores sem alteração e sair sem confirmação; responder par volta à pendência",
+    "Descartar recálculo retorna ao último rascunho salvo",
+    "Cancelar e confirmar exclusão no roteiro preparado"
+  ],
+  "estadosVisitados": [
+    "BAD_AHP",
+    "TIE",
+    "NO_DIFF",
+    "NO_DIFF_SAVED",
+    "NO_DIFF_PDF",
+    "MISSING",
+    "ZERO",
+    "BLOCK_ORIGINAL",
+    "BLOCK_SEMANTIC",
+    "COLLISION",
+    "SAVE_ERROR",
+    "PDF_ERROR",
+    "SHARE_ERROR",
+    "LOADING",
+    "QUERY_ERROR"
+  ],
+  "layoutVisitado": [
+    "360/100% nos percursos padrão",
+    "QA360200",
+    "QA600100",
+    "QA600200"
+  ],
+  "acesso": {
+    "status": "confirmado no contexto observado",
+    "contexto": "Nova janela privativa Firefox; nenhuma autenticação executada nessa janela. Link de OPEN0 transicionou a HOME; clique abriu P_CAT.",
+    "permissoesAlteradas": false,
+    "contaDoProfessorTestada": false,
+    "evidencias": [
+      "acesso-privativo-inicio.png",
+      "acesso-privativo-categoria.png"
+    ],
+    "tentativaAnterior": "Chrome headless isolado expirou em 60 s; não usado como evidência de acesso."
+  },
+  "limites": [
+    "P_M e B_O: auditoria estrutural e matemática, sem percurso GUI completo",
+    "Estados de erro são visitas preparadas, não falhas injetadas em transação Figma",
+    "Figma sem memória global, digitação livre, persistência/PDF real ou retomada parcial arbitrária",
+    "Não testados teclado/leitor de tela Figma, TalkBack/Android, participantes ou conta específica do avaliador",
+    "Tentativas transitórias de leitura durante carregamento foram repetidas; capturas pretas foram substituídas, não aprovadas como resultado",
+    "A automação inicial de rolagem intermediária da galeria foi corrigida após parar antes do clique; retornos/destinos foram reconferidos"
+  ],
+  "destinosConferidos": [
+    {
+      "time": "2026-11-10T04:34:21.217582+00:00",
+      "route": "P_O_A0P",
+      "nodeId": "21:3553",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3553&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:34:23.789238+00:00",
+      "route": "P_O_A0R",
+      "nodeId": "21:3695",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3695&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:04.259186+00:00",
+      "route": "P_O_A1P",
+      "nodeId": "21:3825",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3825&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:06.799495+00:00",
+      "route": "P_O_A1R",
+      "nodeId": "21:3967",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3967&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:10.109810+00:00",
+      "route": "P_O_A2P",
+      "nodeId": "21:4097",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4097&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:12.663709+00:00",
+      "route": "P_O_A2R",
+      "nodeId": "21:4239",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4239&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:15.964736+00:00",
+      "route": "P_O_A3P",
+      "nodeId": "21:4369",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4369&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:18.492516+00:00",
+      "route": "P_O_A3R",
+      "nodeId": "21:4511",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4511&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:21.769817+00:00",
+      "route": "P_O_A4P",
+      "nodeId": "21:4641",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4641&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:24.461552+00:00",
+      "route": "P_O_A4R",
+      "nodeId": "21:4783",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4783&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:27.758596+00:00",
+      "route": "P_O_A5P",
+      "nodeId": "21:4913",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-4913&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:30.292008+00:00",
+      "route": "P_O_A5R",
+      "nodeId": "21:5055",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-5055&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:33.621716+00:00",
+      "route": "P_O_A6P",
+      "nodeId": "21:5185",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-5185&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:36.152084+00:00",
+      "route": "P_O_A6R",
+      "nodeId": "21:5802",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-5802&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:39.462007+00:00",
+      "route": "P_O_A7P",
+      "nodeId": "21:5884",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-5884&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:42.012197+00:00",
+      "route": "P_O_A7R",
+      "nodeId": "21:5970",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-5970&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:45.318277+00:00",
+      "route": "P_O_A8P",
+      "nodeId": "21:6052",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6052&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:47.873083+00:00",
+      "route": "P_O_A8R",
+      "nodeId": "21:6138",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6138&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:51.174079+00:00",
+      "route": "P_O_A9P",
+      "nodeId": "21:6220",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6220&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:53.745025+00:00",
+      "route": "P_O_A9R",
+      "nodeId": "21:6306",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6306&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:35:56.380027+00:00",
+      "route": "P_O_WEIGHTS",
+      "nodeId": "21:6388",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6388&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:36:32.034310+00:00",
+      "route": "P_O_REVIEW",
+      "nodeId": "21:6507",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6507&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T04:36:34.582720+00:00",
+      "route": "P_O_RESULT",
+      "nodeId": "21:6598",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6598&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:03:59.871713+00:00",
+      "route": "P_O_RESULT",
+      "nodeId": "21:6598",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6598&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:04:03.525681+00:00",
+      "route": "P_O_SAVED",
+      "nodeId": "21:6641",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6641&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:04:07.325977+00:00",
+      "route": "P_O_PDF",
+      "nodeId": "21:6736",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6736&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:05:50.173117+00:00",
+      "route": "P_O_SAVED",
+      "nodeId": "21:6641",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6641&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:05:53.854951+00:00",
+      "route": "P_O_EDIT",
+      "nodeId": "21:6798",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6798&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:07:20.026938+00:00",
+      "route": "P_O_EDIT_OLD_PDF",
+      "nodeId": "21:7021",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-7021&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:07:24.338042+00:00",
+      "route": "P_O_EDIT",
+      "nodeId": "21:6798",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6798&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:07:28.643924+00:00",
+      "route": "P_O_EDIT",
+      "nodeId": "21:6798",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6798&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:07:32.915402+00:00",
+      "route": "P_O_SAVED",
+      "nodeId": "21:6641",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6641&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:07:36.597853+00:00",
+      "route": "P_O_EDIT",
+      "nodeId": "21:6798",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6798&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:07:40.880181+00:00",
+      "route": "P_O_EDIT_DRAFT",
+      "nodeId": "21:7074",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-7074&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:13.166929+00:00",
+      "route": "P_O_EDIT_REVIEW",
+      "nodeId": "21:6868",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6868&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:16.867766+00:00",
+      "route": "P_O_EDIT_RESULT",
+      "nodeId": "21:6910",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6910&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:21.165713+00:00",
+      "route": "P_O_EDIT_NEW_PDF",
+      "nodeId": "21:6939",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6939&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:24.835578+00:00",
+      "route": "P_O_EDIT_NEW_SAVED",
+      "nodeId": "21:6981",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6981&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:28.500687+00:00",
+      "route": "HOME",
+      "nodeId": "21:2526",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2526&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:32.182749+00:00",
+      "route": "B_CAT",
+      "nodeId": "21:9890",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-9890&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:35.305015+00:00",
+      "route": "B_SEL0",
+      "nodeId": "21:9971",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-9971&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:38.467810+00:00",
+      "route": "B_SEL1",
+      "nodeId": "21:10022",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-10022&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:41.625834+00:00",
+      "route": "B_SEL2",
+      "nodeId": "21:10074",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-10074&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:45.339833+00:00",
+      "route": "B_FORM",
+      "nodeId": "21:10212",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-10212&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:49.635062+00:00",
+      "route": "B_SEL3",
+      "nodeId": "21:10128",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-10128&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:53.406036+00:00",
+      "route": "B_M_VAL0",
+      "nodeId": "21:13700",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-13700&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:10:57.079399+00:00",
+      "route": "B_M_VAL1",
+      "nodeId": "21:13845",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-13845&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:11:00.782904+00:00",
+      "route": "B_M_A0P",
+      "nodeId": "21:13988",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-13988&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:31.174779+00:00",
+      "route": "B_M_A0S",
+      "nodeId": "21:14074",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14074&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:35.541456+00:00",
+      "route": "B_M_A0R",
+      "nodeId": "21:14176",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14176&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:38.656260+00:00",
+      "route": "B_M_A1P",
+      "nodeId": "21:14258",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14258&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:41.769776+00:00",
+      "route": "B_M_A1R",
+      "nodeId": "21:14344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:44.916976+00:00",
+      "route": "B_M_A2P",
+      "nodeId": "21:14426",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14426&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:48.064363+00:00",
+      "route": "B_M_A2S",
+      "nodeId": "21:14512",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14512&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:51.199786+00:00",
+      "route": "B_M_A2R",
+      "nodeId": "21:14614",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14614&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:54.324850+00:00",
+      "route": "B_M_A3P",
+      "nodeId": "21:14696",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14696&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:13:57.451952+00:00",
+      "route": "B_M_A3S",
+      "nodeId": "21:14782",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14782&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:00.595653+00:00",
+      "route": "B_M_A3R",
+      "nodeId": "21:14884",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14884&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:03.782774+00:00",
+      "route": "B_M_A4P",
+      "nodeId": "21:14966",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-14966&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:07.492998+00:00",
+      "route": "B_M_A4S",
+      "nodeId": "21:15052",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15052&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:10.642369+00:00",
+      "route": "B_M_A4R",
+      "nodeId": "21:15154",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15154&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:13.773291+00:00",
+      "route": "B_M_A5P",
+      "nodeId": "21:15236",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15236&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:16.910811+00:00",
+      "route": "B_M_A5R",
+      "nodeId": "21:15322",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15322&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:20.018916+00:00",
+      "route": "B_M_A6P",
+      "nodeId": "21:15404",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15404&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:23.148388+00:00",
+      "route": "B_M_A6S",
+      "nodeId": "21:15490",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15490&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:26.305512+00:00",
+      "route": "B_M_A6R",
+      "nodeId": "21:15592",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15592&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:29.421291+00:00",
+      "route": "B_M_A7P",
+      "nodeId": "21:15674",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15674&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:32.560212+00:00",
+      "route": "B_M_A7S",
+      "nodeId": "21:15760",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15760&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:35.699183+00:00",
+      "route": "B_M_A7R",
+      "nodeId": "21:15862",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15862&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:38.852502+00:00",
+      "route": "B_M_A8P",
+      "nodeId": "21:15944",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-15944&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:42.014053+00:00",
+      "route": "B_M_A8S",
+      "nodeId": "21:16030",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16030&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:45.151017+00:00",
+      "route": "B_M_A8R",
+      "nodeId": "21:16132",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16132&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:48.309982+00:00",
+      "route": "B_M_A9P",
+      "nodeId": "21:16214",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16214&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:51.472900+00:00",
+      "route": "B_M_A9S",
+      "nodeId": "21:16300",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16300&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:54.628065+00:00",
+      "route": "B_M_A9R",
+      "nodeId": "21:16402",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16402&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:14:58.362998+00:00",
+      "route": "B_M_WEIGHTS",
+      "nodeId": "21:16484",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16484&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:15:02.676930+00:00",
+      "route": "B_M_REVIEW",
+      "nodeId": "21:16603",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16603&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:15:06.356711+00:00",
+      "route": "B_M_RESULT",
+      "nodeId": "21:16707",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16707&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:15:10.659835+00:00",
+      "route": "B_M_SAVED",
+      "nodeId": "21:16756",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16756&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:15:14.357223+00:00",
+      "route": "B_M_PDF",
+      "nodeId": "21:16870",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16870&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:17:54.207674+00:00",
+      "route": "B_M_SAVED",
+      "nodeId": "21:16756",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16756&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:17:59.075810+00:00",
+      "route": "B_M_LIST",
+      "nodeId": "21:16795",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16795&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:03.415130+00:00",
+      "route": "B_M_LIST",
+      "nodeId": "21:16795",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-16795&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:07.125048+00:00",
+      "route": "EMPTY_LIST",
+      "nodeId": "21:17315",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17315&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:10.218600+00:00",
+      "route": "HOME",
+      "nodeId": "21:2526",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2526&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:13.898493+00:00",
+      "route": "DRAFT_ENTRY",
+      "nodeId": "21:17328",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17328&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:17.027478+00:00",
+      "route": "P_O_VAL0",
+      "nodeId": "21:3217",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3217&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:20.712267+00:00",
+      "route": "P_O_VAL1",
+      "nodeId": "21:3388",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3388&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:24.979226+00:00",
+      "route": "P_O_VAL1_DRAFT",
+      "nodeId": "21:3493",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3493&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:28.075898+00:00",
+      "route": "P_O_VAL1_LIST",
+      "nodeId": "21:3524",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3524&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:18:31.210004+00:00",
+      "route": "P_O_VAL1",
+      "nodeId": "21:3388",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3388&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:04.636201+00:00",
+      "route": "P_O_VAL1_DRAFT",
+      "nodeId": "21:3493",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3493&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:07.749680+00:00",
+      "route": "P_O_VAL1_LIST",
+      "nodeId": "21:3524",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3524&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:10.917911+00:00",
+      "route": "P_DRAFT_CLEAN_VAL",
+      "nodeId": "33:19824",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19824&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:14.662678+00:00",
+      "route": "P_DRAFT_CLEAN_SEL",
+      "nodeId": "33:19794",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19794&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:18.327228+00:00",
+      "route": "P_DRAFT_CLEAN_VAL",
+      "nodeId": "33:19824",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19824&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:21.993952+00:00",
+      "route": "P_DRAFT_CLEAN_A0P",
+      "nodeId": "33:19895",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19895&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:25.686538+00:00",
+      "route": "P_O_VAL1_LIST",
+      "nodeId": "21:3524",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3524&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:29.439169+00:00",
+      "route": "P_DRAFT_CLEAN_VAL",
+      "nodeId": "33:19824",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19824&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:33.114834+00:00",
+      "route": "P_DRAFT_CLEAN_A0P",
+      "nodeId": "33:19895",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19895&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:36.821620+00:00",
+      "route": "P_O_A0R",
+      "nodeId": "21:3695",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3695&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:47:41.199983+00:00",
+      "route": "P_O_A0R_DRAFT",
+      "nodeId": "21:3765",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-3765&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:50:19.155262+00:00",
+      "route": "P_O_EDIT_DRAFT",
+      "nodeId": "21:7074",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-7074&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:02.814393+00:00",
+      "route": "P_O_EDIT_CLEAN_REVIEW",
+      "nodeId": "33:19935",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19935&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:07.163417+00:00",
+      "route": "P_O_EDIT_CLEAN_RESULT",
+      "nodeId": "33:22264",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-22264&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:10.887107+00:00",
+      "route": "P_O_EDIT_DRAFT",
+      "nodeId": "21:7074",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-7074&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:14.670357+00:00",
+      "route": "P_O_EDIT_CLEAN_REVIEW",
+      "nodeId": "33:19935",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=33-19935&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:18.392134+00:00",
+      "route": "P_O_EDIT_DRAFT",
+      "nodeId": "21:7074",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-7074&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:21.598612+00:00",
+      "route": "HOME",
+      "nodeId": "21:2526",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2526&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:55:25.335536+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:59:49.112545+00:00",
+      "route": "BAD_AHP",
+      "nodeId": "21:17417",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17417&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:59:53.109912+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T08:59:56.338198+00:00",
+      "route": "TIE",
+      "nodeId": "21:17442",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17442&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:00:01.364089+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:08:49.772067+00:00",
+      "route": "MISSING",
+      "nodeId": "21:17551",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17551&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:09:12.360831+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:09:20.026778+00:00",
+      "route": "ZERO",
+      "nodeId": "21:17567",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17567&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "route": "ZERO",
+      "entry": "Reabertura do estado por link previamente conferido, para regressão dirigida. Não é novo percurso completo."
+    },
+    {
+      "time": "2026-11-10T09:09:25.702899+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:09:53.578468+00:00",
+      "route": "BLOCK_ORIGINAL",
+      "nodeId": "21:17583",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17583&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:10:34.988730+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:18.835953+00:00",
+      "route": "MISSING",
+      "nodeId": "21:17551",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17551&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:22.860404+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:26.938804+00:00",
+      "route": "ZERO",
+      "nodeId": "21:17567",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17567&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:30.995010+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:35.005193+00:00",
+      "route": "BLOCK_ORIGINAL",
+      "nodeId": "21:17583",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17583&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:39.145745+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:43.130518+00:00",
+      "route": "BLOCK_SEMANTIC",
+      "nodeId": "21:17599",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17599&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:47.243359+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:51.343215+00:00",
+      "route": "COLLISION",
+      "nodeId": "21:17615",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17615&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:55.267421+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:11:59.034289+00:00",
+      "route": "SAVE_ERROR",
+      "nodeId": "21:17631",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17631&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:02.874688+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:06.654937+00:00",
+      "route": "PDF_ERROR",
+      "nodeId": "21:17646",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17646&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:10.485574+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:14.260335+00:00",
+      "route": "SHARE_ERROR",
+      "nodeId": "21:17661",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17661&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:18.083279+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:21.332963+00:00",
+      "route": "NO_DIFF",
+      "nodeId": "21:17479",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17479&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:25.739315+00:00",
+      "route": "NO_DIFF_SAVED",
+      "nodeId": "21:17507",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17507&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:29.562004+00:00",
+      "route": "NO_DIFF_PDF",
+      "nodeId": "21:17535",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17535&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:33.410934+00:00",
+      "route": "NO_DIFF_SAVED",
+      "nodeId": "21:17507",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17507&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:36.629748+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:40.419621+00:00",
+      "route": "LOADING",
+      "nodeId": "21:17691",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17691&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:44.289570+00:00",
+      "route": "QUERY_ERROR",
+      "nodeId": "21:17676",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17676&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:48.115596+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:51.877051+00:00",
+      "route": "QA360200",
+      "nodeId": "21:17708",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17708&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:55.709783+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:12:59.487799+00:00",
+      "route": "QA600100",
+      "nodeId": "21:17748",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17748&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:13:03.593357+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:13:07.343135+00:00",
+      "route": "QA600200",
+      "nodeId": "21:17788",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17788&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:13:11.216281+00:00",
+      "route": "LAB",
+      "nodeId": "21:17344",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-17344&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:13:21.753497+00:00",
+      "route": "P_O_RESULT",
+      "nodeId": "21:6598",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6598&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "route": "P_O_RESULT",
+      "entry": "Reabertura do estado por link previamente conferido, para regressão dirigida. Não é novo percurso completo."
+    },
+    {
+      "time": "2026-11-10T09:13:44.627284+00:00",
+      "route": "P_O_A9R",
+      "nodeId": "21:6306",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-6306&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "route": "P_O_A9R",
+      "entry": "Reabertura do estado por link previamente conferido, para regressão dirigida. Não é novo percurso completo."
+    },
+    {
+      "time": "2026-11-10T09:17:05.609965+00:00",
+      "route": "HOME",
+      "nodeId": "21:2526",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2526&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    },
+    {
+      "time": "2026-11-10T09:17:08.913455+00:00",
+      "route": "P_CAT",
+      "nodeId": "21:2609",
+      "url": "https://www.figma.com/proto/S1Ba7mzFVfE1d0ds21FR36/PDM-AHP-TOPSIS-%E2%80%94-Etapa-5-%C2%B7-Proposta-para-revis%C3%A3o?node-id=21-2609&starting-point-node-id=21%3A2567&page-id=21%3A2491&scaling=min-zoom&content-scaling=fixed",
+      "method": "Clique/rolagem GUI no Firefox; destino lido da barra de endereço do modo de apresentação."
+    }
+  ]
+}

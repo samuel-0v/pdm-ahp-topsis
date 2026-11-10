@@ -2,7 +2,7 @@
 
 [Índice da Etapa 5](README.md) · [Navegação](navegacao.md) · [Especificação](especificacao-telas.md)
 
-**Revisão local v0.4, 09/11/2026.** Quatorze famílias, incluindo T00; T11 é um estado e D01–D04 são diálogos/referências, não novos destinos principais. O manifesto tem 87 descritores de storyboard, dos quais 84 constam do ledger Figma histórico. O HTML atual renderiza famílias e sessão próprias em `prototipo.js`, em vez de projetar coeficientes de frames estáticos. Não existe correspondência 1:1 entre cada estado editável e um frame Figma. O estado atual do arquivo remoto não pôde ser lido nesta revisão.
+**Revisão local v0.4, 09/11/2026.** Quatorze famílias, incluindo T00; T11 é um estado e D01–D04 são diálogos/referências, não novos destinos principais. O manifesto tem 87 descritores de storyboard, dos quais 84 constam do ledger Figma histórico. O HTML atual renderiza famílias e sessão próprias em `prototipo.js`, em vez de projetar coeficientes de frames estáticos. Não existe correspondência 1:1 entre cada estado editável e um frame Figma. Na rodada de 09/11 o arquivo remoto não pôde ser lido. Em 10/11, a página 03 recebeu a atualização nativa v0.5; os 84 quadros históricos permanecem separados. [Ledger atual](prototipos/figma/revisao-v05/auditoria-final.json).
 
 | Família / IDs no manifesto | Nome e objetivo | Requisitos | Casos de uso |
 |---|---|---|---|
@@ -30,23 +30,36 @@ Todos os RF01–RF27 e UC01–UC16 estão relacionados acima; isso significa cob
 
 ## Estados representados e alcance
 
-| Estado | Representação local v0.3 | Limite Figma |
+| Estado | Representação HTML v0.4 | Figma v0.5 — página 03 |
 |---|---|---|
-| Abertura e transição | T00; animação, pulo, redução de movimento; não reaparece por retorno/restauração | T00 preparado no script 05; não criado/verificado remotamente. |
-| AHP pendente/progresso | T08; dez pares, três sentidos, intensidades 2–9 e igualdade 1 explícitos; T08-LISTA permite revisão | Vinte frames históricos de igualdade; sentidos/intensidades completos ainda precisam ser portados. |
-| AHP consistente/inconsistente/desatualizado | T09; pesos/λmax/IC/RI/RC calculados; TOPSIS bloqueado quando necessário | E01 e T09 históricos; correções não verificadas. |
-| Ranking/empate | T12; calculado das entradas; cenário de quatro alternativas com posições 1º, 2º, 2º, 4º | T12/E03 históricos; novo layout não aplicado. |
-| Sem diferenciação | C* indefinido, sem posições/vencedor; conclusão salvável/exportável | E04 histórico; novo layout não aplicado. |
-| Dados insuficientes/inválidos | Campos editáveis, ausente ≠ zero, erro por campo e rascunho com texto pendente | E02/E08 históricos; formulário atual precisa ser portado. |
-| Falha matemática | Norma zero, finitude, perda de resolução e erros de precisão sem resultado fictício | E05/E13 históricos; novos controles não aplicados. |
-| Cache/consulta | Cache com data desconhecida, carregamento, cache insuficiente, vazio confirmado, permissão negada e erro | E06/E07 históricos; variantes novas pendentes. |
-| Gravação/rascunho | Falha preparada, mensagem persistente, edição preservada; múltiplas versões salvas em memória da página | Script 03 preparado; nenhuma navegação atual confirmada. |
-| Edição concluída e saída | Abrir sem alterar mantém resultado atual; mudanças invalidam dependências; D01 com três ações | D01 histórico; corrigir contexto do detalhe e verificar retorno. |
-| Exclusão/PDF | Confirmação; cancelamento e falhas; D02 escolhe versão; compartilhamento somente simulado | D02/D03/T13 históricos; runtime não verificado. |
-| DEC-041/042 | Candidato bloqueado; efetivo não contorna original; novo cadastro vazio para nova semântica | E11/E13 não cobrem automaticamente os novos cenários; portar. |
-| BEV/mista/cadastro durante seleção | Cinco critérios próprios, identidade origem+ID, valores livres; cadastro retorna sem autoselecionar | Expansão ainda pendente no arquivo remoto. |
-| Texto/largura/foco | 360/600 CSS px × 100/200%; 16 telas/estados e diálogos medidos; capturas inspecionadas | Amostras QA históricas não comprovam correção atual. |
+| Abertura e transição | T00; animação, pulo, redução de movimento; não reaparece por retorno/restauração | OPEN0/OPEN1/OPEN2 → HOME; pulo e entrada manual sem animação. Não se presume detecção da preferência do sistema. |
+| AHP pendente/progresso | T08; dez pares, três sentidos, intensidades 2–9 e igualdade 1 explícitos; T08-LISTA permite revisão | Quatro roteiros com dez pares, progresso exato do quadro, sentidos e grade 1–9 restritos às respostas preparadas. |
+| AHP consistente/inconsistente/desatualizado | T09; pesos/λmax/IC/RI/RC calculados; TOPSIS bloqueado quando necessário | WEIGHTS com RC/λ/IC/RI e pesos; BAD_AHP e edição desatualizada separados e rotulados. Não valida julgamento livre. |
+| Ranking/empate | T12; calculado das entradas; cenário de quatro alternativas com posições 1º, 2º, 2º, 4º | RESULT/SAVED com números correspondentes aos roteiros; TIE com empate competitivo explícito. |
+| Sem diferenciação | C* indefinido, sem posições/vencedor; conclusão salvável/exportável | NO_DIFF → NO_DIFF_SAVED → NO_DIFF_PDF; sem C*/posto ou vencedor. |
+| Dados insuficientes/inválidos | Campos editáveis, ausente ≠ zero, erro por campo e rascunho com texto pendente | MISSING é exemplo isolado bloqueado; não há entrada livre ou erro por digitação no Figma. |
+| Falha matemática | Norma zero, finitude, perda de resolução e erros de precisão sem resultado fictício | ZERO e COLLISION bloqueiam processamento; exemplos separados do percurso principal. |
+| Cache/consulta | Cache com data desconhecida, carregamento, cache insuficiente, vazio confirmado, permissão negada e erro | Catálogo identificado como cache com datas desconhecidas; LOADING/QUERY_ERROR. Vazio/permissão têm demonstração funcional no HTML, não nova variante nativa. |
+| Gravação/rascunho | Falha preparada, mensagem persistente, edição preservada; múltiplas versões salvas em memória da página | DRAFT/LIST demonstram retomada limpa em Valores e na revisão de edição concluída; outras retomadas parciais ficam desabilitadas. SAVE_ERROR é exemplo isolado; não há memória global. |
+| Edição concluída e saída | Abrir sem alterar mantém resultado atual; mudanças invalidam dependências; D01 com três ações | EDIT mantém a versão salva preparada; EXIT traz três ações, com scrim e fechamento explícito. |
+| Exclusão/PDF | Confirmação; cancelamento e falhas; D02 escolhe versão; compartilhamento somente simulado | PDF da versão salva, escolha de versão, confirmação de exclusão e erros isolados. Sem arquivo/envio reais. |
+| DEC-041/042 | Candidato bloqueado; efetivo não contorna original; novo cadastro vazio para nova semântica | BLOCK_ORIGINAL/BLOCK_SEMANTIC/COLLISION com seleção/TOPSIS desabilitados; não há atalho por ajuste efetivo. |
+| BEV/mista/cadastro durante seleção | Cinco critérios próprios, identidade origem+ID, valores livres; cadastro retorna sem autoselecionar | P/B × oficiais/mista; FORM → mesma seleção com dois oficiais, inclusão pessoal em ação posterior. Cadastro restrito. |
+| Texto/largura/foco | 360/600 CSS px × 100/200%; 16 telas/estados e diálogos medidos; capturas inspecionadas | QA360200/QA600100/QA600200 de revisão, além do percurso 360/100. Geometria nativa auditada; não comprova TalkBack ou teclado Android. |
 
 O cadastro não cria máximo de três alternativas: os dois oficiais por categoria são dados ilustrativos, e novos pessoais podem ser criados na sessão. A matriz acima registra cobertura de demonstração, não certificação de implementação. Falha de leitura do armazenamento Android, integração real do compartilhamento e metadados de catálogo reais continuam fora da simulação.
 
 Na v0.4, T03 reflete imediatamente cadastro pessoal editado, preservando snapshots; T07 focaliza e traz à vista o primeiro erro; T12 rotula empates também em postos intermediários; D03 inicia foco em Cancelar e mantém falha de exclusão visível. Não foram acrescentadas famílias ou regras de negócio. Ver [correções e evidências](finalizacao-v04.md).
+
+## Correspondência do roteiro nativo com as famílias
+
+| Família aprovada | Quadros v0.5 | Alcance |
+|---|---|---|
+| T00/T01 | OPEN0–2, HOME | Abertura e categorias; entradas da apresentação. |
+| T02/T03/T04 | P/B_CAT, DET0/DET1, SEL0–3, FORM/FORM_EXIT | Consulta oficial e cadastro pessoal preparado durante seleção. Edição pessoal livre permanece no HTML. |
+| T05/T06/T07 | DRAFT_ENTRY, *_LIST, *_DRAFT, *_VAL0/VAL1 | Salvamento/retomada e ajuste de preço por ramificações. Não representa memória global. |
+| T08/T09 | *_A0P/R até *_A9P/R, variantes S, WEIGHTS/PAIR_LIST | Dez julgamentos e intensidades dos cenários, pesos e consistência. |
+| T10/T11/T12 | REVIEW, RESULT, SAVED, DETAIL, EDIT_* | Revisão, resultado e versão salva; não executa motor em Figma. |
+| T13 e D01–D03 | PDF*, EXIT*, DELETE* | Compartilhamento/exclusão simulados e decisão explícita de saída. |
+
+Os prefixos P/B indicam as duas categorias; O/M indicam dois oficiais ou seleção mista. Os 598 quadros repetem contextos para permitir conexões básicas no Starter: **não são 598 telas de aplicativo**. As famílias e a rastreabilidade RF/UC acima não foram ampliadas. As limitações do roteiro são escolhas do artefato, não limite de três produtos ou ordem obrigatória do aplicativo.
