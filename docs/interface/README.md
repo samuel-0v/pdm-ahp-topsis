@@ -1,6 +1,6 @@
 # Etapa 5 — Interface, navegação e prototipagem
 
-**Revisão Figma v0.5 · 10/11/2026 · proposta para revisão.** O HTML mantém a UI v0.4 e seu cálculo demonstrativo. Branch `docs/etapa5-interface-navegacao`, integrada à Etapa 4 antes desta revisão. Requisitos, modelagem, contratos aprovados e código Android foram preservados. DEC-049 e referências de arquitetura receberam somente correção editorial de estado atual.
+**Etapa 5 · revisão v0.5 · 10/11/2026 · proposta para revisão.** Esta revisão reúne o HTML calculável e o Figma atualizado. No HTML, a identidade visual, os cálculos e as interações validados na v0.4 foram preservados; o aviso sobre o estado do Figma foi atualizado e o demonstrador foi regenerado e revalidado. A v0.5 concentra as novas alterações visuais e de navegação na página 03 do Figma. Branch `docs/etapa5-interface-navegacao`, integrada à Etapa 4 antes desta revisão. Requisitos, modelagem, contratos aprovados e código Android foram preservados. DEC-049 e referências de arquitetura receberam somente correção editorial de estado atual.
 
 O [demonstrador local](prototipos/index.html) está utilizável para apresentação: abertura animada, duas categorias, seleção mista, cadastro pessoal, valores editáveis, dez pares AHP completos, cálculo correspondente às entradas, revisão, ranking, salvamento e exportação simulados. Abrir diretamente no navegador, sem servidor. Os registros existem **somente na memória da página**; recarregar reinicia os dados.
 

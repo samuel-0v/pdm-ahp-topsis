@@ -18,7 +18,7 @@ Rascunho preserva valores pendentes e julgamentos ainda não respondidos. Consul
 
 | Arquivo | Finalidade e alcance |
 |---|---|
-| [modelo.html](modelo.html), [prototipo.css](prototipo.css), [prototipo.js](prototipo.js) | Template, identidade visual e sessão/controles da UI v0.4; fontes preferenciais para editar. |
+| [modelo.html](modelo.html), [prototipo.css](prototipo.css), [prototipo.js](prototipo.js) | Fontes preferenciais do HTML da revisão v0.5. Identidade visual, cálculo e interações validados na v0.4 foram preservados; o aviso sobre o Figma foi atualizado. |
 | [numeros.js](numeros.js) | Cálculo demonstrativo DEC-018 e validações DEC-041. Não integra o app Android. |
 | [atualizar_html.py](atualizar_html.py) | Gera HTML autocontido a partir dessas fontes e JSONs; não editar apenas o HTML gerado. |
 | [telas.json](telas.json) | 87 descritores de storyboard: inclui T00 e 84 IDs do ledger histórico. Não é motor da sessão atual nem inventário remoto atualizado. |
