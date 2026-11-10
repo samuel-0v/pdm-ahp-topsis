@@ -16,7 +16,7 @@ Fontes normativas do projeto: [visão](../01-visao-e-escopo.md), [RF01–RF27 e 
 | DEC-038–DEC-042 | Aprovadas no registro e em `decisoes/aprovadas/`. Textos em `decisoes/propostas/` e estudos históricos da Parte 5 não reabrem essas escolhas. |
 | Parte 5 | Seis tabelas, resultados incorporados, números tipados, revisões e compatibilidade já contratados. Não foi identificada inconsistência que exija redesenhar domínio ou persistência. CHECK canônico, schema/migrations e escolha de serialização continuam dependências técnicas. |
 | Código em `app/` | Motor Kotlin puro isolado, `AhpTopsis.kt`, e roteiro de testes; sem projeto Gradle Android configurado. O motor ainda não cumpre todos os contratos posteriores, conforme [análise específica](motores-matematicos.md). |
-| Interface em paralelo | A Etapa 5 está em branch separada; este PR conserva o [fluxo funcional inicial](../interface/navegacao.md) da base. IDs visuais ajudam o alinhamento, sem aprovar layouts ou impor rotas. |
+| Interface em paralelo | [Etapa 5 v0.5](../interface/README.md), [mapa de telas](../interface/mapa-telas.md) e [navegação](../interface/navegacao.md) foram aprovados pelo usuário em 10/11/2026, com [alcance registrado](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental). Seus IDs orientam a interface e não impõem rotas Kotlin. O encerramento da Etapa 4 não é presumido por essa aprovação. |
 | Enunciado v2, pp. 9 e 12 | A primeira entrega precisa explicar MVVM e fluxos; as quatro responsabilidades não exigem quatro módulos Gradle. O método de pesos segue a adaptação aprovada na DEC-018. |
 
 ## Organização desta proposta
@@ -41,7 +41,7 @@ Por instrução posterior do usuário para tomar as decisões conforme o enuncia
 
 ## Arquitetura geral: três camadas lógicas
 
-**Correção v0.4:** o escopo do enunciado, p. 4, exige abertura/splash animada. A [DEC-049](../decisoes/adotadas/dec-049.md) corrige a omissão da v0.3 e atribui essa apresentação ao host Android, fora da sessão de avaliação. A especificação e a navegação conceitual da Etapa 5 foram alinhadas em sua branch separada; este PR registra a exigência arquitetural sem incluir Figma/HTML ou os documentos da Etapa 5. O Diagrama 5 também foi corrigido para retornar do cadastro à seleção antes de avançar a valores.
+**Correção v0.4:** o escopo do enunciado, p. 4, exige abertura/splash animada. A [DEC-049](../decisoes/adotadas/dec-049.md) corrige a omissão da v0.3 e atribui essa apresentação ao host Android, fora da sessão de avaliação. A [especificação da interface](../interface/especificacao-telas.md#aberturasplash--exigência-do-enunciado) e a navegação conceitual foram alinhadas documentalmente naquela rodada, sem alterar Figma/HTML. **Estado posterior, 09/11/2026:** o HTML e o manifesto da Etapa 5 já incluem T00, com animação/transição; essa era a pendência Figma em 09/11. Em 10/11, a página 03 recebeu a abertura e os roteiros conectados, conforme [registro da interface](../interface/finalizacao-v05.md). Ver [validação da interface](../interface/validacao.md). O Diagrama 5 também foi corrigido para retornar do cadastro à seleção antes de avançar a valores.
 
 | Camada | Responsabilidade | Correspondência com as quatro responsabilidades do enunciado |
 |---|---|---|
@@ -155,6 +155,6 @@ RNF09–RNF11 e DEC-029 orientam os testes, sem alegar execução do aplicativo 
 
 ## Pendências e status de aprovação
 
-ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. Restam o alinhamento operacional com Etapa 5, eventuais ajustes da conferência final e o encerramento formal da Etapa 4; não se atribui ao professor um aceite não informado. Configuração e testes de implementação ficam para a etapa técnica, conforme o [checklist](referencias-e-validacao.md).
+ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. O alinhamento documental com a Etapa 5 v0.5 foi registrado; restam a integração de implementação, eventuais ajustes da conferência arquitetural final e o encerramento formal da Etapa 4; não se atribui ao professor um aceite não informado. Configuração e testes de implementação ficam para a etapa técnica, conforme o [checklist](referencias-e-validacao.md).
 
 Para o vídeo: apresentar três camadas/quatro responsabilidades; seleção e cálculo sem salvar; salvamento manual atômico; catálogo/cache independente dos snapshots Room; pendências e limites. Estes documentos não comprovam apresentação ou entrega ao professor.

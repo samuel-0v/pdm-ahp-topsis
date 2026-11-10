@@ -1,0 +1,121 @@
+{
+  "data": "2026-11-08",
+  "status": "PREPARADO; nenhuma mutação nesta revisão",
+  "sessaoRevisao": "39d35ff4-bc6e-4dc6-aa80-ea55210177a2",
+  "leituraAtual": "bloqueada pelo limite MCP Starter; inventário atual não verificado",
+  "arquivo": "S1Ba7mzFVfE1d0ds21FR36",
+  "historicoFrames": 84,
+  "novoDescritor": "T00",
+  "scriptPreparado": "05-revisao-uiux.js",
+  "grupos": [
+    {
+      "ids": [
+        {
+          "id": "T01",
+          "nodeIdHistorico": "6:8"
+        },
+        {
+          "id": "T02",
+          "nodeIdHistorico": "6:136"
+        },
+        {
+          "id": "T03",
+          "nodeIdHistorico": "6:378"
+        }
+      ],
+      "ajuste": "Aplicar hierarquia, ilustrações como placeholders identificados, abas e proveniência conforme HTML v0.3."
+    },
+    {
+      "ids": [
+        {
+          "id": "T04",
+          "nodeIdHistorico": "6:470"
+        },
+        {
+          "id": "T04-SELECAO",
+          "nodeIdHistorico": "6:1397"
+        },
+        {
+          "id": "T07",
+          "nodeIdHistorico": "6:1542"
+        },
+        {
+          "id": "T07-EDITAR",
+          "nodeIdHistorico": "6:3258"
+        }
+      ],
+      "ajuste": "Portar formulários com validação, original/efetivo e retorno sem seleção automática; usar cenários preparados, sem coeficiente livre fictício."
+    },
+    {
+      "ids": [
+        {
+          "id": "T08-01-P",
+          "nodeIdHistorico": "6:1645"
+        },
+        {
+          "id": "T08-01-R",
+          "nodeIdHistorico": "6:1703"
+        },
+        {
+          "id": "T09",
+          "nodeIdHistorico": "6:2885"
+        },
+        {
+          "id": "E01",
+          "nodeIdHistorico": "6:3756"
+        }
+      ],
+      "ajuste": "Portar sentido e intensidade 1–9, recíproco, dez respostas e progresso exato; não derivar RC inconsistente de uma só resposta."
+    },
+    {
+      "ids": [
+        {
+          "id": "T10",
+          "nodeIdHistorico": "6:2941"
+        },
+        {
+          "id": "T12",
+          "nodeIdHistorico": "6:3062"
+        },
+        {
+          "id": "T12-SALVA",
+          "nodeIdHistorico": "6:3146"
+        },
+        {
+          "id": "E03",
+          "nodeIdHistorico": "6:3871"
+        },
+        {
+          "id": "E04",
+          "nodeIdHistorico": "6:3979"
+        },
+        {
+          "id": "T12-DETALHES",
+          "nodeIdHistorico": "6:3228"
+        }
+      ],
+      "ajuste": "Aplicar cards de dados/resultado, destaque condicionado ao vencedor único, textos de empate/sem diferenciação e detalhes com exclusão só de versão salva."
+    },
+    {
+      "ids": [
+        {
+          "id": "D01",
+          "nodeIdHistorico": "6:3325"
+        },
+        {
+          "id": "D03-AVALIACAO",
+          "nodeIdHistorico": "6:3577"
+        }
+      ],
+      "ajuste": "Revisar foco, retorno, falhas, três opções e elegibilidade; verificar 360/600 e 200%."
+    }
+  ],
+  "ordem": [
+    "Inspecionar arquivo e ledger atuais; preservar trabalho posterior",
+    "Revisar e aplicar 04/03 somente após preflight; salvar IDs",
+    "Revisar/aplicar 05 sobre aliases originais; parar se T00 existir",
+    "Portar composições/fluxos restantes a partir de prototipo.js e especificacao-telas.md",
+    "Testar no modo de apresentação e capturar resultado; só então declarar Figma navegável"
+  ],
+  "pluginHistorico": "pacote-revisao.zip não inclui 05; continua não instalado/não executado"
+}

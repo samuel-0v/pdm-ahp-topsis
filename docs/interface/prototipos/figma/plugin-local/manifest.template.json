@@ -1,0 +1,10 @@
+{
+  "name": "PDM AHP-TOPSIS · Aplicar protótipo Etapa 5",
+  "id": "USAR_ID_GERADO_PELO_FIGMA",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {"allowedDomains": ["none"]}
+}

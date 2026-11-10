@@ -1,0 +1,54 @@
+{
+  "capturadoEm": "2026-11-09T00:02:35-03:00",
+  "fontesSha256": {
+    "index.html": "5d091b73fc1a3950a5643813849317376669407c2ddcda40f96b4a5358fe5d32",
+    "prototipo.css": "260ec5de6adc7f142dbf16bfc6df4706855827058a69eddbd347ff8305f97ba0",
+    "prototipo.js": "0d64f9c4ccc8f09f556e6c814be4f6e8cf1dea3e276f50c7e4a8b73ecd706ec6",
+    "numeros.js": "ed6b0391a4c2abb6970aa9588d477b4434d9e7fa650388ccd031155251e2ea51"
+  },
+  "origem": "HTML local v0.3; Chrome headless; sem imagens simuladas por IA",
+  "antes": "HTML v0.2 do HEAD 88f2226; capturas preservadas antes da edição",
+  "depois": {
+    "depois-inicio": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1102
+    },
+    "depois-ahp": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1524
+    },
+    "depois-resultado": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1453
+    },
+    "abertura-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 850
+    },
+    "bev-revisao-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1767
+    },
+    "mista-resultado-600-texto200": {
+      "larguraCss": 600,
+      "texto": 2,
+      "alturaViewport": 2817
+    },
+    "cadastro-360-texto200": {
+      "larguraCss": 360,
+      "texto": 2,
+      "alturaViewport": 2752
+    },
+    "saida-360-texto200": {
+      "larguraCss": 360,
+      "texto": 2,
+      "alturaViewport": 1500
+    }
+  },
+  "limite": "Capturas de viewport; páginas longas usam rolagem. Abertura congelada na fase final da marca para registro estático; transição verificada no roteiro DOM."
+}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1150" viewBox="0 0 1240 1150">
+<title>Navegação PDM AHP-TOPSIS v0.5</title><desc>Abertura, catálogo, dez pares AHP, revisão, TOPSIS, resultados, versões salvas e saída manual. Diagrama conceitual, sem rotas Kotlin.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#006A62"/></marker></defs>
+<rect width="1240" height="1150" fill="#F4F7F6"/>
+<g font-family="Arial,sans-serif" fill="#142C2F"><text x="60" y="55" font-size="30">PDM AHP-TOPSIS · Navegação v0.5</text><text x="60" y="90" font-size="17">10/11/2026 · Fluxo conceitual · HTML calculável · Figma 03 com roteiros guiados</text>
+<rect id="splash" x="60" y="140" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="76" y="177" font-size="20" font-weight="bold">T00 · Abertura animada</text>
+<text x="76" y="207" font-size="14">Animação/pulo → conteúdo; não repetir</text>
+<rect id="home" x="460" y="140" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="476" y="177" font-size="20" font-weight="bold">T01 · Categorias</text>
+<text x="476" y="207" font-size="14">Smartphones Premium / BEV</text>
+<rect id="products" x="860" y="140" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="876" y="177" font-size="20" font-weight="bold">T02–T04 · Produtos</text>
+<text x="876" y="207" font-size="14">Oficiais, pessoais e detalhes</text>
+<rect id="select" x="860" y="300" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="876" y="337" font-size="20" font-weight="bold">T06 · Alternativas</text>
+<text x="876" y="367" font-size="14">≥ 2; cadastro retorna sem selecionar</text>
+<rect id="values" x="460" y="300" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="476" y="337" font-size="20" font-weight="bold">T07 · Valores</text>
+<text x="476" y="367" font-size="14">Original / efetivo e validações</text>
+<rect id="ahp" x="60" y="300" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="76" y="337" font-size="20" font-weight="bold">T08 · Dez pares AHP</text>
+<text x="76" y="367" font-size="14">Sentido, intensidade e progresso</text>
+<rect id="weights" x="60" y="460" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="76" y="497" font-size="20" font-weight="bold">T09 · Pesos e RC</text>
+<text x="76" y="527" font-size="14">RC &gt; 0,10 ou desatualizado bloqueia</text>
+<rect id="review" x="460" y="460" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="476" y="497" font-size="20" font-weight="bold">T10 · Revisão</text>
+<text x="476" y="527" font-size="14">Dados, pesos e consistência atuais</text>
+<rect id="processing" x="860" y="460" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="876" y="497" font-size="20" font-weight="bold">T11 · TOPSIS</text>
+<text x="876" y="527" font-size="14">Calcular; token evita retorno tardio</text>
+<rect id="error" x="860" y="620" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="876" y="657" font-size="20" font-weight="bold">Falha ou insuficiência</text>
+<text x="876" y="687" font-size="14">Revisar sem inventar conclusão</text>
+<rect id="result" x="460" y="620" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="476" y="657" font-size="20" font-weight="bold">T12 · Resultado</text>
+<text x="476" y="687" font-size="14">Ranking, empate ou sem diferenciação</text>
+<rect id="list" x="60" y="620" width="320" height="96" rx="20" fill="white" stroke="#6D8181"/>
+<text x="76" y="657" font-size="20" font-weight="bold">T05 · Avaliações salvas</text>
+<text x="76" y="687" font-size="14">Retomar última versão confirmada</text>
+<path d="M380 188H460" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M780 188H860" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M1020 236V300" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M860 348H780" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M460 348H380" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M220 396V460" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M380 508H460" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M780 508H860" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M1020 556V590H620V620" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M1020 556V620" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M860 668H810V530H780" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M460 668H380" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M220 716V738" fill="none" stroke="#006A62" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="236" y="742" font-size="15">Retomar → seleção, valores, AHP ou revisão, conforme dados salvos e primeira pendência.</text>
+<text x="386" y="494" font-size="11">RC ≤ 0,10</text>
+<text x="389" y="656" font-size="11">DEC-025</text>
+<text x="60" y="780" font-size="23" font-weight="bold">Saída da edição · DEC-025</text>
+<rect x="60" y="804" width="1120" height="120" rx="20" fill="#D8F2ED"/>
+<text x="84" y="842" font-size="18">Salvar → confirmar gravação → origem; falha mantém edição e versão anterior</text>
+<text x="84" y="874" font-size="18">Descartar alterações → versão anterior preservada → origem</text>
+<text x="84" y="905" font-size="18">Continuar editando → fechar diálogo e manter sessão</text>
+<text x="60" y="970" font-size="20" font-weight="bold">Salvar na etapa mantém a etapa; navegar ou processar não salva.</text>
+<text x="60" y="1010" font-size="17">PDF: somente versão salva elegível; salvar/exportar atual, exportar anterior ou cancelar.</text>
+<text x="60" y="1040" font-size="17">Editar mantém cópia independente; consulta não recalcula. Voltar preserva sessão entre etapas.</text>
+<text x="60" y="1080" font-size="16">Detalhamento de cancelamento, retornos e falhas: docs/interface/navegacao.md.</text>
+<text x="60" y="1120" font-size="15">HTML: sessão livre · Figma: roteiros preparados · Persistência e PDF simulados nos protótipos.</text>
+</g></svg>

@@ -1,0 +1,798 @@
+{
+  "kind": "inspect",
+  "fileName": "PDM AHP-TOPSIS — Etapa 5 · Proposta para revisão",
+  "fileKey": null,
+  "pages": [
+    {
+      "id": "0:1",
+      "name": "01 · Protótipo",
+      "children": [
+        {
+          "id": "6:8",
+          "name": "T01 · Compare com clareza",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:79",
+          "name": "T01-NOVA · Nova avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:136",
+          "name": "T02 · Smartphones Premium",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:222",
+          "name": "T02-PESSOAL · Produtos pessoais",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:279",
+          "name": "T02-BEV · Veículos Elétricos (BEV)",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:342",
+          "name": "T02-PESSOAL-BEV · Produtos pessoais BEV",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:378",
+          "name": "T03 · Aurora Pro",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:402",
+          "name": "T03-B · Vértice Max",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:420",
+          "name": "T03-BEV · BEV Aurora · 2026",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:437",
+          "name": "T03-PESSOAL · Aurora de teste",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:470",
+          "name": "T04 · Cadastrar produto",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:589",
+          "name": "T04-EDITAR · Editar produto",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:708",
+          "name": "T04-BEV · Cadastrar produto BEV",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:827",
+          "name": "T05 · Avaliações salvas",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:857",
+          "name": "T05-RASCUNHO · Avaliações salvas",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:910",
+          "name": "T05-CONCLUIDA · Avaliações salvas",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:961",
+          "name": "T05-SEMDIF · Avaliações salvas",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1010",
+          "name": "T05-EXCLUIDA · Avaliações salvas",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1040",
+          "name": "T06-0 · Selecionar produtos",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1130",
+          "name": "T06-A · Selecionar produtos",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1219",
+          "name": "T06-B · Selecionar produtos",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1308",
+          "name": "T06-AB · Selecionar produtos",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1397",
+          "name": "T04-SELECAO · Novo produto pessoal",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1488",
+          "name": "T06-BEV · Selecionar produtos BEV",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1542",
+          "name": "T07 · Valores da avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1645",
+          "name": "T08-01-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1703",
+          "name": "T08-01-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1766",
+          "name": "T08-02-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1826",
+          "name": "T08-02-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1892",
+          "name": "T08-03-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:1954",
+          "name": "T08-03-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2016",
+          "name": "T08-04-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2078",
+          "name": "T08-04-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2144",
+          "name": "T08-05-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2206",
+          "name": "T08-05-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2268",
+          "name": "T08-06-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2330",
+          "name": "T08-06-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2392",
+          "name": "T08-07-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2454",
+          "name": "T08-07-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2520",
+          "name": "T08-08-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2582",
+          "name": "T08-08-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2644",
+          "name": "T08-09-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2706",
+          "name": "T08-09-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2768",
+          "name": "T08-10-P · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2830",
+          "name": "T08-10-R · Comparar critérios",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2885",
+          "name": "T09 · Pesos e consistência",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:2941",
+          "name": "T10 · Revisar avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3030",
+          "name": "T11 · Processando TOPSIS",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3062",
+          "name": "T12 · Resultado da avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3146",
+          "name": "T12-SALVA · Resultado da avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3228",
+          "name": "T12-DETALHES · Dados da avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3258",
+          "name": "T07-EDITAR · Editar avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3325",
+          "name": "D01 · Salvar alterações?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 396
+        },
+        {
+          "id": "6:3377",
+          "name": "D01-RESULTADO · Salvar alterações?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 376
+        },
+        {
+          "id": "6:3417",
+          "name": "D01-EXISTENTE · Salvar alterações?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 416
+        },
+        {
+          "id": "6:3457",
+          "name": "D01-PRODUTO · Salvar alterações?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 376
+        },
+        {
+          "id": "6:3497",
+          "name": "D02-NOVA · Exportar avaliação",
+          "type": "FRAME",
+          "width": 328,
+          "height": 376
+        },
+        {
+          "id": "6:3537",
+          "name": "D02-EDICAO · Exportar avaliação",
+          "type": "FRAME",
+          "width": 328,
+          "height": 416
+        },
+        {
+          "id": "6:3577",
+          "name": "D03-AVALIACAO · Excluir avaliação?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 324
+        },
+        {
+          "id": "6:3611",
+          "name": "D03-PRODUTO · Excluir produto pessoal?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 376
+        },
+        {
+          "id": "6:3645",
+          "name": "T02-PESSOAL-VAZIO · Produtos pessoais",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3668",
+          "name": "D04-VALOR · Preço nesta avaliação",
+          "type": "FRAME",
+          "width": 328,
+          "height": 336
+        },
+        {
+          "id": "6:3702",
+          "name": "T13 · Compartilhar PDF",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3729",
+          "name": "T13-EDICAO · Compartilhar PDF",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3756",
+          "name": "E01 · Pesos e consistência",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3808",
+          "name": "E02 · Dados insuficientes",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3871",
+          "name": "E03 · Ranking com empate",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:3979",
+          "name": "E04 · Sem diferenciação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4054",
+          "name": "E04-SALVA · Sem diferenciação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4129",
+          "name": "D01-SEMDIF · Salvar alterações?",
+          "type": "FRAME",
+          "width": 328,
+          "height": 396
+        },
+        {
+          "id": "6:4169",
+          "name": "T13-SEMDIF · Compartilhar PDF",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4193",
+          "name": "E05 · Não foi possível calcular",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4231",
+          "name": "E06 · Carregando catálogo",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4254",
+          "name": "E07 · Catálogo indisponível",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4284",
+          "name": "E08 · Produto incompleto",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4309",
+          "name": "E09 · Não foi possível salvar",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4339",
+          "name": "E10 · Resultado desatualizado",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4377",
+          "name": "E11 · Dados incompatíveis",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4401",
+          "name": "E12 · PDF indisponível",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4431",
+          "name": "E13 · Precisão insuficiente",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4455",
+          "name": "E14 · Falha na exclusão",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4485",
+          "name": "QA-360-200 · Revisar avaliação",
+          "type": "FRAME",
+          "width": 360,
+          "height": 800
+        },
+        {
+          "id": "6:4574",
+          "name": "QA-600 · Revisar avaliação",
+          "type": "FRAME",
+          "width": 600,
+          "height": 800
+        },
+        {
+          "id": "6:4663",
+          "name": "QA-600-200 · Resultado da avaliação",
+          "type": "FRAME",
+          "width": 600,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "4:2",
+      "name": "02 · Componentes",
+      "children": [
+        {
+          "id": "4:86",
+          "name": "Fundações · propostas para revisão",
+          "type": "FRAME",
+          "width": 720,
+          "height": 976
+        },
+        {
+          "id": "4:128",
+          "name": "PDM/Estado",
+          "type": "COMPONENT_SET",
+          "width": 720,
+          "height": 300
+        },
+        {
+          "id": "4:129",
+          "name": "Componentes Material 3 em uso",
+          "type": "FRAME",
+          "width": 328,
+          "height": 500
+        }
+      ]
+    }
+  ],
+  "differences": [],
+  "expectedFrames": 84,
+  "fonts": [
+    {
+      "family": "Roboto",
+      "style": "Black"
+    },
+    {
+      "family": "Roboto",
+      "style": "Black Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Bold"
+    },
+    {
+      "family": "Roboto",
+      "style": "Bold Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Black"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Black Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Bold"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Bold Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed ExtraBold"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed ExtraBold Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed ExtraLight"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed ExtraLight Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Light"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Light Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Medium"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Medium Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Regular"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed SemiBold"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed SemiBold Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Thin"
+    },
+    {
+      "family": "Roboto",
+      "style": "Condensed Thin Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "ExtraBold"
+    },
+    {
+      "family": "Roboto",
+      "style": "ExtraBold Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "ExtraLight"
+    },
+    {
+      "family": "Roboto",
+      "style": "ExtraLight Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Light"
+    },
+    {
+      "family": "Roboto",
+      "style": "Light Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Medium"
+    },
+    {
+      "family": "Roboto",
+      "style": "Medium Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Regular"
+    },
+    {
+      "family": "Roboto",
+      "style": "SemiBold"
+    },
+    {
+      "family": "Roboto",
+      "style": "SemiBold Italic"
+    },
+    {
+      "family": "Roboto",
+      "style": "Thin"
+    },
+    {
+      "family": "Roboto",
+      "style": "Thin Italic"
+    }
+  ],
+  "button": {
+    "masterId": "4:482",
+    "setId": "4:446",
+    "setKey": "dd2040219668454df5aa170434636aa823624c1a",
+    "props": [
+      "Label text#58650:306",
+      "Show icon#58650:357",
+      "Icon#58650:408",
+      "Show focus indicator#58654:2174",
+      "Type",
+      "Size",
+      "State"
+    ]
+  },
+  "collections": [
+    {
+      "id": "VariableCollectionId:4:3",
+      "name": "PDM · Proposta clara",
+      "defaultModeId": "4:0"
+    }
+  ],
+  "flowStartingPoints": []
+}

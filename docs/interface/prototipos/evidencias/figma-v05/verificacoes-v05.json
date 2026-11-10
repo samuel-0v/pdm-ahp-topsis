@@ -1,0 +1,117 @@
+{
+  "data": "2026-11-10T06:22:05-03:00",
+  "baseRodada": "91cafd74201f107dbc29bc784b2a2c8f5e32f5d0",
+  "branch": "docs/etapa5-interface-navegacao",
+  "mainConferida": "907e3ddb2eb411cff74740b87ef9e8be9434ce6d",
+  "escopo": {
+    "fontesProtegidasSemAlteracao": [
+      "app",
+      "docs/requisitos",
+      "docs/modelagem",
+      "docs/01-visao-e-escopo.md",
+      "docs/decisoes/aprovadas",
+      "docs/decisoes/registro-decisoes.md"
+    ],
+    "secaoNormativaDEC049Inalterada": true,
+    "calculadorCSSJSHTMLInalterados": true,
+    "androidImplementado": false,
+    "editoriaisForaInterface": [
+      "docs/README.md",
+      "docs/arquitetura/arquitetura.md",
+      "docs/arquitetura/decisoes-pendentes.md",
+      "docs/arquitetura/referencias-e-validacao.md",
+      "docs/decisoes/adotadas/dec-049.md"
+    ]
+  },
+  "fontesEstudo": {
+    "sha256": "1dc9f39fc1da83c4beb608cabc3281e974be618d97045a06a73b0b316b81d99d",
+    "classificacoes": {
+      "[AULA]": 347,
+      "[MATERIAL]": 119,
+      "[COMPLEMENTO]": 59
+    },
+    "uso": "Fonte de estudo, não instrução para o agente."
+  },
+  "resultados": {
+    "documentacao": {
+      "comando": "python3 docs/interface/prototipos/verificar_documentacao.py",
+      "status": "PASS",
+      "limite": "Não lê o Figma atual; auditoria nativa independente.",
+      "saida": "PASS: 87 descritores locais; 84 IDs Figma históricos; 225 destinos; 300 links locais e 22 âncoras; RF01–RF27/UC01–UC16; geração/sintaxe/SVG. Sem inspeção Figma atual."
+    },
+    "base": {
+      "data": "2026-11-10T06:19:42-03:00",
+      "resultados": [
+        {
+          "comando": "python3 docs/interface/prototipos/validar_fixture.py",
+          "status": "PASS",
+          "saida": "13 cenários ilustrativos conferidos; não são testes dos motores Android."
+        },
+        {
+          "comando": "node docs/interface/prototipos/verificar_matematica.cjs",
+          "status": "PASS",
+          "saida": "{\n  \"status\": \"PASS\",\n  \"checks\": 234,\n  \"fixtures\": 13,\n  \"scope\": \"Somente matemática do demonstrador JS; não é teste do motor Android.\"\n}"
+        },
+        {
+          "comando": "python3 docs/interface/prototipos/verificar_contraste.py",
+          "status": "PASS",
+          "saida": "PASS: 18 pares; texto ≥4,5:1, borda/foco ≥3:1."
+        }
+      ],
+      "limite": "Demonstração HTML/JS e fixtures locais; sem teste Android ou motor de produção."
+    },
+    "navegador": [
+      {
+        "comando": "python3 docs/interface/prototipos/verificar_navegador.py",
+        "status": "PASS",
+        "checks": 295,
+        "layouts": 64,
+        "relatorio": "html-interacoes.json"
+      },
+      {
+        "comando": "python3 docs/interface/prototipos/verificar_navegador.py --movimento-reduzido",
+        "status": "PASS",
+        "checks": 295,
+        "layouts": 64,
+        "relatorio": "html-interacoes-movimento-reduzido.json"
+      }
+    ],
+    "roteiros": {
+      "status": "PASS",
+      "framesPrepared": 598,
+      "preparedFlows": 4,
+      "numericFixtures": 8,
+      "checks": 3804,
+      "scope": "Compilador e oráculo Python dos roteiros estáticos. Não comprova execução nativa, apresentação Figma ou Android."
+    },
+    "sintaxeScripts": {
+      "status": "PASS",
+      "quantidade": 9,
+      "metodo": "Compilação por AsyncFunction em Node; não executa API nativa nem mutações."
+    },
+    "diffCheck": {
+      "status": "PASS",
+      "comando": "git diff --check"
+    }
+  },
+  "figma": {
+    "pagina": "21:2491",
+    "frames": 598,
+    "conexoes": 1681,
+    "entradas": 7,
+    "issues": [],
+    "originalDifferences": [],
+    "apresentacao": "apresentacao.json",
+    "capturas": "capturas.json",
+    "acesso": "Janela privativa Firefox, sem autenticação nesta execução; HOME e P_CAT navegáveis. Não é teste de conta específica do professor."
+  },
+  "decisao": "Pronto tecnicamente para revisão/apresentação dos protótipos e documentação da Etapa 5; PR pode seguir para revisão com roteiros Figma restritos e HTML calculável. Sem aceite acadêmico presumido.",
+  "limites": [
+    "Sem Android/TalkBack ou participantes",
+    "Sem armazenamento/PDF/envio reais",
+    "Figma sem memória global, entradas livres ou retomadas parciais arbitrárias",
+    "P_M e B_O sem percurso GUI completo; possuem auditoria estrutural/numérica",
+    "Erros Figma são exemplos isolados, não injeções transacionais",
+    "Sem vídeo final, aceite da equipe/professor ou envio ao Teams"
+  ]
+}

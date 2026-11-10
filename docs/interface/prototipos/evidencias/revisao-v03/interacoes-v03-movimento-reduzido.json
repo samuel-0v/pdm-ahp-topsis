@@ -1,0 +1,615 @@
+{
+  "status": "PASS",
+  "checks": 283,
+  "passed": [
+    "Abertura DEC-049 presente no lançamento",
+    "Abertura transiciona ao conteúdo sem rede ou espera de dois segundos",
+    "Abertura não cria nem salva avaliação",
+    "Abertura permite leitura/ação em texto 100%",
+    "Abertura permite leitura/ação em texto 200%",
+    "Nova avaliação é pendente e não salva automaticamente",
+    "Zero alternativas bloqueia avanço",
+    "Uma alternativa bloqueia avanço",
+    "Duas identidades distintas liberam conferência",
+    "Campo repetido identifica produto, critério e unidade",
+    "Ajuste preserva valor original",
+    "Ajuste não modifica catálogo",
+    "Par não respondido bloqueia próximo",
+    "Sentido sem intensidade não vira resposta implícita",
+    "Preferência pelo segundo critério aplica recíproco",
+    "Progresso por respostas efetivas 1",
+    "Progresso por respostas efetivas 2",
+    "Progresso por respostas efetivas 3",
+    "Progresso por respostas efetivas 4",
+    "Progresso por respostas efetivas 5",
+    "Progresso por respostas efetivas 6",
+    "Progresso por respostas efetivas 7",
+    "Progresso por respostas efetivas 8",
+    "Progresso por respostas efetivas 9",
+    "Progresso por respostas efetivas 10",
+    "AHP completo e consistente",
+    "Pesos uniformes corretos no cenário igual",
+    "Resultado TOPSIS atual calculado",
+    "Coeficiente correspondente à entrada livre, alternativa 1",
+    "Coeficiente correspondente à entrada livre, alternativa 0",
+    "Processar não salva resultado",
+    "DEC-025 oferece três escolhas",
+    "Diálogo recebe foco ao abrir",
+    "Fechar diálogo devolve foco à origem",
+    "Continuar mantém edição",
+    "Falha ao salvar impede saída e preserva edição",
+    "Falha de salvamento permanece visível além do toast",
+    "Salvar confirma versão separada",
+    "Abrir edição não invalida nem marca alteração",
+    "Mudar valor desatualiza TOPSIS e preserva AHP",
+    "Edição preserva resultado salvo",
+    "Resultado desatualizado não é mostrado como atual",
+    "Edição desatualizada bloqueia Salvar e exportar",
+    "PDF da última salva não mistura dados e conserva edição",
+    "Descartar mantém a versão concluída",
+    "Salvar sem recálculo invalida conclusão atomicamente na simulação",
+    "Entrada pendente é preservada no rascunho",
+    "Retomada preserva três respostas e próximo par pendente",
+    "Cadastro inválido mantém formulário e aponta obrigatórios",
+    "Validação leva foco ao primeiro campo inválido",
+    "Falha do cadastro conserva formulário e avaliação",
+    "Cadastro retorna à mesma seleção sem associação automática",
+    "Seleção mista mantém origens/IDs distintos, mesmo nome",
+    "Descartar avaliação não apaga produto pessoal salvo",
+    "BEV percorre avaliação completa",
+    "Critérios e pesos BEV não usam critérios de smartphone",
+    "Seguro anual e natureza de recarga preservados",
+    "Restaurar carrega só a salva e não repete abertura",
+    "AHP inconsistente bloqueia TOPSIS",
+    "Rascunho preserva diagnóstico inconsistente sem conclusão",
+    "Sem diferenciação não inventa coeficiente/posição",
+    "Sem diferenciação pode ser salva e exportada",
+    "Empates usam numeração competitiva",
+    "Norma zero gera falha e não conclusão sem diferenciação",
+    "Colisão monetária bloqueia TOPSIS",
+    "Bloqueio de resolução preserva centavos informados",
+    "Original incompatível não pode ser selecionado",
+    "Efetivo válido não contorna original incompatível",
+    "Definição semântica incompatível bloqueada",
+    "Novo cadastro não copia/converte números incompatíveis",
+    "Falha de PDF preserva sucesso anterior de gravação",
+    "Falha ao abrir compartilhamento não afirma envio nem altera avaliação",
+    "Falha de exclusão preserva registro",
+    "Cancelar exclusão preserva registro",
+    "Voltar dos dados da avaliação retorna ao resultado",
+    "Cache insuficiente e vazio confirmado são estados distintos",
+    "Permissão negada não é apresentada como vazio",
+    "Revisar sentido/intensidade invalida ambos os resultados",
+    "AHP desatualizado bloqueia processamento",
+    "Sentido/intensidade livres produzem pesos/RC conferidos independentemente em Python",
+    "Ranking livre não uniforme corresponde ao oráculo Python",
+    "Cancelar processamento não publica resposta tardia nem grava",
+    "Sem corte horizontal T00/360/1",
+    "Alvos ≥48×48 T00/360/1",
+    "Campos têm rótulo/ajuda associados T00/360/1",
+    "Sem corte horizontal T01/360/1",
+    "Alvos ≥48×48 T01/360/1",
+    "Campos têm rótulo/ajuda associados T01/360/1",
+    "Sem corte horizontal T02/360/1",
+    "Alvos ≥48×48 T02/360/1",
+    "Campos têm rótulo/ajuda associados T02/360/1",
+    "Sem corte horizontal T03/360/1",
+    "Alvos ≥48×48 T03/360/1",
+    "Campos têm rótulo/ajuda associados T03/360/1",
+    "Sem corte horizontal T04/360/1",
+    "Alvos ≥48×48 T04/360/1",
+    "Campos têm rótulo/ajuda associados T04/360/1",
+    "Sem corte horizontal T05/360/1",
+    "Alvos ≥48×48 T05/360/1",
+    "Campos têm rótulo/ajuda associados T05/360/1",
+    "Sem corte horizontal T06/360/1",
+    "Alvos ≥48×48 T06/360/1",
+    "Campos têm rótulo/ajuda associados T06/360/1",
+    "Sem corte horizontal T07/360/1",
+    "Alvos ≥48×48 T07/360/1",
+    "Campos têm rótulo/ajuda associados T07/360/1",
+    "Sem corte horizontal T08/360/1",
+    "Alvos ≥48×48 T08/360/1",
+    "Campos têm rótulo/ajuda associados T08/360/1",
+    "Sem corte horizontal T08-LISTA/360/1",
+    "Alvos ≥48×48 T08-LISTA/360/1",
+    "Campos têm rótulo/ajuda associados T08-LISTA/360/1",
+    "Sem corte horizontal T09/360/1",
+    "Alvos ≥48×48 T09/360/1",
+    "Campos têm rótulo/ajuda associados T09/360/1",
+    "Sem corte horizontal T10/360/1",
+    "Alvos ≥48×48 T10/360/1",
+    "Campos têm rótulo/ajuda associados T10/360/1",
+    "Sem corte horizontal T11/360/1",
+    "Alvos ≥48×48 T11/360/1",
+    "Campos têm rótulo/ajuda associados T11/360/1",
+    "Sem corte horizontal T12/360/1",
+    "Alvos ≥48×48 T12/360/1",
+    "Campos têm rótulo/ajuda associados T12/360/1",
+    "Sem corte horizontal T12-DETALHES/360/1",
+    "Alvos ≥48×48 T12-DETALHES/360/1",
+    "Campos têm rótulo/ajuda associados T12-DETALHES/360/1",
+    "Sem corte horizontal T13/360/1",
+    "Alvos ≥48×48 T13/360/1",
+    "Campos têm rótulo/ajuda associados T13/360/1",
+    "Sem corte horizontal T00/360/2",
+    "Alvos ≥48×48 T00/360/2",
+    "Campos têm rótulo/ajuda associados T00/360/2",
+    "Sem corte horizontal T01/360/2",
+    "Alvos ≥48×48 T01/360/2",
+    "Campos têm rótulo/ajuda associados T01/360/2",
+    "Sem corte horizontal T02/360/2",
+    "Alvos ≥48×48 T02/360/2",
+    "Campos têm rótulo/ajuda associados T02/360/2",
+    "Sem corte horizontal T03/360/2",
+    "Alvos ≥48×48 T03/360/2",
+    "Campos têm rótulo/ajuda associados T03/360/2",
+    "Sem corte horizontal T04/360/2",
+    "Alvos ≥48×48 T04/360/2",
+    "Campos têm rótulo/ajuda associados T04/360/2",
+    "Sem corte horizontal T05/360/2",
+    "Alvos ≥48×48 T05/360/2",
+    "Campos têm rótulo/ajuda associados T05/360/2",
+    "Sem corte horizontal T06/360/2",
+    "Alvos ≥48×48 T06/360/2",
+    "Campos têm rótulo/ajuda associados T06/360/2",
+    "Sem corte horizontal T07/360/2",
+    "Alvos ≥48×48 T07/360/2",
+    "Campos têm rótulo/ajuda associados T07/360/2",
+    "Sem corte horizontal T08/360/2",
+    "Alvos ≥48×48 T08/360/2",
+    "Campos têm rótulo/ajuda associados T08/360/2",
+    "Sem corte horizontal T08-LISTA/360/2",
+    "Alvos ≥48×48 T08-LISTA/360/2",
+    "Campos têm rótulo/ajuda associados T08-LISTA/360/2",
+    "Sem corte horizontal T09/360/2",
+    "Alvos ≥48×48 T09/360/2",
+    "Campos têm rótulo/ajuda associados T09/360/2",
+    "Sem corte horizontal T10/360/2",
+    "Alvos ≥48×48 T10/360/2",
+    "Campos têm rótulo/ajuda associados T10/360/2",
+    "Sem corte horizontal T11/360/2",
+    "Alvos ≥48×48 T11/360/2",
+    "Campos têm rótulo/ajuda associados T11/360/2",
+    "Sem corte horizontal T12/360/2",
+    "Alvos ≥48×48 T12/360/2",
+    "Campos têm rótulo/ajuda associados T12/360/2",
+    "Sem corte horizontal T12-DETALHES/360/2",
+    "Alvos ≥48×48 T12-DETALHES/360/2",
+    "Campos têm rótulo/ajuda associados T12-DETALHES/360/2",
+    "Sem corte horizontal T13/360/2",
+    "Alvos ≥48×48 T13/360/2",
+    "Campos têm rótulo/ajuda associados T13/360/2",
+    "Sem corte horizontal T00/600/1",
+    "Alvos ≥48×48 T00/600/1",
+    "Campos têm rótulo/ajuda associados T00/600/1",
+    "Sem corte horizontal T01/600/1",
+    "Alvos ≥48×48 T01/600/1",
+    "Campos têm rótulo/ajuda associados T01/600/1",
+    "Sem corte horizontal T02/600/1",
+    "Alvos ≥48×48 T02/600/1",
+    "Campos têm rótulo/ajuda associados T02/600/1",
+    "Sem corte horizontal T03/600/1",
+    "Alvos ≥48×48 T03/600/1",
+    "Campos têm rótulo/ajuda associados T03/600/1",
+    "Sem corte horizontal T04/600/1",
+    "Alvos ≥48×48 T04/600/1",
+    "Campos têm rótulo/ajuda associados T04/600/1",
+    "Sem corte horizontal T05/600/1",
+    "Alvos ≥48×48 T05/600/1",
+    "Campos têm rótulo/ajuda associados T05/600/1",
+    "Sem corte horizontal T06/600/1",
+    "Alvos ≥48×48 T06/600/1",
+    "Campos têm rótulo/ajuda associados T06/600/1",
+    "Sem corte horizontal T07/600/1",
+    "Alvos ≥48×48 T07/600/1",
+    "Campos têm rótulo/ajuda associados T07/600/1",
+    "Sem corte horizontal T08/600/1",
+    "Alvos ≥48×48 T08/600/1",
+    "Campos têm rótulo/ajuda associados T08/600/1",
+    "Sem corte horizontal T08-LISTA/600/1",
+    "Alvos ≥48×48 T08-LISTA/600/1",
+    "Campos têm rótulo/ajuda associados T08-LISTA/600/1",
+    "Sem corte horizontal T09/600/1",
+    "Alvos ≥48×48 T09/600/1",
+    "Campos têm rótulo/ajuda associados T09/600/1",
+    "Sem corte horizontal T10/600/1",
+    "Alvos ≥48×48 T10/600/1",
+    "Campos têm rótulo/ajuda associados T10/600/1",
+    "Sem corte horizontal T11/600/1",
+    "Alvos ≥48×48 T11/600/1",
+    "Campos têm rótulo/ajuda associados T11/600/1",
+    "Sem corte horizontal T12/600/1",
+    "Alvos ≥48×48 T12/600/1",
+    "Campos têm rótulo/ajuda associados T12/600/1",
+    "Sem corte horizontal T12-DETALHES/600/1",
+    "Alvos ≥48×48 T12-DETALHES/600/1",
+    "Campos têm rótulo/ajuda associados T12-DETALHES/600/1",
+    "Sem corte horizontal T13/600/1",
+    "Alvos ≥48×48 T13/600/1",
+    "Campos têm rótulo/ajuda associados T13/600/1",
+    "Sem corte horizontal T00/600/2",
+    "Alvos ≥48×48 T00/600/2",
+    "Campos têm rótulo/ajuda associados T00/600/2",
+    "Sem corte horizontal T01/600/2",
+    "Alvos ≥48×48 T01/600/2",
+    "Campos têm rótulo/ajuda associados T01/600/2",
+    "Sem corte horizontal T02/600/2",
+    "Alvos ≥48×48 T02/600/2",
+    "Campos têm rótulo/ajuda associados T02/600/2",
+    "Sem corte horizontal T03/600/2",
+    "Alvos ≥48×48 T03/600/2",
+    "Campos têm rótulo/ajuda associados T03/600/2",
+    "Sem corte horizontal T04/600/2",
+    "Alvos ≥48×48 T04/600/2",
+    "Campos têm rótulo/ajuda associados T04/600/2",
+    "Sem corte horizontal T05/600/2",
+    "Alvos ≥48×48 T05/600/2",
+    "Campos têm rótulo/ajuda associados T05/600/2",
+    "Sem corte horizontal T06/600/2",
+    "Alvos ≥48×48 T06/600/2",
+    "Campos têm rótulo/ajuda associados T06/600/2",
+    "Sem corte horizontal T07/600/2",
+    "Alvos ≥48×48 T07/600/2",
+    "Campos têm rótulo/ajuda associados T07/600/2",
+    "Sem corte horizontal T08/600/2",
+    "Alvos ≥48×48 T08/600/2",
+    "Campos têm rótulo/ajuda associados T08/600/2",
+    "Sem corte horizontal T08-LISTA/600/2",
+    "Alvos ≥48×48 T08-LISTA/600/2",
+    "Campos têm rótulo/ajuda associados T08-LISTA/600/2",
+    "Sem corte horizontal T09/600/2",
+    "Alvos ≥48×48 T09/600/2",
+    "Campos têm rótulo/ajuda associados T09/600/2",
+    "Sem corte horizontal T10/600/2",
+    "Alvos ≥48×48 T10/600/2",
+    "Campos têm rótulo/ajuda associados T10/600/2",
+    "Sem corte horizontal T11/600/2",
+    "Alvos ≥48×48 T11/600/2",
+    "Campos têm rótulo/ajuda associados T11/600/2",
+    "Sem corte horizontal T12/600/2",
+    "Alvos ≥48×48 T12/600/2",
+    "Campos têm rótulo/ajuda associados T12/600/2",
+    "Sem corte horizontal T12-DETALHES/600/2",
+    "Alvos ≥48×48 T12-DETALHES/600/2",
+    "Campos têm rótulo/ajuda associados T12-DETALHES/600/2",
+    "Sem corte horizontal T13/600/2",
+    "Alvos ≥48×48 T13/600/2",
+    "Campos têm rótulo/ajuda associados T13/600/2",
+    "Diálogo cabe e permite rolagem 360/1",
+    "Ações do diálogo ≥48 360/1",
+    "Diálogo cabe e permite rolagem 360/2",
+    "Ações do diálogo ≥48 360/2",
+    "Diálogo cabe e permite rolagem 600/1",
+    "Ações do diálogo ≥48 600/1",
+    "Diálogo cabe e permite rolagem 600/2",
+    "Ações do diálogo ≥48 600/2",
+    "Voltar, navegação, edição e restauração não repetem abertura"
+  ],
+  "layouts": [
+    {
+      "route": "T00",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T01",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T02",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T03",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T04",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T05",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T06",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T07",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T08",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T08-LISTA",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T09",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T10",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T11",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T12",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T12-DETALHES",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T13",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "route": "T00",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T01",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T02",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T03",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T04",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T05",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T06",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T07",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T08",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T08-LISTA",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T09",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T10",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T11",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T12",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T12-DETALHES",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T13",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "route": "T00",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T01",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T02",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T03",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T04",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T05",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T06",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T07",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T08",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T08-LISTA",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T09",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T10",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T11",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T12",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T12-DETALHES",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T13",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "route": "T00",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T01",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T02",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T03",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T04",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T05",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T06",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T07",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T08",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T08-LISTA",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T09",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T10",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T11",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T12",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T12-DETALHES",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "route": "T13",
+      "width": 600,
+      "scale": 2
+    }
+  ],
+  "motionPreference": true,
+  "scope": "Demonstrador HTML/JS. Sem testes Android/TalkBack ou participantes.",
+  "browser": "Chrome headless; viewport 1440×1200 CSS px; testes de largura interna 360/600",
+  "dateContext": "2026-11-09T00:01:42-03:00"
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "preview",
+  "method": "exportAsync PNG, escala 1; leitura nativa, não captura da apresentação",
+  "exported": [
+    {
+      "filename": "antes-inicio-preservado.png",
+      "nodeId": "6:8",
+      "name": "T01 · Compare com clareza",
+      "width": 360,
+      "height": 800,
+      "bytes": 31057,
+      "sha256": "23fd9585532e2f235c306fce6c94ac56608f05f73f9cd64394deb44cbcaab490"
+    },
+    {
+      "filename": "depois-inicio-exportado.png",
+      "nodeId": "21:2526",
+      "name": "HOME · Compare com clareza",
+      "width": 360,
+      "height": 800,
+      "bytes": 38565,
+      "sha256": "293d7403513fc4aa0088ab77f473b904dbf0e9b7c30b76f381c575985d4628a5"
+    },
+    {
+      "filename": "abertura-exportada.png",
+      "nodeId": "21:2595",
+      "name": "OPEN2 · PDM AHP-TOPSIS",
+      "width": 360,
+      "height": 800,
+      "bytes": 14175,
+      "sha256": "7abc0f31bc05f9832ec8a1c2524fcb17bf94573cd456be4722d0a42259b475e1"
+    }
+  ]
+}

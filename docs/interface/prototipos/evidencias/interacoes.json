@@ -1,0 +1,192 @@
+{
+  "status": "PASS",
+  "checks": 84,
+  "passed": [
+    "Entrada no catálogo",
+    "Criação sem salvamento automático",
+    "Zero alternativas bloqueia avanço",
+    "Uma alternativa bloqueia avanço",
+    "Duas alternativas liberam conferência",
+    "Valores da avaliação",
+    "Par pendente 1",
+    "Par 1 não respondido bloqueia próximo",
+    "Par pendente 2",
+    "Par 2 não respondido bloqueia próximo",
+    "Par pendente 3",
+    "Par 3 não respondido bloqueia próximo",
+    "Par pendente 4",
+    "Par 4 não respondido bloqueia próximo",
+    "Par pendente 5",
+    "Par 5 não respondido bloqueia próximo",
+    "Par pendente 6",
+    "Par 6 não respondido bloqueia próximo",
+    "Par pendente 7",
+    "Par 7 não respondido bloqueia próximo",
+    "Par pendente 8",
+    "Par 8 não respondido bloqueia próximo",
+    "Par pendente 9",
+    "Par 9 não respondido bloqueia próximo",
+    "Par pendente 10",
+    "Par 10 não respondido bloqueia próximo",
+    "Dez respostas liberam consistência",
+    "TOPSIS não salva automaticamente",
+    "DEC-025 oferece três opções",
+    "Continuar mantém edição",
+    "Falha ao salvar preserva edição e não sai",
+    "Salvar resultado e retornar às avaliações",
+    "Edição mantém versão salva",
+    "Edição desatualizada bloqueia Salvar e exportar",
+    "Exportar última salva mantém edição pendente",
+    "Descartar restaura resultado salvo",
+    "Retoma par 4 ainda pendente",
+    "Descartar preserva rascunho anterior",
+    "Salvar rascunho preserva progresso",
+    "RC inconsistente bloqueia TOPSIS",
+    "Empate com numeração competitiva",
+    "Sem diferenciação não inventa posição",
+    "Sem diferenciação pode ser salva",
+    "Sem diferenciação exportável no cenário simulado",
+    "Sem corte horizontal T01/360/1",
+    "Alvos ≥48dp T01/360/1",
+    "Sem corte horizontal T07/360/1",
+    "Alvos ≥48dp T07/360/1",
+    "Sem corte horizontal T08-01-P/360/1",
+    "Alvos ≥48dp T08-01-P/360/1",
+    "Sem corte horizontal T10/360/1",
+    "Alvos ≥48dp T10/360/1",
+    "Sem corte horizontal T12-SALVA/360/1",
+    "Alvos ≥48dp T12-SALVA/360/1",
+    "Sem corte horizontal T01/360/2",
+    "Alvos ≥48dp T01/360/2",
+    "Sem corte horizontal T07/360/2",
+    "Alvos ≥48dp T07/360/2",
+    "Sem corte horizontal T08-01-P/360/2",
+    "Alvos ≥48dp T08-01-P/360/2",
+    "Sem corte horizontal T10/360/2",
+    "Alvos ≥48dp T10/360/2",
+    "Sem corte horizontal T12-SALVA/360/2",
+    "Alvos ≥48dp T12-SALVA/360/2",
+    "Sem corte horizontal T01/600/1",
+    "Alvos ≥48dp T01/600/1",
+    "Sem corte horizontal T07/600/1",
+    "Alvos ≥48dp T07/600/1",
+    "Sem corte horizontal T08-01-P/600/1",
+    "Alvos ≥48dp T08-01-P/600/1",
+    "Sem corte horizontal T10/600/1",
+    "Alvos ≥48dp T10/600/1",
+    "Sem corte horizontal T12-SALVA/600/1",
+    "Alvos ≥48dp T12-SALVA/600/1",
+    "Sem corte horizontal T01/600/2",
+    "Alvos ≥48dp T01/600/2",
+    "Sem corte horizontal T07/600/2",
+    "Alvos ≥48dp T07/600/2",
+    "Sem corte horizontal T08-01-P/600/2",
+    "Alvos ≥48dp T08-01-P/600/2",
+    "Sem corte horizontal T10/600/2",
+    "Alvos ≥48dp T10/600/2",
+    "Sem corte horizontal T12-SALVA/600/2",
+    "Alvos ≥48dp T12-SALVA/600/2"
+  ],
+  "layouts": [
+    {
+      "id": "T01",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T07",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T08-01-P",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T10",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 360,
+      "scale": 1
+    },
+    {
+      "id": "T01",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T07",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T08-01-P",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T10",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 360,
+      "scale": 2
+    },
+    {
+      "id": "T01",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T07",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T08-01-P",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T10",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 600,
+      "scale": 1
+    },
+    {
+      "id": "T01",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T07",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T08-01-P",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T10",
+      "width": 600,
+      "scale": 2
+    },
+    {
+      "id": "T12-SALVA",
+      "width": 600,
+      "scale": 2
+    }
+  ]
+}

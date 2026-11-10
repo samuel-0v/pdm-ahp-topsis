@@ -1,0 +1,74 @@
+{
+  "capturadoEm": "2026-11-09T10:56:20-03:00",
+  "fontesSha256": {
+    "index.html": "f5c0a730edd0818e0fb5faf57f753f060c82a0a22cfde895aa285ebed190b018",
+    "prototipo.css": "7ba134292ea7e27b4145f6408a4b18371b61194f1008f49ccf30b6904aba7f01",
+    "prototipo.js": "1c7f2ecdcf1728b11689619c42f72f2d2510dd335835848f5c0f3602734a7243",
+    "numeros.js": "ed6b0391a4c2abb6970aa9588d477b4434d9e7fa650388ccd031155251e2ea51"
+  },
+  "origem": "HTML local v0.4; Chrome headless; sem imagens simuladas por IA",
+  "compararCom": "evidencias/revisao-v03/ preserva o antes desta rodada; fontes anteriores no commit bd055c2",
+  "depois": {
+    "depois-inicio": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1102
+    },
+    "depois-ahp": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1524
+    },
+    "depois-resultado": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1453
+    },
+    "abertura-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 850
+    },
+    "bev-revisao-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1767
+    },
+    "mista-resultado-600-texto200": {
+      "larguraCss": 600,
+      "texto": 2,
+      "alturaViewport": 2917
+    },
+    "cadastro-360-texto200": {
+      "larguraCss": 360,
+      "texto": 2,
+      "alturaViewport": 2752
+    },
+    "foco-erro-valores-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 2332
+    },
+    "exclusao-cancelar-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1200
+    },
+    "empate-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 2079
+    },
+    "pessoal-atualizado-360": {
+      "larguraCss": 360,
+      "texto": 1,
+      "alturaViewport": 1108
+    },
+    "saida-360-texto200": {
+      "larguraCss": 360,
+      "texto": 2,
+      "alturaViewport": 1500
+    }
+  },
+  "limite": "Erro de valores: captura de altura completa reposicionada no topo, mantendo foco no campo; a rolagem ao erro foi verificada separadamente no DOM. Capturas de viewport; páginas longas usam rolagem. Abertura congelada na fase final da marca para registro estático; transição verificada no roteiro DOM."
+}

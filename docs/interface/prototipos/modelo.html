@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PDM AHP-TOPSIS · Protótipo demonstrável</title><style>__CSS__</style></head>
+<body>
+<div class="workspace">
+ <aside class="review-panel" aria-label="Laboratório de revisão do protótipo">
+  <span class="tag">ETAPA 5 · REVISÃO UI/UX</span><h1>PDM AHP-TOPSIS</h1>
+  <p>Protótipo local com dados fictícios. Nenhuma informação é enviada ou gravada entre recargas.</p>
+  <details><summary>Testar cenários e acessibilidade</summary>
+   <label for="scenario">Percurso ou estado preparado</label><select id="scenario">
+    <option value="home">Explorar do início</option><option value="bev">Avaliação BEV</option><option value="mixed">Seleção mista</option><option value="draft">Retomar rascunho parcial</option><option value="saved">Consultar resultado salvo</option><option value="editing">Edição com resultado desatualizado</option><option value="inconsistent">AHP inconsistente</option><option value="missing">Valor ausente</option><option value="fraction">Fração de centavo rejeitada</option><option value="tie">Empate: 1º, 2º, 2º, 4º</option><option value="no-difference">Conclusão sem diferenciação</option><option value="zero">Norma zero</option><option value="resolution">Colisão monetária · DEC-041</option><option value="representation">Original incompatível · DEC-041</option><option value="semantic">Definição incompatível · DEC-042</option><option value="cache-empty">Cache insuficiente</option><option value="empty">Consulta vazia confirmada</option><option value="denied">Permissão negada</option><option value="loading">Carregamento</option><option value="error">Erro de consulta</option>
+   </select>
+   <label for="width">Largura de referência</label><select id="width"><option value="360">360 dp</option><option value="600">600 dp</option></select>
+   <label for="font">Escala de texto</label><select id="font"><option value="1">100%</option><option value="2">200%</option></select>
+   <label for="failure">Falhar na próxima operação</label><select id="failure"><option value="">Sem falha preparada</option><option value="save">Salvar avaliação</option><option value="product">Salvar produto</option><option value="pdf">Gerar PDF</option><option value="share">Abrir compartilhamento</option><option value="delete">Excluir</option></select>
+   <button id="fill-example">Preencher formulário com exemplo</button><button id="android-back">Simular Voltar do Android</button><button id="restore">Simular restauração da última salva</button><button id="reset">Reiniciar demonstração e limpar dados simulados</button>
+  </details>
+  <p id="where" aria-live="polite"></p><p><a href="https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36">Arquivo Figma autoral</a></p>
+  <small>Valores e julgamentos são editáveis. Os resultados são calculados nesta demonstração segundo a DEC-018, sem reutilizar coeficientes fictícios. Não é o motor Android. PDF e armazenamento são simulados. Figma: página 03 revisada com roteiros preparados e entradas restritas; armazenamento e PDF também simulados.</small>
+ </aside>
+ <div class="stage"><section id="phone" class="phone" aria-label="Protótipo de interface Android">
+  <div class="system-bar" aria-hidden="true"><span>9:41</span><span>● ▮▮▮</span></div>
+  <div class="demo-strip">PROTÓTIPO INTERATIVO · DADOS FICTÍCIOS</div>
+  <header class="appbar" id="appbar"></header><main id="content" tabindex="-1"></main><div class="actions" id="footer"></div><nav class="nav" id="bottom" aria-label="Navegação principal"></nav>
+  <section class="splash" id="splash" aria-label="Abertura animada do PDM AHP-TOPSIS">
+   <svg viewBox="0 0 100 100" role="img" aria-label="Marca de comparação multicritério"><path id="splash-path" class="splash-line" d="M20 70V46h15v24M44 70V30h15v40M68 70V14h15v56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   <div class="splash-copy"><span class="eyebrow">Compare com clareza</span><h1>PDM<br>AHP-TOPSIS</h1><p>Suas prioridades.<br>Uma escolha bem fundamentada.</p></div>
+   <button class="button" id="skip-splash">Ir ao catálogo</button>
+  </section>
+ </section></div>
+</div>
+<dialog id="dialog" aria-labelledby="dialog-title"></dialog><div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script id="manifesto" type="application/json">__MANIFEST__</script>
+<script id="fixtures" type="application/json">__FIXTURES__</script>
+<script>__MATH__</script><script>__APP__</script>
+</body></html>

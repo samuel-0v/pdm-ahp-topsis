@@ -1,8 +1,10 @@
 # Fase 1 — Catálogo de tarefas e issues propostas
 
-**Versão:** 0.1 — 06/11/2026. **Situação:** proposta; nenhuma issue, atribuição nominal, branch ou PR criado.
+**Catálogo original:** v0.1 — 06/11/2026. **Atualização:** 10/11/2026. Distribuição nominal e prazos permanecem propostos. Os artefatos F1-05–F1-08 integram a Etapa 5 v0.5 aprovada pelo usuário; a branch de interface e o PR #5 já existem. Este catálogo não é inventário do estado de issues/Projects.
 
 [Plano e diagnóstico](fase-1-plano.md) · [Cronograma](fase-1-plano.md#5-dependências-paralelismo-e-cronograma) · [Mensagem para o grupo](fase-1-mensagem-equipe.md)
+
+O [fechamento da Etapa 5](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental) reúne aprovação, fontes, apresentação e limites. As descrições abaixo preservam os critérios e metas originais; os artefatos de interface já produzidos devem ser reutilizados na consolidação da entrega.
 
 Todos os prazos abaixo são **metas internas condicionadas a 10/11/2026**, ainda sem confirmação no Teams/professor. F1-01 deve registrar prazo e horário oficiais; silêncio não confirma adiamento. Os papéis precisam ser associados a integrantes reais antes da execução. “Dependência” indica artefato necessário, não obrigação de esperar passivamente: rascunhos independentes podem avançar enquanto a confirmação é buscada.
 
@@ -36,7 +38,7 @@ Os IDs F1-01–F1-14 são identificadores deste plano, não números de issues e
 
 - **Objetivo:** definir a estrutura técnica necessária à Fase 1 com base na modelagem aprovada.
 - **Responsável sugerido:** desenvolvimento Android/Kotlin; engenharia de dados revisa os limites de persistência.
-- **Referências:** [arquitetura pendente](../arquitetura/arquitetura.md), [RNF09](../requisitos/nao-funcionais/05-qualidade-codigo.md), [modelagem](../modelagem/dominio.md), [contratos aprovados](../modelagem/05-contratos-persistencia.md); enunciado, páginas 7, 11 e 12.
+- **Referências:** [arquitetura documentada](../arquitetura/arquitetura.md), [RNF09](../requisitos/nao-funcionais/05-qualidade-codigo.md), [modelagem](../modelagem/dominio.md), [contratos aprovados](../modelagem/05-contratos-persistencia.md); enunciado, páginas 7, 11 e 12.
 - **Entregável verificável:** documento de arquitetura descrevendo Compose/UI, ViewModels com StateFlow, domínio/motores, repositórios e fontes Room/Firestore, responsabilidades e direção das dependências. Incluir edição em memória, salvamento manual, estados de carregamento/erro/offline e exemplos de fluxo de ações/estado.
 - **Critério de conclusão:** nenhum acesso direto a Room/Firestore nas telas ou motores; motores genéricos e independentes de Android; contratos de consultar, calcular, salvar e reabrir compreensíveis. Distinguir estados da UI, edição e avaliação persistida. Listar escolhas técnicas ainda necessárias para Fase 2 sem exigir Gradle, schema executável ou biblioteca configurada agora.
 - **Dependências:** Etapas 1–3 concluídas; revisão dos papéis em F1-01. Pode iniciar pela documentação atual antes da confirmação externa do prazo.
@@ -61,7 +63,7 @@ Os IDs F1-01–F1-14 são identificadores deste plano, não números de issues e
 - **Objetivo:** definir o conjunto de telas, diálogos e estados necessários antes de detalhar layouts.
 - **Responsável sugerido:** Design/UX; desenvolvimento Android revisa viabilidade e estados.
 - **Referências:** [UC01–UC16](../requisitos/casos-de-uso/README.md), [estados da avaliação](../modelagem/04-estados-transicoes.md), [RNF01/RNF02](../requisitos/nao-funcionais/01-usabilidade-acessibilidade.md), [escopo](../01-visao-e-escopo.md); enunciado, páginas 4 e 11.
-- **Entregável verificável:** inventário em `docs/interface/telas-estados.md` (destino proposto) com tela/diálogo, objetivo, UC/RF, ações, retorno e estados relevantes. Cobrir categorias, produtos/detalhes, catálogo pessoal, configuração, AHP, resumo, resultados, avaliações salvas e exportação.
+- **Entregável verificável:** inventário em [mapa-telas.md](../interface/mapa-telas.md) com tela/diálogo, objetivo, UC/RF, ações, retorno e estados relevantes. Cobrir categorias, produtos/detalhes, catálogo pessoal, configuração, AHP, resumo, resultados, avaliações salvas e exportação.
 - **Critério de conclusão:** UC01–UC16 associados a telas/diálogos/estados, sem confundir um UC com uma tela obrigatória. Estados de rascunho, AHP inconsistente, empate, sem diferenciação, alterações pendentes, confirmação de exclusão, carregamento, erro e offline localizados. Confrontar abertura/splash e os exemplos das páginas 4/11 com o escopo; registrar dúvidas para F1-01, sem adicionar quatro categorias, nome do exemplo ou gráficos automaticamente.
 - **Dependências:** requisitos/modelagem já aprovados; F1-01 resolve eventuais dúvidas externas; sincronizar com rascunho de F1-03.
 - **Prioridade e prazo:** P0; 07/11.
@@ -85,19 +87,19 @@ Os IDs F1-01–F1-14 são identificadores deste plano, não números de issues e
 - **Objetivo:** apresentar telas próprias da equipe e permitir percorrer o fluxo principal sem aplicativo implementado.
 - **Responsável sugerido:** Design/UX; Android fornece revisão das ações e estados.
 - **Referências:** F1-05/F1-06, [requisitos](../requisitos/README.md), [diretrizes de acessibilidade](../requisitos/nao-funcionais/01-usabilidade-acessibilidade.md); enunciado, páginas 9 e 11.
-- **Entregável verificável:** arquivo Figma autoral, link de apresentação, frames identificados e primeira navegação interativa; registro do link, data/revisão e capturas em `docs/interface/prototipos.md` (destino proposto). Se já existir protótipo externo, verificar e reaproveitar em vez de refazer por presunção.
+- **Entregável verificável:** arquivo Figma autoral, link de apresentação, frames identificados e primeira navegação interativa; registro do link, data/revisão e capturas no [índice dos protótipos](../interface/prototipos/README.md) e no [fechamento v0.5](../interface/finalizacao-v05.md). Se já existir protótipo externo, verificar e reaproveitar em vez de refazer por presunção.
 - **Critério de conclusão:** fluxo consultável de categoria/produto → seleção/valores → julgamentos AHP → resumo → resultados; caminhos de rascunho/retomada e acesso às funções pessoais previstos no inventário. Duas categorias aprovadas representadas, com formulários genéricos e unidades corretas. Explicar paleta, ícones, tipografia e hierarquia. Dados e resultados de demonstração rotulados como ilustrativos; não prometer cálculo real no Figma.
 - **Dependências:** F1-05 e navegação preliminar de F1-06; um responsável confirmado com acesso ao Figma.
 - **Prioridade e prazo:** P0; 08/11.
 - **Paralelismo:** pode avançar com F1-06; se houver um único responsável de UX, planejar a capacidade e deixar F1-08 para a revisão seguinte.
-- **Branch/PR sugerido:** evidências documentais em `docs/etapa5-interface-navegacao`; criação no Figma é tarefa futura, não realizada neste planejamento.
+- **Branch/PR existente:** `docs/etapa5-interface-navegacao`, [PR #5](https://github.com/samuel-0v/pdm-ahp-topsis/pull/5). Figma v0.5 aplicado e aprovado pelo usuário; os scripts históricos de criação não devem ser repetidos.
 
 ## F1-08 — Completar estados alternativos e conferir acesso ao protótipo
 
 - **Objetivo:** demonstrar comportamentos que influenciam a experiência e as regras centrais, além do caminho de sucesso.
 - **Responsável sugerido:** Design/UX; apoio de Android para percorrer e conferir o fluxo.
 - **Referências:** [estados](../modelagem/04-estados-transicoes.md), [resultados](../requisitos/funcionais/05-topsis-resultados.md), [exportação](../requisitos/funcionais/07-exportacao.md), [RNF01/RNF02](../requisitos/nao-funcionais/01-usabilidade-acessibilidade.md), F1-05/F1-07.
-- **Entregável verificável:** variantes de frames/diálogos identificáveis no mesmo protótipo e tabela estado → link/frame → requisito em `docs/interface/prototipos.md`.
+- **Entregável verificável:** variantes de frames/diálogos identificáveis no mesmo protótipo e tabela de estados em [mapa-telas.md](../interface/mapa-telas.md), com IDs/evidências no [fechamento v0.5](../interface/finalizacao-v05.md).
 - **Critério de conclusão:** mostrar RC > 0,10 bloqueando ranking; vencedor único, empate e conclusão sem diferenciação; rascunho e aviso de alterações; exclusão confirmada; opções de exportação; carregamento, erro e offline com cache insuficiente ou dados locais disponíveis. Nada de vencedor arbitrário ou autosave. Legibilidade, rótulos e indicação além de cor conferidos no design. Link acessível em sessão equivalente à do professor e fluxos percorridos por outro integrante, quando disponível. Não declarar testes TalkBack ou do app a partir do Figma.
 - **Dependências:** primeira versão F1-07 e mapa F1-06; participação de um revisor quando disponível.
 - **Prioridade e prazo:** P0; 09/11, manhã.

@@ -1,0 +1,4329 @@
+{
+  "versao": "0.4 · correções finais para PR draft · 09/11/2026",
+  "figma": "https://www.figma.com/design/S1Ba7mzFVfE1d0ds21FR36",
+  "aviso": "87 descritores de referência, 84 frames Figma históricos; HTML v0.4 usa sessão e renderização próprias, cálculos reais demonstrativos, inputs livres e splash DEC-049. Figma atual não pôde ser inspecionado por limite MCP.",
+  "screens": [
+    {
+      "id": "T00",
+      "title": "Abertura animada",
+      "group": "Host de apresentação",
+      "figmaPendente": true,
+      "body": [
+        {
+          "type": "text",
+          "text": "PDM AHP-TOPSIS · Compare com clareza",
+          "role": "title"
+        }
+      ],
+      "footer": [],
+      "auto": "T01",
+      "animated": true,
+      "semDuracaoObrigatoria": true
+    },
+    {
+      "id": "T01",
+      "title": "Compare com clareza",
+      "body": [
+        {
+          "type": "text",
+          "text": "PDM AHP-TOPSIS",
+          "role": "label"
+        },
+        {
+          "type": "text",
+          "text": "Escolha uma categoria",
+          "role": "title"
+        },
+        {
+          "type": "card",
+          "title": "Smartphones Premium",
+          "subtitle": "5 critérios · desempenho, preço e mais",
+          "to": "T02"
+        },
+        {
+          "type": "card",
+          "title": "Veículos Elétricos (BEV)",
+          "subtitle": "5 critérios · autonomia, preço e mais",
+          "to": "T02-BEV"
+        },
+        {
+          "type": "state",
+          "text": "Consulte produtos e avalie o que importa para você.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "root": true,
+      "nav": true
+    },
+    {
+      "id": "T01-NOVA",
+      "title": "Nova avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "Escolha a categoria. Ela ficará fixa nesta avaliação.",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "Smartphones Premium",
+          "subtitle": "5 critérios predefinidos",
+          "to": "T06-0"
+        },
+        {
+          "type": "card",
+          "title": "Veículos Elétricos (BEV)",
+          "subtitle": "5 critérios predefinidos",
+          "to": "T06-BEV"
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "T05",
+      "root": true
+    },
+    {
+      "id": "T02",
+      "title": "Smartphones Premium",
+      "body": [
+        {
+          "type": "text",
+          "text": "Catálogo oficial",
+          "role": "title"
+        },
+        {
+          "type": "state",
+          "text": "Dados oficiais obtidos do cache. Atualização desconhecida.",
+          "tone": "Info"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro · 256 GB",
+          "subtitle": "Oficial · Dados de demonstração",
+          "to": "T03"
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max · 512 GB",
+          "subtitle": "Oficial · Dados de demonstração",
+          "to": "T03-B"
+        },
+        {
+          "type": "button",
+          "label": "Ver produtos pessoais",
+          "to": "T02-PESSOAL",
+          "secondary": true
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Iniciar avaliação",
+          "to": "T06-0",
+          "create": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T01",
+      "nav": true
+    },
+    {
+      "id": "T02-PESSOAL",
+      "title": "Produtos pessoais",
+      "body": [
+        {
+          "type": "state",
+          "text": "Somente neste dispositivo. Avaliações salvas preservam seus próprios dados.",
+          "tone": "Info"
+        },
+        {
+          "type": "card",
+          "title": "Aurora de teste · pessoal",
+          "subtitle": "Smartphones Premium · Categoria fixa",
+          "to": "T03-PESSOAL"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cadastrar produto",
+          "to": "T04"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T02",
+      "nav": true
+    },
+    {
+      "id": "T02-BEV",
+      "title": "Veículos Elétricos (BEV)",
+      "body": [
+        {
+          "type": "state",
+          "text": "Dados fictícios para demonstrar a segunda categoria.",
+          "tone": "Info"
+        },
+        {
+          "type": "card",
+          "title": "BEV Aurora · 2026",
+          "subtitle": "Elétrico a bateria · Versão de demonstração",
+          "to": "T03-BEV"
+        },
+        {
+          "type": "button",
+          "label": "Produtos pessoais",
+          "to": "T02-PESSOAL-BEV",
+          "secondary": true
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Iniciar avaliação",
+          "to": "T06-BEV",
+          "create": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T01",
+      "nav": true
+    },
+    {
+      "id": "T02-PESSOAL-BEV",
+      "title": "Produtos pessoais BEV",
+      "body": [
+        {
+          "type": "state",
+          "text": "Nenhum produto pessoal nesta categoria.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cadastrar produto",
+          "to": "T04-BEV"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T02-BEV",
+      "nav": true
+    },
+    {
+      "id": "T03",
+      "title": "Aurora Pro",
+      "body": [
+        {
+          "type": "text",
+          "text": "Oficial · 256 GB",
+          "role": "label"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\n8.000 pontos · benefício",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nR$ 5.200,00 · custo",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras\n8 / 10 · benefício",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia\n16 h · benefício",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Armazenamento\n256 GB · benefício",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Fonte: conjunto fictício da equipe. Data de referência desconhecida. Rubrica de câmeras e protocolo de autonomia reais ainda pendentes.",
+          "tone": "Info"
+        },
+        {
+          "type": "state",
+          "text": "Origem: cache. Não confirma atualização no servidor.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "T02"
+    },
+    {
+      "id": "T03-B",
+      "title": "Vértice Max",
+      "body": [
+        {
+          "type": "text",
+          "text": "Oficial · 512 GB",
+          "role": "label"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core: 7.000 pontos\nPreço: R$ 6.000,00\nCâmeras: 9 / 10\nAutonomia: 20 h\nArmazenamento: 512 GB",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Fonte: conjunto fictício. Datas desconhecidas. Dados do cache.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "T02"
+    },
+    {
+      "id": "T03-BEV",
+      "title": "BEV Aurora · 2026",
+      "body": [
+        {
+          "type": "text",
+          "text": "Autonomia Inmetro/PBEV: 400 km · benefício\nPreço de aquisição: R$ 180.000,00 · custo\nRecarga DC 20–80%: 30 min · custo\nSeguro anual: R$ 5.000,00/ano · custo\nADAS: 8 / 10 · benefício",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Valores simulados; não são dados do Inmetro. Perfil do seguro e rubrica ADAS reais pendentes. Nota ADAS da equipe não é certificação de segurança.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "T02-BEV"
+    },
+    {
+      "id": "T03-PESSOAL",
+      "title": "Aurora de teste",
+      "body": [
+        {
+          "type": "text",
+          "text": "Pessoal · Categoria: Smartphones Premium\nDados locais; não altera avaliações salvas.",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\n8.000 pontos · benefício",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nR$ 5.200,00 · custo",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras\n8 / 10 · benefício",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia\n16 h · benefício",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Armazenamento\n256 GB · benefício",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Editar produto",
+          "to": "T04-EDITAR"
+        },
+        {
+          "type": "button",
+          "label": "Excluir produto",
+          "to": "D03-PRODUTO",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T02-PESSOAL"
+    },
+    {
+      "id": "T04",
+      "title": "Cadastrar produto",
+      "body": [
+        {
+          "type": "state",
+          "text": "Categoria: Smartphones Premium\nFixa após o cadastro.",
+          "tone": "Info"
+        },
+        {
+          "type": "field",
+          "label": "Nome",
+          "value": "Aurora de teste",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Fabricante",
+          "value": "Fabricante de demonstração",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Modelo / versão",
+          "value": "Versão de demonstração",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Geekbench 6 Multi-Core · pontos",
+          "value": "8000",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Preço · R$",
+          "value": "5.200,00",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Câmeras · nota de 1 a 10",
+          "value": "8",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Autonomia · h",
+          "value": "16",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Armazenamento · GB",
+          "value": "256",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "state",
+          "text": "Fontes e datas desconhecidas não são preenchidas automaticamente. Campos obrigatórios são validados antes de salvar.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar produto",
+          "to": "T02-PESSOAL"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "D01-PRODUTO",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "D01-PRODUTO"
+    },
+    {
+      "id": "T04-EDITAR",
+      "title": "Editar produto",
+      "body": [
+        {
+          "type": "state",
+          "text": "Categoria: Smartphones Premium\nFixa após o cadastro.",
+          "tone": "Info"
+        },
+        {
+          "type": "field",
+          "label": "Nome",
+          "value": "Aurora de teste",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Fabricante",
+          "value": "Fabricante de demonstração",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Modelo / versão",
+          "value": "Versão de demonstração",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Geekbench 6 Multi-Core · pontos",
+          "value": "8000",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Preço · R$",
+          "value": "5.200,00",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Câmeras · nota de 1 a 10",
+          "value": "8",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Autonomia · h",
+          "value": "16",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Armazenamento · GB",
+          "value": "256",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "state",
+          "text": "Fontes e datas desconhecidas não são preenchidas automaticamente. Campos obrigatórios são validados antes de salvar.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar produto",
+          "to": "T03-PESSOAL"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "D01-PRODUTO",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "D01-PRODUTO"
+    },
+    {
+      "id": "T04-BEV",
+      "title": "Cadastrar produto BEV",
+      "body": [
+        {
+          "type": "state",
+          "text": "Categoria: Veículos Elétricos (BEV)\nFixa após o cadastro.",
+          "tone": "Info"
+        },
+        {
+          "type": "field",
+          "label": "Nome",
+          "value": "Aurora de teste",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Fabricante",
+          "value": "Fabricante de demonstração",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Modelo / versão",
+          "value": "Versão de demonstração",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Autonomia PBEV · km",
+          "value": "400",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Preço · R$",
+          "value": "180.000,00",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Recarga DC 20–80% · min",
+          "value": "30",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Seguro anual · R$/ano",
+          "value": "5.000,00",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "ADAS · nota de 1 a 10",
+          "value": "8",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "state",
+          "text": "Fontes e datas desconhecidas não são preenchidas automaticamente. Campos obrigatórios são validados antes de salvar.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar produto",
+          "to": "T02-PESSOAL-BEV"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "D01-PRODUTO",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "D01-PRODUTO"
+    },
+    {
+      "id": "T05",
+      "title": "Avaliações salvas",
+      "body": [
+        {
+          "type": "state",
+          "text": "Você ainda não salvou avaliações. Elas ficam somente neste dispositivo. Desinstalar o app ou perder o aparelho pode causar perda definitiva dos dados.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Nova avaliação",
+          "to": "T01-NOVA"
+        }
+      ],
+      "group": "Fluxo principal",
+      "root": true,
+      "nav": true
+    },
+    {
+      "id": "T05-RASCUNHO",
+      "title": "Avaliações salvas",
+      "body": [
+        {
+          "type": "state",
+          "text": "Rascunho salvo neste dispositivo.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "card",
+          "title": "Comparação · Smartphones Premium",
+          "subtitle": "Rascunho · Retomar última gravação",
+          "to": "@resume"
+        },
+        {
+          "type": "state",
+          "text": "Dados locais. Desinstalar o app pode causar perda definitiva.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Nova avaliação",
+          "to": "T01-NOVA"
+        }
+      ],
+      "group": "Fluxo principal",
+      "root": true,
+      "nav": true
+    },
+    {
+      "id": "T05-CONCLUIDA",
+      "title": "Avaliações salvas",
+      "body": [
+        {
+          "type": "card",
+          "title": "Comparação · Smartphones Premium",
+          "subtitle": "Concluída com ranking",
+          "to": "T12-SALVA"
+        },
+        {
+          "type": "state",
+          "text": "Versão efetivamente salva neste dispositivo.",
+          "tone": "Sucesso"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Nova avaliação",
+          "to": "T01-NOVA"
+        }
+      ],
+      "group": "Fluxo principal",
+      "root": true,
+      "nav": true
+    },
+    {
+      "id": "T05-SEMDIF",
+      "title": "Avaliações salvas",
+      "body": [
+        {
+          "type": "card",
+          "title": "Comparação · Smartphones Premium",
+          "subtitle": "Concluída — sem diferenciação",
+          "to": "E04-SALVA"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Nova avaliação",
+          "to": "T01-NOVA"
+        }
+      ],
+      "group": "Fluxo principal",
+      "root": true,
+      "nav": true
+    },
+    {
+      "id": "T05-EXCLUIDA",
+      "title": "Avaliações salvas",
+      "body": [
+        {
+          "type": "state",
+          "text": "Avaliação excluída. Os produtos dos catálogos foram preservados.",
+          "tone": "Sucesso"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Nova avaliação",
+          "to": "T01-NOVA"
+        }
+      ],
+      "group": "Fluxo principal",
+      "root": true,
+      "nav": true
+    },
+    {
+      "id": "T06-0",
+      "title": "Selecionar produtos",
+      "body": [
+        {
+          "type": "text",
+          "text": "1 de 4 · Alternativas",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "Categoria fixa: Smartphones Premium",
+          "tone": "Info"
+        },
+        {
+          "type": "text",
+          "text": "0 de pelo menos 2 produtos selecionados",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "○ Aurora Pro",
+          "subtitle": "Oficial · 256 GB",
+          "to": "T06-A"
+        },
+        {
+          "type": "card",
+          "title": "○ Vértice Max",
+          "subtitle": "Oficial · 512 GB",
+          "to": "T06-B"
+        },
+        {
+          "type": "button",
+          "label": "Adicionar produto pessoal",
+          "to": "T04-SELECAO",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "Seleção identifica origem + ID. Nomes iguais não são unidos automaticamente.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Conferir valores",
+          "to": "T07",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "@exit",
+      "edit": true,
+      "exit": true,
+      "dirtyCards": true
+    },
+    {
+      "id": "T06-A",
+      "title": "Selecionar produtos",
+      "body": [
+        {
+          "type": "text",
+          "text": "1 de 4 · Alternativas",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "Categoria fixa: Smartphones Premium",
+          "tone": "Info"
+        },
+        {
+          "type": "text",
+          "text": "1 de pelo menos 2 produtos selecionados",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "✓ Aurora Pro",
+          "subtitle": "Oficial · 256 GB",
+          "to": "T06-0"
+        },
+        {
+          "type": "card",
+          "title": "○ Vértice Max",
+          "subtitle": "Oficial · 512 GB",
+          "to": "T06-AB"
+        },
+        {
+          "type": "button",
+          "label": "Adicionar produto pessoal",
+          "to": "T04-SELECAO",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "Seleção identifica origem + ID. Nomes iguais não são unidos automaticamente.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Conferir valores",
+          "to": "T07",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "@exit",
+      "edit": true,
+      "exit": true,
+      "dirtyCards": true
+    },
+    {
+      "id": "T06-B",
+      "title": "Selecionar produtos",
+      "body": [
+        {
+          "type": "text",
+          "text": "1 de 4 · Alternativas",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "Categoria fixa: Smartphones Premium",
+          "tone": "Info"
+        },
+        {
+          "type": "text",
+          "text": "1 de pelo menos 2 produtos selecionados",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "○ Aurora Pro",
+          "subtitle": "Oficial · 256 GB",
+          "to": "T06-AB"
+        },
+        {
+          "type": "card",
+          "title": "✓ Vértice Max",
+          "subtitle": "Oficial · 512 GB",
+          "to": "T06-0"
+        },
+        {
+          "type": "button",
+          "label": "Adicionar produto pessoal",
+          "to": "T04-SELECAO",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "Seleção identifica origem + ID. Nomes iguais não são unidos automaticamente.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Conferir valores",
+          "to": "T07",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "@exit",
+      "edit": true,
+      "exit": true,
+      "dirtyCards": true
+    },
+    {
+      "id": "T06-AB",
+      "title": "Selecionar produtos",
+      "body": [
+        {
+          "type": "text",
+          "text": "1 de 4 · Alternativas",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "Categoria fixa: Smartphones Premium",
+          "tone": "Info"
+        },
+        {
+          "type": "text",
+          "text": "2 de pelo menos 2 produtos selecionados",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "✓ Aurora Pro",
+          "subtitle": "Oficial · 256 GB",
+          "to": "T06-B"
+        },
+        {
+          "type": "card",
+          "title": "✓ Vértice Max",
+          "subtitle": "Oficial · 512 GB",
+          "to": "T06-A"
+        },
+        {
+          "type": "button",
+          "label": "Adicionar produto pessoal",
+          "to": "T04-SELECAO",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "Seleção identifica origem + ID. Nomes iguais não são unidos automaticamente.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Conferir valores",
+          "to": "T07",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "@exit",
+      "edit": true,
+      "exit": true,
+      "dirtyCards": true
+    },
+    {
+      "id": "T04-SELECAO",
+      "title": "Novo produto pessoal",
+      "body": [
+        {
+          "type": "state",
+          "text": "Smartphones Premium · Categoria fixa",
+          "tone": "Info"
+        },
+        {
+          "type": "field",
+          "label": "Nome",
+          "value": "Aurora pessoal",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Geekbench 6 Multi-Core",
+          "value": "8.000 pontos",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Preço",
+          "value": "R$ 5.200,00",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Câmeras",
+          "value": "8 / 10",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Autonomia",
+          "value": "16 h",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Armazenamento",
+          "value": "256 GB",
+          "helper": "",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "state",
+          "text": "A demonstração retorna à seleção; incluir e selecionar este novo registro é uma interação ainda pendente.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "T06-AB",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T06-AB"
+    },
+    {
+      "id": "T06-BEV",
+      "title": "Selecionar produtos BEV",
+      "body": [
+        {
+          "type": "state",
+          "text": "Categoria fixa: Veículos Elétricos (BEV)",
+          "tone": "Info"
+        },
+        {
+          "type": "card",
+          "title": "○ BEV Aurora · 2026",
+          "subtitle": "Oficial · Valores simulados",
+          "to": null
+        },
+        {
+          "type": "state",
+          "text": "Esta categoria está especificada. O percurso interativo completo desta versão usa Smartphones Premium.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "@exit",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T07",
+      "title": "Valores da avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "2 de 4 · Confira os 5 critérios",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "Ajustes valem apenas nesta avaliação.",
+          "tone": "Info"
+        },
+        {
+          "type": "text",
+          "text": "Aurora Pro · Oficial",
+          "role": "title"
+        },
+        {
+          "type": "field",
+          "label": "Geekbench 6 Multi-Core · pontos",
+          "value": "8000",
+          "helper": "Benefício",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Preço · R$",
+          "value": "5.000,00",
+          "helper": "Original: R$ 5.200,00 · Ajustado nesta avaliação",
+          "to": "D04-VALOR",
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Câmeras · nota de 1 a 10",
+          "value": "8",
+          "helper": "Benefício",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Autonomia · h",
+          "value": "16",
+          "helper": "Benefício",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "field",
+          "label": "Armazenamento · GB",
+          "value": "256",
+          "helper": "Benefício",
+          "to": null,
+          "error": false
+        },
+        {
+          "type": "text",
+          "text": "Vértice Max · Oficial",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "7.000 pontos · R$ 6.000,00\nCâmeras 9/10 · Autonomia 20 h · 512 GB",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Efetivo ajustado pelo usuário. Fonte/data do novo preço desconhecidas; não herda a referência do original.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Comparar critérios",
+          "to": "T08-01-P"
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T06-AB",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-01-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 0,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 1 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nPreço",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-01-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-02-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T07",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-01-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 1,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 1 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nPreço",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-01-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-02-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T07",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-02-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 1,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 2 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nCâmeras",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-02-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-03-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-01-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-02-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 2,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 2 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nCâmeras",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-02-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-03-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-01-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-03-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 2,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 3 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nAutonomia",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-03-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-04-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-02-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-03-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 3,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 3 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nAutonomia",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-03-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-04-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-02-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-04-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 3,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 4 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-04-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-05-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-03-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-04-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 4,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 4 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-04-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-05-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-03-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-05-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 4,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 5 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nou\nCâmeras",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-05-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-06-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-04-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-05-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 5,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 5 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nou\nCâmeras",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-05-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-06-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-04-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-06-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 5,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 6 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nou\nAutonomia",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-06-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-07-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-05-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-06-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 6,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 6 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nou\nAutonomia",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-06-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-07-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-05-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-07-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 6,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 7 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-07-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-08-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-06-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-07-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 7,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 7 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Preço\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-07-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-08-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-06-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-08-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 7,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 8 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras\nou\nAutonomia",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-08-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-09-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-07-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-08-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 8,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 8 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras\nou\nAutonomia",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-08-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-09-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-07-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-09-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 8,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 9 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-09-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-10-P",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-08-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-09-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 9,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 9 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-09-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Próxima comparação",
+          "to": "T08-10-P",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-08-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-10-P",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 9,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 10 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Esta comparação ainda não foi respondida.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-10-R",
+          "change": true,
+          "secondary": true
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Validar AHP",
+          "to": "T09",
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-09-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T08-10-R",
+      "title": "Comparar critérios",
+      "body": [
+        {
+          "type": "text",
+          "text": "3 de 4 · AHP",
+          "role": "label"
+        },
+        {
+          "type": "progress",
+          "count": 10,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Comparação 10 de 10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia\nou\nArmazenamento",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Qual critério tem maior importância para a sua decisão?",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Resposta: igual importância (1)",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "button",
+          "label": "Igual importância · 1",
+          "to": "T08-10-R",
+          "change": true,
+          "secondary": false
+        },
+        {
+          "type": "text",
+          "text": "Escala de Saaty\n1 Igual · 3 Moderada · 5 Forte\n7 Muito forte · 9 Extrema\n2, 4, 6 e 8 são intensidades intermediárias.",
+          "role": "medium"
+        },
+        {
+          "type": "text",
+          "text": "Sentido: critério da esquerda ou da direita. O recíproco é preenchido automaticamente.",
+          "role": "medium"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Validar AHP",
+          "to": "T09",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-09-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T09",
+      "title": "Pesos e consistência",
+      "body": [
+        {
+          "type": "progress",
+          "count": 10,
+          "total": 10
+        },
+        {
+          "type": "state",
+          "text": "✓ Julgamentos consistentes. RC = 0,0000 ≤ 0,10.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Preço · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Armazenamento · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "λmax = 5,0000 · IC = 0,0000\nRI = 1,12 · RC = 0,0000",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Pesos por média geométrica normalizada. Calcular não salva a avaliação.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Revisar avaliação",
+          "to": "T10"
+        },
+        {
+          "type": "button",
+          "label": "Revisar comparações",
+          "to": "T08-01-R",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T08-10-R",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T10",
+      "title": "Revisar avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "4 de 4 · Antes do TOPSIS",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "2 alternativas válidas · 5 critérios\nAHP consistente · RC = 0,0000",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro · Valores utilizados",
+          "subtitle": "8.000 pontos · R$ 5.000,00\nCâmeras 8/10 · 16 h · 256 GB",
+          "to": "T07"
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max · Valores utilizados",
+          "subtitle": "7.000 pontos · R$ 6.000,00\nCâmeras 9/10 · 20 h · 512 GB",
+          "to": "T07"
+        },
+        {
+          "type": "text",
+          "text": "Pesos: 20% para cada critério.\nPreço: custo. Demais critérios: benefício.",
+          "role": "body"
+        },
+        {
+          "type": "button",
+          "label": "Revisar pesos e consistência",
+          "to": "T09",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "O processamento usa estes dados preservados; não atualiza valores pelo catálogo.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Processar TOPSIS",
+          "to": "T11",
+          "change": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T09",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T11",
+      "title": "Processando TOPSIS",
+      "body": [
+        {
+          "type": "state",
+          "text": "Processando a avaliação…",
+          "tone": "Info"
+        },
+        {
+          "type": "progress",
+          "count": 5,
+          "total": 10
+        },
+        {
+          "type": "text",
+          "text": "Calculando proximidade às soluções ideais.",
+          "role": "body"
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "T10",
+      "auto": "T12",
+      "edit": true
+    },
+    {
+      "id": "T12",
+      "title": "Resultado da avaliação",
+      "body": [
+        {
+          "type": "state",
+          "text": "Resultado calculado. Ainda não salvo.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "text",
+          "text": "Vértice Max",
+          "role": "headline"
+        },
+        {
+          "type": "text",
+          "text": "Maior proximidade às condições ideais neste cenário.",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "1º · Vértice Max",
+          "subtitle": "C* 0,7517 · d+ 0,0318 · d− 0,0962",
+          "to": "T12-DETALHES"
+        },
+        {
+          "type": "card",
+          "title": "2º · Aurora Pro",
+          "subtitle": "C* 0,2483 · d+ 0,0962 · d− 0,0318",
+          "to": "T12-DETALHES"
+        },
+        {
+          "type": "text",
+          "text": "Pesos: 20% por critério\nλmax 5 · IC 0 · RI 1,12 · RC 0",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "C* mais alto indica maior proximidade ideal, considerando os critérios e os pesos desta avaliação.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar avaliação",
+          "to": "T12-SALVA",
+          "saveResult": true
+        },
+        {
+          "type": "button",
+          "label": "Exportar PDF",
+          "to": "D02-NOVA",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T10",
+      "edit": true,
+      "exit": true
+    },
+    {
+      "id": "T12-SALVA",
+      "title": "Resultado da avaliação",
+      "body": [
+        {
+          "type": "state",
+          "text": "Avaliação salva neste dispositivo.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Vértice Max",
+          "role": "headline"
+        },
+        {
+          "type": "text",
+          "text": "Maior proximidade às condições ideais neste cenário.",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "1º · Vértice Max",
+          "subtitle": "C* 0,7517 · d+ 0,0318 · d− 0,0962",
+          "to": "T12-DETALHES"
+        },
+        {
+          "type": "card",
+          "title": "2º · Aurora Pro",
+          "subtitle": "C* 0,2483 · d+ 0,0962 · d− 0,0318",
+          "to": "T12-DETALHES"
+        },
+        {
+          "type": "text",
+          "text": "Pesos: 20% por critério\nλmax 5 · IC 0 · RI 1,12 · RC 0",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "C* mais alto indica maior proximidade ideal, considerando os critérios e os pesos desta avaliação.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Editar avaliação",
+          "to": "T07-EDITAR"
+        },
+        {
+          "type": "button",
+          "label": "Exportar PDF",
+          "to": "T13",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Voltar às avaliações",
+          "to": "T05-CONCLUIDA",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T05-CONCLUIDA",
+      "edit": false,
+      "exit": false
+    },
+    {
+      "id": "T12-DETALHES",
+      "title": "Dados da avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "Smartphones Premium · Valores preservados",
+          "role": "label"
+        },
+        {
+          "type": "text",
+          "text": "Aurora Pro: 8.000 pontos · R$ 5.000,00 · Câmeras 8/10 · 16 h · 256 GB\n\nVértice Max: 7.000 pontos · R$ 6.000,00 · Câmeras 9/10 · 20 h · 512 GB",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Preço · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Armazenamento · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "AHP: λmax 5 · IC 0 · RI 1,12 · RC 0",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Preço Aurora: original R$ 5.200,00; efetivo R$ 5.000,00 ajustado pelo usuário. Dados fictícios; fontes/datas reais desconhecidas. Consultar não recalcula.",
+          "tone": "Info"
+        },
+        {
+          "type": "button",
+          "label": "Excluir avaliação",
+          "to": "D03-AVALIACAO",
+          "secondary": true
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "@back"
+    },
+    {
+      "id": "T07-EDITAR",
+      "title": "Editar avaliação",
+      "body": [
+        {
+          "type": "state",
+          "text": "Alterações não salvas. Resultado anterior desatualizado nesta edição.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "field",
+          "label": "Aurora Pro · Preço · R$",
+          "value": "5.000,001",
+          "helper": "Fração de centavo não permitida. Corrija explicitamente.",
+          "to": "T07",
+          "error": true
+        },
+        {
+          "type": "state",
+          "text": "A versão salva permanece íntegra. Salvar agora substitui a configuração como rascunho e invalida o ranking anterior.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Corrigir valores",
+          "to": "T07",
+          "change": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar como rascunho",
+          "to": "@draft",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Exportar PDF",
+          "to": "D02-EDICAO",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "D01-EXISTENTE",
+      "edit": true,
+      "exit": true,
+      "exitTo": "D01-EXISTENTE"
+    },
+    {
+      "id": "D01",
+      "title": "Salvar alterações?",
+      "body": [
+        {
+          "type": "text",
+          "text": "Há alterações não salvas. Salve para retomar depois ou descarte as mudanças.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar",
+          "to": "@saveExit"
+        },
+        {
+          "type": "button",
+          "label": "Descartar alterações",
+          "to": "@discard",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Continuar editando",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D01-RESULTADO",
+      "title": "Salvar alterações?",
+      "body": [
+        {
+          "type": "text",
+          "text": "O resultado foi calculado, mas ainda não foi salvo.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar",
+          "to": "T05-CONCLUIDA",
+          "saveResult": true
+        },
+        {
+          "type": "button",
+          "label": "Descartar alterações",
+          "to": "T01",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Continuar editando",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D01-EXISTENTE",
+      "title": "Salvar alterações?",
+      "body": [
+        {
+          "type": "text",
+          "text": "Salvar sem resultado atualizado substitui a versão salva por um rascunho. Descartar preserva o ranking salvo.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar",
+          "to": "T05-RASCUNHO",
+          "draftFrom": "T07-EDITAR"
+        },
+        {
+          "type": "button",
+          "label": "Descartar alterações",
+          "to": "T12-SALVA",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Continuar editando",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D01-PRODUTO",
+      "title": "Salvar alterações?",
+      "body": [
+        {
+          "type": "text",
+          "text": "Produto pessoal em edição. A categoria permanece fixa.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar",
+          "to": "T03-PESSOAL"
+        },
+        {
+          "type": "button",
+          "label": "Descartar alterações",
+          "to": "T02-PESSOAL",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Continuar editando",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D02-NOVA",
+      "title": "Exportar avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "Salve a avaliação processada antes de gerar o PDF.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar e exportar",
+          "to": "T13",
+          "saveResult": true
+        },
+        {
+          "type": "button",
+          "label": "Exportar última versão salva",
+          "to": null,
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D02-EDICAO",
+      "title": "Exportar avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "É necessário recalcular a edição atual. Você pode exportar integralmente a última versão salva, mantendo a edição pendente.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar e exportar",
+          "to": null,
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Exportar última versão salva",
+          "to": "T13-EDICAO"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D03-AVALIACAO",
+      "title": "Excluir avaliação?",
+      "body": [
+        {
+          "type": "text",
+          "text": "A exclusão é permanente. Produtos dos catálogos e outras avaliações serão preservados.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Excluir avaliação",
+          "to": "T05-EXCLUIDA"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "D03-PRODUTO",
+      "title": "Excluir produto pessoal?",
+      "body": [
+        {
+          "type": "text",
+          "text": "O cadastro será removido permanentemente. Avaliações anteriores preservam os dados utilizados.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Excluir produto",
+          "to": "T02-PESSOAL-VAZIO"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "T02-PESSOAL-VAZIO",
+      "title": "Produtos pessoais",
+      "body": [
+        {
+          "type": "state",
+          "text": "Produto excluído. Nenhum produto pessoal nesta categoria.",
+          "tone": "Sucesso"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cadastrar produto",
+          "to": "T04"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T02"
+    },
+    {
+      "id": "D04-VALOR",
+      "title": "Preço nesta avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "Ajustar o valor mantém a referência original e não altera o catálogo.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Confirmar R$ 5.000,00",
+          "to": "@close",
+          "change": true
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "T13",
+      "title": "Compartilhar PDF",
+      "body": [
+        {
+          "type": "state",
+          "text": "PDF gerado a partir da última versão salva elegível.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Compartilhamento padrão do Android",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Escolha um destino no dispositivo. Abrir esta área não comprova envio.",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Representação de demonstração: nenhum arquivo é gerado ou enviado pelo Figma.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cancelar compartilhamento",
+          "to": "T12-SALVA",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T12-SALVA"
+    },
+    {
+      "id": "T13-EDICAO",
+      "title": "Compartilhar PDF",
+      "body": [
+        {
+          "type": "state",
+          "text": "PDF gerado a partir da última versão salva elegível.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Compartilhamento padrão do Android",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "Escolha um destino no dispositivo. Abrir esta área não comprova envio.",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "Representação de demonstração: nenhum arquivo é gerado ou enviado pelo Figma.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cancelar compartilhamento",
+          "to": "T07-EDITAR",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T07-EDITAR"
+    },
+    {
+      "id": "E01",
+      "title": "Pesos e consistência",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Julgamentos inconsistentes. TOPSIS bloqueado.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "RC = 0,9524 > 0,10",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "λmax = 9,2667 · IC = 1,0667 · RI = 1,12",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Geekbench 6 Multi-Core · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Preço · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Câmeras · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Autonomia · 20%",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Armazenamento · 20%",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "10 comparações respondidas. Revise o ciclo Geekbench > Preço > Câmeras > Geekbench, com intensidade 9. O rascunho pode ser salvo.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Processar TOPSIS",
+          "to": null,
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Revisar comparações",
+          "to": "T08-01-R"
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "edit": true,
+      "exit": true,
+      "back": "T08-10-R"
+    },
+    {
+      "id": "E02",
+      "title": "Dados insuficientes",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Informe os valores ausentes antes de processar.",
+          "tone": "Erro"
+        },
+        {
+          "type": "field",
+          "label": "Vértice Max · Autonomia · h",
+          "value": "",
+          "helper": "Valor obrigatório ausente.",
+          "to": "T07",
+          "error": true
+        },
+        {
+          "type": "state",
+          "text": "Valor ausente não significa zero. Você pode salvar um rascunho incompleto.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Processar TOPSIS",
+          "to": null,
+          "disabled": true
+        },
+        {
+          "type": "button",
+          "label": "Corrigir valores",
+          "to": "T07"
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "edit": true,
+      "exit": true,
+      "back": "T07"
+    },
+    {
+      "id": "E03",
+      "title": "Ranking com empate",
+      "body": [
+        {
+          "type": "state",
+          "text": "Duas alternativas compartilham a 2ª posição.",
+          "tone": "Info"
+        },
+        {
+          "type": "card",
+          "title": "1º · Alternativa 1",
+          "subtitle": "C* 1,0000 · d+ 0,0000 · d− 0,1366",
+          "to": null
+        },
+        {
+          "type": "card",
+          "title": "2º · Alternativa 2",
+          "subtitle": "C* 0,3739 · d+ 0,0864 · d− 0,0516",
+          "to": null
+        },
+        {
+          "type": "card",
+          "title": "2º · Alternativa 3",
+          "subtitle": "C* 0,3739 · d+ 0,0864 · d− 0,0516",
+          "to": null
+        },
+        {
+          "type": "card",
+          "title": "4º · Alternativa 4",
+          "subtitle": "C* 0,0000 · d+ 0,1366 · d− 0,0000",
+          "to": null
+        },
+        {
+          "type": "text",
+          "text": "Posições: 1º, 2º, 2º, 4º. Empates usam coeficientes internos, não o arredondamento exibido.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Voltar às avaliações",
+          "to": "T05"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T05"
+    },
+    {
+      "id": "E04",
+      "title": "Sem diferenciação",
+      "body": [
+        {
+          "type": "state",
+          "text": "Processamento válido. Ainda não salvo.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "text",
+          "text": "Sem diferenciação entre as alternativas",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "As duas alternativas têm os mesmos valores efetivos nos cinco critérios. Não há vencedor.",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro",
+          "subtitle": "d+ = 0 · d− = 0 · C* não definido",
+          "to": null
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max",
+          "subtitle": "d+ = 0 · d− = 0 · C* não definido",
+          "to": null
+        },
+        {
+          "type": "state",
+          "text": "Sem coeficiente ou posição fictícios. Este resultado pode ser salvo e exportado.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar avaliação",
+          "to": "T05-SEMDIF"
+        },
+        {
+          "type": "button",
+          "label": "Voltar às avaliações",
+          "to": "D01-SEMDIF",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "D01-SEMDIF"
+    },
+    {
+      "id": "E04-SALVA",
+      "title": "Sem diferenciação",
+      "body": [
+        {
+          "type": "state",
+          "text": "Concluída — sem diferenciação",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Sem diferenciação entre as alternativas",
+          "role": "title"
+        },
+        {
+          "type": "text",
+          "text": "As duas alternativas têm os mesmos valores efetivos nos cinco critérios. Não há vencedor.",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro",
+          "subtitle": "d+ = 0 · d− = 0 · C* não definido",
+          "to": null
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max",
+          "subtitle": "d+ = 0 · d− = 0 · C* não definido",
+          "to": null
+        },
+        {
+          "type": "state",
+          "text": "Sem coeficiente ou posição fictícios. Este resultado pode ser salvo e exportado.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Exportar PDF",
+          "to": "T13-SEMDIF"
+        },
+        {
+          "type": "button",
+          "label": "Voltar às avaliações",
+          "to": "T05-SEMDIF",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T05-SEMDIF"
+    },
+    {
+      "id": "D01-SEMDIF",
+      "title": "Salvar alterações?",
+      "body": [
+        {
+          "type": "text",
+          "text": "O processamento sem diferenciação é válido e ainda não foi salvo.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar",
+          "to": "T05-SEMDIF"
+        },
+        {
+          "type": "button",
+          "label": "Descartar alterações",
+          "to": "T05",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Continuar editando",
+          "to": "@close",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "modal": true
+    },
+    {
+      "id": "T13-SEMDIF",
+      "title": "Compartilhar PDF",
+      "body": [
+        {
+          "type": "state",
+          "text": "Relatório sem diferenciação, a partir da versão salva.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Sem coeficiente, posição ou vencedor fictícios. Nenhum arquivo real é gerado no protótipo.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cancelar compartilhamento",
+          "to": "E04-SALVA",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "E04-SALVA"
+    },
+    {
+      "id": "E05",
+      "title": "Não foi possível calcular",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Normalização indefinida no critério Geekbench 6 Multi-Core.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "A coluna contém somente zeros. Isso é uma falha matemática; não é conclusão sem diferenciação.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Revisar valores",
+          "to": "T07"
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "edit": true,
+      "exit": true,
+      "back": "T10"
+    },
+    {
+      "id": "E06",
+      "title": "Carregando catálogo",
+      "body": [
+        {
+          "type": "state",
+          "text": "Consultando produtos…",
+          "tone": "Info"
+        },
+        {
+          "type": "progress",
+          "count": 0,
+          "total": 10
+        }
+      ],
+      "footer": [],
+      "group": "Fluxo principal",
+      "back": "T01"
+    },
+    {
+      "id": "E07",
+      "title": "Catálogo indisponível",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Não foi possível consultar o catálogo e não há dados em cache disponíveis.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "Conecte-se e tente novamente. Produtos pessoais e avaliações locais continuam acessíveis.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Tentar novamente",
+          "to": "E06"
+        },
+        {
+          "type": "button",
+          "label": "Avaliações salvas",
+          "to": "T05",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T01"
+    },
+    {
+      "id": "E08",
+      "title": "Produto incompleto",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Autonomia não informada.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "text",
+          "text": "Aurora Pro · Oficial",
+          "role": "body"
+        },
+        {
+          "type": "text",
+          "text": "Consulte os dados conhecidos. A ausência real pode ser preenchida na avaliação, antes do cálculo.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Conferir valores",
+          "to": "E02"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T02"
+    },
+    {
+      "id": "E09",
+      "title": "Não foi possível salvar",
+      "body": [
+        {
+          "type": "state",
+          "text": "! A avaliação não foi salva.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "Suas alterações continuam nesta edição. A última versão salva permanece íntegra.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Tentar salvar novamente",
+          "to": "T12-SALVA"
+        },
+        {
+          "type": "button",
+          "label": "Continuar editando",
+          "to": "T12",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T12"
+    },
+    {
+      "id": "E10",
+      "title": "Resultado desatualizado",
+      "body": [
+        {
+          "type": "state",
+          "text": "! O ranking anterior não corresponde à edição atual.",
+          "tone": "Aviso"
+        },
+        {
+          "type": "text",
+          "text": "Revalide o AHP se mudou julgamentos. Se mudou apenas valores ou alternativas, os pesos continuam vigentes.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Revisar e recalcular",
+          "to": "T10"
+        },
+        {
+          "type": "button",
+          "label": "Salvar como rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "edit": true,
+      "exit": true,
+      "back": "T07"
+    },
+    {
+      "id": "E11",
+      "title": "Dados incompatíveis",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Este produto não pode ser selecionado.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "Unidade, rubrica ou formato não são compatíveis com a avaliação. Para produto pessoal semanticamente incompatível, cadastre outro produto com definições adequadas. Confirmar um aviso não resolve a incompatibilidade.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Cadastrar outro produto",
+          "to": "T04"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T02"
+    },
+    {
+      "id": "E12",
+      "title": "PDF indisponível",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Não foi possível gerar o PDF.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "A versão salva da avaliação foi preservada. Nenhum envio foi confirmado.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Tentar novamente",
+          "to": "T13"
+        },
+        {
+          "type": "button",
+          "label": "Voltar à avaliação",
+          "to": "T12-SALVA",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T12-SALVA"
+    },
+    {
+      "id": "E13",
+      "title": "Precisão insuficiente",
+      "body": [
+        {
+          "type": "state",
+          "text": "! Não foi possível preservar a distinção dos preços para calcular.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "Dois valores monetários efetivos distintos viraram a mesma entrada numérica. Critério: preço. O processamento está bloqueado; não há empate ou conclusão sem diferenciação.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Revisar valores",
+          "to": "T07"
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T10"
+    },
+    {
+      "id": "E14",
+      "title": "Falha na exclusão",
+      "body": [
+        {
+          "type": "state",
+          "text": "! A avaliação não foi excluída.",
+          "tone": "Erro"
+        },
+        {
+          "type": "text",
+          "text": "Os dados e resultados salvos continuam preservados.",
+          "role": "body"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Tentar novamente",
+          "to": "D03-AVALIACAO"
+        },
+        {
+          "type": "button",
+          "label": "Voltar à avaliação",
+          "to": "T12-SALVA",
+          "secondary": true
+        }
+      ],
+      "group": "Fluxo principal",
+      "back": "T12-SALVA"
+    },
+    {
+      "id": "QA-360-200",
+      "title": "Revisar avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "4 de 4 · Antes do TOPSIS",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "2 alternativas válidas · 5 critérios\nAHP consistente · RC = 0,0000",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro · Valores utilizados",
+          "subtitle": "8.000 pontos · R$ 5.000,00\nCâmeras 8/10 · 16 h · 256 GB",
+          "to": "T07"
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max · Valores utilizados",
+          "subtitle": "7.000 pontos · R$ 6.000,00\nCâmeras 9/10 · 20 h · 512 GB",
+          "to": "T07"
+        },
+        {
+          "type": "text",
+          "text": "Pesos: 20% para cada critério.\nPreço: custo. Demais critérios: benefício.",
+          "role": "body"
+        },
+        {
+          "type": "button",
+          "label": "Revisar pesos e consistência",
+          "to": "T09",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "O processamento usa estes dados preservados; não atualiza valores pelo catálogo.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Processar TOPSIS",
+          "to": "T11",
+          "change": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Responsividade",
+      "back": "T09",
+      "edit": true,
+      "exit": true,
+      "width": 360,
+      "fontScale": 2
+    },
+    {
+      "id": "QA-600",
+      "title": "Revisar avaliação",
+      "body": [
+        {
+          "type": "text",
+          "text": "4 de 4 · Antes do TOPSIS",
+          "role": "label"
+        },
+        {
+          "type": "state",
+          "text": "2 alternativas válidas · 5 critérios\nAHP consistente · RC = 0,0000",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro · Valores utilizados",
+          "subtitle": "8.000 pontos · R$ 5.000,00\nCâmeras 8/10 · 16 h · 256 GB",
+          "to": "T07"
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max · Valores utilizados",
+          "subtitle": "7.000 pontos · R$ 6.000,00\nCâmeras 9/10 · 20 h · 512 GB",
+          "to": "T07"
+        },
+        {
+          "type": "text",
+          "text": "Pesos: 20% para cada critério.\nPreço: custo. Demais critérios: benefício.",
+          "role": "body"
+        },
+        {
+          "type": "button",
+          "label": "Revisar pesos e consistência",
+          "to": "T09",
+          "secondary": true
+        },
+        {
+          "type": "state",
+          "text": "O processamento usa estes dados preservados; não atualiza valores pelo catálogo.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Processar TOPSIS",
+          "to": "T11",
+          "change": true
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Responsividade",
+      "back": "T09",
+      "edit": true,
+      "exit": true,
+      "width": 600,
+      "fontScale": 1
+    },
+    {
+      "id": "QA-600-200",
+      "title": "Resultado da avaliação",
+      "body": [
+        {
+          "type": "state",
+          "text": "Avaliação salva neste dispositivo.",
+          "tone": "Sucesso"
+        },
+        {
+          "type": "text",
+          "text": "Vértice Max",
+          "role": "headline"
+        },
+        {
+          "type": "text",
+          "text": "Maior proximidade às condições ideais neste cenário.",
+          "role": "body"
+        },
+        {
+          "type": "card",
+          "title": "1º · Vértice Max",
+          "subtitle": "C* 0,7517 · d+ 0,0318 · d− 0,0962",
+          "to": "T12-DETALHES"
+        },
+        {
+          "type": "card",
+          "title": "2º · Aurora Pro",
+          "subtitle": "C* 0,2483 · d+ 0,0962 · d− 0,0318",
+          "to": "T12-DETALHES"
+        },
+        {
+          "type": "text",
+          "text": "Pesos: 20% por critério\nλmax 5 · IC 0 · RI 1,12 · RC 0",
+          "role": "body"
+        },
+        {
+          "type": "state",
+          "text": "C* mais alto indica maior proximidade ideal, considerando os critérios e os pesos desta avaliação.",
+          "tone": "Info"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Editar avaliação",
+          "to": "T07-EDITAR"
+        },
+        {
+          "type": "button",
+          "label": "Exportar PDF",
+          "to": "T13",
+          "secondary": true
+        },
+        {
+          "type": "button",
+          "label": "Voltar às avaliações",
+          "to": "T05-CONCLUIDA",
+          "secondary": true
+        }
+      ],
+      "group": "Responsividade",
+      "back": "T05-CONCLUIDA",
+      "edit": false,
+      "exit": false,
+      "width": 600,
+      "fontScale": 2
+    },
+    {
+      "id": "T06-MISTA",
+      "title": "Selecionar produtos",
+      "body": [
+        {
+          "type": "state",
+          "text": "Smartphones Premium · oficiais e pessoais da mesma categoria",
+          "tone": "Info"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro",
+          "subtitle": "Oficial",
+          "to": "@select-0"
+        },
+        {
+          "type": "card",
+          "title": "Vértice Max",
+          "subtitle": "Oficial",
+          "to": "@select-1"
+        },
+        {
+          "type": "card",
+          "title": "Aurora Pro",
+          "subtitle": "Pessoal",
+          "to": "@select-2"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Conferir valores",
+          "to": "T07",
+          "disabled": false
+        },
+        {
+          "type": "button",
+          "label": "Salvar rascunho",
+          "to": "@draft",
+          "secondary": true
+        }
+      ],
+      "group": "Continuação local",
+      "back": "@exit",
+      "edit": true,
+      "exit": true,
+      "dirtyCards": true,
+      "figmaPendente": true,
+      "projection": "selection"
+    },
+    {
+      "id": "T04-SELECAO-BEV",
+      "title": "Novo produto pessoal BEV",
+      "body": [
+        {
+          "type": "state",
+          "text": "Categoria fixa: Veículos Elétricos (BEV)",
+          "tone": "Info"
+        },
+        {
+          "type": "field",
+          "label": "Nome",
+          "value": "BEV Aurora · 2026"
+        },
+        {
+          "type": "field",
+          "label": "Autonomia PBEV · km",
+          "value": "400"
+        },
+        {
+          "type": "field",
+          "label": "Preço · R$",
+          "value": "180000"
+        },
+        {
+          "type": "field",
+          "label": "Recarga DC 20–80% · min",
+          "value": "30"
+        },
+        {
+          "type": "field",
+          "label": "Seguro anual · R$/ano",
+          "value": "5000"
+        },
+        {
+          "type": "field",
+          "label": "ADAS · nota 1–10",
+          "value": "8"
+        }
+      ],
+      "footer": [
+        {
+          "type": "button",
+          "label": "Salvar produto",
+          "to": "@productSave"
+        },
+        {
+          "type": "button",
+          "label": "Cancelar",
+          "to": "D01-PRODUTO",
+          "secondary": true
+        }
+      ],
+      "group": "Continuação local",
+      "back": "T06-AB",
+      "figmaPendente": true
+    }
+  ]
+}

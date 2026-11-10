@@ -1,0 +1,310 @@
+{
+  "versao": "0.1 · frames criados no Figma em 06/11/2026",
+  "screens": [
+    {
+      "id": "T01"
+    },
+    {
+      "id": "T01-NOVA"
+    },
+    {
+      "id": "T02"
+    },
+    {
+      "id": "T02-PESSOAL"
+    },
+    {
+      "id": "T02-BEV"
+    },
+    {
+      "id": "T02-PESSOAL-BEV"
+    },
+    {
+      "id": "T03"
+    },
+    {
+      "id": "T03-B"
+    },
+    {
+      "id": "T03-BEV"
+    },
+    {
+      "id": "T03-PESSOAL"
+    },
+    {
+      "id": "T04"
+    },
+    {
+      "id": "T04-EDITAR"
+    },
+    {
+      "id": "T04-BEV"
+    },
+    {
+      "id": "T05"
+    },
+    {
+      "id": "T05-RASCUNHO"
+    },
+    {
+      "id": "T05-CONCLUIDA"
+    },
+    {
+      "id": "T05-SEMDIF"
+    },
+    {
+      "id": "T05-EXCLUIDA"
+    },
+    {
+      "id": "T06-0",
+      "edit": true
+    },
+    {
+      "id": "T06-A",
+      "edit": true
+    },
+    {
+      "id": "T06-B",
+      "edit": true
+    },
+    {
+      "id": "T06-AB",
+      "edit": true
+    },
+    {
+      "id": "T04-SELECAO"
+    },
+    {
+      "id": "T06-BEV",
+      "edit": true
+    },
+    {
+      "id": "T07",
+      "edit": true
+    },
+    {
+      "id": "T08-01-P",
+      "edit": true
+    },
+    {
+      "id": "T08-01-R",
+      "edit": true
+    },
+    {
+      "id": "T08-02-P",
+      "edit": true
+    },
+    {
+      "id": "T08-02-R",
+      "edit": true
+    },
+    {
+      "id": "T08-03-P",
+      "edit": true
+    },
+    {
+      "id": "T08-03-R",
+      "edit": true
+    },
+    {
+      "id": "T08-04-P",
+      "edit": true
+    },
+    {
+      "id": "T08-04-R",
+      "edit": true
+    },
+    {
+      "id": "T08-05-P",
+      "edit": true
+    },
+    {
+      "id": "T08-05-R",
+      "edit": true
+    },
+    {
+      "id": "T08-06-P",
+      "edit": true
+    },
+    {
+      "id": "T08-06-R",
+      "edit": true
+    },
+    {
+      "id": "T08-07-P",
+      "edit": true
+    },
+    {
+      "id": "T08-07-R",
+      "edit": true
+    },
+    {
+      "id": "T08-08-P",
+      "edit": true
+    },
+    {
+      "id": "T08-08-R",
+      "edit": true
+    },
+    {
+      "id": "T08-09-P",
+      "edit": true
+    },
+    {
+      "id": "T08-09-R",
+      "edit": true
+    },
+    {
+      "id": "T08-10-P",
+      "edit": true
+    },
+    {
+      "id": "T08-10-R",
+      "edit": true
+    },
+    {
+      "id": "T09",
+      "edit": true
+    },
+    {
+      "id": "T10",
+      "edit": true
+    },
+    {
+      "id": "T11",
+      "edit": true,
+      "auto": "T12"
+    },
+    {
+      "id": "T12",
+      "edit": true
+    },
+    {
+      "id": "T12-SALVA",
+      "edit": false
+    },
+    {
+      "id": "T12-DETALHES"
+    },
+    {
+      "id": "T07-EDITAR",
+      "edit": true
+    },
+    {
+      "id": "D01",
+      "modal": true
+    },
+    {
+      "id": "D01-RESULTADO",
+      "modal": true
+    },
+    {
+      "id": "D01-EXISTENTE",
+      "modal": true
+    },
+    {
+      "id": "D01-PRODUTO",
+      "modal": true
+    },
+    {
+      "id": "D02-NOVA",
+      "modal": true
+    },
+    {
+      "id": "D02-EDICAO",
+      "modal": true
+    },
+    {
+      "id": "D03-AVALIACAO",
+      "modal": true
+    },
+    {
+      "id": "D03-PRODUTO",
+      "modal": true
+    },
+    {
+      "id": "T02-PESSOAL-VAZIO"
+    },
+    {
+      "id": "D04-VALOR",
+      "modal": true
+    },
+    {
+      "id": "T13"
+    },
+    {
+      "id": "T13-EDICAO"
+    },
+    {
+      "id": "E01",
+      "edit": true
+    },
+    {
+      "id": "E02",
+      "edit": true
+    },
+    {
+      "id": "E03"
+    },
+    {
+      "id": "E04"
+    },
+    {
+      "id": "E04-SALVA"
+    },
+    {
+      "id": "D01-SEMDIF",
+      "modal": true
+    },
+    {
+      "id": "T13-SEMDIF"
+    },
+    {
+      "id": "E05",
+      "edit": true
+    },
+    {
+      "id": "E06"
+    },
+    {
+      "id": "E07"
+    },
+    {
+      "id": "E08"
+    },
+    {
+      "id": "E09"
+    },
+    {
+      "id": "E10",
+      "edit": true
+    },
+    {
+      "id": "E11"
+    },
+    {
+      "id": "E12"
+    },
+    {
+      "id": "E13"
+    },
+    {
+      "id": "E14"
+    },
+    {
+      "id": "QA-360-200",
+      "fontScale": 2,
+      "edit": true
+    },
+    {
+      "id": "QA-600",
+      "fontScale": 1,
+      "edit": true
+    },
+    {
+      "id": "QA-600-200",
+      "fontScale": 2,
+      "edit": false
+    }
+  ]
+}

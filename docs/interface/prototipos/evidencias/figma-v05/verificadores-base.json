@@ -1,0 +1,21 @@
+{
+  "data": "2026-11-10T06:19:42-03:00",
+  "resultados": [
+    {
+      "comando": "python3 docs/interface/prototipos/validar_fixture.py",
+      "status": "PASS",
+      "saida": "13 cenários ilustrativos conferidos; não são testes dos motores Android."
+    },
+    {
+      "comando": "node docs/interface/prototipos/verificar_matematica.cjs",
+      "status": "PASS",
+      "saida": "{\n  \"status\": \"PASS\",\n  \"checks\": 234,\n  \"fixtures\": 13,\n  \"scope\": \"Somente matemática do demonstrador JS; não é teste do motor Android.\"\n}"
+    },
+    {
+      "comando": "python3 docs/interface/prototipos/verificar_contraste.py",
+      "status": "PASS",
+      "saida": "PASS: 18 pares; texto ≥4,5:1, borda/foco ≥3:1."
+    }
+  ],
+  "limite": "Demonstração HTML/JS e fixtures locais; sem teste Android ou motor de produção."
+}

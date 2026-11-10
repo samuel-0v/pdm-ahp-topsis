@@ -6,10 +6,6 @@
 
 Registrar de onde vêm as regras e como revisar a Etapa 4 sem depender de explicação verbal. A [arquitetura](arquitetura.md) é o índice; os documentos temáticos detalham as propostas. As regras de produto permanecem nos requisitos/modelagem/decisões, evitando aprovar escolhas por repetição nesta pasta.
 
-## Escopo do PR independente
-
-Esta cópia para revisão da Etapa 4 parte de `main` e inclui os sete capítulos arquiteturais, as DEC-043–DEC-049 e seus índices. A Etapa 5 continua em branch separada; seus documentos e protótipos não integram este PR. Referências e contagens históricas das rodadas v0.1–v0.4 abaixo descrevem as verificações feitas na branch de trabalho original. Para este recorte independente, links locais e diff foram conferidos novamente; o alinhamento visual da Etapa 5 permanece pendente de integração.
-
 ## Hierarquia de fontes e uso das anotações
 
 O [registro central](../decisoes/registro-decisoes.md) e seus detalhamentos aprovados, os [requisitos](../requisitos/README.md), os [UCs](../requisitos/casos-de-uso/README.md) e a [modelagem](../modelagem/dominio.md) definem a base do projeto. Os [contratos consolidados P5](../modelagem/05-contratos-persistencia.md) prevalecem sobre alternativas dos estudos históricos. DEC-038 está aprovada desde 05/11; DEC-039–DEC-042 foram formalizadas em 06/11/2026. Arquivos antigos de propostas não são evidência de pendência atual.
@@ -55,7 +51,7 @@ Consultadas em 08/11/2026 para conferir características das APIs, sem escolher 
 
 | Grupo | Cobertura arquitetural e onde revisar |
 |---|---|
-| Enunciado v2, p. 4; DEC-049 | Abertura animada no host de Presentation, registrada em [componentes](componentes.md) e na especificação da interface mantida na branch separada da Etapa 5; sem inventar novo RF/UC. |
+| Enunciado v2, p. 4; DEC-049 | Abertura animada no host de Presentation, registrada em [componentes](componentes.md) e na [especificação da interface](../interface/especificacao-telas.md#aberturasplash--exigência-do-enunciado); sem inventar novo RF/UC. |
 | RF01–RF09; UC01–UC05 | Componentes/repositórios em [componentes](componentes.md); eventos/cache/compatibilidade em [fluxo de dados](fluxo-dados.md); VMs de catálogo/pessoal em [estado](gerenciamento-estado.md). |
 | RF10–RF14; UC06–UC09 | Criação/snapshots, seleção por identidade, efetivos tipados, pares canônicos e edição em memória nos mesmos documentos. |
 | RF15–RF20; UC10–UC11 | Contratos, bloqueio de consistência, integração e lacunas em [motores](motores-matematicos.md). |
@@ -115,12 +111,12 @@ Parecer recebido: **“Parecer técnico — arquitetura v0.3”**. A conclusão 
 
 | Apontamento | Avaliação e correção na v0.4 | Rastreabilidade e limite |
 |---|---|---|
-| Importante — abertura animada omitida ou tratada como exemplo | **Procedente.** O item é exigência no Escopo do Projeto, p. 4; corrigida a classificação e registrada a DEC-049. Host Presentation, componentes, especificação, mapa e navegação passam a prever a abertura animada, sem impor os dois segundos ilustrativos. | [DEC-049](../decisoes/adotadas/dec-049.md), [enunciado](../../references/ProjetoDisciplina_PDM20262v2.pdf) e especificação da abertura na branch separada da Etapa 5. Figma/HTML/manifesto continuam pendentes de representação; não foram alterados. |
+| Importante — abertura animada omitida ou tratada como exemplo | **Procedente.** O item é exigência no Escopo do Projeto, p. 4; corrigida a classificação e registrada a DEC-049. Host Presentation, componentes, especificação, mapa e navegação passam a prever a abertura animada, sem impor os dois segundos ilustrativos. | [DEC-049](../decisoes/adotadas/dec-049.md), [enunciado](../../references/ProjetoDisciplina_PDM20262v2.pdf) e [abertura na interface](../interface/especificacao-telas.md#aberturasplash--exigência-do-enunciado). Na rodada arquitetural, Figma/HTML/manifesto não foram alterados. Posteriormente, a Etapa 5 acrescentou T00 ao HTML/manifesto; em 10/11, a página Figma 03 recebeu os quadros de abertura e conexões, com limites registrados na interface. |
 | Melhoria — `RET → VAL` no Diagrama 5 pode pular seleção | **Procedente.** Corrigido para `RET → SEL`; `SEL → VAL` tem ação explícita de conferir seleção e avançar. Cancelamento ou sucesso de cadastro revela a mesma seleção, sem incorporar produto nem salvar avaliação por consequência da navegação. | [Diagrama 5](gerenciamento-estado.md#diagrama-5--propriedade-e-ciclo-de-vida-da-sessão) e adendo na DEC-047; texto do contrato já definia o comportamento correto, que foi preservado. |
 
 A correção da abertura não muda os contratos DEC-041/042, o salvamento manual, os motores, as seis tabelas ou as seis escolhas técnicas anteriores. Os ajustes da Etapa 5 nesta rodada são estritamente documentais, sem alterar os protótipos ou seus inventários/evidências. Alinhamento documental registrado não equivale a protótipo aplicado e validado pela equipe.
 
-**Complemento editorial da v0.4:** uma conferência posterior identificou que design-system.md da branch separada da Etapa 5 ainda excluía a splash do escopo visual. A frase foi corrigida para reconhecer a exigência da DEC-049 e distinguir essa obrigação da representação ainda pendente nos protótipos. O arquivo não havia sido incluído entre os quatro documentos de interface conferidos na rodada original; esta correção complementa aquele alinhamento, sem alterar decisões ou protótipos.
+**Complemento editorial da v0.4:** uma conferência posterior identificou que [design-system.md](../interface/design-system.md) ainda excluía a splash do escopo visual. A frase foi corrigida para reconhecer a exigência da DEC-049 e distinguir essa obrigação da representação ainda pendente nos protótipos. O arquivo não havia sido incluído entre os quatro documentos de interface conferidos na rodada original; esta correção complementa aquele alinhamento, sem alterar decisões ou protótipos.
 
 Na verificação complementar, foram conferidos 24 documentos, 253 referências locais e 27 âncoras, sem falhas; `git diff --check` passou. Nenhum diagrama foi alterado nesse complemento, portanto a renderização dos oito blocos permanece a da rodada v0.4 registrada abaixo. As menções restantes à antiga entrada direta identificadas na busca descrevem o histórico da omissão, não a regra vigente.
 
@@ -130,6 +126,10 @@ Na verificação complementar, foram conferidos 24 documentos, 253 referências 
 - **Oito diagramas com parser e renderização Mermaid 11.12.2/Chrome headless sem erros:** cinco arquiteturais e três de navegação da interface. Inclui a seta corrigida do Diagrama 5 e a abertura no fluxo de navegação. Relatório local: `/tmp/pdm-etapa4-v04-validacao-mermaid.json`; ferramenta/artefatos temporários não foram incorporados ao projeto.
 - **Diff revisado e `git diff --check` sem erros.** Nesta rodada foram atualizados 16 arquivos preexistentes e criado somente o detalhamento DEC-049; em fluxo de dados/motores, apenas a versão do documento mudou. Outros 129 arquivos preexistentes permaneceram íntegros, incluindo código, requisitos, modelagem, decisões aprovadas e todos os protótipos/scripts/manifestos da Etapa 5. A DEC-047 recebeu apenas adendo de rastreabilidade, sem troca da biblioteca ou do escopo.
 - Nenhuma classe Kotlin, configuração Android/Firebase/Room ou protótipo foi alterado. Não foram executados testes do aplicativo. Não houve commit ou push; o HEAD permaneceu `916ee6c`. A concordância com os dois achados e o alinhamento documental não comprovam aplicação/validação da abertura no Figma/HTML nem encerram formalmente a etapa.
+
+## Atualização editorial de interface — 09/11/2026
+
+Os registros de v0.4 acima descrevem a execução histórica da arquitetura. A Etapa 5 evoluiu depois: `bd055c2` já contém T00 no HTML e no manifesto, com evidências de animação/transição e ausência de repetição em retorno/restauração. A [validação da interface](../interface/validacao.md) registra a rodada atual. Esse era o estado Figma em 09/11. Em 10/11, a API nativa via Firefox/Scripter permitiu criar a página 03; a [rodada atual da interface](../interface/finalizacao-v05.md) registra aplicação e apresentação. O limite MCP não representa mais ausência total de acesso ao arquivo. Essa distinção editorial não altera DEC-018/025/032/041–049, camadas, sessão ou persistência.
 
 ## Checklist de revisão independente e pendências
 
@@ -141,8 +141,8 @@ O parecer independente já foi recebido e respondido; as seis escolhas foram ado
 4. Se snapshots, tipos/Long, originais/efetivos, revisões, limites de detecção e seis tabelas seguem DEC-038–DEC-042.
 5. Se bloqueios AHP/TOPSIS, empates, sem diferenciação e lacunas do motor estão expostos sem declarar implementação pronta.
 6. Se PDF usa apenas a versão salva escolhida e falhas de cada etapa preservam os fatos anteriores.
-7. Se os contratos com Figma e os estados/retornos refletem DEC-043–DEC-049, incluindo abertura animada e retorno à seleção; registrar a aplicação/validação visual pendente e o encerramento formal da etapa quando efetivamente autorizado.
+7. Se os contratos com Figma e os estados/retornos refletem DEC-043–DEC-049, incluindo abertura animada e retorno à seleção; consultar a [aplicação e aprovação da Etapa 5 v0.5](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental), preservando as verificações futuras no Android e o encerramento formal separado da Etapa 4.
 
 Após aprovação documental, implementar e testar os cenários do [plano vigente](../requisitos/plano-verificacao.md) e dos contratos P5: matemática de referência, fronteiras monetárias, atomicidade com falha provocada, cache parcial/permissões, mudança/exclusão de catálogo, ciclo de vida e saída/PDF. Continuam abertos os domínios/fontes/rubricas, schema/migrations/CHECK e versões de dependências. Não são apresentados como testes passados ou requisitos novos.
 
-**Status final desta versão:** seis escolhas arquiteturais adotadas e formalizadas por delegação do usuário; permanecem alinhamento com Etapa 5, conferência/encerramento formal e tarefas técnicas futuras. A decisão não declara protótipos, aplicativo ou entrega ao professor concluídos.
+**Status final desta versão:** seis escolhas arquiteturais adotadas e formalizadas por delegação do usuário; o alinhamento documental com a Etapa 5 v0.5 foi registrado e aprovado pelo usuário no escopo da interface. Permanecem conferência/encerramento formal da Etapa 4 e tarefas técnicas futuras. A aprovação da Etapa 5 não declara aplicativo ou entrega ao professor concluídos.
