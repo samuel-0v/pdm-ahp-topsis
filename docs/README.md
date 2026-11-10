@@ -12,7 +12,7 @@
 | [Resposta à revisão da Parte 5](modelagem/revisao-parte5.md) | Cinco achados; tratamento contratual aprovado em 06/11/2026 |
 | [Fechamento da Etapa 3](modelagem/fechamento-etapa-3.md) | Concluído em 06/11/2026; dependências e próximo passo registrados |
 | [Plano da Fase 1 — primeira entrega](entregas/fase-1-plano.md) | Proposta para aprovação/distribuição; prazo de 10/11/2026 ainda provisório |
-| [Arquitetura](arquitetura/arquitetura.md) | Etapa 4 v0.4: dois achados da revisão v0.3 corrigidos; abertura animada reconhecida na DEC-049 e retorno à seleção explícito; protótipos/encerramento formal ainda pendentes |
+| [Arquitetura](arquitetura/arquitetura.md) | Etapa 4 v0.4: dois achados da revisão v0.3 corrigidos; abertura animada reconhecida na DEC-049 e retorno à seleção explícito; protótipos atualizados posteriormente na Etapa 5; encerramento formal não presumido |
 | [Interface e prototipagem — Etapa 5](interface/README.md) | Proposta revisada v0.5: HTML calculável e página Figma 03 com roteiros preparados, conexões e apresentação verificadas; alcance e prontidão em [parecer](interface/finalizacao-v05.md) |
 | [Navegação](interface/navegacao.md) | Fluxos de catálogo, avaliação, saída e PDF; Voltar do Android |
 
