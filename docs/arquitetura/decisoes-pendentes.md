@@ -1,10 +1,10 @@
 # Decisões arquiteturais adotadas e pendências técnicas
 
-**Versão 0.4 · 08/11/2026 · Escolhas adotadas por delegação explícita do usuário.** ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048. O nome histórico deste arquivo foi preservado para manter os links. Não há implementação nem encerramento formal da Etapa 4 por este registro. A DEC-049 complementa a apresentação após a revisão v0.3.
+**Versão 0.4 · 08/11/2026 · Escolhas adotadas por delegação explícita do usuário.** ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048. O nome histórico deste arquivo foi preservado para manter os links. A [Etapa 4 foi encerrada documentalmente em 10/11/2026](fechamento-etapa-4.md), sem implementação. A DEC-049 complementa a apresentação após a revisão v0.3.
 
 ## Objetivo e contexto
 
-Registrar as alternativas escolhidas com base no [enunciado v2](../../references/ProjetoDisciplina_PDM20262v2.pdf), nas [anotações acadêmicas identificadas por nome/hash](referencias-e-validacao.md#hierarquia-de-fontes-e-uso-das-anotações) e nos requisitos/contratos vigentes. O usuário delegou a decisão após os refinamentos v0.2; as escolhas abaixo são vigentes para orientar implementação, sem nova rodada de aprovação técnica de cada alternativa. A aceitação pelo professor e o fechamento formal da etapa não são presumidos. DEC-001–DEC-042 permanecem inalteradas.
+Registrar as alternativas escolhidas com base no [enunciado v2](../../references/ProjetoDisciplina_PDM20262v2.pdf), nas [anotações acadêmicas identificadas por nome/hash](referencias-e-validacao.md#hierarquia-de-fontes-e-uso-das-anotações) e nos requisitos/contratos vigentes. O usuário delegou a decisão após os refinamentos v0.2; as escolhas abaixo são vigentes para orientar implementação, sem nova rodada de aprovação técnica de cada alternativa. A aceitação pelo professor não é presumida; o fechamento documental posterior está [registrado à parte](fechamento-etapa-4.md). DEC-001–DEC-042 permanecem inalteradas.
 
 ## Quadro de decisões adotadas
 
@@ -65,6 +65,6 @@ Qualquer escolha deve cumprir: IDs mínimos como argumentos; UI com callbacks de
 
 O [parecer independente da v0.1 e suas respostas](referencias-e-validacao.md#resposta-à-revisão-independente-da-v01) precedem esta escolha. Depois de receber a v0.2, o usuário instruiu o agente a tomar as decisões conforme enunciado e aulas. Em atendimento a essa delegação, as seis alternativas foram escolhidas e registradas nas DEC-043–DEC-048; não se atribui ao usuário uma aprovação literal anterior de cada texto, nem ao professor um aceite não informado.
 
-As escolhas técnicas não dependem mais de confirmação individual. O alinhamento documental com a Etapa 5 v0.5 está registrado. Permanecem integração Android, eventual ajuste decorrente da revisão arquitetural final e encerramento formal da Etapa 4. A aprovação da interface não encerra a arquitetura por extensão nem comprova a entrega ao professor.
+As escolhas técnicas não dependem mais de confirmação individual. O alinhamento documental com a Etapa 5 v0.5 e a conferência final estão registrados no [fechamento da Etapa 4](fechamento-etapa-4.md). Permanecem integração Android e ajustes que seus testes revelem. A aprovação anterior da interface não encerrou a arquitetura por extensão; o fechamento agora decorre da conferência específica autorizada pelo usuário e não comprova entrega ao professor.
 
 Schema/migrations/CHECK, domínios/fontes/rubricas/precisão, versões de dependências, adequações do motor e testes são tarefas posteriores já listadas acima. Não reabrem DEC-041/042 nem impedem a adoção desta arquitetura documental. Nenhum código, configuração ou commit é produzido nesta atividade.

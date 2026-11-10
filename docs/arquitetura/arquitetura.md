@@ -1,6 +1,6 @@
 # Etapa 4 — Arquitetura do Aplicativo
 
-**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** Modelo documentado; componentes ainda não implementados. A adoção das escolhas não declara encerramento formal da Etapa 4.
+**Versão 0.4 · 08/11/2026 · Decisões técnicas adotadas por delegação do usuário.** [Etapa 4 encerrada documentalmente em 10/11/2026](fechamento-etapa-4.md); componentes ainda não implementados.
 
 ## Objetivo e contexto
 
@@ -155,6 +155,6 @@ RNF09–RNF11 e DEC-029 orientam os testes, sem alegar execução do aplicativo 
 
 ## Pendências e status de aprovação
 
-ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. O alinhamento documental com a Etapa 5 v0.5 foi registrado; restam a integração de implementação, eventuais ajustes da conferência arquitetural final e o encerramento formal da Etapa 4; não se atribui ao professor um aceite não informado. Configuração e testes de implementação ficam para a etapa técnica, conforme o [checklist](referencias-e-validacao.md).
+ARQ-P01–ARQ-P06 foram resolvidas nas DEC-043–DEC-048 por delegação explícita do usuário, sem mudar DEC-001–DEC-042. As escolhas técnicas estão adotadas para orientar implementação. O alinhamento documental com a Etapa 5 v0.5 e a conferência final foram registrados no [fechamento da Etapa 4](fechamento-etapa-4.md). Restam integração, configuração e testes de implementação conforme o [checklist](referencias-e-validacao.md); não se atribui ao professor um aceite não informado.
 
 Para o vídeo: apresentar três camadas/quatro responsabilidades; seleção e cálculo sem salvar; salvamento manual atômico; catálogo/cache independente dos snapshots Room; pendências e limites. Estes documentos não comprovam apresentação ou entrega ao professor.

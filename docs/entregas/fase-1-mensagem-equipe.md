@@ -6,7 +6,7 @@
 
 ---
 
-Pessoal, a documentação de visão/escopo, requisitos e modelagem está concluída. A arquitetura está documentada e a Etapa 5 v0.5 de interface, navegação e protótipos foi aprovada pelo usuário, conforme o [registro de fechamento](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental). A primeira entrega ainda precisa de consolidação do pacote, roteiro/vídeo e envio dos materiais no Teams; o encerramento formal da Etapa 4 permanece separado.
+Pessoal, a documentação de visão/escopo, requisitos e modelagem está concluída. A [Etapa 4 de arquitetura](../arquitetura/fechamento-etapa-4.md) foi encerrada documentalmente após conferência final, e a [Etapa 5 v0.5 de interface](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental) foi aprovada pelo usuário. A primeira entrega ainda precisa de consolidação do pacote, roteiro/vídeo e envio dos materiais no Teams.
 
 Vamos usar **10/11/2026 como prazo operacional provisório**, enquanto o líder confirma o adiamento, o horário e o formato na atividade do Teams ou com o professor. O PDF original informa 03/11; ainda precisamos guardar a confirmação da nova data.
 

@@ -12,7 +12,7 @@ Este plano organiza a primeira entrega. Não altera requisitos, decisões ou Par
 
 A [Etapa 5 v0.5 foi aprovada pelo usuário e concluída documentalmente](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental). Mapa/rastreabilidade, navegação, design system, HTML calculável e página Figma 03 estão disponíveis com evidências e limites. O [PR #5](https://github.com/samuel-0v/pdm-ahp-topsis/pull/5) reúne esse material. Os artefatos de F1-05–F1-08 podem ser reutilizados na consolidação, sem refazer o protótipo ou executar o antigo plano de retomada.
 
-A [arquitetura](../arquitetura/arquitetura.md) também foi documentada posteriormente ao diagnóstico inicial, com escolhas adotadas nas DEC-043–DEC-049; seu encerramento formal é separado da aprovação da interface. Permanecem consolidação do pacote, roteiro/vídeo, confirmação de prazo/formato/responsáveis e submissão com comprovante. A aprovação da Etapa 5 não aprova o plano inteiro, não confirma a data no Teams e não comprova a entrega ao professor.
+A [arquitetura](../arquitetura/arquitetura.md) também foi documentada posteriormente ao diagnóstico inicial, com escolhas adotadas nas DEC-043–DEC-049. Seu [fechamento documental](../arquitetura/fechamento-etapa-4.md) decorre da conferência final específica de 10/11/2026, separada da aprovação anterior da interface. Permanecem consolidação do pacote, roteiro/vídeo, confirmação de prazo/formato/responsáveis e submissão com comprovante. A aprovação da Etapa 5 não aprova o plano inteiro, não confirma a data no Teams e não comprova a entrega ao professor.
 
 ## 1. Referências e separação das fases
 
@@ -52,14 +52,14 @@ Checklist derivado da página 7, com o roteiro da página 9 e prototipagem da p�
 
 - [x] Requisitos funcionais e não funcionais definidos: RF01–RF27 e RNF01–RNF13 localizados e conferidos.
 - [ ] Documento de requisitos organizado e legível no material que será inserido no Teams; conferir formato aceito na atividade.
-- [x] Arquitetura do app modelada: documentação disponível nos sete documentos da Etapa 4; encerramento formal separado.
+- [x] Arquitetura do app modelada: sete documentos da Etapa 4 e [fechamento documental](../arquitetura/fechamento-etapa-4.md) após conferência final.
 - [ ] Diagramas de arquitetura legíveis no pacote da entrega.
 - [x] Layouts e navegação especificados: Etapa 5 v0.5 aprovada pelo usuário, com mapa, especificação e diagramas.
 - [x] Protótipo autoral Figma demonstrável, com apresentação e acesso conferidos; HTML calculável e evidências vinculados à revisão v0.5.
 - [ ] Link do vídeo descrevendo a etapa de desenvolvimento, com acesso testado para o professor.
 - [ ] Documento(s) e materiais inseridos na atividade correta do Teams, com comprovante do envio.
 
-A conclusão documental das etapas internas não encerra toda a Fase 1 do professor. Arquitetura e interface já possuem artefatos; a Etapa 5 está aprovada pelo usuário. A consolidação do pacote, o vídeo e o envio continuam pendentes, assim como a conferência formal da Etapa 4.
+A conclusão documental das etapas internas não encerra toda a Fase 1 do professor. Arquitetura e interface já possuem artefatos; as Etapas 4 e 5 estão encerradas documentalmente no escopo autorizado pelo usuário. A consolidação do pacote, o vídeo e o envio continuam pendentes.
 
 ## 3. Diagnóstico documental e evidências
 

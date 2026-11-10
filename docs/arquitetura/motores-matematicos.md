@@ -96,4 +96,4 @@ Desempenho segue DEC-026: cenários de 2/10/50 alternativas e cinco critérios, 
 
 ## Pendências e status de aprovação
 
-A DEC-046 (origem ARQ-P04) adota a fronteira de preparação/motores/resultado, preservando a metodologia já aprovada. Implementação deve adequar o caso degenerado, empates/posições e defesas numéricas antes de conectar UI/Room. Escolher dados de referência e definir domínios/precisão dos critérios continuam pendências. Não houve código novo, reescrita, teste do motor ou aprovação da Etapa 4.
+A DEC-046 (origem ARQ-P04) adota a fronteira de preparação/motores/resultado, preservando a metodologia já aprovada. Implementação deve adequar o caso degenerado, empates/posições e defesas numéricas antes de conectar UI/Room. Escolher dados de referência e definir domínios/precisão dos critérios continuam pendências. Nesta elaboração não houve código novo, reescrita ou teste do motor; o [fechamento documental posterior](fechamento-etapa-4.md) não altera esses limites.

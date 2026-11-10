@@ -141,8 +141,16 @@ O parecer independente já foi recebido e respondido; as seis escolhas foram ado
 4. Se snapshots, tipos/Long, originais/efetivos, revisões, limites de detecção e seis tabelas seguem DEC-038–DEC-042.
 5. Se bloqueios AHP/TOPSIS, empates, sem diferenciação e lacunas do motor estão expostos sem declarar implementação pronta.
 6. Se PDF usa apenas a versão salva escolhida e falhas de cada etapa preservam os fatos anteriores.
-7. Se os contratos com Figma e os estados/retornos refletem DEC-043–DEC-049, incluindo abertura animada e retorno à seleção; consultar a [aplicação e aprovação da Etapa 5 v0.5](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental), preservando as verificações futuras no Android e o encerramento formal separado da Etapa 4.
+7. Se os contratos com Figma e os estados/retornos refletem DEC-043–DEC-049, incluindo abertura animada e retorno à seleção; consultar a [aplicação e aprovação da Etapa 5 v0.5](../interface/finalizacao-v05.md#aprovação-e-fechamento-documental), preservando as verificações futuras no Android.
 
 Após aprovação documental, implementar e testar os cenários do [plano vigente](../requisitos/plano-verificacao.md) e dos contratos P5: matemática de referência, fronteiras monetárias, atomicidade com falha provocada, cache parcial/permissões, mudança/exclusão de catálogo, ciclo de vida e saída/PDF. Continuam abertos os domínios/fontes/rubricas, schema/migrations/CHECK e versões de dependências. Não são apresentados como testes passados ou requisitos novos.
 
-**Status final desta versão:** seis escolhas arquiteturais adotadas e formalizadas por delegação do usuário; o alinhamento documental com a Etapa 5 v0.5 foi registrado e aprovado pelo usuário no escopo da interface. Permanecem conferência/encerramento formal da Etapa 4 e tarefas técnicas futuras. A aprovação da Etapa 5 não declara aplicativo ou entrega ao professor concluídos.
+**Status da v0.4 antes da conferência final:** seis escolhas arquiteturais adotadas e formalizadas por delegação do usuário; o alinhamento documental com a Etapa 5 v0.5 foi registrado e aprovado pelo usuário no escopo da interface. A aprovação da Etapa 5, isoladamente, não declarou aplicativo, Etapa 4 ou entrega ao professor concluídos.
+
+## Conferência final e fechamento documental — 10/11/2026
+
+O [registro de fechamento](fechamento-etapa-4.md) apresenta o resultado dos sete itens acima. A conferência específica solicitada pelo usuário não encontrou impedimento concreto ao fechamento documental da Etapa 4. Esta conclusão não afirma que as tarefas Android ou os testes futuros foram realizados.
+
+- Fontes locais relidas: os dois PDFs de `references/`, a cópia de `chatGPT.md` (SHA-256 reconferido), DEC-018/041/042/043–049, contratos definitivos P5-D/P5-E, documentos da arquitetura e registro de aprovação da Etapa 5.
+- `python3 docs/interface/prototipos/verificar_documentacao.py`: **PASS**, 87 descritores, 225 destinos, 450 links locais e 49 âncoras; verificações de geração, sintaxe e SVG. O script não acessa o Figma remoto.
+- `git diff --check`: sem erros. O diff de integração desde `907e3dd` não alterou blocos Mermaid arquiteturais; a renderização dos oito diagramas citada acima é evidência da rodada v0.4, não um teste repetido nesta conferência.
