@@ -23,4 +23,13 @@ O enunciado consultado indica a Fase 1 em 03/11/2026 e a Fase 2 em 11/12/2026. O
 
 ## Execução
 
-A pasta `app/` está reservada para a etapa posterior de implementação Android. Ainda não há projeto Gradle executável.
+O app Android está em [`app/`](app/README.md) e o simulador do Firebase em [`firebase/`](firebase/README.md). Resumo para rodar no celular por USB:
+
+```bash
+cd firebase && npm install && npm run emulador     # terminal 1 (deixe aberto)
+(cd firebase && npm run popular)                   # terminal 2: publica o catálogo fictício
+adb reverse tcp:8085 tcp:8085                      # túnel USB celular → PC
+./gradlew :app:installDebug -PfirestoreHost=127.0.0.1
+```
+
+Para o emulador Android, use apenas `./gradlew :app:installDebug`, que aponta para `10.0.2.2`. O passo a passo, os cenários de teste com o simulador e as soluções para problemas comuns estão em [app/README.md](app/README.md).

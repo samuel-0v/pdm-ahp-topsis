@@ -32,7 +32,9 @@ npm run teste         # sobe o emulador, popula, verifica, testa as regras e enc
 | Emulador Android (AVD) | `10.0.2.2:8085` |
 | Aparelho via USB | `adb reverse tcp:8085 tcp:8085` e depois `127.0.0.1:8085` |
 
-O app de debug inicializa o Firebase manualmente com `projectId = demo-pdm-ahp-topsis` e chama `useEmulator`. Os detalhes estão em `app/README.md`.
+O host vai para o APK no momento do build: `./gradlew :app:installDebug -PfirestoreHost=127.0.0.1` para o aparelho, ou sem a propriedade para o AVD. O app de debug inicializa o Firebase manualmente com `projectId = demo-pdm-ahp-topsis` e chama `useEmulator`.
+
+O passo a passo completo e os cenários de teste (tempo real, offline, catálogo vazio, produto incompleto) estão em [app/README.md](../app/README.md#como-usar-o-simulador-do-firebase-durante-os-testes).
 
 ## Dados (`dados/catalogo.json`)
 
