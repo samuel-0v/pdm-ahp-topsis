@@ -57,7 +57,7 @@ class GeradorRelatorioPdfAndroid(
     /** Desenha o relatório inteiro e devolve o número de páginas. */
     private fun desenhar(pdf: PdfDocument, c: ConteudoRelatorio, totalPaginas: Int?): Int {
         val d = Desenho(pdf, c.titulo, "Gerado em ${dataHora.format(c.geradoEm)}", totalPaginas)
-        d.capa(c.titulo, c.categoria)
+        d.capa(c.titulo, c.categoria.takeIf { it != c.titulo })
         d.texto(
             listOfNotNull("PDF gerado em ${dataHora.format(c.geradoEm)}", c.salvaEm?.let { "versão salva em ${dataHora.format(it)}" }).joinToString(" · ") +
                 ". Estas datas não são datas de referência dos dados.",
@@ -115,7 +115,7 @@ class GeradorRelatorioPdfAndroid(
             d.texto("* Valor ajustado nesta avaliação; o catálogo de origem não foi alterado.", tamanho = 8f, cor = CINZA)
         }
 
-        d.secao("Método")
+        d.secao("Método", reservar = d.alturaTexto(c.metodo, 8.5f))
         d.texto(c.metodo, tamanho = 8.5f, cor = CINZA)
         return d.finalizar()
     }
@@ -169,16 +169,17 @@ class GeradorRelatorioPdfAndroid(
             if (pagina == null || y + altura > limite) novaPagina()
         }
 
-        fun capa(titulo: String, categoria: String) {
+        /** [categoria] null quando repete o título (avaliação sem título próprio). */
+        fun capa(titulo: String, categoria: String?) {
             garantir(0f)
             val tituloL = layout(titulo, paint(17f, negrito = true, cor = Color.WHITE), largura - 32f)
-            val altura = 58f + tituloL.height
+            val altura = (if (categoria != null) 56f else 42f) + tituloL.height
             preenchimento.color = PRIMARIA
             canvas.drawRoundRect(RectF(MARGEM, y, LARGURA - MARGEM, y + altura), 8f, 8f, preenchimento)
             canvas.drawText("RELATÓRIO DE AVALIAÇÃO AHP-TOPSIS", MARGEM + 16f, y + 22f, paint(8.5f, negrito = true, cor = CLARO))
             desenharLayout(tituloL, MARGEM + 16f, y + 30f)
-            canvas.drawText("Categoria: $categoria", MARGEM + 16f, y + 30f + tituloL.height + 16f, paint(10f, cor = CLARO))
-            y += altura + 10f
+            categoria?.let { canvas.drawText("Categoria: $it", MARGEM + 16f, y + 30f + tituloL.height + 15f, paint(10f, cor = CLARO)) }
+            y += altura + 8f
         }
 
         fun quadroResultado(rotulo: String, destaque: String?, texto: String) {
@@ -197,16 +198,19 @@ class GeradorRelatorioPdfAndroid(
             yy += 12f
             destaqueL?.let { desenharLayout(it, MARGEM + 14f, yy); yy += it.height + 4f }
             desenharLayout(textoL, MARGEM + 14f, yy)
-            y += altura + 4f
+            y += altura
         }
 
-        fun secao(t: String) {
-            garantir(60f) // título não fica órfão no fim da página
-            y += 14f
+        fun alturaTexto(t: String, tamanho: Float): Float = layout(t, paint(tamanho), largura).height.toFloat()
+
+        /** [reservar]: altura mínima do conteúdo que vem logo após o título, para não deixá-lo órfão. */
+        fun secao(t: String, reservar: Float = 18f) {
+            garantir(30f + reservar)
+            y += 8f
             canvas.drawText(t.uppercase(), MARGEM, y + 10f, paint(10f, negrito = true, cor = PRIMARIA))
             preenchimento.color = PRIMARIA
             canvas.drawRect(MARGEM, y + 15f, MARGEM + 28f, y + 17f, preenchimento)
-            y += 24f
+            y += 22f
         }
 
         fun espaco(px: Float) {
@@ -224,7 +228,7 @@ class GeradorRelatorioPdfAndroid(
             if (itens.isEmpty()) return
             val gap = 8f
             val w = (largura - gap * (itens.size - 1)) / itens.size
-            val h = 40f
+            val h = 36f
             garantir(h)
             itens.forEachIndexed { i, (nome, valor) ->
                 val x = MARGEM + i * (w + gap)
@@ -240,7 +244,7 @@ class GeradorRelatorioPdfAndroid(
         fun tabela(colunas: List<Coluna>, linhas: List<List<Celula>>, fonte: Float = 9f, fundoLinha: (Int) -> Int? = { null }) {
             val somaPesos = colunas.sumOf { it.peso.toDouble() }.toFloat()
             val larguras = colunas.map { it.peso / somaPesos * largura }
-            val pad = 5f
+            val pad = 4f
 
             fun cabecalho() {
                 val layouts = colunas.mapIndexed { i, c -> layout(c.titulo, paint(fonte, negrito = true, cor = Color.WHITE), larguras[i] - 2 * pad) }
@@ -255,9 +259,12 @@ class GeradorRelatorioPdfAndroid(
 
             cabecalho()
             linhas.forEachIndexed { indice, linha ->
-                val layouts = linha.mapIndexed { i, cel -> layout(cel.texto, paint(fonte, cel.negrito, TINTA), larguras[i] - 2 * pad) }
-                val temBarra = linha.any { it.barra != null }
-                val h = layouts.maxOf { it.height } + 2 * pad + if (temBarra) 7f else 0f
+                // Célula com barra: número à esquerda (largura fixa) e barra ao lado, na mesma linha.
+                val layouts = linha.mapIndexed { i, cel ->
+                    val w = if (cel.barra != null) LARGURA_NUMERO_BARRA else larguras[i] - 2 * pad
+                    layout(cel.texto, paint(fonte, cel.negrito, TINTA), w)
+                }
+                val h = layouts.maxOf { it.height } + 2 * pad
                 if (y + h > limite) {
                     novaPagina()
                     cabecalho()
@@ -275,12 +282,13 @@ class GeradorRelatorioPdfAndroid(
                     }
                     desenharLayout(layouts[i], x + pad, y + pad)
                     cel.barra?.let { f ->
-                        val by = y + pad + layouts[i].height + 2f
-                        val bw = larguras[i] - 2 * pad
+                        val by = y + pad + layouts[i].height / 2f - 2.5f
+                        val bx = x + pad + LARGURA_NUMERO_BARRA + 4f
+                        val bw = larguras[i] - 2 * pad - LARGURA_NUMERO_BARRA - 4f
                         preenchimento.color = TRILHO
-                        canvas.drawRoundRect(RectF(x + pad, by, x + pad + bw, by + 4f), 2f, 2f, preenchimento)
+                        canvas.drawRoundRect(RectF(bx, by, bx + bw, by + 5f), 2.5f, 2.5f, preenchimento)
                         preenchimento.color = PRIMARIA
-                        canvas.drawRoundRect(RectF(x + pad, by, x + pad + bw * f.coerceIn(0f, 1f), by + 4f), 2f, 2f, preenchimento)
+                        canvas.drawRoundRect(RectF(bx, by, bx + bw * f.coerceIn(0f, 1f), by + 5f), 2.5f, 2.5f, preenchimento)
                     }
                     x += larguras[i]
                 }
@@ -322,6 +330,7 @@ class GeradorRelatorioPdfAndroid(
         private const val LARGURA = 595f // A4 em pontos
         private const val ALTURA = 842f
         private const val MARGEM = 40f
+        private const val LARGURA_NUMERO_BARRA = 44f
         private val PRIMARIA = Color.rgb(0x00, 0x6A, 0x62)
         private val PRIMARIA_ESCURA = Color.rgb(0x00, 0x4D, 0x47)
         private val CLARO = Color.rgb(0xD5, 0xEE, 0xEA)

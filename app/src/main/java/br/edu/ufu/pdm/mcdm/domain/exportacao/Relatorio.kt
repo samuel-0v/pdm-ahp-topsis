@@ -5,6 +5,7 @@ import br.edu.ufu.pdm.mcdm.domain.model.Natureza
 import br.edu.ufu.pdm.mcdm.domain.model.OrigemProduto
 import br.edu.ufu.pdm.mcdm.domain.model.ResultadoTopsis
 import br.edu.ufu.pdm.mcdm.domain.model.Unidades
+import br.edu.ufu.pdm.mcdm.domain.model.ValorCanonico
 import br.edu.ufu.pdm.mcdm.domain.validation.Formatos
 import java.time.Instant
 
@@ -59,7 +60,16 @@ data class ConteudoRelatorio(
                     "Concluída — sem diferenciação entre as alternativas. d+ = d− = 0; C*, posição e vencedor não definidos."
             }
             val alternativas = a.alternativasOrdenadas.map { alt ->
-                val valores = crit.map { c -> ValorRelatorio(c.nome, Formatos.valor(alt.valores[c.id]?.efetivo, c), alt.valores[c.id]?.ajustado == true) }
+                // Unidade no cabeçalho da coluna; a célula leva só o número.
+                val valores = crit.map { c ->
+                    val v = alt.valores[c.id]
+                    val texto = when (val e = v?.efetivo) {
+                        null -> "não informado"
+                        is ValorCanonico.Monetario -> Formatos.centavos(e.centavos).removePrefix("R$ ")
+                        is ValorCanonico.Numero -> Formatos.numero(e.valor)
+                    }
+                    ValorRelatorio("${c.nome} (${Unidades.rotulo(c.unidade)})", texto, v?.ajustado == true)
+                }
                 val origem = if (alt.origemProduto == OrigemProduto.OFICIAL) "Oficial" else "Pessoal"
                 when (topsis) {
                     is ResultadoTopsis.Ranking -> {
