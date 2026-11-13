@@ -1,0 +1,330 @@
+{
+  "aviso": "Catálogo FICTÍCIO para desenvolvimento e demonstração. Nomes, valores e fontes não descrevem produtos reais.",
+  "categorias": [
+    {
+      "id": "smartphones-premium",
+      "formatoContrato": 1,
+      "revisaoDefinicao": "r1",
+      "nome": "Smartphones Premium",
+      "descricao": "Smartphones de alto desempenho comparados por cinco critérios predefinidos.",
+      "criterios": [
+        {
+          "id": "smartphones-geekbench",
+          "nome": "Geekbench 6 Multi-Core",
+          "ordem": 0,
+          "unidade": "PONTOS",
+          "natureza": "BENEFICIO",
+          "descricao": "Pontuação multi-core do Geekbench 6; versão e data devem ser identificáveis.",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "smartphones-preco",
+          "nome": "Preço",
+          "ordem": 1,
+          "unidade": "BRL",
+          "natureza": "CUSTO",
+          "validacao": {
+            "tipoValor": "MONETARIO_BRL",
+            "moeda": "BRL",
+            "escala": 2,
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "smartphones-cameras",
+          "nome": "Qualidade das câmeras",
+          "ordem": 2,
+          "unidade": "NOTA_1_10",
+          "natureza": "BENEFICIO",
+          "descricao": "Nota da rubrica da equipe (DEC-014); não é certificação oficial.",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false,
+            "limites": { "minimo": 1, "minimoInclusivo": true, "maximo": 10, "maximoInclusivo": true }
+          }
+        },
+        {
+          "id": "smartphones-autonomia",
+          "nome": "Autonomia",
+          "ordem": 3,
+          "unidade": "HORAS",
+          "natureza": "BENEFICIO",
+          "descricao": "Horas em teste padronizado e comparável (DEC-013).",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "smartphones-armazenamento",
+          "nome": "Armazenamento",
+          "ordem": 4,
+          "unidade": "GB",
+          "natureza": "BENEFICIO",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "veiculos-eletricos-bev",
+      "formatoContrato": 1,
+      "revisaoDefinicao": "r1",
+      "nome": "Veículos Elétricos (BEV)",
+      "descricao": "Veículos totalmente elétricos (DEC-015) comparados por cinco critérios predefinidos.",
+      "criterios": [
+        {
+          "id": "bev-autonomia",
+          "nome": "Autonomia Inmetro/PBEV",
+          "ordem": 0,
+          "unidade": "KM",
+          "natureza": "BENEFICIO",
+          "descricao": "Referência brasileira Inmetro/PBEV com modelo, versão e ano (DEC-016).",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "bev-preco",
+          "nome": "Preço de aquisição",
+          "ordem": 1,
+          "unidade": "BRL",
+          "natureza": "CUSTO",
+          "validacao": {
+            "tipoValor": "MONETARIO_BRL",
+            "moeda": "BRL",
+            "escala": 2,
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "bev-recarga-dc",
+          "nome": "Recarga rápida DC 20–80%",
+          "ordem": 2,
+          "unidade": "MINUTOS",
+          "natureza": "CUSTO",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "bev-seguro-anual",
+          "nome": "Seguro anual",
+          "ordem": 3,
+          "unidade": "BRL_POR_ANO",
+          "natureza": "CUSTO",
+          "descricao": "Perfil de referência do seguro deve ser documentado.",
+          "validacao": {
+            "tipoValor": "MONETARIO_BRL",
+            "moeda": "BRL",
+            "escala": 2,
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false
+          }
+        },
+        {
+          "id": "bev-adas",
+          "nome": "Recursos ADAS",
+          "ordem": 4,
+          "unidade": "NOTA_1_10",
+          "natureza": "BENEFICIO",
+          "descricao": "Nota da rubrica da equipe (DEC-014); não é certificação oficial de segurança.",
+          "validacao": {
+            "tipoValor": "NUMERO",
+            "obrigatorioCadastro": true,
+            "obrigatorioProcessamento": true,
+            "exigeInteiro": false,
+            "limites": { "minimo": 1, "minimoInclusivo": true, "maximo": 10, "maximoInclusivo": true }
+          }
+        }
+      ]
+    }
+  ],
+  "produtos": [
+    {
+      "id": "sp-aurora-pro",
+      "categoriaId": "smartphones-premium",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "Aurora Pro",
+      "fabricante": "Aurora (fictício)",
+      "modelo": "Pro",
+      "ano": 2026,
+      "valores": {
+        "smartphones-geekbench": { "tipo": "NUMERO", "numero": 8000 },
+        "smartphones-preco": { "tipo": "MONETARIO_BRL", "centavos": 500000, "moeda": "BRL", "escala": 2 },
+        "smartphones-cameras": { "tipo": "NUMERO", "numero": 8 },
+        "smartphones-autonomia": { "tipo": "NUMERO", "numero": 16 },
+        "smartphones-armazenamento": { "tipo": "NUMERO", "numero": 256 }
+      },
+      "referenciasPorCriterio": {
+        "smartphones-geekbench": { "fonte": "Valor fictício de demonstração", "estimativa": true },
+        "smartphones-cameras": { "fonte": "Valor fictício de demonstração", "protocoloOuRubrica": "Rubrica de câmeras v0 (ilustrativa)", "estimativa": true }
+      }
+    },
+    {
+      "id": "sp-vertice-max",
+      "categoriaId": "smartphones-premium",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "Vértice Max",
+      "fabricante": "Vértice (fictício)",
+      "modelo": "Max",
+      "ano": 2026,
+      "valores": {
+        "smartphones-geekbench": { "tipo": "NUMERO", "numero": 7000 },
+        "smartphones-preco": { "tipo": "MONETARIO_BRL", "centavos": 600000, "moeda": "BRL", "escala": 2 },
+        "smartphones-cameras": { "tipo": "NUMERO", "numero": 9 },
+        "smartphones-autonomia": { "tipo": "NUMERO", "numero": 20 },
+        "smartphones-armazenamento": { "tipo": "NUMERO", "numero": 512 }
+      }
+    },
+    {
+      "id": "sp-lumen-ultra",
+      "categoriaId": "smartphones-premium",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "Lumen Ultra",
+      "fabricante": "Lumen (fictício)",
+      "modelo": "Ultra",
+      "ano": 2026,
+      "valores": {
+        "smartphones-geekbench": { "tipo": "NUMERO", "numero": 9000 },
+        "smartphones-preco": { "tipo": "MONETARIO_BRL", "centavos": 799990, "moeda": "BRL", "escala": 2 },
+        "smartphones-cameras": { "tipo": "NUMERO", "numero": 10 },
+        "smartphones-autonomia": { "tipo": "NUMERO", "numero": 24.5 },
+        "smartphones-armazenamento": { "tipo": "NUMERO", "numero": 1024 }
+      }
+    },
+    {
+      "id": "sp-orion-lite",
+      "categoriaId": "smartphones-premium",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "Orion Lite",
+      "fabricante": "Orion (fictício)",
+      "modelo": "Lite",
+      "valores": {
+        "smartphones-geekbench": { "tipo": "NUMERO", "numero": 6200 },
+        "smartphones-preco": { "tipo": "MONETARIO_BRL", "centavos": 349900, "moeda": "BRL", "escala": 2 },
+        "smartphones-cameras": { "tipo": "NUMERO", "numero": 7 },
+        "smartphones-autonomia": { "tipo": "NUMERO", "numero": 18 },
+        "smartphones-armazenamento": { "tipo": "NUMERO", "numero": 256 }
+      }
+    },
+    {
+      "id": "sp-nimbus-x-incompleto",
+      "categoriaId": "smartphones-premium",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "Nimbus X",
+      "fabricante": "Nimbus (fictício)",
+      "_comentario": "Incompleto de propósito: sem nota de câmeras (testa RF de dado incompleto e o ajuste do valor efetivo).",
+      "valores": {
+        "smartphones-geekbench": { "tipo": "NUMERO", "numero": 7600 },
+        "smartphones-preco": { "tipo": "MONETARIO_BRL", "centavos": 450000, "moeda": "BRL", "escala": 2 },
+        "smartphones-cameras": null,
+        "smartphones-autonomia": { "tipo": "NUMERO", "numero": 19 },
+        "smartphones-armazenamento": { "tipo": "NUMERO", "numero": 512 }
+      }
+    },
+    {
+      "id": "bev-aurora-2026",
+      "categoriaId": "veiculos-eletricos-bev",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "BEV Aurora",
+      "fabricante": "Aurora Motors (fictício)",
+      "modelo": "Aurora",
+      "versao": "Standard",
+      "ano": 2026,
+      "valores": {
+        "bev-autonomia": { "tipo": "NUMERO", "numero": 400 },
+        "bev-preco": { "tipo": "MONETARIO_BRL", "centavos": 18000000, "moeda": "BRL", "escala": 2 },
+        "bev-recarga-dc": { "tipo": "NUMERO", "numero": 30 },
+        "bev-seguro-anual": { "tipo": "MONETARIO_BRL", "centavos": 500000, "moeda": "BRL", "escala": 2 },
+        "bev-adas": { "tipo": "NUMERO", "numero": 8 }
+      },
+      "referenciasPorCriterio": {
+        "bev-autonomia": { "fonte": "Valor fictício no formato Inmetro/PBEV", "dataReferencia": "2026-01-15", "estimativa": true },
+        "bev-seguro-anual": { "fonte": "Valor fictício", "protocoloOuRubrica": "Perfil ilustrativo: condutor 35 anos, Uberlândia-MG", "estimativa": true }
+      }
+    },
+    {
+      "id": "bev-boreal-2026",
+      "categoriaId": "veiculos-eletricos-bev",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "BEV Boreal",
+      "fabricante": "Boreal (fictício)",
+      "modelo": "Boreal",
+      "versao": "Long Range",
+      "ano": 2026,
+      "valores": {
+        "bev-autonomia": { "tipo": "NUMERO", "numero": 420 },
+        "bev-preco": { "tipo": "MONETARIO_BRL", "centavos": 19000000, "moeda": "BRL", "escala": 2 },
+        "bev-recarga-dc": { "tipo": "NUMERO", "numero": 25 },
+        "bev-seguro-anual": { "tipo": "MONETARIO_BRL", "centavos": 480000, "moeda": "BRL", "escala": 2 },
+        "bev-adas": { "tipo": "NUMERO", "numero": 9 }
+      }
+    },
+    {
+      "id": "bev-cirrus-2025",
+      "categoriaId": "veiculos-eletricos-bev",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "BEV Cirrus",
+      "fabricante": "Cirrus (fictício)",
+      "modelo": "Cirrus",
+      "versao": "City",
+      "ano": 2025,
+      "valores": {
+        "bev-autonomia": { "tipo": "NUMERO", "numero": 310.5 },
+        "bev-preco": { "tipo": "MONETARIO_BRL", "centavos": 14990000, "moeda": "BRL", "escala": 2 },
+        "bev-recarga-dc": { "tipo": "NUMERO", "numero": 42 },
+        "bev-seguro-anual": { "tipo": "MONETARIO_BRL", "centavos": 389050, "moeda": "BRL", "escala": 2 },
+        "bev-adas": { "tipo": "NUMERO", "numero": 6 }
+      }
+    },
+    {
+      "id": "bev-delta-incompleto",
+      "categoriaId": "veiculos-eletricos-bev",
+      "revisaoDefinicao": "r1",
+      "formatoContrato": 1,
+      "nome": "BEV Delta",
+      "fabricante": "Delta (fictício)",
+      "ano": 2026,
+      "_comentario": "Incompleto de propósito: sem seguro anual.",
+      "valores": {
+        "bev-autonomia": { "tipo": "NUMERO", "numero": 450 },
+        "bev-preco": { "tipo": "MONETARIO_BRL", "centavos": 21500000, "moeda": "BRL", "escala": 2 },
+        "bev-recarga-dc": { "tipo": "NUMERO", "numero": 22 },
+        "bev-adas": { "tipo": "NUMERO", "numero": 9 }
+      }
+    }
+  ]
+}

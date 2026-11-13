@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Mcdm" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/canvas</item>
+    </style>
+
+    <!-- Splash do sistema (DEC-049): fundo da abertura; a animação Compose continua a partir dele. -->
+    <style name="Theme.Mcdm.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/abertura_fundo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_marca</item>
+        <item name="postSplashScreenTheme">@style/Theme.Mcdm</item>
+    </style>
+</resources>
