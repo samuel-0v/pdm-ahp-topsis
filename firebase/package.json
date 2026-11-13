@@ -1,0 +1,19 @@
+{
+  "name": "pdm-ahp-topsis-firebase-emulador",
+  "private": true,
+  "description": "Firestore Emulator com catálogo oficial fictício para desenvolvimento do app AHP-TOPSIS",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "emulador": "firebase emulators:start --only firestore,ui --project demo-pdm-ahp-topsis",
+    "popular": "node scripts/catalogo.mjs popular",
+    "limpar": "node scripts/catalogo.mjs limpar",
+    "verificar": "node scripts/catalogo.mjs verificar",
+    "atualizar": "node scripts/catalogo.mjs atualizar",
+    "validar-dados": "node scripts/catalogo.mjs validar-dados",
+    "teste": "firebase emulators:exec --only firestore --project demo-pdm-ahp-topsis \"node scripts/catalogo.mjs popular && node scripts/catalogo.mjs verificar && node scripts/testar-regras.mjs\""
+  },
+  "devDependencies": {
+    "firebase-tools": "15.34.1"
+  }
+}
