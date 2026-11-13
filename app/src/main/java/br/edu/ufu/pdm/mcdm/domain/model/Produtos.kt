@@ -61,6 +61,8 @@ sealed interface EstadoConsulta<out T> {
         val dados: T,
         val origem: OrigemDados,
         val confirmadoNoServidorEm: Instant?,
+        /** Documentos fora do contrato que não puderam ser interpretados. */
+        val documentosInvalidos: Int = 0,
     ) : EstadoConsulta<T>
 
     data object PermissaoNegada : EstadoConsulta<Nothing>

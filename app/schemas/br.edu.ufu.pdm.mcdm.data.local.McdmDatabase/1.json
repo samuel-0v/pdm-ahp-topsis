@@ -1,0 +1,637 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "3c4bcbff9fc40b106946759c98c4bdd0",
+    "entities": [
+      {
+        "tableName": "produto_pessoal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`produtoId` TEXT NOT NULL, `categoriaId` TEXT NOT NULL, `categoriaNome` TEXT NOT NULL, `revisaoDefinicao` TEXT, `nome` TEXT NOT NULL, `fabricante` TEXT, `modelo` TEXT, `versao` TEXT, `ano` INTEGER, `payloadJson` TEXT NOT NULL, `formatoPayload` INTEGER NOT NULL, PRIMARY KEY(`produtoId`))",
+        "fields": [
+          {
+            "fieldPath": "produtoId",
+            "columnName": "produtoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoriaId",
+            "columnName": "categoriaId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoriaNome",
+            "columnName": "categoriaNome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisaoDefinicao",
+            "columnName": "revisaoDefinicao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fabricante",
+            "columnName": "fabricante",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "modelo",
+            "columnName": "modelo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "versao",
+            "columnName": "versao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ano",
+            "columnName": "ano",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "payloadJson",
+            "columnName": "payloadJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formatoPayload",
+            "columnName": "formatoPayload",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "produtoId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_produto_pessoal_categoriaId",
+            "unique": false,
+            "columnNames": [
+              "categoriaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_produto_pessoal_categoriaId` ON `${TABLE_NAME}` (`categoriaId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "avaliacao",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`avaliacaoId` TEXT NOT NULL, `categoriaId` TEXT NOT NULL, `categoriaNome` TEXT NOT NULL, `revisaoDefinicao` TEXT, `titulo` TEXT, `estadoSalvo` TEXT NOT NULL, `tipoTopsis` TEXT NOT NULL, `criadaEm` INTEGER NOT NULL, `salvaEm` INTEGER NOT NULL, `lambdaMax` REAL, `ic` REAL, `ri` REAL, `rc` REAL, PRIMARY KEY(`avaliacaoId`))",
+        "fields": [
+          {
+            "fieldPath": "avaliacaoId",
+            "columnName": "avaliacaoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoriaId",
+            "columnName": "categoriaId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoriaNome",
+            "columnName": "categoriaNome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisaoDefinicao",
+            "columnName": "revisaoDefinicao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "estadoSalvo",
+            "columnName": "estadoSalvo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoTopsis",
+            "columnName": "tipoTopsis",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criadaEm",
+            "columnName": "criadaEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salvaEm",
+            "columnName": "salvaEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lambdaMax",
+            "columnName": "lambdaMax",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ic",
+            "columnName": "ic",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ri",
+            "columnName": "ri",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rc",
+            "columnName": "rc",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "avaliacaoId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_avaliacao_salvaEm",
+            "unique": false,
+            "columnNames": [
+              "salvaEm"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_avaliacao_salvaEm` ON `${TABLE_NAME}` (`salvaEm`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "criterio_preservado",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`avaliacaoId` TEXT NOT NULL, `criterioId` TEXT NOT NULL, `nome` TEXT NOT NULL, `ordem` INTEGER NOT NULL, `unidade` TEXT NOT NULL, `natureza` TEXT NOT NULL, `validacaoJson` TEXT NOT NULL, `descricao` TEXT, `pesoAhp` REAL, PRIMARY KEY(`avaliacaoId`, `criterioId`), FOREIGN KEY(`avaliacaoId`) REFERENCES `avaliacao`(`avaliacaoId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "avaliacaoId",
+            "columnName": "avaliacaoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criterioId",
+            "columnName": "criterioId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordem",
+            "columnName": "ordem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unidade",
+            "columnName": "unidade",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "natureza",
+            "columnName": "natureza",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "validacaoJson",
+            "columnName": "validacaoJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "descricao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pesoAhp",
+            "columnName": "pesoAhp",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "avaliacaoId",
+            "criterioId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_criterio_preservado_avaliacaoId_ordem",
+            "unique": true,
+            "columnNames": [
+              "avaliacaoId",
+              "ordem"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_criterio_preservado_avaliacaoId_ordem` ON `${TABLE_NAME}` (`avaliacaoId`, `ordem`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "avaliacao",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avaliacaoId"
+            ],
+            "referencedColumns": [
+              "avaliacaoId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "alternativa_avaliacao",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`avaliacaoId` TEXT NOT NULL, `alternativaId` TEXT NOT NULL, `origemProduto` TEXT NOT NULL, `idProdutoOrigem` TEXT NOT NULL, `nome` TEXT NOT NULL, `fabricante` TEXT, `modelo` TEXT, `versao` TEXT, `ano` INTEGER, `ordem` INTEGER NOT NULL, `atualizadoNaOrigemEm` INTEGER, `dMais` REAL, `dMenos` REAL, `coeficiente` REAL, `posicao` INTEGER, PRIMARY KEY(`avaliacaoId`, `alternativaId`), FOREIGN KEY(`avaliacaoId`) REFERENCES `avaliacao`(`avaliacaoId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "avaliacaoId",
+            "columnName": "avaliacaoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alternativaId",
+            "columnName": "alternativaId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "origemProduto",
+            "columnName": "origemProduto",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idProdutoOrigem",
+            "columnName": "idProdutoOrigem",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fabricante",
+            "columnName": "fabricante",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "modelo",
+            "columnName": "modelo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "versao",
+            "columnName": "versao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ano",
+            "columnName": "ano",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ordem",
+            "columnName": "ordem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atualizadoNaOrigemEm",
+            "columnName": "atualizadoNaOrigemEm",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dMais",
+            "columnName": "dMais",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dMenos",
+            "columnName": "dMenos",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coeficiente",
+            "columnName": "coeficiente",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "posicao",
+            "columnName": "posicao",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "avaliacaoId",
+            "alternativaId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_alternativa_avaliacao_avaliacaoId_origemProduto_idProdutoOrigem",
+            "unique": true,
+            "columnNames": [
+              "avaliacaoId",
+              "origemProduto",
+              "idProdutoOrigem"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_alternativa_avaliacao_avaliacaoId_origemProduto_idProdutoOrigem` ON `${TABLE_NAME}` (`avaliacaoId`, `origemProduto`, `idProdutoOrigem`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "avaliacao",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avaliacaoId"
+            ],
+            "referencedColumns": [
+              "avaliacaoId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "valor_alternativa",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`avaliacaoId` TEXT NOT NULL, `alternativaId` TEXT NOT NULL, `criterioId` TEXT NOT NULL, `origem_tipo` TEXT, `origem_centavos` INTEGER, `origem_numero` REAL, `origem_proveniencia` TEXT, `efetivo_tipo` TEXT, `efetivo_centavos` INTEGER, `efetivo_numero` REAL, `efetivo_proveniencia` TEXT, `entradaPendenteEfetiva` TEXT, PRIMARY KEY(`avaliacaoId`, `alternativaId`, `criterioId`), FOREIGN KEY(`avaliacaoId`, `alternativaId`) REFERENCES `alternativa_avaliacao`(`avaliacaoId`, `alternativaId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`avaliacaoId`, `criterioId`) REFERENCES `criterio_preservado`(`avaliacaoId`, `criterioId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "avaliacaoId",
+            "columnName": "avaliacaoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alternativaId",
+            "columnName": "alternativaId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criterioId",
+            "columnName": "criterioId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "origemTipo",
+            "columnName": "origem_tipo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "origemCentavos",
+            "columnName": "origem_centavos",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "origemNumero",
+            "columnName": "origem_numero",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "origemProveniencia",
+            "columnName": "origem_proveniencia",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "efetivoTipo",
+            "columnName": "efetivo_tipo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "efetivoCentavos",
+            "columnName": "efetivo_centavos",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "efetivoNumero",
+            "columnName": "efetivo_numero",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "efetivoProveniencia",
+            "columnName": "efetivo_proveniencia",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "entradaPendenteEfetiva",
+            "columnName": "entradaPendenteEfetiva",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "avaliacaoId",
+            "alternativaId",
+            "criterioId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_valor_alternativa_avaliacaoId_criterioId",
+            "unique": false,
+            "columnNames": [
+              "avaliacaoId",
+              "criterioId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_valor_alternativa_avaliacaoId_criterioId` ON `${TABLE_NAME}` (`avaliacaoId`, `criterioId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "alternativa_avaliacao",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avaliacaoId",
+              "alternativaId"
+            ],
+            "referencedColumns": [
+              "avaliacaoId",
+              "alternativaId"
+            ]
+          },
+          {
+            "table": "criterio_preservado",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avaliacaoId",
+              "criterioId"
+            ],
+            "referencedColumns": [
+              "avaliacaoId",
+              "criterioId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "julgamento_ahp",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`avaliacaoId` TEXT NOT NULL, `criterioMenorId` TEXT NOT NULL, `criterioMaiorId` TEXT NOT NULL, `intensidade` INTEGER NOT NULL, `direcao` TEXT NOT NULL, PRIMARY KEY(`avaliacaoId`, `criterioMenorId`, `criterioMaiorId`), FOREIGN KEY(`avaliacaoId`, `criterioMenorId`) REFERENCES `criterio_preservado`(`avaliacaoId`, `criterioId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`avaliacaoId`, `criterioMaiorId`) REFERENCES `criterio_preservado`(`avaliacaoId`, `criterioId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "avaliacaoId",
+            "columnName": "avaliacaoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criterioMenorId",
+            "columnName": "criterioMenorId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criterioMaiorId",
+            "columnName": "criterioMaiorId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "intensidade",
+            "columnName": "intensidade",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "direcao",
+            "columnName": "direcao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "avaliacaoId",
+            "criterioMenorId",
+            "criterioMaiorId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_julgamento_ahp_avaliacaoId_criterioMaiorId",
+            "unique": false,
+            "columnNames": [
+              "avaliacaoId",
+              "criterioMaiorId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_julgamento_ahp_avaliacaoId_criterioMaiorId` ON `${TABLE_NAME}` (`avaliacaoId`, `criterioMaiorId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "criterio_preservado",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avaliacaoId",
+              "criterioMenorId"
+            ],
+            "referencedColumns": [
+              "avaliacaoId",
+              "criterioId"
+            ]
+          },
+          {
+            "table": "criterio_preservado",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avaliacaoId",
+              "criterioMaiorId"
+            ],
+            "referencedColumns": [
+              "avaliacaoId",
+              "criterioId"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3c4bcbff9fc40b106946759c98c4bdd0')"
+    ]
+  }
+}
