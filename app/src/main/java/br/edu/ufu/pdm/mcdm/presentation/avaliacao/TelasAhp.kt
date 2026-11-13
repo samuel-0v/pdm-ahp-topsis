@@ -74,15 +74,25 @@ fun TelaAhp(vm: AvaliacaoViewModel, onVoltar: () -> Unit) {
     TelaSessao(
         vm, Passo.AHP, "Comparações AHP", voltar,
         rodape = {
-            if (respondidos == pares.size) {
-                BotaoPrincipal(if (s.calculandoAhp) "Calculando…" else "Calcular pesos e consistência", vm::calcularPesos, habilitado = !s.calculandoAhp)
-            } else {
-                Text("Responda os ${pares.size} pares para calcular os pesos. Você pode salvar um rascunho a qualquer momento.", style = MaterialTheme.typography.bodySmall)
+            // Navegação fixa no rodapé: os botões não mudam de lugar conforme o conteúdo do par.
+            if (!lista) {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    BotaoSecundario("Par anterior", { indice-- }, Modifier.weight(1f), habilitado = indice > 0)
+                    BotaoSecundario("Próximo par", { indice++ }, Modifier.weight(1f), habilitado = indice < pares.size - 1)
+                }
             }
+            BotaoPrincipal(
+                if (s.calculandoAhp) "Calculando…" else "Calcular pesos e consistência",
+                vm::calcularPesos,
+                habilitado = respondidos == pares.size && !s.calculandoAhp,
+            )
         },
     ) {
         Text("Respondidos: $respondidos de ${pares.size}", style = MaterialTheme.typography.titleMedium)
         LinearProgressIndicator(progress = { respondidos / pares.size.toFloat() }, modifier = Modifier.fillMaxWidth())
+        if (respondidos < pares.size) {
+            Text("Responda os ${pares.size} pares para calcular os pesos. Você pode salvar um rascunho a qualquer momento.", style = MaterialTheme.typography.bodySmall)
+        }
         s.problemas.forEach { Mensagem(it.mensagem, Tom.AVISO) }
         if (s.edicao?.vigenciaAhp == Vigencia.DESATUALIZADO) {
             Mensagem("Os julgamentos mudaram: os pesos anteriores estão desatualizados e precisam ser recalculados.", Tom.AVISO)
@@ -132,10 +142,6 @@ fun TelaAhp(vm: AvaliacaoViewModel, onVoltar: () -> Unit) {
             }
         }
         Mensagem("Importância do preço não significa que preço maior é melhor: preço continua sendo custo.")
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            BotaoSecundario("Par anterior", { indice-- }, Modifier.weight(1f), habilitado = indice > 0)
-            BotaoSecundario("Próximo par", { indice++ }, Modifier.weight(1f), habilitado = indice < pares.size - 1)
-        }
     }
 
     // Ao concluir uma resposta, segue para o próximo par pendente.
