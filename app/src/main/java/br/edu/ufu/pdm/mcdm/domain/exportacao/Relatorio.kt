@@ -19,8 +19,10 @@ data class ConteudoRelatorio(
     val situacao: String,
     val alternativas: List<LinhaAlternativa>,
     val metodo: String,
+    /** Nome da alternativa vencedora única; null em empate na 1ª posição ou sem diferenciação. */
+    val vencedora: String? = null,
 ) {
-    data class LinhaCriterio(val nome: String, val unidade: String, val natureza: String, val peso: String)
+    data class LinhaCriterio(val nome: String, val unidade: String, val natureza: String, val peso: String, val pesoValor: Double = 0.0)
     data class LinhaAlternativa(
         val nome: String,
         val origem: String,
@@ -28,8 +30,10 @@ data class ConteudoRelatorio(
         val coeficiente: String,
         val dMais: String,
         val dMenos: String,
-        val valores: List<Pair<String, String>>,
+        val valores: List<ValorRelatorio>,
+        val coeficienteValor: Double? = null,
     )
+    data class ValorRelatorio(val criterio: String, val texto: String, val ajustado: Boolean)
 
     companion object {
         const val METODO =
@@ -55,13 +59,13 @@ data class ConteudoRelatorio(
                     "Concluída — sem diferenciação entre as alternativas. d+ = d− = 0; C*, posição e vencedor não definidos."
             }
             val alternativas = a.alternativasOrdenadas.map { alt ->
-                val valores = crit.map { c -> c.nome to Formatos.valor(alt.valores[c.id]?.efetivo, c) + if (alt.valores[c.id]?.ajustado == true) " (ajustado)" else "" }
+                val valores = crit.map { c -> ValorRelatorio(c.nome, Formatos.valor(alt.valores[c.id]?.efetivo, c), alt.valores[c.id]?.ajustado == true) }
                 val origem = if (alt.origemProduto == OrigemProduto.OFICIAL) "Oficial" else "Pessoal"
                 when (topsis) {
                     is ResultadoTopsis.Ranking -> {
                         val d = topsis.detalhes.getValue(alt.alternativaId)
                         val empate = topsis.tamanhoGrupo(d.posicao).let { if (it > 1) " (empate)" else "" }
-                        LinhaAlternativa(alt.identificacao.nome, origem, "${d.posicao}º$empate", Formatos.fixo(d.coeficiente, 6), Formatos.fixo(d.dMais, 6), Formatos.fixo(d.dMenos, 6), valores)
+                        LinhaAlternativa(alt.identificacao.nome, origem, "${d.posicao}º$empate", Formatos.fixo(d.coeficiente, 6), Formatos.fixo(d.dMais, 6), Formatos.fixo(d.dMenos, 6), valores, d.coeficiente)
                     }
                     is ResultadoTopsis.SemDiferenciacao -> {
                         val d = topsis.distancias.getValue(alt.alternativaId)
@@ -77,7 +81,7 @@ data class ConteudoRelatorio(
                 geradoEm = geradoEm,
                 salvaEm = a.salvaEm,
                 criterios = crit.map {
-                    LinhaCriterio(it.nome, Unidades.rotulo(it.unidade), if (it.natureza == Natureza.BENEFICIO) "Benefício" else "Custo", Formatos.percentual(ahp.pesos.getValue(it.id)))
+                    LinhaCriterio(it.nome, Unidades.rotulo(it.unidade), if (it.natureza == Natureza.BENEFICIO) "Benefício" else "Custo", Formatos.percentual(ahp.pesos.getValue(it.id)), ahp.pesos.getValue(it.id))
                 },
                 indicadoresAhp = listOf(
                     "λmax" to Formatos.fixo(ahp.lambdaMax, 6),
@@ -88,6 +92,10 @@ data class ConteudoRelatorio(
                 situacao = situacao,
                 alternativas = alternativas,
                 metodo = METODO,
+                vencedora = (topsis as? ResultadoTopsis.Ranking)?.takeIf { it.tamanhoGrupo(1) == 1 }?.let { r ->
+                    val id = r.detalhes.entries.first { it.value.posicao == 1 }.key
+                    a.alternativas.first { it.alternativaId == id }.identificacao.nome
+                },
             )
         }
     }
