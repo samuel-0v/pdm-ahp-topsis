@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -5,6 +7,36 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
+
+// O modo real usa os identificadores do app Android registrado no Firebase.
+// O JSON é lido pelo Gradle; o app continua inicializando o SDK manualmente.
+val firebaseMode = providers.gradleProperty("firebaseMode").getOrElse("emulator")
+require(firebaseMode in setOf("emulator", "real")) {
+    "firebaseMode deve ser 'emulator' ou 'real'."
+}
+
+val firebaseConfig = if (firebaseMode == "real") {
+    val configFile = file("google-services.json")
+    require(configFile.isFile) {
+        "Para -PfirebaseMode=real, baixe google-services.json do Firebase e salve em app/google-services.json."
+    }
+    val root = JsonSlurper().parse(configFile) as Map<*, *>
+    val projectId = (root["project_info"] as? Map<*, *>)?.get("project_id") as? String
+    val client = (root["client"] as? List<*>)
+        ?.filterIsInstance<Map<*, *>>()
+        ?.firstOrNull { entry ->
+            val info = entry["client_info"] as? Map<*, *>
+            val android = info?.get("android_client_info") as? Map<*, *>
+            android?.get("package_name") == "br.edu.ufu.pdm.mcdm"
+        }
+    val appId = (client?.get("client_info") as? Map<*, *>)?.get("mobilesdk_app_id") as? String
+    val apiKey = (client?.get("api_key") as? List<*>)
+        ?.filterIsInstance<Map<*, *>>()?.firstOrNull()?.get("current_key") as? String
+    require(!projectId.isNullOrBlank() && !appId.isNullOrBlank() && !apiKey.isNullOrBlank()) {
+        "google-services.json deve conter project_id e um app Android br.edu.ufu.pdm.mcdm com mobilesdk_app_id e current_key."
+    }
+    Triple(projectId, appId, apiKey)
+} else null
 
 android {
     namespace = "br.edu.ufu.pdm.mcdm"
@@ -18,10 +50,10 @@ android {
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Projeto Firebase "demo-" do Local Emulator Suite: não exige google-services.json.
-        buildConfigField("String", "FIREBASE_PROJECT_ID", "\"demo-pdm-ahp-topsis\"")
-        buildConfigField("String", "FIREBASE_APPLICATION_ID", "\"1:000000000000:android:0000000000000000\"")
-        buildConfigField("String", "FIREBASE_API_KEY", "\"demo-api-key\"")
+        buildConfigField("String", "FIREBASE_PROJECT_ID", "\"${firebaseConfig?.first ?: "demo-pdm-ahp-topsis"}\"")
+        buildConfigField("String", "FIREBASE_APPLICATION_ID", "\"${firebaseConfig?.second ?: "1:000000000000:android:0000000000000000"}\"")
+        buildConfigField("String", "FIREBASE_API_KEY", "\"${firebaseConfig?.third ?: "demo-api-key"}\"")
+        buildConfigField("boolean", "USE_FIRESTORE_EMULATOR", (firebaseMode == "emulator").toString())
     }
 
     buildTypes {
@@ -32,8 +64,7 @@ android {
         }
         release {
             isMinifyEnabled = false
-            // Sem projeto Firebase real nesta versão: o release também aponta para o emulador
-            // até que um google-services.json seja fornecido pela equipe.
+            // O acesso real requer -PfirebaseMode=real e app/google-services.json.
             buildConfigField("String", "FIRESTORE_EMULATOR_HOST", "\"10.0.2.2\"")
             buildConfigField("int", "FIRESTORE_EMULATOR_PORT", "8085")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")

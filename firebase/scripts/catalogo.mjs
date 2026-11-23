@@ -120,7 +120,7 @@ function paraFirestore(valor, chave = '', dentroLimitesMonetarios = false) {
   return { mapValue: { fields: camposFirestore(valor, dentroLimitesMonetarios) } };
 }
 
-function camposFirestore(obj, monetario = false) {
+export function camposFirestore(obj, monetario = false) {
   const campos = {};
   for (const [k, v] of Object.entries(obj)) {
     if (k.startsWith('_')) continue; // comentários do arquivo de dados não são publicados

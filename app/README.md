@@ -8,6 +8,8 @@ O app foi escrito em Kotlin com Jetpack Compose e segue o padrão MVVM (DEC-043)
 
 Durante o desenvolvimento, o catálogo vem do **simulador do Firebase** (Firestore Emulator), na pasta [`../firebase`](../firebase/README.md). Não é preciso ter um projeto Firebase real nem o `google-services.json`.
 
+Para usar um projeto Firebase real, consulte [o guia de configuração](../docs/firebase-real.md). O build padrão continua usando o simulador.
+
 ## Requisitos
 
 | Ferramenta | Versão |

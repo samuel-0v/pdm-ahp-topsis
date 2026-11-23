@@ -49,12 +49,18 @@ class AppContainer(context: Context) {
                 .build(),
         )
         FirebaseFirestore.getInstance(firebaseApp).apply {
-            // Projeto demo do Local Emulator Suite (firebase/README.md).
-            useEmulator(BuildConfig.FIRESTORE_EMULATOR_HOST, BuildConfig.FIRESTORE_EMULATOR_PORT)
+            if (BuildConfig.USE_FIRESTORE_EMULATOR) {
+                useEmulator(BuildConfig.FIRESTORE_EMULATOR_HOST, BuildConfig.FIRESTORE_EMULATOR_PORT)
+            }
             firestoreSettings = FirebaseFirestoreSettings.Builder()
                 .setLocalCacheSettings(PersistentCacheSettings.newBuilder().build())
                 .build()
-            Log.i("AppContainer", "Firestore -> ${BuildConfig.FIRESTORE_EMULATOR_HOST}:${BuildConfig.FIRESTORE_EMULATOR_PORT}")
+            val destino = if (BuildConfig.USE_FIRESTORE_EMULATOR) {
+                "emulador ${BuildConfig.FIRESTORE_EMULATOR_HOST}:${BuildConfig.FIRESTORE_EMULATOR_PORT}"
+            } else {
+                "projeto ${BuildConfig.FIREBASE_PROJECT_ID}"
+            }
+            Log.i("AppContainer", "Firestore -> $destino")
         }
     }
 

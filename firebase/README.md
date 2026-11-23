@@ -2,6 +2,8 @@
 
 Simula o catálogo oficial remoto (DEC-009, DEC-040) sem um projeto Firebase real. Usa o **Firebase Local Emulator Suite** oficial. O app usa o SDK real do Firestore, com listeners, cache offline e regras, apontando para a máquina local.
 
+Para configurar um projeto na nuvem e publicar o catálogo inicial, siga [o guia do Firebase real](../docs/firebase-real.md).
+
 O projeto `demo-pdm-ahp-topsis` tem o prefixo `demo-`, por isso não precisa de credenciais nem de `google-services.json`. Ele nunca acessa serviços reais.
 
 ## Requisitos

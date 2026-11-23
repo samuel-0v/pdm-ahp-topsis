@@ -33,3 +33,5 @@ adb reverse tcp:8085 tcp:8085                      # túnel USB celular → PC
 ```
 
 Para o emulador Android, use apenas `./gradlew :app:installDebug`, que aponta para `10.0.2.2`. O passo a passo, os cenários de teste com o simulador e as soluções para problemas comuns estão em [app/README.md](app/README.md).
+
+Para conectar o app a um projeto Firebase real, siga [o guia de configuração](docs/firebase-real.md).
