@@ -1,0 +1,14 @@
+# Gradle / Android
+.gradle/
+build/
+local.properties
+app/google-services.json
+*.apk
+*.aab
+captures/
+.externalNativeBuild/
+.cxx/
+# IDE
+.idea/
+*.iml
+.DS_Store

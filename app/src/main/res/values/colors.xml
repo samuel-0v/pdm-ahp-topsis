@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="abertura_fundo">#142C2F</color>
+    <color name="primary">#006A62</color>
+    <color name="canvas">#F4F7F6</color>
+    <color name="marca_clara">#9BDAC3</color>
+</resources>

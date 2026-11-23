@@ -16,6 +16,7 @@
 | [Fechamento da Etapa 4](arquitetura/fechamento-etapa-4.md) | Concluído documentalmente em 10/11/2026 após conferência final; implementação Android e entrega acadêmica pendentes |
 | [Interface e prototipagem — Etapa 5](interface/README.md) | v0.5 aprovada pelo usuário em 10/11/2026 e concluída documentalmente: HTML calculável e Figma 03 com roteiros preparados; [aprovação, evidências e limites](interface/finalizacao-v05.md#aprovação-e-fechamento-documental) |
 | [Navegação](interface/navegacao.md) | Fluxos de catálogo, avaliação, saída e PDF; Voltar do Android |
+| [Firebase real](firebase-real.md) | Criação do projeto, Firestore, registro do app e build conectado ao serviço |
 
 Os requisitos detalhados ficam nos respectivos grupos. O registro de decisões e os documentos de modelagem funcionam como índices para arquivos menores, separados por tema. [PDFs do professor](../references/) e [diagramas](../diagrams/).
 
